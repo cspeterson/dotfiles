@@ -1,0 +1,25 @@
+# Git stuff and git prompt
+
+alias git-treel='/usr/bin/git log --all --graph'    #”tree long,” get it
+alias git-tree='/usr/bin/git log --all --graph --oneline'
+
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
+else
+    echo 'To install git-completion for git bash completion, run: gitcompletion'
+    alias gitcompletion='wget -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash'
+fi
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+else
+    echo 'To install git-prompt to show git reepo status in your prompt, run: gitprompt'
+    alias gitprompt='wget -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh'
+fi
+
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWCOLORHINTS=true
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWUNTRACKEDFILES=true
+PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+PROMPT_DIRTRIM=4
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '

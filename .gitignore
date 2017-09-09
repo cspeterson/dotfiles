@@ -1,0 +1,35 @@
+# Ignore
+*
+.bash_local
+
+# Include
+!.audacity-data/
+!.audacity-data/audacity.cfg
+!.audacity-files/
+!.audacity-files/
+!.audacity-files/plug-ins/
+!.audacity-files/plug-ins/Noisegate.ny
+
+!.gitignore
+!.bash_aliases
+!.bash_git
+!.bash_logout
+!.bash_ps1
+!.bash_settings
+!.bashrc
+
+!.config/
+!.config/terminator
+!.config/terminator/config
+
+!.README.md
+
+!.screenrc
+
+!.vimrc
+!.vim/
+!.vim/setup.sh
+!.vim/ftplugin/
+!.vim/ftplugin/python.vim
+!.vim/ftplugin/html.vim
+!.vim/ftplugin/javascript.vim

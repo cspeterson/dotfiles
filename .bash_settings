@@ -1,0 +1,14 @@
+# Usage-based bash settings
+
+# Unlimited history
+export HISTSIZE=''
+export HISTFILESIZE=''
+# Ignore both duplicate entries and entries preceeded by empty space
+export HISTCONTROL=ignoreboth
+# Vim ftw
+export EDITOR=vim
+
+# shopts
+shopt -s globstar
+
+
