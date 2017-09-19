@@ -2,8 +2,9 @@
 "## General goodness
 "###############################################3
 set nu " line numbers
-set paste
 set term=xterm-256color " behave sensibly
+set laststatus=2 " always show status line
+
 
 " Layouts
 set splitbelow " when splitting layout, new horizontal splits go below
@@ -13,6 +14,16 @@ nnoremap <C-J> <C-W><C-J> " down
 nnoremap <C-K> <C-W><C-K> " up
 nnoremap <C-L> <C-W><C-L> " right
 nnoremap <C-H> <C-W><C-H> " left
+
+" Tab nav controls sorta in the vein of Firefox etc
+" Not using Ctrl-Tab etc because X and/or the terminal don't let the ind. keys
+" through :(
+nnoremap <S-Tab>   :tabprevious<CR>
+nnoremap <Tab>     :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <S-Tab>   <Esc>:tabprevious<CR>i
+inoremap <Tab>     <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
 
 " Redundant mappings for saving and quitting because I always typo
 command Q q
@@ -50,6 +61,7 @@ nnoremap <space> za
 " Install plugins here.
 " They can be easily installed without entering Vim by running:
 " vim +PluginInstall +qall
+Plugin 'ConradIrwin/vim-bracketed-paste' " automatic set paste when pasting. which is nice.
 Plugin 'JamshedVesuna/vim-markdown-preview' " preview markdown from vim in browser
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized' " pleasant colors
