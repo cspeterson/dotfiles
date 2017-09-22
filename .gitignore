@@ -5,6 +5,7 @@
 # Include
 !.audacity-data/
 !.audacity-data/audacity.cfg
+!.audacity-data/Tags.xml
 !.audacity-files/
 !.audacity-files/
 !.audacity-files/setup.sh
