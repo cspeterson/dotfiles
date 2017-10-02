@@ -11,7 +11,7 @@ for plugin in ${plugins[@]}; do
 	filepath="${plugindir}/${filename}"
 	if [ ! -f "${filepath}" ]; then
 		echo "Installing plugin ${filename}..."
-    mkdir -p "${installdir}"
+    mkdir -p "${plugindir}"
 		wget -O "${filepath}" "${plugin}" >/dev/null
 	else
 		echo "Skipping plugin ${filename}; already downloaded."
