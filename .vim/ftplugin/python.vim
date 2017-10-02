@@ -1,5 +1,5 @@
 set autoindent
-set colorcolumn=120
+set colorcolumn=80
 set encoding=utf-8
 set expandtab	" inserts spaces instead of tabs
 set fileformat=unix
