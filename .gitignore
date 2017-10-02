@@ -1,8 +1,14 @@
+########
 # Ignore
+########
 *
 .bash_local
 
+#########
 # Include
+#########
+!.Xresources
+
 !.audacity-data/
 !.audacity-data/audacity.cfg
 !.audacity-data/Tags.xml

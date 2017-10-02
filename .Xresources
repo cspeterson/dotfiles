@@ -1,0 +1,11 @@
+! to enable any changes to this configuration:
+! xrdb -merge ~/.Xresources
+
+! Set front to truetype as the bitmap-based default fonts are dumb and
+! tiny on high-DPI displays. Also wtf who wants bitmapped fonts
+XTerm*faceName: DejaVu Sans Mono
+XTerm*faceSize: 8
+XTerm*renderFont: true
+
+! Reverse to white-on-black color scheme
+! Term*reverseVideo: off
