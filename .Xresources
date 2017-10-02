@@ -6,6 +6,6 @@
 XTerm*faceName: DejaVu Sans Mono
 XTerm*faceSize: 8
 XTerm*renderFont: true
-
+!
 ! Reverse to white-on-black color scheme
-! Term*reverseVideo: off
+XTerm*reverseVideo: on

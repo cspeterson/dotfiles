@@ -19,12 +19,16 @@
 !.audacity-files/plug-ins/Noisegate.ny
 
 !.gitignore
+
 !.bash_aliases
 !.bash_git
 !.bash_logout
 !.bash_ps1
 !.bash_settings
 !.bashrc
+
+!.clusterssh/
+!.clusterssh/config
 
 !.config/
 !.config/terminator
