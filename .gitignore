@@ -18,6 +18,9 @@
 !.audacity-files/plug-ins/
 !.audacity-files/plug-ins/Noisegate.ny
 
+
+!.dotfiles.setup.py
+
 !.gitignore
 
 !.bash_aliases
