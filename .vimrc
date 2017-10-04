@@ -5,6 +5,16 @@ set nu " line numbers
 set term=xterm-256color " behave sensibly
 set laststatus=2 " always show status line
 
+" Statusline
+" Show full expanded path of file, cut at 30 chars
+set statusline=%.30{fnamemodify(bufname('%'),':p:h')}/
+" Filename
+set statusline+=%t
+" Start aligning the rest to the right
+set statusline+=%=
+" File type as detected by vim
+set statusline+=FileType:\ %y " always show filename in status
+
 " Layouts
 set splitbelow " when splitting layout, new horizontal splits go below
 set splitright " when splitting layout, new vert splits go to the rights

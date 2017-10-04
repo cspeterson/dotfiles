@@ -22,6 +22,26 @@ for test_pkg_man in ${pkg_mans[@]}; do
 		break
 	fi
 done
+
+# Post plugin-install tasks for YouCompleteMe: requires compilation and the packages required
+# difft between debian- and redhat-based systems
+if [ -z ${pkg_man+x} ]; then
+	echo "Did not find either apt-get, yum, or dnf package managers. What happen?"
+	echo "Please manually compile YouCmpleteMe as per README:"
+	echo "https://github.com/Valloric/YouCompleteMe"
+else
+	if [ -d ~/.vim/bundle/YouCompleteMe ]; then
+		if [ "$pkg_man" == "apt-get" ]; then
+			sudo $pkg_man install build-essential cmake
+		else
+			sudo $pkg_man install automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel
+		fi
+		# Now compile YCM
+		$(cd ~/.vim/bundle/YouCompleteMe &&
+			./install.py --clang-completer)
+	fi
+fi
+
 if [ -z ${pkg_man+x} ]; then
 	echo "Did not find either apt-get, yum, or dnf package managers. What happen?"
 	echo "Please manually install the package xdotool from whatever package manager this system provides (for the markdown preview plugin)."
