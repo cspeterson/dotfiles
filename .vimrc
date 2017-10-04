@@ -5,7 +5,6 @@ set nu " line numbers
 set term=xterm-256color " behave sensibly
 set laststatus=2 " always show status line
 
-
 " Layouts
 set splitbelow " when splitting layout, new horizontal splits go below
 set splitright " when splitting layout, new vert splits go to the rights
@@ -125,7 +124,9 @@ let g:solarized_termcolors=256
 colorscheme solarized
 " Toggle dark/light colors
 call togglebg#map("<F5>")
-
+" now set it so it doesn't do that awful ugly blocky coloring behind text
+" (this needs to be after the syntax line above)
+hi Normal ctermbg=NONE
 
 "###############################################3
 "# Snytax
