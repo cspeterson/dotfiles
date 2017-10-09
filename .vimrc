@@ -36,9 +36,14 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 
 " Redundant mappings for saving and quitting because I always typo
 command Q q
+command Qa qa
+command QA qa
 command W w
-command WQ wq
 command Wq wq
+command WQ wq
+command Wqa wqa
+command WQa wqa
+command WQA wqa
 
 " Code folding
 set foldmethod=indent
