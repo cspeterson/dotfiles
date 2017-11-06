@@ -18,11 +18,6 @@
 !.audacity-files/plug-ins/
 !.audacity-files/plug-ins/Noisegate.ny
 
-
-!.dotfiles.setup.py
-
-!.gitignore
-
 !.bash_aliases
 !.bash_git
 !.bash_logout
@@ -36,6 +31,11 @@
 !.config/
 !.config/terminator
 !.config/terminator/config
+
+!.dotfiles.setup.py
+
+!.git-setup.sh
+!.gitignore
 
 !.README.md
 

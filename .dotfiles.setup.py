@@ -18,6 +18,27 @@ def setup_audacity():
     cmd = os.path.join(homedir, '.audacity-files', 'setup.sh')
     call([cmd])
 
+def setup_git():
+    """ set git """
+
+    print('Running the git setup script...')
+    cmd = os.path.join(homedir, '.git-setup.sh')
+    call([cmd])
+
+def setup_i3():
+    """ Set up i3 """
+
+    print('Running the i3 setup script...')
+    cmd = os.path.join(homedir, '.config', 'i3', 'i3-setup.sh')
+    call([cmd])
+
+def setup_packages():
+    """ Set up generally-required packages """
+
+    print('Running the package-install script...')
+    cmd = os.path.join(homedir, '.packages-install.sh')
+    call([cmd])
+
 def setup_vim():
     """ setup_vim """
 
@@ -32,6 +53,8 @@ def main():
 
     setups = {
         'audacity': setup_audacity,
+        'git': setup_git,
+        'packages': setup_packages,
         'vim': setup_vim,
     }
     all_args = sys.argv[1:]
