@@ -12,47 +12,19 @@ vim +PluginInstall +qall || echo 'Failed to install Vundle and Vim plguins. Try 
 echo 'Installing grip with pip...'
 pip install --user --upgrade grip >/dev/null
 
-# Everything I use fits within this list of package managers
-# This is a dumb lazy way of doing this but, again, I know which platforms I use
-pkg_mans=('apt-get' 'yum' 'dnf')
-for test_pkg_man in ${pkg_mans[@]}; do
-	which $test_pkg_man
-	if [ $? -eq 0 ]; then
-		pkg_man=$test_pkg_man
-		break
-	fi
-done
-
-# Post plugin-install tasks for YouCompleteMe: requires compilation and the packages required
-# difft between debian- and redhat-based systems
-if [ -z ${pkg_man+x} ]; then
-	echo "Did not find either apt-get, yum, or dnf package managers. What happen?"
-	echo "Please manually compile YouCmpleteMe as per README:"
-	echo "https://github.com/Valloric/YouCompleteMe"
-else
-	if [ -d ~/.vim/bundle/YouCompleteMe ]; then
-		if [ "$pkg_man" == "apt-get" ]; then
-			sudo $pkg_man install build-essential cmake
-		else
-			sudo $pkg_man install automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel
-		fi
-		# Now compile YCM
-		$(cd ~/.vim/bundle/YouCompleteMe &&
-			./install.py --clang-completer)
-	fi
+if [ -d ~/.vim/bundle/YouCompleteMe ]; then
+	sudo apt-get install build-essential cmake
 fi
+# Now compile YCM
+$(cd ~/.vim/bundle/YouCompleteMe &&
+	./install.py --clang-completer)
 
-if [ -z ${pkg_man+x} ]; then
-	echo "Did not find either apt-get, yum, or dnf package managers. What happen?"
-	echo "Please manually install the package xdotool from whatever package manager this system provides (for the markdown preview plugin)."
+which xdotool
+if [ $? -ne 0 ]; then
+	echo "sudo up to install xdotool..."
+	sudo apt-get install xdotool
 else
-	which xdotool
-	if [ $? -ne 0 ]; then
-		echo "sudo up to install xdotool..."
-		sudo $pkg_man install xdotool
-	else
-		echo "Detected xdotools installed."
-	fi
+	echo "Detected xdotools installed."
 fi
 
 echo 'Done.'
