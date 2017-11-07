@@ -29,7 +29,7 @@ def setup_i3():
     """ Set up i3 """
 
     print('Running the i3 setup script...')
-    cmd = os.path.join(homedir, '.config', 'i3', 'i3-setup.sh')
+    cmd = os.path.join(homedir, '.config', 'i3', 'setup.sh')
     call([cmd])
 
 def setup_packages():
@@ -54,6 +54,7 @@ def main():
     setups = {
         'audacity': setup_audacity,
         'git': setup_git,
+        'i3': setup_i3,
         'packages': setup_packages,
         'vim': setup_vim,
     }
