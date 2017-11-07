@@ -13,6 +13,7 @@ echo 'Installing grip with pip...'
 pip install --user --upgrade grip >/dev/null
 
 if [ -d ~/.vim/bundle/YouCompleteMe ]; then
+	echo "Install build tools for YCM..."
 	sudo apt-get install build-essential cmake
 fi
 # Now compile YCM
