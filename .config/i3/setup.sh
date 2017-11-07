@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
 
-echo 	sudo apt-get install i3lock gsimplecal i3blocks pavucontrol blueman pasystray notify-osd fonts-font-awesome pcmanfm-qt 
-	sudo apt-get install i3lock gsimplecal i3blocks pavucontrol blueman pasystray notify-osd fonts-font-awesome pcmanfm-qt 
+echo "Install tools and applets upon which the i3 config will rely..."
+sudo apt-get install \
+blueman \
+fonts-font-awesome \
+gsimplecal \
+i3blocks \
+i3blocks \
+i3lock \
+notify-osd \
+pasystray \
+pavucontrol \
+pcmanfm-qt \
+xserver-xorg-input-synaptics
