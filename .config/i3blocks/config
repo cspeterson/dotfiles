@@ -28,6 +28,13 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# Date Time
+#
+[time]
+command=~/.config/i3blocks/datetimecal.sh
+color=#00FF00
+interval=1
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -108,13 +115,6 @@ min_width=CPU: 100.00%
 label=⚡
 #instance=1
 interval=30
-
-# Date Time
-#
-[time]
-command=~/.config/i3blocks/datetimecal.sh
-color=#00FF00
-interval=1
 
 # Generic media player support
 #
