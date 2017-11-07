@@ -189,6 +189,8 @@ exec --no-startup-id pasystray
 #
 # Window placements and behaviours
 #
+# Firefox
+for_window [class="Mozilla Firefox$"] stacking enable
 # Pidgin
 assign [class="^Pidgin$"] 3
 # Pop-up calendar (opens from i3blocks click event)
@@ -198,6 +200,15 @@ for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move d
 # Application key combos
 #
 bindsym $mod+t exec i3-sensible-terminal
+# GUI file browser
+bindsym $mod+z exec pcmanfm-qt
+# Screen shot full desktop
+bindsym Print exec "shutter --remove_cursor --exit_after_capture --full --output=~/Downloads/screenshot-%Y-%m-%d--%H:%M:%S.png"
+# Screen shot focused window
+bindsym Print+Mod1 exec "shutter --remove_cursor --exit_after_capture --full --active --output=~/Downloads/screenshot-%Y-%m-%d--%H:%M:%S.png"
+# Screen shot with selection
+bindsym Mod1+Shift+Print exec "shutter --remove_cursor --exit_after_capture --full --section --output=~/Downloads/screenshot-%Y-%m-%d--%H:%M:%S.png"
+
 
 # Media keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+ unmute
@@ -218,9 +229,12 @@ bindsym $mod+KP_Subtract exec amixer -D pulse sset Master 10%-; exec $dripsound;
 bindsym $mod+semicolon workspace prev
 bindsym $mod+apostrophe workspace next
 bindsym $mod+x move workspace to output right
+# Cycle windows (in workspace)
+bindsym $mod+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py
+bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py reverse
 
-# Lock screen
-set $lock_cmd i3lock -I 10 
+# Lock screen, turn off displays after 2s
+set $lock_cmd "i3lock -I 10; sleep 2; xset dpms force off"
 bindsym $mod+l exec $lock_cmd
 # Ctrl+alt+L locks too
 bindsym Mod1+Control+l exec $lock_cmd
