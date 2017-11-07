@@ -11,5 +11,4 @@ i3lock \
 notify-osd \
 pasystray \
 pavucontrol \
-pcmanfm-qt \
-xserver-xorg-input-synaptics
+pcmanfm-qt
