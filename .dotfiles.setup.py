@@ -18,8 +18,16 @@ def setup_audacity():
     cmd = os.path.join(homedir, '.audacity-files', 'setup.sh')
     call([cmd])
 
+def setup_gimp():
+    """ setup gimp """
+
+    print('Running the gimp setup script...')
+    cmd = os.path.join(homedir, '.gimp-2.8', 'setup.sh')
+    call([cmd])
+
+
 def setup_git():
-    """ set git """
+    """ setup git """
 
     print('Running the git setup script...')
     cmd = os.path.join(homedir, '.git-setup.sh')
@@ -53,6 +61,7 @@ def main():
 
     setups = {
         'audacity': setup_audacity,
+        'gimp': setup_gimp,
         'git': setup_git,
         'i3': setup_i3,
         'packages': setup_packages,
