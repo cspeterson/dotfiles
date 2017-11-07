@@ -33,7 +33,7 @@
 !.config/
 !.config/i3
 !.config/i3/config
-!.config/i3/setup
+!.config/i3/setup.sh
 !.config/i3blocks
 !.config/i3blocks/config
 !.config/i3blocks/datetimecal.sh
