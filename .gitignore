@@ -56,6 +56,14 @@
 !.git-setup.sh
 !.gitignore
 
+!.mutt/
+!.mutt/muttrc
+!.mutt/mutt-colors-solarized-dark-16.muttrc
+!.mutt/mutt-colors-solarized-light-16.muttrc
+!.mutt/cache/
+!.mutt/cache/bodies/
+!.mutt/cache/bodies/.hello
+
 !.packages-install.sh
 
 !.README.md

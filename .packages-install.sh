@@ -7,11 +7,13 @@ sudo apt-get install \
 	intltool \
 	libgimp2.0-dev \
 	libglib2.0-dev \
+	links \
 	python \
 	python-pip \
 	python3 \
 	python3-pip \
 	vim \
+	w3m \
 	x11-utils
 
 

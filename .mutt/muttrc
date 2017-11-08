@@ -1,0 +1,41 @@
+# Have these files in the .mutt directory:
+#
+# .imap_host	imap hostname
+# .pass		password for imap and smtp (assumes same)
+# .realname	real name
+# .smtp_host	smtp hostname
+# .user		username for imap and smtp (assumes same)
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_user = "`cat ~/.mutt/.user`"
+set imap_pass = "`cat ~/.mutt/.pass`"
+set from = "`cat ~/.mutt/.user`"
+set realname = "`cat ~/.mutt/.realname`"
+set folder = "imaps://`cat ~/.mutt/.imap_host`"
+set spoolfile = "imaps://`cat ~/.mutt/.user`:`cat ~/.mutt/.pass`@`cat ~/.mutt/.imap_host`"
+set postponed="imaps://`cat ~/.mutt/.imap_host`/Drafts"
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set smtp_url = "smtp://`cat ~/.mutt/.user`:`cat ~/.mutt/.pass`@`cat ~/.mutt/.smtp_host`"
+set move = no
+set imap_keepalive = 900
+
+
+
+bind index G imap-fetch-mail
+bind pager <up> previous-line # scroll inside the pager instead of index
+bind pager <down> next-line
+set sleep_time = 0 # suppress pausing
+set smart_wrap
+set sort=threads
+set sort_browser=reverse-date
+set sort_aux=reverse-last-date-received
+# source ~/.mutt/mutt-colors-solarized-light-16.muttrc
+source ~/.mutt/mutt-colors-solarized-light-16.muttrc
+set include	# include message in reply
+set sendmail_wait = -1
+auto_view text/html
+# alternative_order text/enriched text/plain text/html
+set index_format = "%4C %Z %[%I:%M %p %d%b] %-15.15L (%?l?%4l&%4c?) %s"
