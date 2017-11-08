@@ -6,6 +6,7 @@
 # .smtp_host	smtp hostname
 # .user		username for imap and smtp (assumes same)
 
+# Setup send/receive
 set ssl_starttls=yes
 set ssl_force_tls=yes
 set imap_user = "`cat ~/.mutt/.user`"
@@ -23,19 +24,57 @@ set move = no
 set imap_keepalive = 900
 
 
-
+#
+# Key bindings
+# 
+# Index refresh
 bind index G imap-fetch-mail
-bind pager <up> previous-line # scroll inside the pager instead of index
+# Pager behave as less
+bind pager <up> previous-line 
 bind pager <down> next-line
-set sleep_time = 0 # suppress pausing
+# Move delete to 'D' and set up 'a' for archive
+bind index,pager d noop #get rid of delete, all archive
+bind index,pager D "delete-message"
+macro index,pager a "<save-message>=Archives/2017<enter>" "Archive Message"
+
+#
+# Misc Settings
+#
+# Suppres ui pausing
+# Don't ask for confirm when moving a message to a folder
+set confirmappend = "no"
+# Copy sent messages
+set copy = "yes"
+# Do not prompt to confirm delete at exit
+set delete = "yes"
+# Include message in reply
+set include
+# How to show messages in index view
+set index_format = "%4C %Z %[%I:%M %p %d %b%y] %-15.15L (%?l?%4l&%4c?) %s"
+# Do not prompt about resuming drafts when starting a new message
+set recall = "no"
+# Copy send messages here
+set record = "+/Sent"
+# Do not wait for sendmail
+set sendmail_wait = -1
+# Do not pause ui things
+set sleep_time = 0
+# Long line pain
 set smart_wrap
-set sort=threads
-set sort_browser=reverse-date
-set sort_aux=reverse-last-date-received
+# Sorting
+set sort = "threads"
+set sort_aux = "reverse-last-date-received"
+set sort_browser = "reverse-date"
+
+#
+# Html
+#
+auto_view text/x-vcard text/html text/enriched
+
+#
+# Themes/color
 # source ~/.mutt/mutt-colors-solarized-light-16.muttrc
 source ~/.mutt/mutt-colors-solarized-light-16.muttrc
-set include	# include message in reply
-set sendmail_wait = -1
-auto_view text/html
-# alternative_order text/enriched text/plain text/html
-set index_format = "%4C %Z %[%I:%M %p %d%b] %-15.15L (%?l?%4l&%4c?) %s"
+
+
+
