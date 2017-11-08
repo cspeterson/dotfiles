@@ -50,7 +50,7 @@ set delete = "yes"
 # Include message in reply
 set include
 # How to show messages in index view
-set index_format = "%4C %Z %[%I:%M %p %d %b%y] %-15.15L (%?l?%4l&%4c?) %s"
+set index_format = "%4C %Z %[%I:%M %p %d %b%y] %-15.15L (%?l?%4l&%4c?) %?X?A&-? %s"
 # Do not prompt about resuming drafts when starting a new message
 set recall = "no"
 # Copy send messages here
