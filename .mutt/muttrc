@@ -69,12 +69,18 @@ set sort_browser = "reverse-date"
 #
 # Html
 #
+alternative_order text/plain text/enriched text/html
 auto_view text/x-vcard text/html text/enriched
+# Ctrl+b to open html email in w3m
+macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
 
 #
 # Themes/color
 # source ~/.mutt/mutt-colors-solarized-light-16.muttrc
 source ~/.mutt/mutt-colors-solarized-light-16.muttrc
+
+
+
 
 
 

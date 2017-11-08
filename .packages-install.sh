@@ -12,6 +12,7 @@ sudo apt-get install \
 	python-pip \
 	python3 \
 	python3-pip \
+	urlscan \
 	vim \
 	w3m \
 	x11-utils

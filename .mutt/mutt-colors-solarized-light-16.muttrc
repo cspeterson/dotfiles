@@ -32,8 +32,8 @@ color markers       red             black
 color attachment    black           default         
 color search        brightmagenta   default         
 #color status        J_black         J_status        
-color status        brightblue      white           
-color indicator     brightwhite     yellow          
+color status        black      white           
+color indicator     black     	    brightwhite
 color tree          yellow          default                                     # arrow in threads
 
 # basic monocolor screen
