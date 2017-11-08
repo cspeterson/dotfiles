@@ -1,8 +1,7 @@
-
 ########
 *
 .bash_local
-.ssh
+.ssh/
 
 #########
 # Include
@@ -13,7 +12,6 @@
 !.audacity-data/
 !.audacity-data/audacity.cfg
 !.audacity-data/Tags.xml
-!.audacity-files/
 !.audacity-files/
 !.audacity-files/setup.sh
 !.audacity-files/plug-ins/
@@ -31,18 +29,21 @@
 
 !.config/
 
-!.config/gsimplecal
+!.config/gsimplecal/
 !.config/gsimplecal/config
 
-!.config/i3
+!.config/i3/
 !.config/i3/config
 !.config/i3/setup.sh
 
-!.config/i3blocks
+!.config/i3blocks/
 !.config/i3blocks/config
 !.config/i3blocks/datetimecal.sh
 
-!.config/terminator
+!.config/pulse/
+!.config/pulse/default.pa
+
+!.config/terminator/
 !.config/terminator/config
 
 !.dotfiles.setup.py
