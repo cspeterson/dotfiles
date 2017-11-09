@@ -9,3 +9,27 @@ XTerm*renderFont: true
 !
 ! Reverse to white-on-black color scheme
 XTerm*reverseVideo: on
+
+!
+! Hi-DPI handling
+!
+#ifdef SRVR_csplt
+	#define DPI 180
+	#define AUTOHINT 0
+	#define LCDFILTER  lcddefault
+	#define HINTSTYLE  hintfull
+	#define HINTING 1
+	#define ANTIALIAS 1
+	#define RGBA rgb
+
+	#define I3BARFONTSIZE 16
+#endif
+Xft.dpi: DPI
+Xft.autohint: AUTOHINT
+Xft.lcdfilter: LCDFILTER
+Xft.hintstyle: HINTSTYLE
+Xft.hinting: HINTING
+Xft.antialias: ANTIALIAS
+Xft.rgba: RGBA
+! Set this variable for use in i3 config
+*i3barfontsize: I3BARFONTSIZE

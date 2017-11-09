@@ -157,6 +157,7 @@ bindsym $mod+r mode "resize"
 # Values
 # 
 set $mastervol $(amixer -D pulse get Master  | grep -Eo '[[0-9]+%]' | head -n 1)
+set_from_resource $barfontsize i3wm.i3barfontsize
 #
 # Command aliases
 # Play gnome drip sound - volume 0-65536:0%-100%
@@ -167,6 +168,7 @@ bar {
 	tray_output	primary
         status_command	i3blocks
 	position 	top
+	font pango:DejaVu Sans Mono Awesome $barfontsize
 }
 
 #
