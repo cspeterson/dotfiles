@@ -22,6 +22,7 @@ set certificate_file = "~/.mutt/certificates"
 set smtp_url = "smtp://`cat ~/.mutt/.user`:`cat ~/.mutt/.pass`@`cat ~/.mutt/.smtp_host`"
 set move = no
 set imap_keepalive = 900
+set timeout = 60
 
 
 #
