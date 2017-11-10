@@ -27,3 +27,8 @@ pip3 install --user --upgrade i3ipc
 echo '::::Download focus-next-visible.py from the i3ipc-python github repo...'
 wget -O ~/.config/i3/focus-next-visible.py https://raw.githubusercontent.com/acrisci/i3ipc-python/master/examples/focus-next-visible.py
 ls -l ~/.config/i3/focus-next-visible.py
+
+echo '::::Alter gdm3 default Xsession to NOT skip over prepocessor directives...'
+sudo sed -i 's/-nocpp //g' /etc/gdm3/Xsession
+echo '::::Merge in Xresources now...'
+xrdb -merge ~/.Xresources
