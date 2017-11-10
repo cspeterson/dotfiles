@@ -4,6 +4,7 @@
 set nu " line numbers
 set term=xterm-256color " behave sensibly
 set laststatus=2 " always show status line
+set cursorline " highlight the line being edited
 
 " Statusline
 " Show full expanded path of file, cut at 30 chars
