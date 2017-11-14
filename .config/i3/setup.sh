@@ -10,17 +10,17 @@ notify-send "dunst test" "Are we dunst yet?"
 
 echo "::::Install tools and applets upon which the i3 config will rely..."
 sudo apt-get install \
-blueman \
-fonts-font-awesome \
-gnome-web-photo \
-gsimplecal \
-i3blocks \
-i3lock \
-libimage-exiftool-perl \
-pasystray \
-pavucontrol \
-pcmanfm-qt \
-shutter
+	blueman \
+	fonts-font-awesome \
+	gnome-web-photo \
+	gsimplecal \
+	i3blocks \
+	i3lock \
+	libimage-exiftool-perl \
+	pasystray \
+	pavucontrol \
+	pcmanfm-qt \
+	shutter \
 
 echo '::::Pip install the i3ipc module for this user...'
 pip3 install --user --upgrade i3ipc
