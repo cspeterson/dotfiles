@@ -177,7 +177,7 @@ bar {
 font pango:DejaVu Sans Mono Awesome 10
 
 #
-# Autorun
+# Autorun/startup scripts
 #
 # Network manager
 exec --no-startup-id nm-applet
@@ -187,7 +187,11 @@ exec --no-startup-id pidgin
 exec --no-startup-id blueman-applet
 # Sound
 exec --no-startup-id pasystray
-
+# Touchpad config
+# Enable two-finger scroll sideways
+exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
+# Enable middle-click
+#
 #
 # Window placements and behaviours
 #
