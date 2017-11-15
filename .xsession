@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 # ENVVARS
-TERMINAL=terminator
+export TERMINAL=terminator
 
 
 #Compose key: right alt
@@ -8,6 +10,3 @@ setxkbmap -option compose:ralt
 xmodmap ~/.Xmodmap
 # Set screen timeout
 xset dpms 600
-
-
-

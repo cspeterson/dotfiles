@@ -171,13 +171,31 @@ bar {
 	font pango:DejaVu Sans Mono Awesome $barfontsize
 }
 
+
 #
 # Styling
 #
+# Font in bar etc
 font pango:DejaVu Sans Mono Awesome 10
+# Set split indicator to magenta
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #ff02d9   #285577
+# Window border size
+new_window pixel 4
+
 
 #
-# Autorun/startup scripts
+# Startup environment and hardware setup
+#
+# Touchpad config
+# Enable two-finger scroll sideways
+exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
+# Enable middle-click
+#
+
+
+#
+# Autorun
 #
 # Network manager
 exec --no-startup-id nm-applet
@@ -187,11 +205,8 @@ exec --no-startup-id pidgin
 exec --no-startup-id blueman-applet
 # Sound
 exec --no-startup-id pasystray
-# Touchpad config
-# Enable two-finger scroll sideways
-exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
-# Enable middle-click
-#
+
+
 #
 # Window placements and behaviours
 #
@@ -201,6 +216,7 @@ for_window [class="Mozilla Firefox$"] stacking enable
 assign [class="^Pidgin$"] 3
 # Pop-up calendar (opens from i3blocks click event)
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 10 px
+
 
 #
 # Application key combos
@@ -228,6 +244,7 @@ bindsym $mod+KP_Add exec amixer -D pulse sset Master 10%+; exec $dripsound; exec
 bindsym $mod+minus exec amixer -D pulse sset Master 10%-; exec $dripsound; exec notify-send -t 1 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
 bindsym $mod+KP_Subtract exec amixer -D pulse sset Master 10%-; exec $dripsound; exec notify-send -t 1 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
 
+
 #
 # UI Navigation
 #
@@ -238,16 +255,8 @@ bindsym $mod+x move workspace to output right
 # Cycle windows (in workspace)
 bindsym $mod+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py
 bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py reverse
-
 # Lock screen, turn off displays after 2s
 set $lock_cmd "i3lock -I 10; sleep 2; xset dpms force off"
 bindsym $mod+l exec $lock_cmd
 # Ctrl+alt+L locks too
 bindsym Mod1+Control+l exec $lock_cmd
-
-
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #ff02d9   #285577
-
-new_window pixel 4
-
