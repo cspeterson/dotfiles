@@ -1,5 +1,6 @@
 # Aliases and functions
 
+# Generally-useful aliases
 alias axfr='dig AXFR' # Zone transfer
 alias clr='clear'
 alias digs='dig +short' # reduce dig output
@@ -14,6 +15,9 @@ alias lla='ls -la'
 alias llz='ls -lZ'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
+
+# Aliases rather particular to my use-case
+alias locksleep='sudo -u csp i3lock -I 10 && sleep 1 && sudo pm-suspend'
 
 # Functions
 dossh() {
