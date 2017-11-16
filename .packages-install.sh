@@ -8,6 +8,7 @@ sudo apt-get install \
 	libgimp2.0-dev \
 	libglib2.0-dev \
 	links \
+	mosh \
 	python \
 	python-pip \
 	python3 \
