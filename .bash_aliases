@@ -17,7 +17,7 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security thi
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 
 # Aliases rather particular to my use-case
-alias locksleep='sudo -u csp i3lock -I 10 && sleep 1 && sudo pm-suspend'
+alias locksleep='sudo -u csp i3lock -I 10 && sudo pm-suspend'
 
 # Functions
 dossh() {
