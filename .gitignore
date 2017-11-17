@@ -54,6 +54,7 @@
 !.git-setup.sh
 
 !.github/
+!.github/LICENSE
 !.github/README.md
 
 !.gitignore
