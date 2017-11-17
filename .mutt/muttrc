@@ -24,7 +24,6 @@ set move = no
 set imap_keepalive = 900
 set timeout = 60
 
-
 #
 # Key bindings
 # 
@@ -33,10 +32,11 @@ bind index G imap-fetch-mail
 # Pager behave as less
 bind pager <up> previous-line 
 bind pager <down> next-line
-# Move delete to 'D' and set up 'a' for archive
+# Move delete to '[dD]' and set up '[aA]' for archive
 bind index,pager d noop #get rid of delete, all archive
-bind index,pager D "delete-message"
+bind index,pager d "delete-message"
 macro index,pager a "<save-message>=Archives/2017<enter>" "Archive Message"
+macro index,pager A "<save-message>=Archives/2017<enter><sync-mailbox>" "Archive Message and Sync"
 
 #
 # Misc Settings
