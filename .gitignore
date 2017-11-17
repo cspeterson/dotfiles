@@ -54,6 +54,10 @@
 !.gimp-2.8/setup.sh
 
 !.git-setup.sh
+
+!.github/
+!.github/README.md
+
 !.gitignore
 
 !.mailcap
