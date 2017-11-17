@@ -14,8 +14,6 @@
 !.audacity-data/Tags.xml
 !.audacity-files/
 !.audacity-files/setup.sh
-!.audacity-files/plug-ins/
-!.audacity-files/plug-ins/Noisegate.ny
 
 !.bash_aliases
 !.bash_git
