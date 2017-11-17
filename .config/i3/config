@@ -192,6 +192,8 @@ new_window pixel 4
 exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
 # Enable middle-click
 #
+# X
+exec --no-startup-id /bin/bash ~/.xsession
 
 
 #

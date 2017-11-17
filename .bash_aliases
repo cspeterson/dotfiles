@@ -1,6 +1,8 @@
 # Aliases and functions
 
+#
 # Generally-useful aliases
+#
 alias axfr='dig AXFR' # Zone transfer
 alias clr='clear'
 alias digs='dig +short' # reduce dig output
@@ -16,10 +18,15 @@ alias llz='ls -lZ'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 
+#
 # Aliases rather particular to my use-case
+#
 alias locksleep='sudo echo sudo && sudo -u csp i3lock -I 10 && sudo pm-suspend'
 
+#
 # Functions
+#
+# Ssh
 dossh() {
 	# Keep trying to connect over ssh
         ssh "$1"
@@ -28,6 +35,40 @@ dossh() {
         done
 }
 
+sshs() {
+	# Open ssh to host $1 with a screen session as same user
+	ssh_screen $1
+}
+
+sshr() {
+	# Open ssh to host $1 with a screen session as root
+	ssh_screen $1 '' 'sudo'
+}
+
+
+ssh_screen() {
+	# Connect to ssh with a screen session.
+	#
+	# Params:
+	#	$1: Hostname
+	#	$2: Screen session name. If not given defaults to username
+	#	$3: sudo? Sudos if nonempty
+
+	if [ ! -z "$2" ]; then
+		screenname=$2
+	else
+		screenname=$(whoami)
+	fi
+	if [ ! -z "$3" ]; then
+		sudocmd='sudo '
+	else
+		sudocmd=' '
+	fi
+	hostnameshellcmd='$(hostname)'
+	ssh -t ${1} "echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+}
+
+# Mosh
 moshs() {
 	# Open mosh to host $1 with a screen session as same user
 	mosh_screen $1
