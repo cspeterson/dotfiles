@@ -65,7 +65,7 @@ ssh_screen() {
 		sudocmd=' '
 	fi
 	hostnameshellcmd='$(hostname)'
-	ssh -t ${1} "echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+	ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
 }
 
 # Mosh
