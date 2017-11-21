@@ -212,6 +212,8 @@ exec --no-startup-id pasystray
 #
 # Window placements and behaviours
 #
+# CSSH
+for_window [title="CSSH"] floating enable
 # Firefox
 for_window [class="Mozilla Firefox$"] stacking enable
 # Pidgin
