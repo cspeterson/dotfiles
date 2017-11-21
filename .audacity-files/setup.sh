@@ -7,7 +7,7 @@ plugins=(
 echo "Installing Audacity plugins if not installed..."
 for plugin in ${plugins[@]}; do
 	filename=$(basename "${plugin}")
-	plugindir="~/.audacity-files/plug-ins"
+	plugindir="${HOME}/.audacity-files/plug-ins"
 	filepath="${plugindir}/${filename}"
 	if [ ! -f "${filepath}" ]; then
 		echo "Installing plugin ${filename}..."
