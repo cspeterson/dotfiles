@@ -1,22 +1,32 @@
 #!/usr/bin/env bash
-
-# LastPass-cli quick search to clipboard via dmenu
+#
+# https://github.com/cspeterson
+#
+# Quick search LastPass to clipboard via dmenu
 #
 # Pop-up dmenu to search just as the LastPass browser plugin.
 # Password for selected entry is put into clipboard
-# fin.
 #
-# This script uses:
-#   cut
-#   dmenu
-#   lpass (https://github.com/lastpass/lastpass-cli or install lastpass-cli)
-#   sed
+# ## Requires:
+# * cut
+# * dmenu
+# * lpass (https://github.com/lastpass/lastpass-cli)
+# * sed
 #
-# You won't need to already be logged into lastpass-cli to run this, 
-# as the utility automatically prompts for credentials when not logged-in.
-# This will fail however if you have /never/ logged in before, in which
-# case you should do so first:
-# `lpass login myemail@domain.tld`
+# ## INSTALL (Ubuntu)
+# ```
+# sudo apt-get update
+# # Lastpass cli is the lastpass cli client from LastPass themselves
+# sudo apt-get install dmenu lastpass-cli
+# mkdir $HOME/.bin
+# wget -O $HOME/.bin/lastpass-cli
+# https://raw.githubusercontent.com/cspeterson/dotfiles/master/.bin/lastpass-dmenu
+# chmod +x $HOME/.bin/lastpass-cli
+# # Login to lastpass-cli one time and it will remember your email for the
+# # future
+# lpass login myuser@email.tld
+# ```
+# Then bind a key combo to the script in your window manager and you're good to go.
 
 IFS=$'\n'
 # List all entries in LastPass vault into dmenu formatted as follows
