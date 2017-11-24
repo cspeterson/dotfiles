@@ -17,5 +17,6 @@ sudo apt-get install \
 	vim \
 	w3m \
 	x11-utils
+	xclip
 
 

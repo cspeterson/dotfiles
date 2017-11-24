@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# LastPass-cli quick search to clipboard via dmenu
+#
+# Pop-up dmenu to search just as the LastPass browser plugin.
+# Password for selected entry is put into clipboard
+# fin.
+#
+# This script uses:
+#   cut
+#   dmenu
+#   lpass (the package on ubuntu is lastpass-cli)
+#   sed
+#
+# You won't need to already be logged into lastpass-cli to run this, 
+# as the utility automatically prompts for credentials when not logged-in.
+# This will fail however if you have /never/ logged in before, in which
+# case you should do so first:
+# `lastpass login myemail@domain.tld`
+
+IFS=$'\n'
+# List all entries in LastPass vault into dmenu formatted as follows
+# Folder/subfolder/Name of Site [username at site] [id: id for lookup]
+entries=($(lpass ls --long \
+  | cut -d ' ' -f 3- \
+  | sed 's/\[username: /[/' \
+  | sed 's/\(.*\)\(\[.*\]\) \(\[.*\]\)/\1 \3 \2/')
+  )
+
+# Get id from dmenu user selection
+selid=$(printf '%s\n' "${entries[@]}" \
+  | dmenu -i -p 'LastPass: ' -l 7 \
+  | sed 's/^.*\[id: \([0-9]\{1,\}\)\].*$/\1/')
+
+# Password to clipboard
+lpass show --clip --password ${selid}
