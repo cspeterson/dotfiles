@@ -23,6 +23,10 @@
 !.bash_settings
 !.bashrc
 
+!.bin/
+!.bin/lastpass-dmenu
+!.bin/packages-install
+
 !.clusterssh/
 !.clusterssh/config
 
@@ -71,8 +75,6 @@
 !.mutt/cache/
 !.mutt/cache/bodies/
 !.mutt/cache/bodies/.hello
-
-!.packages-install.sh
 
 !.README.md
 
