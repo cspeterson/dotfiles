@@ -16,7 +16,7 @@
 # as the utility automatically prompts for credentials when not logged-in.
 # This will fail however if you have /never/ logged in before, in which
 # case you should do so first:
-# `lastpass login myemail@domain.tld`
+# `lpass login myemail@domain.tld`
 
 IFS=$'\n'
 # List all entries in LastPass vault into dmenu formatted as follows
