@@ -34,12 +34,12 @@ Some (all?) of these different configs rely upon external plugins/utilities/what
 So what is included are different setup scripts. With the repo files in-place, one could then run
 ```
 # Set up for all the things in this repo
-~/.dotfiles.setup.py all
+~/.bin/dotfiles-setup.py all
 ```
 or
 ```
 # Set up an individual component.
-~/.dotfiles.setup.py
+~/.bin/dotfiles-setup.py
 # <outputs list of setup options>
-~/.dotfiles.setup.py <specific setup from the list>
+~/.bin/dotfiles-setup.py <specific setup from the list>
 ```
