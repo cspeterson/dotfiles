@@ -44,6 +44,10 @@
 !.config/i3blocks/config
 !.config/i3blocks/datetimecal.sh
 
+!.config/pcmanfm-qt/
+!.config/pcmanfm-qt/default
+!.config/pcmanfm-qt/default/settings.conf
+
 !.config/pulse/
 !.config/pulse/default.pa
 
