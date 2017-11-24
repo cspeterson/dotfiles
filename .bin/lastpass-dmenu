@@ -9,7 +9,7 @@
 # This script uses:
 #   cut
 #   dmenu
-#   lpass (the package on ubuntu is lastpass-cli)
+#   lpass (https://github.com/lastpass/lastpass-cli or install lastpass-cli)
 #   sed
 #
 # You won't need to already be logged into lastpass-cli to run this, 
