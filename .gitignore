@@ -33,6 +33,7 @@
 
 !.config/i3/
 !.config/i3/config
+!.config/i3/lastpass-dmenu
 !.config/i3/setup.sh
 
 !.config/i3blocks/
@@ -81,8 +82,9 @@
 !.vim/
 !.vim/setup.sh
 !.vim/ftplugin/
-!.vim/ftplugin/python.vim
 !.vim/ftplugin/html.vim
 !.vim/ftplugin/javascript.vim
+!.vim/ftplugin/python.vim
+!.vim/ftplugin/sh.vim
 
 !.xsession
