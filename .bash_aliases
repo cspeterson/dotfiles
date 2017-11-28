@@ -21,7 +21,8 @@ alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 #
 # Aliases rather particular to my use-case
 #
-alias locksleep='sudo echo sudo && sudo -u csp i3lock -I 10 && sudo pm-suspend'
+alias locksleep='sudo echo && sudo -u csp i3lock -I 10 && sudo pm-suspend'
+alias sizerate='$HOME/.bin/sizerate'
 
 #
 # Functions

@@ -26,6 +26,7 @@
 !.bin/
 !.bin/lastpass-dmenu
 !.bin/packages-install
+!.bin/sizerate
 
 !.clusterssh/
 !.clusterssh/config

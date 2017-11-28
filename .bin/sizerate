@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# Functions as per help output
+set -e
+
+function help() {
+  # Print help
+  # Args:
+  #   $1: [return code=0]
+  if [ -z "$1" ]; then
+    retcode=0
+  else
+    retcode=$1
+  fi
+  cat <<-EOF
+  Monitor avg rate of file size change to STDERR and finally output the change
+  over the specified interval
+
+  Usage: $0 [-b BLOCKSIZE] <FILEPATH> <TIME in s>
+
+EOF
+  exit $retcode
+}
+
+
+function getsize() {
+  # Get file size
+  # Args:
+  #   $1: file path
+  #   $2: [blocksize=b]
+  if [ -z "$2" ]; then
+    blocksize=''
+  else
+    blocksize="--block-size=${2}"
+  fi
+  echo $(ls -l ${blocksize} "$1" | awk '{print $5}' |sed 's/[a-zA-Z]//g')
+}
+
+
+
+###
+# MAIN
+###
+# Arg processing
+while getopts ":b:" opt; do
+  case $opt in
+    b)
+      blocksize=$OPTARG
+      ;;
+    \?)
+      echo
+      >&2 echo "Invalid option: -${OPTARG}"
+      echo
+      help 1
+      ;;
+    :)
+      echo
+      >&2 "option -${OPTARG} requires an argument."
+      echo
+      help 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+if [ "$#" -lt 1 ]; then
+  help
+fi
+
+if [ -z "$blocksize" ]; then
+  printblocksize='b'
+else
+  printblocksize=$blocksize
+fi
+FILEPATH=$1
+if [ -z "$2" ]; then
+  TIME=10
+else
+  TIME=$2
+fi
+
+# Go!
+# Running average of file size change over time
+lastsize=$(getsize "$FILEPATH" ${blocksize})
+startsize=$lastsize
+avg=0
+for (( i=1; i<=$((TIME - 1)); i++ )); do
+  newsize=$( getsize "$FILEPATH" ${blocksize} )
+  printf -v prog_sofar '#%.0s' $(seq 1 $i)
+  rem=$(( TIME - i ))
+  printf -v prog_remaining '_%.0s' $(seq 1 ${rem})
+  avg=$(( (avg + (newsize - lastsize)) / 2 ))
+  >&2 echo -ne "[ ${prog_sofar}${prog_remaining} ] ${avg}${printblocksize}/s\r"
+
+  lastsize=$newsize
+  sleep 1s
+done
+endsize=$newsize
+
+>&2 echo -ne "\n"
+
+# Final summary
+echo "${avg}${printblocksize}/s"
+echo "$(( endsize -startsize ))${printblocksize} total over interval"
