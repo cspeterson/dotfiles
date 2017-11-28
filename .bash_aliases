@@ -26,6 +26,39 @@ alias locksleep='sudo echo sudo && sudo -u csp i3lock -I 10 && sudo pm-suspend'
 #
 # Functions
 #
+# Mosh
+moshs() {
+	# Open mosh to host $1 with a screen session as same user
+	mosh_screen $1
+}
+
+moshr() {
+	# Open mosh to host $1 with a screen session as root
+	mosh_screen $1 '' 'sudo'
+}
+
+mosh_screen() {
+	# Connect to mosh with a screen session.
+	#
+	# Params:
+	#	$1: Hostname
+	#	$2: Screen session name. If not given defaults to username
+	#	$3: sudo? Sudos if nonempty
+
+	if [ ! -z "$2" ]; then
+		screenname=$2
+	else
+		screenname=$(whoami)
+	fi
+	if [ ! -z "$3" ]; then
+		sudocmd='sudo '
+	else
+		sudocmd=' '
+	fi
+	hostnameshellcmd='$(hostname)'
+	mosh "${1}" -- bash -c "echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+}
+
 # Ssh
 dossh() {
 	# Keep trying to connect over ssh
@@ -67,38 +100,4 @@ ssh_screen() {
 	hostnameshellcmd='$(hostname)'
 	ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
 }
-
-# Mosh
-moshs() {
-	# Open mosh to host $1 with a screen session as same user
-	mosh_screen $1
-}
-
-moshr() {
-	# Open mosh to host $1 with a screen session as root
-	mosh_screen $1 '' 'sudo'
-}
-
-mosh_screen() {
-	# Connect to mosh with a screen session.
-	#
-	# Params:
-	#	$1: Hostname
-	#	$2: Screen session name. If not given defaults to username
-	#	$3: sudo? Sudos if nonempty
-
-	if [ ! -z "$2" ]; then
-		screenname=$2
-	else
-		screenname=$(whoami)
-	fi
-	if [ ! -z "$3" ]; then
-		sudocmd='sudo '
-	else
-		sudocmd=' '
-	fi
-	hostnameshellcmd='$(hostname)'
-	mosh "${1}" -- bash -c "echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
-}
-
 
