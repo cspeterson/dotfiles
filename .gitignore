@@ -14,7 +14,6 @@
 !.audacity-data/pluginsettings.cfg
 !.audacity-data/Tags.xml
 !.audacity-files/
-!.audacity-files/setup.sh
 
 !.bash_aliases
 !.bash_git
@@ -24,8 +23,14 @@
 !.bashrc
 
 !.bin/
+!.bin/dotfiles-setup.py
 !.bin/lastpass-dmenu
-!.bin/packages-install
+!.bin/setup-audacity
+!.bin/setup-gimp
+!.bin/setup-git
+!.bin/setup-i3
+!.bin/setup-packages
+!.bin/setup-vim
 !.bin/sizerate
 
 !.clusterssh/
@@ -39,7 +44,6 @@
 !.config/i3/
 !.config/i3/config
 !.config/i3/lastpass-dmenu
-!.config/i3/setup.sh
 
 !.config/i3blocks/
 !.config/i3blocks/config
@@ -55,14 +59,10 @@
 !.config/terminator/
 !.config/terminator/config
 
-!.dotfiles.setup.py
-
 !.gimp-2.8/
 !.gimp-2.8/gimprc
 !.gimp-2.8/menurc
-!.gimp-2.8/setup.sh
 
-!.git-setup.sh
 
 !.github/
 !.github/LICENSE
@@ -87,7 +87,6 @@
 
 !.vimrc
 !.vim/
-!.vim/setup.sh
 !.vim/ftplugin/
 !.vim/ftplugin/html.vim
 !.vim/ftplugin/javascript.vim
