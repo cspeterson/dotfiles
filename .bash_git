@@ -1,5 +1,8 @@
 # Git stuff and git prompt
 
+source $HOME/.git-prompt.sh
+source $HOME/.git-completion.bash
+
 alias git-treel='/usr/bin/git log --all --graph'    #”tree long,” get it
 alias git-tree='/usr/bin/git log --all --graph --oneline'
 GIT_PS1_SHOWDIRTYSTATE=true
