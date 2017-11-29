@@ -90,6 +90,7 @@
 !.vim/ftplugin/
 !.vim/ftplugin/html.vim
 !.vim/ftplugin/javascript.vim
+!.vim/ftplugin/json.vim
 !.vim/ftplugin/python.vim
 !.vim/ftplugin/sh.vim
 
