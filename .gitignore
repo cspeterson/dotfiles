@@ -87,6 +87,8 @@
 
 !.vimrc
 !.vim/
+!.vim/ftdetect/
+!.vim/ftdetect/puppet.vim
 !.vim/ftplugin/
 !.vim/ftplugin/html.vim
 !.vim/ftplugin/javascript.vim
