@@ -17,6 +17,7 @@ alias lla='ls -la'
 alias llz='ls -lZ'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
+alias nodeactivate='PATH=$(npm bin):$PATH; '
 
 #
 # Aliases rather particular to my use-case
