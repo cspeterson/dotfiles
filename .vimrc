@@ -31,9 +31,6 @@ nnoremap <C-H> <C-W><C-H> " left
 nnoremap <S-Tab>   :tabprevious<CR>
 nnoremap <Tab>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
-inoremap <S-Tab>   <Esc>:tabprevious<CR>i
-inoremap <Tab>     <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
 
 " Redundant mappings for saving and quitting because I always typo
 command Q q
