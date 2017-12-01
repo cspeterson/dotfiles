@@ -3,10 +3,10 @@
 "###############################################3
 set nu " line numbers
 set term=xterm-256color " behave sensibly
-set laststatus=2 " always show status line
 set cursorline " highlight the line being edited
 
 " Statusline
+set laststatus=2 " always show status line
 set statusline=
 " Buffer number
 set statusline+=Buf:%(%{&filetype!='help'?bufnr('%'):''}\ \|\ %)
