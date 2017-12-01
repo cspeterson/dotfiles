@@ -125,8 +125,13 @@ map <C-f> :NERDTreeToggle<CR>	" Ctrl+f toggles file pane
 "# Code completion
 "###############################################3
 " Via youCompleteMe plugin
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" YCM only supports 7.4.1578+
+if v:version <= 7.4.1578
+        let g:loaded_youcompleteme = 1 
+else
+        let g:ycm_autoclose_preview_window_after_completion=1
+        map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+endif
 
 
 "###############################################3
