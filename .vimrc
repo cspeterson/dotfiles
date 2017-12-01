@@ -7,14 +7,29 @@ set laststatus=2 " always show status line
 set cursorline " highlight the line being edited
 
 " Statusline
-" Show full expanded path of file, cut at 30 chars
-set statusline=%.30{fnamemodify(bufname('%'),':p:h')}/
-" Filename
+set statusline=
+" Buffer number
+set statusline+=Buf:%(%{&filetype!='help'?bufnr('%'):''}\ \|\ %)
+" Add full expanded path (without filename) of file, cut from right at 30 chars
+set statusline+=%.30{fnamemodify(bufname('%'),':p:h')}/
+" Add filename
 set statusline+=%t
-" Start aligning the rest to the right
+" Add modified or RO marker after filename if either true
+set statusline+=%{&modified?'\ +\ ':''}
+set statusline+=%{&readonly?'\ 🔒\ ':''}
+" From here, align the rest to the right
 set statusline+=%=
-" File type as detected by vim
-set statusline+=FileType:\ %y " always show filename in status
+" File type as detected by vim, specifying when none
+set statusline+=[%{&filetype!=#''?&filetype:'none'}]
+" Show file encoding ig
+set statusline+=%(\ \|%{(&bomb\|\|&fileencoding!~#'^$\\\|utf-8'?'\ '.&fileencoding.(&bomb?'-bom':''):'')\.(&fileformat!=#(has('win32')?'dos':'unix')?'\ '.&fileformat:'')}%)
+" Show `et` or `noet` for expandtab on/off. Then, shift width
+set statusline+=%(\ \|\ %{&modifiable?(&expandtab?'et\ ':'noet\ ').&shiftwidth:''}%)
+" Column number
+set statusline+=\ \|\ Col:\ %{&number?'':printf('%2d,',line('.'))}
+set statusline+=%-2v " Virtual column number if differs
+" Percentage through file
+set statusline+=\ \|\ %2p%%
 
 " Layouts
 set splitbelow " when splitting layout, new horizontal splits go below
