@@ -34,11 +34,6 @@ set statusline+=\ \|\ %2p%%
 " Layouts
 set splitbelow " when splitting layout, new horizontal splits go below
 set splitright " when splitting layout, new vert splits go to the rights
-" Map layout navigation to ctrl+<key> 
-nnoremap <C-J> <C-W><C-J> " down
-nnoremap <C-K> <C-W><C-K> " up
-nnoremap <C-L> <C-W><C-L> " right
-nnoremap <C-H> <C-W><C-H> " left
 
 " Tab nav controls sorta in the vein of Firefox etc
 " Not using Ctrl-Tab etc because X and/or the terminal don't let the ind. keys
