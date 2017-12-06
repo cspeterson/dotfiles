@@ -83,12 +83,13 @@ nnoremap <space> za
 " Install plugins here.
 " They can be easily installed without entering Vim by running:
 " vim +PluginInstall +qall
-Plugin 'ConradIrwin/vim-bracketed-paste' " automatic set paste when pasting. which is nice.
-Plugin 'JamshedVesuna/vim-markdown-preview' " preview markdown from vim in browser
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'altercation/vim-colors-solarized' " pleasant colors
-Plugin 'elzr/vim-json' " better than standard javascript highlighting
-Plugin 'godlygeek/tabular' " aligns text
+Plugin 'ConradIrwin/vim-bracketed-paste'		" Automatic set paste when pasting. which is nice.
+Plugin 'JamshedVesuna/vim-markdown-preview'		" Preview markdown from vim in browser
+Plugin 'Valloric/YouCompleteMe'				" Code completion
+Plugin 'altercation/vim-colors-solarized' 		" Pleasant colors
+Plugin 'elzr/vim-json' 					" Better than standard javascript highlighting
+Plugin 'godlygeek/tabular' 				" Aligns text
+Plugin 'iamcco/markdown-preview.vim' 			" Md preview with commands MarkdownPreview and MarkdownPreviewStop
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rodjek/vim-puppet'
@@ -143,6 +144,11 @@ else
         map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 endif
 
+"###############################################3
+"# Markdown Preview
+"###############################################3
+:command Md MarkdownPreview
+:command Mds MarkdownPreviewStop
 
 "###############################################3
 "# Theming
