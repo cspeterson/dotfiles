@@ -4,6 +4,7 @@
 set nu " line numbers
 set term=xterm-256color " behave sensibly
 set cursorline " highlight the line being edited
+set scrolloff=3 " keep 3 lines above or below when scrolling up and down
 
 " Navigation
 nmap <C-Up> 4k
