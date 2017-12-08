@@ -5,6 +5,10 @@ set nu " line numbers
 set term=xterm-256color " behave sensibly
 set cursorline " highlight the line being edited
 
+" Navigation
+nmap <C-Up> 4k
+nmap <C-Down> 4j
+
 " Statusline
 set laststatus=2 " always show status line
 set statusline=
