@@ -30,6 +30,8 @@ set statusline+=\ \|\ Col:\ %{&number?'':printf('%2d,',line('.'))}
 set statusline+=%-2v " Virtual column number if differs
 " Percentage through file
 set statusline+=\ \|\ %2p%%
+" Total lines
+set statusline+=/%L
 
 " Layouts
 set splitbelow " when splitting layout, new horizontal splits go below
