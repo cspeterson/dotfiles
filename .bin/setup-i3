@@ -32,7 +32,8 @@ ls -l ~/.config/i3/focus-next-visible.py
 # uniemoji
 git clone https://github.com/salty-horse/ibus-uniemoji /tmp/uniemoji
 cd /tmp/uniemoji
-make install
+sudo make install
+ibus restart
 
 
 ###

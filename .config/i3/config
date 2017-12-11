@@ -199,6 +199,8 @@ exec --no-startup-id /bin/bash ~/.xsession
 #
 # Autorun
 #
+# ibus
+exec --no-startup-id ibus-daemon -drx
 # Network manager
 exec --no-startup-id nm-applet
 # Pidgin
