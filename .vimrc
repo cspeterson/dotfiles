@@ -4,6 +4,12 @@
 set nu " line numbers
 set term=xterm-256color " behave sensibly
 set cursorline " highlight the line being edited
+set scrolloff=3 " keep 3 lines above or below when scrolling up and down
+set pastetoggle=<F2>
+
+" Navigation
+nmap <C-Up> 4k
+nmap <C-Down> 4j
 
 " Statusline
 set laststatus=2 " always show status line
@@ -18,7 +24,9 @@ set statusline+=%t
 set statusline+=%{&modified?'\ +\ ':''}
 set statusline+=%{&readonly?'\ 🔒\ ':''}
 " From here, align the rest to the right
-set statusline+=%=
+set statusline+=%= 
+set statusline+=%{&paste?'paste':'nopaste'}
+set statusline+=\ \|\ 
 " File type as detected by vim, specifying when none
 set statusline+=[%{&filetype!=#''?&filetype:'none'}]
 " Show file encoding ig
