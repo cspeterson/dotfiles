@@ -7,6 +7,14 @@ set cursorline " highlight the line being edited
 set scrolloff=3 " keep 3 lines above or below when scrolling up and down
 set pastetoggle=<F2>
 
+" Search
+" Use ignore case, smart case, highlight results, incrementally
+" smart case ignores "ignore case" if we include uppercase characters
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
 " Navigation
 nmap <C-Up> 4k
 nmap <C-Down> 4j
