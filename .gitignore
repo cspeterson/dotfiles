@@ -24,10 +24,11 @@
 
 !.bin/
 !.bin/dotfiles-setup.py
+!.bin/ibus-switch.py
 !.bin/lastpass-dmenu
 !.bin/setup-audacity
 !.bin/setup-gimp
-!.bin/setup-git
+!.bin/setup-gita
 !.bin/setup-i3
 !.bin/setup-packages
 !.bin/setup-vim
