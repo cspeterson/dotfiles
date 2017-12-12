@@ -228,7 +228,7 @@ for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move d
 # Application key combos
 #
 # ibus engine toggler
-bindsym $mod+slash exec "$HOME/.bin/ibus-switch.py xkb:us::eng uniemoji"
+bindsym $mod+slash exec "$HOME/.bin/ibus-switch.py xkb:us::eng uniemoji; bash $HOME/.xsession"
 # Lastpass cli popup
 bindsym $mod+l exec "$HOME/.bin/lastpass-dmenu"
 # PCManfm-qt GUI file browser
