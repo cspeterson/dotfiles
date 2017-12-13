@@ -29,42 +29,54 @@ alias sizerate='$HOME/.bin/sizerate'
 #
 # Functions
 #
+# Misc
+g() {
+  # Google some input directly from cli
+  # via Avinash Raj on AskUbuntu https://askubuntu.com/a/486021
+  search=""
+  echo "Googling: $@"
+  for term in $@; do
+      search="$search%20$term"
+  done
+  xdg-open "https://www.google.com/search?q=$search"
+}
+
 # Mosh
 moshs() {
-	# Open mosh to host $1 with a screen session as same user
-	mosh_screen $1
+  # Open mosh to host $1 with a screen session as same user
+  mosh_screen $1
 }
 
 moshr() {
-	# Open mosh to host $1 with a screen session as root
-	mosh_screen $1 '' 'sudo'
+  # Open mosh to host $1 with a screen session as root
+  mosh_screen $1 '' 'sudo'
 }
 
 mosh_screen() {
-	# Connect to mosh with a screen session.
-	#
-	# Params:
-	#	$1: Hostname
-	#	$2: Screen session name. If not given defaults to username
-	#	$3: sudo? Sudos if nonempty
+  # Connect to mosh with a screen session.
+  #
+  # Params:
+  #  $1: Hostname
+  #  $2: Screen session name. If not given defaults to username
+  #  $3: sudo? Sudos if nonempty
 
-	if [ ! -z "$2" ]; then
-		screenname=$2
-	else
-		screenname=$(whoami)
-	fi
-	if [ ! -z "$3" ]; then
-		sudocmd='sudo '
-	else
-		sudocmd=' '
-	fi
-	hostnameshellcmd='$(hostname)'
-	mosh "${1}" -- bash -c "echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+  if [ ! -z "$2" ]; then
+    screenname=$2
+  else
+    screenname=$(whoami)
+  fi
+  if [ ! -z "$3" ]; then
+    sudocmd='sudo '
+  else
+    sudocmd=' '
+  fi
+  hostnameshellcmd='$(hostname)'
+  mosh "${1}" -- bash -c "echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
 }
 
 # Ssh
 dossh() {
-	# Keep trying to connect over ssh
+  # Keep trying to connect over ssh
         ssh "$1"
         until [ $? -eq 0 ]; do
                 sleep 1; ssh "$1"
@@ -72,35 +84,35 @@ dossh() {
 }
 
 sshs() {
-	# Open ssh to host $1 with a screen session as same user
-	ssh_screen $1
+  # Open ssh to host $1 with a screen session as same user
+  ssh_screen $1
 }
 
 sshr() {
-	# Open ssh to host $1 with a screen session as root
-	ssh_screen $1 '' 'sudo'
+  # Open ssh to host $1 with a screen session as root
+  ssh_screen $1 '' 'sudo'
 }
 
 
 ssh_screen() {
-	# Connect to ssh with a screen session.
-	#
-	# Params:
-	#	$1: Hostname
-	#	$2: Screen session name. If not given defaults to username
-	#	$3: sudo? Sudos if nonempty
+  # Connect to ssh with a screen session.
+  #
+  # Params:
+  #  $1: Hostname
+  #  $2: Screen session name. If not given defaults to username
+  #  $3: sudo? Sudos if nonempty
 
-	if [ ! -z "$2" ]; then
-		screenname=$2
-	else
-		screenname=$(whoami)
-	fi
-	if [ ! -z "$3" ]; then
-		sudocmd='sudo '
-	else
-		sudocmd=' '
-	fi
-	hostnameshellcmd='$(hostname)'
-	ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+  if [ ! -z "$2" ]; then
+    screenname=$2
+  else
+    screenname=$(whoami)
+  fi
+  if [ ! -z "$3" ]; then
+    sudocmd='sudo '
+  else
+    sudocmd=' '
+  fi
+  hostnameshellcmd='$(hostname)'
+  ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
 }
 
