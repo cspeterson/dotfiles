@@ -4,6 +4,7 @@
 # Generally-useful aliases
 #
 alias axfr='dig AXFR' # Zone transfer
+alias clip='xclip -selection clipboard' # Put input to x primary clipboard
 alias clr='clear'
 alias digs='dig +short' # reduce dig output
 alias duhso='du -h | sort -Vr | head' # Human-readable disk usage top offenders in curr dir
@@ -15,9 +16,9 @@ alias grepi='grep --exclude-dir=".svn"--exclude-dir=".git" -i' # case-insensitiv
 alias ll='ls -l'
 alias lla='ls -la'
 alias llz='ls -lZ'
+alias nodeactivate='PATH=$(npm bin):$PATH; '
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
-alias nodeactivate='PATH=$(npm bin):$PATH; '
 
 #
 # Aliases rather particular to my use-case
