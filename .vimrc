@@ -14,6 +14,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+nnoremap <CR> :nohlsearch<cr> " enter clears search highlighting
 
 " Navigation
 nmap <C-Up> 4k
