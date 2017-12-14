@@ -110,6 +110,7 @@ Plugin 'elzr/vim-json' 					" Better than standard javascript highlighting
 Plugin 'godlygeek/tabular' 				" Aligns text
 Plugin 'iamcco/markdown-preview.vim' 			" Md preview with commands MarkdownPreview and MarkdownPreviewStop
 Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-surround'				" Easily work with surrounding objects eg parens, quotes, tags
 Plugin 'pangloss/vim-javascript'
 Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdtree'
