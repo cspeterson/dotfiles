@@ -2,6 +2,7 @@
 
 plugins=(
 'http://wiki.audacityteam.org/w/images/7/75/Noisegate.ny'
+'https://raw.githubusercontent.com/theDanielJLewis/dynamic-compressor-for-audacity/master/compress.ny'
 )
 
 echo "Installing Audacity plugins if not installed..."
