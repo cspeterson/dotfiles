@@ -32,3 +32,10 @@ ls -l wget -O scripts/smart-remove-fix.scm http://registry.gimp.org/files/smart-
 echo 'Change the meta name of the fixed heal selection script to distinguish from orig...'
 sed -i scripts/smart-remove-fix.scm 's?"<Image>/Filters/Enhance/Heal selection..."?"<Image>/Filters/Enhance/Heal selection (fix)..."?'
 
+echo "Clone 'export layer' plugin from github and install..."
+mkdir -p /tmp/gimp-export-layers
+git clone https://github.com/khalim19/gimp-plugin-export-layers.git /tmp/gimp-export-layers
+cd /tmp/gimp-export-layers
+cp -r export_layers export_layers.py pygimplib ~/.gimp-2.8/plug-ins/
+cd ~/.gimp-2.8/
+rm -rf /tmp/gimp-export-layers
