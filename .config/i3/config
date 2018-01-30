@@ -199,6 +199,8 @@ exec --no-startup-id /bin/bash ~/.xsession
 #
 # Autorun
 #
+# dropbox
+exec --no-startup-id dropbox start
 # ibus
 exec --no-startup-id ibus-daemon -drx
 # Network manager
