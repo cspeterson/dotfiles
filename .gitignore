@@ -38,6 +38,7 @@
 !.clusterssh/config
 
 !.config/
+!.config/user-dirs.dirs
 
 !.config/gsimplecal/
 !.config/gsimplecal/config
