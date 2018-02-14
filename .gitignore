@@ -25,6 +25,7 @@
 !.bin/
 !.bin/dotfiles-setup.py
 !.bin/ibus-switch.py
+!.bin/instagif
 !.bin/lastpass-dmenu
 !.bin/setup-audacity
 !.bin/setup-gimp
