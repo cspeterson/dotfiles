@@ -236,11 +236,11 @@ bindsym $mod+l exec "$HOME/.bin/lastpass-dmenu"
 # PCManfm-qt GUI file browser
 bindsym $mod+z exec pcmanfm-qt
 # Shutter screenshot full desktop
-bindsym Print exec "shutter --remove_cursor --exit_after_capture --full --output=~/Downloads/screenshot-%Y-%m-%d--%H:%M:%S.png"
+bindsym --release Print exec "shutter --remove_cursor --exit_after_capture --no_session --full --output=~/downloads/screenshot-%Y-%m-%d--%H:%M:%S.full.png"
 # Shutter screenshot focused window
-bindsym Print+Mod1 exec "shutter --remove_cursor --exit_after_capture --full --active --output=~/Downloads/screenshot-%Y-%m-%d--%H:%M:%S.png"
+bindsym --release Shift+Print exec "shutter --remove_cursor --exit_after_capture --no_session --full --active --output=~/downloads/screenshot-%Y-%m-%d--%H:%M:%S.window.png"
 # Shutter screenshot with selection
-bindsym Mod1+Shift+Print exec "shutter --remove_cursor --exit_after_capture --full --section --output=~/Downloads/screenshot-%Y-%m-%d--%H:%M:%S.png"
+bindsym $mod+Shift+Print exec "shutter --remove_cursor --exit_after_capture --no_session --select --output=~/downloads/screenshot-%Y-%m-%d--%H:%M:%S.selection.png"
 # Terminal
 bindsym $mod+t exec i3-sensible-terminal
 

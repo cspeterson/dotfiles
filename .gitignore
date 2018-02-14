@@ -39,6 +39,7 @@
 !.clusterssh/config
 
 !.config/
+!.config/user-dirs.dirs
 
 !.config/gsimplecal/
 !.config/gsimplecal/config
@@ -73,15 +74,6 @@
 !.gitignore
 
 !.mailcap
-
-!.mutt/
-!.mutt/muttrc
-!.mutt/mutt-colors-solarized-dark-16.muttrc
-!.mutt/mutt-colors-solarized-light-16.muttrc
-!.mutt/workmail.screenrc
-!.mutt/cache/
-!.mutt/cache/bodies/
-!.mutt/cache/bodies/.hello
 
 !.README.md
 
