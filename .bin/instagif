@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+# Required:
+# bc
+# ffmpeg
+# wget
+
 set -e
 
 # Usage
@@ -8,7 +14,8 @@ if [ $# -eq 0 ]; then
   Convert a gif to mp4 with ffmpeg, looping it enough times to ensure it meets
   Instagram's minimum video length limit.
 
-    infile  | A valid gif file to convert.
+    infile  | A valid gif file to convert. If given a URI, this script will
+              try to download it for you and then convert it.
     outfile | A target filename for the result. If the output filename is not
               specified, it will be placed alongside the input file with the
               extension '.insta.mp4' added.
@@ -21,13 +28,21 @@ INFILE=$1
 OUTFILE=$2
 MINTIME=3
 
-# Determine output filename
-if [ -z "$2" ]; then
-    OUTFILE=$(echo "$INFILE" | sed 's/\.gif$//')
-    OUTFILE="${OUTFILE}.insta.mp4"
+# Download the input file if given a URI
+urire='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
+if [[ $INFILE =~ $urire ]]; then
+  filename=$(basename $INFILE)
+  wget -O "${filename}" "${INFILE}"
+  INFILE="${filename}"
 fi
 
-# Check if gif
+# Determine output filename
+if [ -z $OUTFILE ]; then
+  OUTFILE=$(echo "$INFILE" | sed 's/\.gif$//')
+  OUTFILE="${OUTFILE}.insta.mp4"
+fi
+
+# Check if input is gif
 if [[ $(file $INFILE) != *GIF* ]]; then
   echo "Input file '$INFILE' is not a gif. Quitting."
   exit 1
@@ -61,5 +76,4 @@ ffmpeg -i "$INFILE" \
        -y \
        -preset slow \
        -pix_fmt yuv420p \
-       "$OUTFILE" >/dev/null 2>&1 ||
-  echo "Conversion failed! Quitting."; exit 1
+       "$OUTFILE" >/dev/null 2>&1
