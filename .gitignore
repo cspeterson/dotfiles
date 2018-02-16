@@ -24,6 +24,7 @@
 
 !.bin/
 !.bin/dotfiles-setup.py
+!.bin/h5toflac
 !.bin/ibus-switch.py
 !.bin/instagif
 !.bin/lastpass-dmenu

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Requires:
+# ffmpeg
+
+# Usage
+if [ $# -eq 0 ]; then
+  cat <<-EOF
+  Usage: $0 episode_dir file1 file2 file3...
+  Convert a bunch of WAVs to FLAC with names to match the target dir.
+  (For converting WAVs from the Zoom H5 into podcast tracks for editing by my
+  naming scheme)
+
+    episode_dir | A directory named as the title of a podcast episode.
+    file1...n   | WAV files named with either a number or 'LR' as produced by
+                  the Zoom H5 recorder.
+EOF
+  exit 1
+fi
+
+episode_dir=$1
+files=("${@:2}")
+moviename=$(basename "$episode_dir" | sed 's/^[0-9 ]*//')
+
+mkdir -p "$episode_dir"
+
+for file in "${files[@]}"; do
+  num=$(echo "$file" | grep -Po '([0-9]|LR)(?=\.[wW][aA][vV])')
+  num=$(echo "$num" | sed 's/LR/0/')
+  ffmpeg \
+    -i "$file" \
+    -ac 1 \
+    "${episode_dir}/${moviename}.raw.${num}.flac"
+done
