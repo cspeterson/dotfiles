@@ -1,2 +1,0 @@
-text/html; firefox %s;
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
