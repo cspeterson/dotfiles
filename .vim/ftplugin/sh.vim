@@ -2,7 +2,6 @@ set colorcolumn=80
 
 set autoindent
 set smartindent
-set textwidth=79
 
 set shiftwidth=2
 set expandtab
