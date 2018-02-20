@@ -31,12 +31,11 @@ def main():
 
     # Set up "all" by calling every setup function
     if 'all' in [arg.lower() for arg in all_args]:
-        [func() for _, func in setups.items()]
+        args = setups
     # Set up specified services
-    else:
-        for setup in args:
-            cmd = os.path.join(homedir, '.bin', 'setup-{}'.format(setup))
-            call([cmd])
+    for setup in args:
+        cmd = os.path.join(homedir, '.bin', 'setup-{}'.format(setup))
+        call([cmd])
 
 
 if __name__ == '__main__':
