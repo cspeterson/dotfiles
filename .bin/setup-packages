@@ -16,7 +16,7 @@ sudo apt-get install \
 	urlscan \
 	vim \
 	w3m \
-	x11-utils
-	xclip
+	x11-utils \
+	xclip \
 
 
