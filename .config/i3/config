@@ -221,7 +221,7 @@ for_window [title="CSSH"] floating enable
 # Firefox
 for_window [class="Mozilla Firefox$"] stacking enable
 # Pidgin
-assign [class="^Pidgin$"] 3
+assign [class="^Pidgin$"] 9
 # Pop-up calendar (opens from i3blocks click event)
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 10 px
 
