@@ -9,6 +9,7 @@ set -e
 echo "::::Install tools and applets upon which the i3 config will rely..."
 sudo apt-get install \
 	blueman \
+  dmenu \
 	fonts-font-awesome \
 	gsimplecal \
 	i3blocks \
@@ -18,6 +19,7 @@ sudo apt-get install \
 	pavucontrol \
 	pcmanfm-qt \
 	shutter \
+  terminator \
 
 ## Other
 
