@@ -10,7 +10,6 @@ echo "::::Install tools and applets upon which the i3 config will rely..."
 sudo apt-get install \
 	blueman \
 	fonts-font-awesome \
-	gnome-web-photo \
 	gsimplecal \
 	i3blocks \
 	i3lock \
