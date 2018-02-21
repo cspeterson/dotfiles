@@ -41,6 +41,21 @@ g() {
   xdg-open "https://www.google.com/search?q=$search"
 }
 
+# md5sum comparison
+md5comp() {
+  md5sum=$(md5sum "$1" | tr -s ' ' | cut -d ' ' -f 1)
+  for filename in "$@"; do
+    newsum=$(md5sum "$filename" | tr -s ' ' | cut -d ' ' -f 1)
+    if [ "$newsum" != "$md5sum" ]; then
+      echo "No match"
+      return 1
+    fi
+  done
+
+  echo "Match"
+  return 0
+}
+
 # Mosh
 moshs() {
   # Open mosh to host $1 with a screen session as same user
