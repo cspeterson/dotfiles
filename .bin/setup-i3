@@ -8,17 +8,18 @@ set -e
 # Normal packages
 echo "::::Install tools and applets upon which the i3 config will rely..."
 sudo apt-get install \
-	blueman \
+  blueman \
   dmenu \
-	fonts-font-awesome \
-	gsimplecal \
-	i3blocks \
-	i3lock \
-	libimage-exiftool-perl \
-	pasystray \
-	pavucontrol \
-	pcmanfm-qt \
-	shutter \
+  fonts-font-awesome \
+  gsimplecal \
+  i3blocks \
+  i3lock \
+  lastpass-cli \
+  libimage-exiftool-perl \
+  pasystray \
+  pavucontrol \
+  pcmanfm-qt \
+  shutter \
   terminator \
 
 ## Other
