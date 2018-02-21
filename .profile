@@ -28,3 +28,10 @@ fi
 
 # Make lastpass cli limit paste requests on clipboarded passwords
 export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
+
+# Pulseaudio stuff so bluetooth headphones will work
+# I tried putting them into ~/.config/pulse/default.pa but it just made Pulse
+# break, so here we are
+start-pulseaudio-x11
+pacmd load-module module-bluetooth-policy
+pacmd load-module module-bluetooth-discover
