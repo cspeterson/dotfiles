@@ -199,6 +199,8 @@ exec --no-startup-id /bin/bash ~/.xsession
 #
 # Autorun
 #
+# Bluetooth
+exec --no-startup-id blueman-applet
 # dropbox
 exec --no-startup-id dropbox start
 # ibus
@@ -207,8 +209,6 @@ exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id nm-applet
 # Pidgin
 exec --no-startup-id pidgin
-# Bluetooth
-exec --no-startup-id blueman-applet
 # Sound
 exec --no-startup-id pasystray
 
