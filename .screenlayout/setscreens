@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ ! -z "$DISPLAY" ]; then
+  if [ -f "${HOME}/.screenlayout/xrandr" ]; then
+    "${HOME}/.screenlayout/xrandr"
+  fi
+fi

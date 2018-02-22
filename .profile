@@ -9,7 +9,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# if running bash
+# If running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bash_profile" ]; then
@@ -17,9 +17,7 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Pulseaudio stuff so bluetooth headphones will work
-# I tried putting them into ~/.config/pulse/default.pa but it just made Pulse
-# break, so here we are
-start-pulseaudio-x11
-pacmd load-module module-bluetooth-policy
-pacmd load-module module-bluetooth-discover
+# Set up screen layout
+if [ -f "$HOME/.screenlayout/setscreens" ]; then
+  "$HOME/.screenlayout/setscreens"
+fi
