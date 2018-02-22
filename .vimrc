@@ -61,10 +61,19 @@ nnoremap <S-Tab>   :tabprevious<CR>
 nnoremap <Tab>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 
-" Redundant mappings for saving and quitting because I always typo
+" Redundant mappings for common functions because I always typo
+" split
+command Sp sp
+command SP sp
+" quit all
 command Q q
 command Qa qa
 command QA qa
+" split vert
+command VSp sp
+command VSP sp
+command VsP sp
+" write/save/quit
 command W w
 command Wq wq
 command WQ wq
