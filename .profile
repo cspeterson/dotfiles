@@ -1,6 +1,7 @@
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
+# i.e. this script runs for graphical logins since .bash_profile is present
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
@@ -11,23 +12,10 @@
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    if [ -f "$HOME/.bash_profile" ]; then
+	. "$HOME/.bash_profile"
     fi
 fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private hidden bin if it exists
-if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
-fi
-
-# Make lastpass cli limit paste requests on clipboarded passwords
-export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
 
 # Pulseaudio stuff so bluetooth headphones will work
 # I tried putting them into ~/.config/pulse/default.pa but it just made Pulse
