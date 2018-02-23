@@ -19,6 +19,17 @@ alias llz='ls -lZ'
 alias nodeactivate='PATH=$(npm bin):$PATH; '
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
+alias sudo='sudo ' # to allow sudoing with aliases
+
+#
+# Packaging
+#
+alias apts='apt-cache search'
+alias aptshow='apt-cache show'
+alias aptint='apt-get install'
+alias aptupd='apt-get update'
+alias aptupg='apt-get upgrade'
+alias aptrm='apt-get remove'
 
 #
 # Aliases rather particular to my use-case
@@ -130,4 +141,3 @@ ssh_screen() {
   hostnameshellcmd='$(hostname)'
   ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
 }
-
