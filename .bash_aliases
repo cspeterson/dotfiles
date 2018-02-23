@@ -26,7 +26,7 @@ alias sudo='sudo ' # to allow sudoing with aliases
 #
 alias apts='apt-cache search'
 alias aptshow='apt-cache show'
-alias aptint='apt-get install'
+alias aptinst='apt-get install'
 alias aptupd='apt-get update'
 alias aptupg='apt-get upgrade'
 alias aptrm='apt-get remove'
