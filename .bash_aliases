@@ -52,6 +52,18 @@ g() {
   xdg-open "https://www.google.com/search?q=$search"
 }
 
+# hr print horizontal rule, default with '-' but char can be provided
+# based on: https://www.reddit.com/r/commandline/comments/7zvmze/show_hr_a_cli_program_that_outputs_a_horizontal/durci2h/
+hr() {
+  outchar='-'
+  if [ ! -z "$1" ]; then
+    if [ "${#1}" -eq 1 ]; then
+      outchar=$1
+    fi
+  fi
+  printf "%0.s${outchar}" $(seq 5 $(tput cols))
+}
+
 # md5sum comparison
 md5comp() {
   md5sum=$(md5sum "$1" | tr -s ' ' | cut -d ' ' -f 1)
