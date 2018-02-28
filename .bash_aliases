@@ -61,7 +61,7 @@ hr() {
       outchar=$1
     fi
   fi
-  printf "%0.s${outchar}" $(seq 5 $(tput cols))
+  printf "%0.s${outchar}" $(seq 1 $(tput cols))
 }
 
 # md5sum comparison
