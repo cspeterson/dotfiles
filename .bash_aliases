@@ -26,7 +26,7 @@ alias sudo='sudo ' # to allow sudoing with aliases
 #
 alias apts='apt-cache search'
 alias aptshow='apt-cache show'
-alias aptint='apt-get install'
+alias aptinst='apt-get install'
 alias aptupd='apt-get update'
 alias aptupg='apt-get upgrade'
 alias aptrm='apt-get remove'
@@ -50,6 +50,18 @@ g() {
       search="$search%20$term"
   done
   xdg-open "https://www.google.com/search?q=$search"
+}
+
+# hr print horizontal rule, default with '-' but char can be provided
+# based on: https://www.reddit.com/r/commandline/comments/7zvmze/show_hr_a_cli_program_that_outputs_a_horizontal/durci2h/
+hr() {
+  outchar='-'
+  if [ ! -z "$1" ]; then
+    if [ "${#1}" -eq 1 ]; then
+      outchar=$1
+    fi
+  fi
+  printf "%0.s${outchar}" $(seq 1 $(tput cols))
 }
 
 # md5sum comparison
