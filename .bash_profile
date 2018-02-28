@@ -9,16 +9,22 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# Go
+GOPATH=$HOME/.go
+GOBIN=$HOME/.go/bin
+
 # Add other bins to path if exist
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
-fi
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+bindirs=(
+"$HOME/bin"
+"$HOME/.bin"
+"$HOME/.local/bin"
+"$HOME/.go/bin"
+)
+for bindir in "${bindirs[@]}"; do
+  if [ -d $bindir ] ; then
+      PATH="$bindir:$PATH"
+  fi
+done
 
 # Make lastpass cli limit paste requests on clipboarded passwords
 export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
