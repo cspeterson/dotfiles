@@ -187,6 +187,8 @@ new_window pixel 4
 #
 # Startup environment and hardware setup
 #
+# Background to grey
+exec --no-startup-id xsetroot -solid "#333333"
 # Touchpad config
 # Enable two-finger scroll sideways
 exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
