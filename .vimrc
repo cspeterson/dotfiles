@@ -81,6 +81,9 @@ command Wqa wqa
 command WQa wqa
 command WQA wqa
 
+" Saving if forgot sudo
+cmap w!! w !sudo tee > /dev/null %
+
 " Code folding
 set foldmethod=indent
 set foldlevel=99
