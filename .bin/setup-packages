@@ -30,4 +30,4 @@ pip install \
 echo 'Install some basic Go packages...'
 go get \
   github.com/ichinaski/pxl \
-
+  mvdan.cc/sh/cmd/shfmt \
