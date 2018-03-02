@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -e
+
+echo "Installing audacity..."
+sudo apt-get install audacity
 
 plugins=(
   'http://wiki.audacityteam.org/w/images/7/75/Noisegate.ny'
