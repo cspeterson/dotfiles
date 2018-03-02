@@ -21,6 +21,7 @@ sudo apt-get install \
   pcmanfm-qt \
   shutter \
   terminator \
+  ubuntu-restricted-extras \
 
 ## Other
 
