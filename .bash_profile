@@ -10,8 +10,8 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Go
-GOPATH=$HOME/.go
-GOBIN=$HOME/.go/bin
+export GOPATH=$HOME/.go
+export GOBIN=$HOME/.go/bin
 
 # Add other bins to path if exist
 bindirs=(
@@ -22,7 +22,7 @@ bindirs=(
 )
 for bindir in "${bindirs[@]}"; do
   if [ -d $bindir ] ; then
-      PATH="$bindir:$PATH"
+      export PATH="$bindir:$PATH"
   fi
 done
 
