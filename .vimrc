@@ -91,60 +91,73 @@ nnoremap <space> za
 
 
 "###############################################3
+""## My functions or long-form commands
+"###############################################3
+
+" Ensure shell flags specify interactive mode, execute command, and return
+" to original setting
+" Basically I just want to be able to execute bash aliases once in a while
+command -nargs=+ Exi 
+  \ let shellcmdflag_orig = &shellcmdflag |
+  \ let &shellcmdflag='-ci' |
+  \ execute ':' . "<args>" |
+  \ let &shellcmdflag=shellcmdflag_orig
+
+"###############################################3
 "## Plugin stuff
 "###############################################3
-	" Vundle Plugins Setup
-	" set the runtime path to include Vundle and initialize
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
-	" alternatively, pass a path where Vundle should install plugins
-	"call vundle#begin('~/some/path/here')
+  " Vundle Plugins Setup
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  " alternatively, pass a path where Vundle should install plugins
+  "call vundle#begin('~/some/path/here')
 
-	" let Vundle manage Vundle, required
-	Plugin 'VundleVim/Vundle.vim'
+  " let Vundle manage Vundle, required
+  Plugin 'VundleVim/Vundle.vim'
 
-	" Examples:
-	" Plugin 'tpope/vim-fugitive'
-	" Plugin 'git://git.wincent.com/command-t.git'
-	" Plugin 'file:///home/gmarik/path/to/plugin'
-	" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-	"""""""""""""""""""""""""""""""""""""""""""
-	"" Install Vim plugins with Vundle here
-	"vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  " Examples:
+  " Plugin 'tpope/vim-fugitive'
+  " Plugin 'git://git.wincent.com/command-t.git'
+  " Plugin 'file:///home/gmarik/path/to/plugin'
+  " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+  """""""""""""""""""""""""""""""""""""""""""
+  "" Install Vim plugins with Vundle here
+  "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 " Install plugins here.
 " They can be easily installed without entering Vim by running:
 " vim +PluginInstall +qall
-Plugin 'ConradIrwin/vim-bracketed-paste'		" Automatic set paste when pasting. which is nice.
-Plugin 'JamshedVesuna/vim-markdown-preview'		" Preview markdown from vim in browser
-Plugin 'Valloric/YouCompleteMe'				" Code completion
-Plugin 'altercation/vim-colors-solarized' 		" Pleasant colors
-Plugin 'elzr/vim-json' 					" Better than standard javascript highlighting
-Plugin 'godlygeek/tabular' 				" Aligns text
-Plugin 'iamcco/markdown-preview.vim' 			" Md preview with commands MarkdownPreview and MarkdownPreviewStop
+Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
+Plugin 'JamshedVesuna/vim-markdown-preview'    " Preview markdown from vim in browser
+Plugin 'Valloric/YouCompleteMe'        " Code completion
+Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
+Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
+Plugin 'godlygeek/tabular'         " Aligns text
+Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPreview and MarkdownPreviewStop
 Plugin 'othree/html5.vim'
-Plugin 'tpope/vim-surround'				" Easily work with surrounding objects eg parens, quotes, tags
+Plugin 'tpope/vim-surround'        " Easily work with surrounding objects eg parens, quotes, tags
 Plugin 'pangloss/vim-javascript'
 Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tmhedberg/SimpylFold'	" smarter code folding
+Plugin 'tmhedberg/SimpylFold'  " smarter code folding
 Plugin 'vim-syntastic/syntastic'
-	"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-	"" End list of plugins to install/manage
-	"""""""""""""""""""""""""""""""""""""""""""
-	" All of your Plugins must be added before the following line
-	call vundle#end()            " required
-	filetype plugin indent on    " required
-	" To ignore plugin indent changes, instead use:
-	"filetype plugin on
-	"
-	" Brief help
-	" :PluginList       - lists configured plugins
-	" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-	" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-	" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-	"
-	" see :h vundle for more details or wiki for FAQ
-	" Put your non-Plugin stuff after this line
+  "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  "" End list of plugins to install/manage
+  """""""""""""""""""""""""""""""""""""""""""
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+  filetype plugin indent on    " required
+  " To ignore plugin indent changes, instead use:
+  "filetype plugin on
+  "
+  " Brief help
+  " :PluginList       - lists configured plugins
+  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+  " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+  "
+  " see :h vundle for more details or wiki for FAQ
+  " Put your non-Plugin stuff after this line
 
 
 "###############################################3
@@ -155,7 +168,7 @@ let vim_markdown_preview_github=1
 "###############################################3
 "# NerdTREE file browser
 "###############################################3
-map <C-f> :NERDTreeToggle<CR>	" Ctrl+f toggles file pane
+map <C-f> :NERDTreeToggle<CR>  " Ctrl+f toggles file pane
 
 "###############################################3
 "# vim-json

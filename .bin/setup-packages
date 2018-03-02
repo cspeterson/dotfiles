@@ -21,13 +21,13 @@ sudo apt-get install \
   vim \
   w3m \
   x11-utils \
-  xclip \
+  xclip
 
 echo 'Install some basic packages from pip...'
 pip install \
-  http-prompt \
+  http-prompt
 
 echo 'Install some basic Go packages...'
 go get \
   github.com/ichinaski/pxl \
-  mvdan.cc/sh/cmd/shfmt \
+  mvdan.cc/sh/cmd/shfmt
