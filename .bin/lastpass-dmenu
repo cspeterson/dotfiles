@@ -49,22 +49,22 @@ typeit=$1
 IFS=$'\n'
 # List all entries in LastPass vault into dmenu formatted as follows
 # Folder/subfolder/Name of Site [username at site] [id: id for lookup]
-entries=($(lpass ls --long \
-  | cut -d ' ' -f 3- \
-  | sed 's/\[username: /[/' \
-  | sed 's/\(.*\)\(\[.*\]\) \(\[.*\]\)/\1 \3 \2/')
-  )
+entries=($(lpass ls --long |
+  cut -d ' ' -f 3- |
+  sed 's/\[username: /[/' |
+  sed 's/\(.*\)\(\[.*\]\) \(\[.*\]\)/\1 \3 \2/')
+)
 
 # Get id from dmenu user selection
-selid=$(printf '%s\n' "${entries[@]}" \
-  | dmenu -i -p 'LastPass: ' -l 7 \
-  | sed 's/^.*\[id: \([0-9]\{1,\}\)\].*$/\1/')
+selid=$(printf '%s\n' "${entries[@]}" |
+  dmenu -i -p 'LastPass: ' -l 7 |
+  sed 's/^.*\[id: \([0-9]\{1,\}\)\].*$/\1/')
 
 if [ $typeit == "--typeit" ]; then
-  lpass show --password ${selid} \
-    | tr -d '\n' \
-    | awk '{print "type \""$0"\""}' \
-    | xdotool -
+  lpass show --password ${selid} |
+    tr -d '\n' |
+    awk '{print "type \""$0"\""}' |
+    xdotool -
 else
   # Password to clipboard
   lpass show --clip --password ${selid}
