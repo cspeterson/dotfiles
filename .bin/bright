@@ -7,12 +7,14 @@ set -e
 # Usage
 if [ "$#" -eq 0 ]; then
   cat <<-EOF
-  Usage: $0 [up|down]
+  Usage: $0 [command]
   Increase or decrease screen brightness at hardware level by steps of 10% of
   max, as determined by the values under /sys/class/backlight/**. Limit values
   to the range of 0 to max_brightness.
 
-    [up|down] | Whether to increase or decrease the brightness
+    up      | Increase brightness by 10%
+    down    | Decrease brightness by 10%
+    current | Report current brightness
 
 
   This script needs root access - sudo is an option, but you may also consider
@@ -24,8 +26,6 @@ if [ "$#" -eq 0 ]; then
 EOF
   exit 1
 fi
-
-direction=$1
 
 # Gather information
 backlight_dir='/sys/class/backlight'
@@ -39,23 +39,30 @@ brightness_file="${device_dir}/brightness"
 curr_brightness=$(cat "${brightness_file}")
 max_brightness=$(cat "${device_dir}/max_brightness")
 
-# Calculate
-step=$(( $max_brightness / 10 ))
-if [ $direction == 'up' ]; then
-  new_brightness=$(( $curr_brightness + $step ))
-elif [ $direction == 'down' ]; then
-  new_brightness=$(( $curr_brightness - $step ))
+if [ "$1" == 'current' ]; then
+  echo $( echo "(${curr_brightness} / ${max_brightness}) * 100" | bc -l) \
+          | cut -d'.' -f 1
 else
-  echo 'Argument $1 must be either "up" or "down". Quitting.'
-  exit 1
-fi
-# Limit range
-if [ "$new_brightness" -gt "$max_brightness" ]; then
-  new_brightness="$max_brightness"
-fi
-if [ "$new_brightness" -lt 0 ]; then
-  new_brightness=0
-fi
+  direction=$1
 
-# "Do it" - the emperor
-echo $new_brightness > "${brightness_file}"
+  # Calculate
+  step=$(( $max_brightness / 10 ))
+  if [ $direction == 'up' ]; then
+    new_brightness=$(( $curr_brightness + $step ))
+  elif [ $direction == 'down' ]; then
+    new_brightness=$(( $curr_brightness - $step ))
+  else
+    echo 'Argument $1 must be either "up" or "down". Quitting.'
+    exit 1
+  fi
+  # Limit range
+  if [ "$new_brightness" -gt "$max_brightness" ]; then
+    new_brightness="$max_brightness"
+  fi
+  if [ "$new_brightness" -lt 0 ]; then
+    new_brightness=0
+  fi
+
+  # "Do it" - the emperor
+  echo $new_brightness > "${brightness_file}"
+fi
