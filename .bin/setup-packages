@@ -4,6 +4,7 @@ echo 'Install a bunch of basic packages...'
 sudo apt-get install \
   autoconf \
   build-essential \
+  golang \
   htop \
   intltool \
   libgimp2.0-dev \
