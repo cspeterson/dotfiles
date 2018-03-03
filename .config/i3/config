@@ -251,6 +251,9 @@ bindsym $mod+Control+Shift+Print exec "xwd -silent -root | convert xwd:- ~/downl
 # Terminal
 bindsym $mod+t exec i3-sensible-terminal
 
+# Brightness controls
+bindsym XF86MonBrightnessUp exec sudo $HOME/.bin/bright up; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
+bindsym XF86MonBrightnessDown exec sudo $HOME/.bin/bright down; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
 
 # Media keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+ unmute
