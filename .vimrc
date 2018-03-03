@@ -94,9 +94,13 @@ nnoremap <space> za
 ""## My functions or long-form commands
 "###############################################3
 
+" Exi - "execute interactive"
+" A command to execute whatever follows in an interactive shell
 " Ensure shell flags specify interactive mode, execute command, and return
 " to original setting
 " Basically I just want to be able to execute bash aliases once in a while
+" Use example:
+" :Exi %!myalias arg1 arg2
 command -nargs=+ Exi 
   \ let shellcmdflag_orig = &shellcmdflag |
   \ let &shellcmdflag='-ci' |
