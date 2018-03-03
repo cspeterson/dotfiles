@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -e
+
+# Question: Under what circumstances could there be two backlight listings?
+# If I had this, I would set it up to adjust each in turn maybe. But I don't.
+
+# Usage
+if [ "$#" -eq 0 ]; then
+  cat <<-EOF
+  Usage: $0 [up|down]
+  Increase or decrease screen brightness at hardware level by steps of 10% of
+  max, as determined by the values under /sys/class/backlight/**. Limit values
+  to the range of 0 to max_brightness.
+
+    [up|down] | Whether to increase or decrease the brightness
+
+
+  This script needs root access - sudo is an option, but you may also consider
+  allowing your user to run the script without a password prompt e.g.:
+
+    # Append to /etc/sudoers
+    Cmnd_Alias BRIGHT_CMDS=/bin/path/bright up, /bin/path/bright down
+    csp ALL=(root) NOPASSWD: BRIGHT_CMDS
+EOF
+  exit 1
+fi
+
+direction=$1
+
+# Gather information
+backlight_dir='/sys/class/backlight'
+device_dir=$(ls "${backlight_dir}" | head -n 1)
+if [ -z "$device_dir" ]; then
+  echo 'No backlight hardware is listed in /sys/class/backlight! Quitting.'
+  exit 1
+fi
+device_dir="${backlight_dir}/${device_dir}"
+brightness_file="${device_dir}/brightness"
+curr_brightness=$(cat "${brightness_file}")
+max_brightness=$(cat "${device_dir}/max_brightness")
+
+# Calculate
+step=$(( $max_brightness / 10 ))
+if [ $direction == 'up' ]; then
+  new_brightness=$(( $curr_brightness + $step ))
+elif [ $direction == 'down' ]; then
+  new_brightness=$(( $curr_brightness - $step ))
+else
+  echo 'Argument $1 must be either "up" or "down". Quitting.'
+  exit 1
+fi
+# Limit range
+if [ "$new_brightness" -gt "$max_brightness" ]; then
+  new_brightness="$max_brightness"
+fi
+if [ "$new_brightness" -lt 0 ]; then
+  new_brightness=0
+fi
+
+# "Do it" - the emperor
+echo $new_brightness > "${brightness_file}"

@@ -24,6 +24,7 @@
 !.bashrc
 
 !.bin/
+!.bin/bright
 !.bin/dotfiles-setup.py
 !.bin/h5toflac
 !.bin/ibus-switch.py
