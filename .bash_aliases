@@ -65,6 +65,14 @@ hr() {
   printf "%0.s${outchar}" $(seq 1 $(tput cols))
 }
 
+# id3 add image to mp3 file with eyeD3
+id3img() {
+  imgpath=$1
+  mp3file=$2
+
+  eyeD3 --add-image "${imgpath}:FRONT_COVER" "${mp3file}"
+}
+
 # md5sum comparison
 md5comp() {
   md5sum=$(md5sum "$1" | tr -s ' ' | cut -d ' ' -f 1)
