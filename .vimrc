@@ -33,8 +33,12 @@ set statusline+=%t
 set statusline+=%{&modified?'\ +\ ':''}
 set statusline+=%{&readonly?'\ 🔒\ ':''}
 " From here, align the rest to the right
-set statusline+=%= 
+set statusline+=%=
+" Paste?
 set statusline+=%{&paste?'paste':'nopaste'}
+set statusline+=\ \|
+" Character value
+set statusline+=\ A:%b\ U\+%B
 set statusline+=\ \|\ 
 " File type as detected by vim, specifying when none
 set statusline+=[%{&filetype!=#''?&filetype:'none'}]
