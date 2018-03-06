@@ -22,7 +22,7 @@ if [ "$#" -eq 0 ]; then
 
     # Append to /etc/sudoers
     Cmnd_Alias BRIGHT_CMDS=/bin/path/bright up, /bin/path/bright down
-    csp ALL=(root) NOPASSWD: BRIGHT_CMDS
+    username ALL=(root) NOPASSWD: BRIGHT_CMDS
 EOF
   exit 1
 fi
