@@ -45,7 +45,7 @@ alias sizerate='$HOME/.bin/sizerate'
 g() {
   # Google some input directly from cli
   # via Avinash Raj on AskUbuntu https://askubuntu.com/a/486021
-  search=""
+  local search=""
   echo "Googling: $@"
   for term in $@; do
       search="$search%20$term"
@@ -56,10 +56,10 @@ g() {
 # hr print horizontal rule, default with '-' but char can be provided
 # based on: https://www.reddit.com/r/commandline/comments/7zvmze/show_hr_a_cli_program_that_outputs_a_horizontal/durci2h/
 hr() {
-  outchar='-'
-  if [ ! -z "$1" ]; then
+  local outchar='-'
+  if [ ! -z "${1}" ]; then
     if [ "${#1}" -eq 1 ]; then
-      outchar=$1
+      outchar="${1}"
     fi
   fi
   printf "%0.s${outchar}" $(seq 1 $(tput cols))
@@ -67,14 +67,18 @@ hr() {
 
 # id3 add image to mp3 file with eyeD3
 id3img() {
-  imgpath=$1
-  mp3file=$2
+  local imgpath
+  imgpath="${1}"
+  local mp3file
+  mp3file="${2}"
 
   eyeD3 --add-image "${imgpath}:FRONT_COVER" "${mp3file}"
 }
 
 # md5sum comparison
 md5comp() {
+  local md5sum
+  local newsum
   md5sum=$(md5sum "$1" | tr -s ' ' | cut -d ' ' -f 1)
   for filename in "$@"; do
     newsum=$(md5sum "$filename" | tr -s ' ' | cut -d ' ' -f 1)
@@ -123,6 +127,7 @@ mosh_screen() {
 
 # New password maker
 newpass() {
+  local len
   if [ -z "${1}" ]; then
     len=30
   else
@@ -160,16 +165,19 @@ ssh_screen() {
   #  $2: Screen session name. If not given defaults to username
   #  $3: sudo? Sudos if nonempty
 
+  local screenname
   if [ ! -z "$2" ]; then
     screenname=$2
   else
     screenname=$(whoami)
   fi
+  local sudocmd
   if [ ! -z "$3" ]; then
     sudocmd='sudo '
   else
     sudocmd=' '
   fi
+  local hostnameshellcmd
   hostnameshellcmd='$(hostname)'
   ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
 }
