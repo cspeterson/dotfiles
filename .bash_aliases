@@ -121,6 +121,17 @@ mosh_screen() {
   mosh "${1}" -- bash -c "echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
 }
 
+# New password maker
+newpass() {
+  if [ -z "${1}" ]; then
+    len=30
+  else
+    len="${1}"
+  fi
+  openssl rand -base64 "${len}" | tr -d '\n' | head -c "${len}"
+  echo
+}
+
 # Ssh
 dossh() {
   # Keep trying to connect over ssh
