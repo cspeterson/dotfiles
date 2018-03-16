@@ -4,12 +4,13 @@ set -e
 
 echo 'Install gimp and some plugins'
 sudo apt-get install \
-	gimp \
-	gimp-data-extras \
-	gimp-gap \
-	gimp-lensfun \
-	gimp-plugin-registry \
-	gimp-texturize
+  gimp \
+  gimp-data-extras \
+  gimp-gap \
+  gimp-gmic \
+  gimp-lensfun \
+  gimp-plugin-registry \
+  gimp-texturize
 
 echo 'Install icc color profiles...'
 sudo apt-get install icc-profiles-free
