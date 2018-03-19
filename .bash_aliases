@@ -18,9 +18,9 @@ alias lla='ls -la'
 alias llz='ls -lZ'
 alias nodeactivate='PATH=$(npm bin):$PATH; '
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
+alias shfmtg='shfmt -i 2 -ci' # shfmt by Google's Style guide
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 alias sudo='sudo ' # to allow sudoing with aliases
-alias shfmtg='shfmt -i 2 -ci' # shfmt by Google's Style guide
 
 #
 # Packaging
@@ -42,6 +42,15 @@ alias sizerate='$HOME/.bin/sizerate'
 # Functions
 #
 # Misc
+# Ssh
+dossh() {
+  # Keep trying to connect over ssh
+        ssh "$1"
+        until [ $? -eq 0 ]; do
+                sleep 1; ssh "$1"
+        done
+}
+
 g() {
   # Google some input directly from cli
   # via Avinash Raj on AskUbuntu https://askubuntu.com/a/486021
@@ -53,9 +62,9 @@ g() {
   xdg-open "https://www.google.com/search?q=$search"
 }
 
-# hr print horizontal rule, default with '-' but char can be provided
-# based on: https://www.reddit.com/r/commandline/comments/7zvmze/show_hr_a_cli_program_that_outputs_a_horizontal/durci2h/
 hr() {
+  # hr print horizontal rule, default with '-' but char can be provided
+  # based on: https://www.reddit.com/r/commandline/comments/7zvmze/show_hr_a_cli_program_that_outputs_a_horizontal/durci2h/
   local outchar='-'
   if [ ! -z "${1}" ]; then
     if [ "${#1}" -eq 1 ]; then
@@ -92,16 +101,16 @@ md5comp() {
   return 0
 }
 
-# Mosh
+moshr() {
+  # Open mosh to host $1 with a screen session as root
+  mosh_screen $1 '' 'sudo'
+}
+
 moshs() {
   # Open mosh to host $1 with a screen session as same user
   mosh_screen $1
 }
 
-moshr() {
-  # Open mosh to host $1 with a screen session as root
-  mosh_screen $1 '' 'sudo'
-}
 
 mosh_screen() {
   # Connect to mosh with a screen session.
@@ -137,25 +146,18 @@ newpass() {
   echo
 }
 
-# Ssh
-dossh() {
-  # Keep trying to connect over ssh
-        ssh "$1"
-        until [ $? -eq 0 ]; do
-                sleep 1; ssh "$1"
-        done
-}
 
-sshs() {
-  # Open ssh to host $1 with a screen session as same user
-  ssh_screen $1
-}
 
 sshr() {
   # Open ssh to host $1 with a screen session as root
   ssh_screen $1 '' 'sudo'
 }
 
+
+sshs() {
+  # Open ssh to host $1 with a screen session as same user
+  ssh_screen $1
+}
 
 ssh_screen() {
   # Connect to ssh with a screen session.
@@ -180,4 +182,31 @@ ssh_screen() {
   local hostnameshellcmd
   hostnameshellcmd='$(hostname)'
   ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+}
+
+uconv() {
+  # Convert units using GNU Units but remove the noise
+  # Also filter out "to" from the arugments because units doesn't speak Englinewargs[-1]h
+  # And my brain always seems to type it this way
+  newargs=()
+  for arg in "$@"; do
+    if [ "${arg}" != 'to' ]; then
+      newargs+=("${arg}")
+    fi
+  done
+  units "${newargs[@]/#/}" | head -n 1 | tr -d ' \t' | cut -c 2-
+}
+
+uconvu() {
+  # Convert units using GNU Units but remove the noise
+  # Also filter out "to" from the arugments because units doesn't speak English
+  # And my brain always seems to type it this way
+  newargs=()
+  for arg in "$@"; do
+    if [ "${arg}" != 'to' ]; then
+      newargs+=("${arg}")
+    fi
+  done
+  res=$(units "${newargs[@]/#/}" | head -n 1 | tr -d ' \t' | cut -c 2-)
+  echo "${res}${newargs[-1]}"
 }
