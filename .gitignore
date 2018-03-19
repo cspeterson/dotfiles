@@ -86,6 +86,7 @@
 !.screenlayout/setscreens
 
 !.vimrc
+!.vim_plugins
 !.vim/
 !.vim/ftdetect/
 !.vim/ftdetect/puppet.vim

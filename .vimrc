@@ -105,126 +105,19 @@ nnoremap <space> za
 " Basically I just want to be able to execute bash aliases once in a while
 " Use example:
 " :Exi %!myalias arg1 arg2
-command -nargs=+ Exi 
+command -nargs=+ Exi
   \ let shellcmdflag_orig = &shellcmdflag |
   \ let &shellcmdflag='-ci' |
   \ execute ':' . "<args>" |
   \ let &shellcmdflag=shellcmdflag_orig
 
 "###############################################3
-"## Plugin stuff
+"## Plugins!
 "###############################################3
-  " Vundle Plugins Setup
-  " set the runtime path to include Vundle and initialize
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-  " alternatively, pass a path where Vundle should install plugins
-  "call vundle#begin('~/some/path/here')
-
-  " let Vundle manage Vundle, required
-  Plugin 'VundleVim/Vundle.vim'
-
-  " Examples:
-  " Plugin 'tpope/vim-fugitive'
-  " Plugin 'git://git.wincent.com/command-t.git'
-  " Plugin 'file:///home/gmarik/path/to/plugin'
-  " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-  """""""""""""""""""""""""""""""""""""""""""
-  "" Install Vim plugins with Vundle here
-  "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-" Install plugins here.
-" They can be easily installed without entering Vim by running:
-" vim +PluginInstall +qall
-Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
-Plugin 'JamshedVesuna/vim-markdown-preview'    " Preview markdown from vim in browser
-Plugin 'Valloric/YouCompleteMe'        " Code completion
-Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
-Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
-Plugin 'godlygeek/tabular'         " Aligns text
-Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPreview and MarkdownPreviewStop
-Plugin 'othree/html5.vim'
-Plugin 'tpope/vim-surround'        " Easily work with surrounding objects eg parens, quotes, tags
-Plugin 'pangloss/vim-javascript'
-Plugin 'rodjek/vim-puppet'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tmhedberg/SimpylFold'  " smarter code folding
-Plugin 'vim-syntastic/syntastic'
-  "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  "" End list of plugins to install/manage
-  """""""""""""""""""""""""""""""""""""""""""
-  " All of your Plugins must be added before the following line
-  call vundle#end()            " required
-  filetype plugin indent on    " required
-  " To ignore plugin indent changes, instead use:
-  "filetype plugin on
-  "
-  " Brief help
-  " :PluginList       - lists configured plugins
-  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-  " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-  "
-  " see :h vundle for more details or wiki for FAQ
-  " Put your non-Plugin stuff after this line
-
+source ~/.vim_plugins
 
 "###############################################3
-"# vim-markdown-preview
+"## After plugins!
 "###############################################3
-let vim_markdown_preview_github=1
-
-"###############################################3
-"# NerdTREE file browser
-"###############################################3
-map <C-f> :NERDTreeToggle<CR>  " Ctrl+f toggles file pane
-
-"###############################################3
-"# vim-json
-"###############################################3
-" If this is left on (default), the editor only shows the quotes around keys and values
-" for the active line
-"let g:vim_json_syntax_conceal = 0
-
-"###############################################3
-"# Code completion
-"###############################################3
-" Via youCompleteMe plugin
-" YCM only supports 7.4.1578+
-if v:version <= 7.4.1578
-        let g:loaded_youcompleteme = 1 
-else
-        let g:ycm_autoclose_preview_window_after_completion=1
-        map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-endif
-
-"###############################################3
-"# Markdown Preview
-"###############################################3
-:command Md MarkdownPreview
-:command Mds MarkdownPreviewStop
-
-"###############################################3
-"# Theming
-"###############################################3
-syntax enable
-let g:solarized_termcolors=256
-colorscheme solarized
-" Toggle dark/light colors
-call togglebg#map("<F5>")
-" now set it so it doesn't do that awful ugly blocky coloring behind text
-" (this needs to be after the syntax line above)
-hi Normal ctermbg=NONE
-
-"###############################################3
-"# Snytax
-"###############################################3
-"# Syntax highlighting options for Syntastic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-
 " This needs to come well after Vundle does its thing
 filetype plugin indent on
