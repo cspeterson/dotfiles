@@ -222,10 +222,10 @@ exec --no-startup-id pasystray
 for_window [title="CSSH"] floating enable
 # Firefox
 for_window [class="Mozilla Firefox$"] stacking enable
-# Pidgin
-assign [class="^Pidgin$"] 9
 # Pop-up calendar (opens from i3blocks click event)
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 10 px
+# Vim-anywhere
+for_window [class="Gvim"] floating enable
 
 
 #
@@ -250,6 +250,8 @@ bindsym $mod+Shift+Print exec "shutter --remove_cursor --exit_after_capture --no
 bindsym $mod+Control+Shift+Print exec "xwd -silent -root | convert xwd:- ~/downloads/screenshot-$(date '+%Y-%m-%d--%H:%M:%S').fullx.png"
 # Terminal
 bindsym $mod+t exec i3-sensible-terminal
+# Vim-anywhere
+bindsym Control+Mod1+v exec ~/.bin/vim-anywhere/bin/run
 
 # Brightness controls
 bindsym XF86MonBrightnessUp exec sudo $HOME/.bin/bright up; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
