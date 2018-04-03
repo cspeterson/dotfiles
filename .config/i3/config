@@ -221,7 +221,7 @@ exec --no-startup-id pasystray
 # CSSH
 for_window [title="CSSH"] floating enable
 # Firefox
-for_window [class="Mozilla Firefox$"] stacking enable
+for_window [class="Firefox"] stacking enable
 # Pop-up calendar (opens from i3blocks click event)
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 10 px
 # Vim-anywhere
