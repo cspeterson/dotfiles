@@ -8,6 +8,7 @@ set -e
 # Normal packages
 echo "::::Install tools and applets upon which the i3 config will rely..."
 sudo apt-get install \
+  adwaita-icon-theme-full \
   blueman \
   dmenu \
   fonts-font-awesome \
