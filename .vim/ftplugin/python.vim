@@ -1,13 +1,13 @@
-set autoindent
-set colorcolumn=80
-set encoding=utf-8
-set expandtab	" inserts spaces instead of tabs
-set fileformat=unix
-set shiftwidth=4
-set smartindent
-set softtabstop=4
-set tabstop=4	" Sets a 'tab' to 4 spaces
-set textwidth=79
+setlocal autoindent
+setlocal colorcolumn=80
+setlocal encoding=utf-8
+setlocal expandtab	" inserts spaces instead of tabs
+setlocal fileformat=unix
+setlocal shiftwidth=4
+setlocal smartindent
+setlocal softtabstop=4
+setlocal tabstop=4	" Sets a 'tab' to 4 spaces
+setlocal textwidth=79
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

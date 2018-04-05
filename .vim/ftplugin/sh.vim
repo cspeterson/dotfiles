@@ -1,12 +1,12 @@
-set colorcolumn=80
+setlocal colorcolumn=80
 
-set autoindent
-set smartindent
+setlocal autoindent
+setlocal smartindent
 
-set shiftwidth=2
-set expandtab
-set softtabstop=2
-set tabstop=2
+setlocal shiftwidth=2
+setlocal expandtab
+setlocal softtabstop=2
+setlocal tabstop=2
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
