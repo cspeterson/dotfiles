@@ -1,11 +1,13 @@
 "###############################################3
-"## General goodness
+"## General goodness dlkfjdsf sdf sdlkf lkd
 "###############################################3
 set nu " line numbers
 set term=xterm-256color " behave sensibly
 set cursorline " highlight the line being edited
 set scrolloff=3 " keep 3 lines above or below when scrolling up and down
 set pastetoggle=<F2>
+set spell spelllang=en_us
+nnoremap <F4> :setlocal spell! spelllang=en_us<CR>
 
 " Search
 " Use ignore case, smart case, highlight results, incrementally
@@ -36,6 +38,8 @@ set statusline+=%{&readonly?'\ 🔒\ ':''}
 set statusline+=%=
 " Paste?
 set statusline+=%{&paste?'paste':'nopaste'}
+set statusline+=\ \|
+set statusline+=%{&spell?'spell':'nospell'}
 set statusline+=\ \|
 " Character value
 set statusline+=\ A:%b\ U\+%B
