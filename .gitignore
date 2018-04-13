@@ -30,6 +30,7 @@
 !.bin/ibus-switch.py
 !.bin/instagif
 !.bin/lastpass-dmenu
+!.bin/lockblank
 !.bin/setup-audacity
 !.bin/setup-gimp
 !.bin/setup-gita

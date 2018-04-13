@@ -156,6 +156,7 @@ bindsym $mod+r mode "resize"
 #
 # Values
 # 
+set $lock_cmd "$HOME/.bin/lockblank"
 set $mastervol $(amixer -D pulse get Master  | grep -Eo '[[0-9]+%]' | head -n 1)
 set_from_resource $barfontsize i3wm.i3barfontsize
 #
@@ -213,6 +214,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pidgin
 # Sound
 exec --no-startup-id pasystray
+# X Screen lock for inactivity
+exec --no-startup-id xautolock -time 10 -locker $lock_cmd
 
 
 #
@@ -283,6 +286,5 @@ bindsym $mod+x move workspace to output right
 # Cycle windows (in workspace)
 bindsym $mod+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py
 bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py reverse
-# Lock screen, turn off displays after 2s
-set $lock_cmd "i3lock -I 10; sleep 2; xset dpms force off"
+# Lock screen
 bindsym Mod1+Control+l exec $lock_cmd

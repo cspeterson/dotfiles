@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+revert() {
+  xset dpms 0 0 0
+}
+trap revert HUP INT TERM
+xset +dpms dpms 3 3 3
+i3lock -n
+revert
