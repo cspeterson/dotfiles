@@ -1,13 +1,14 @@
 "###############################################3
-"## General goodness dlkfjdsf sdf sdlkf lkd
+"## General goodness
 "###############################################3
 set nu " line numbers
 set term=xterm-256color " behave sensibly
 set cursorline " highlight the line being edited
 set scrolloff=3 " keep 3 lines above or below when scrolling up and down
 set pastetoggle=<F2>
-set spell spelllang=en_us
-nnoremap <F4> :setlocal spell! spelllang=en_us<CR>
+set spell spelllang=en_us " spellcheck on
+nnoremap <F4> :setlocal spell! spelllang=en_us<CR> " toggle spellcheck
+nnoremap <C-l> :set list!<CR> " Toggle whitespace char representation
 
 " Search
 " Use ignore case, smart case, highlight results, incrementally
