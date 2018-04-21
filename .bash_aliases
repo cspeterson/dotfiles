@@ -84,6 +84,16 @@ id3img() {
   eyeD3 --add-image "${imgpath}:FRONT_COVER" "${mp3file}"
 }
 
+boxscale() {
+  # Scale up a video up or down to the specified dimensions, maintaining
+  # aspect ratio and letter/pillarboxing as necessary
+  local infile=$1
+  local dimensions=$2
+  local outfile=$3
+
+  ffmpeg -i "${infile}" -vf "scale=${dimensions}:force_original_aspect_ratio=decrease,pad=${dimensions}:(ow-iw)/2:(oh-ih)/2" "${outfile}"
+}
+
 # md5sum comparison
 md5comp() {
   local md5sum
