@@ -98,5 +98,6 @@
 !.vim/ftplugin/puppet.vim
 !.vim/ftplugin/python.vim
 !.vim/ftplugin/sh.vim
+!.vim/ftplugin/yaml.vim
 
 !.xsession
