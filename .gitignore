@@ -26,6 +26,7 @@
 !.bin/
 !.bin/bright
 !.bin/dotfiles-setup.py
+!.bin/gifgen
 !.bin/h5toflac
 !.bin/ibus-switch.py
 !.bin/instagif
@@ -33,7 +34,6 @@
 !.bin/lockblank
 !.bin/setup-audacity
 !.bin/setup-gimp
-!.bin/setup-gita
 !.bin/setup-i3
 !.bin/setup-packages
 !.bin/setup-vim
