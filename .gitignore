@@ -33,6 +33,7 @@
 !.bin/lastpass-dmenu
 !.bin/lockblank
 !.bin/setup-audacity
+!.bin/setup-blender
 !.bin/setup-gimp
 !.bin/setup-i3
 !.bin/setup-packages
