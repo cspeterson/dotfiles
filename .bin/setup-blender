@@ -5,4 +5,5 @@ addon_path="${HOME}/.config/blender/2.79/scripts/addons"
 
 echo 'Install gimp plugins...'
 
+mkdir -p "${addon_path}"
 wget -O "${addon_path}/vse-loop.py" "https://raw.githubusercontent.com/mutantbob/blender-vse-loop/master/vse-loop.py"
