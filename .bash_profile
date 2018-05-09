@@ -13,12 +13,16 @@ fi
 export GOPATH=$HOME/.go
 export GOBIN=$HOME/.go/bin
 
+# Ruby
+export GEM_HOME="$HOME/.gems"
+
 # Add other bins to path if exist
 bindirs=(
-"$HOME/bin"
 "$HOME/.bin"
-"$HOME/.local/bin"
 "$HOME/.go/bin"
+"$HOME/.local/bin"
+"$HOME/bin"
+"$HOME/.gems/bin"
 )
 for bindir in "${bindirs[@]}"; do
   if [ -d $bindir ] ; then
