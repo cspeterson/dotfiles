@@ -98,6 +98,7 @@
 !.vim/ftplugin/json.vim
 !.vim/ftplugin/puppet.vim
 !.vim/ftplugin/python.vim
+!.vim/ftplugin/ruby.vim
 !.vim/ftplugin/sh.vim
 !.vim/ftplugin/yaml.vim
 
