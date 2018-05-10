@@ -2,35 +2,22 @@
 
 echo 'Install a bunch of basic packages...'
 sudo apt-get install \
-  autoconf \
-  build-essential \
   gnuplot-x11 \
-  golang \
   htop \
-  intltool \
   jq \
   libgimp2.0-dev \
-  libglib2.0-dev \
   links \
   moreutils \
   mosh \
-  python \
-  python-pip \
-  python3 \
-  python3-pip \
   ranger \
   screen \
-  urlscan \
   vim \
   w3m \
   x11-utils \
   xclip
 
-echo 'Install some basic packages from pip...'
-pip install \
-  yq
+# echo 'Install some basic packages from pip...'
+# pip install \
 
-echo 'Install some basic Go packages...'
-go get \
-  github.com/ichinaski/pxl \
-  mvdan.cc/sh/cmd/shfmt
+# echo 'Install some basic Go packages...'
+# go get \

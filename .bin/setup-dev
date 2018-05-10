@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+echo 'Install a bunch of dev packages...'
+
+sudo apt-get install \
+  autoconf \
+  build-essential \
+  golang \
+  libglib2.0-dev \
+  python \
+  python-pip \
+  python3 \
+  python3-pip \
+  ruby \
+  ruby-dev \
+
+echo 'Install pip packages...'
+pip install \
+  virtualenv \
+  yq \
+
+echo 'Install ruby gems...'
+# These will install for the user, *not root*, so long as .bash_profile has
+# already been sourced with its ruby envvars
+gem install \
+  bundler \
+
+echo 'Install Go packages...'
+go get \
+  mvdan.cc/sh/cmd/shfmt \
+
+
