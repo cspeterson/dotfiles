@@ -68,6 +68,8 @@
 !.config/terminator/
 !.config/terminator/config
 
+!.gemrc
+
 !.gimp-2.8/
 !.gimp-2.8/gimprc
 !.gimp-2.8/menurc
