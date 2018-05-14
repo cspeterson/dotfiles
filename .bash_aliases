@@ -4,6 +4,7 @@
 # Generally-useful aliases
 #
 alias axfr='dig AXFR' # Zone transfer
+alias be='bundler exec'
 alias clip='xclip -selection clipboard' # Put input to x primary clipboard
 alias clr='clear'
 alias digs='dig +short' # reduce dig output
