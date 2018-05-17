@@ -44,7 +44,14 @@ alias unetbootin='xhost local:root && sudo QT_X11_NO_MITSHM=1 unetbootin'
 #
 # Functions
 #
-# Misc
+# DecipherMedia.tv (i.e. dm) website etc helpers
+dmaddmovie() {
+  # Add a movie to decipherscifi's movie data with an easy-to-access key
+  jsonfile=$1
+  jq --sort-keys --slurpfile oldjson "${jsonfile}" '. | {(.title + " " + .release_year): .} + $oldjson[]'
+}
+
+
 # Ssh
 dossh() {
   # Keep trying to connect over ssh
