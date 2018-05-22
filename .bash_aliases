@@ -19,6 +19,7 @@ alias lla='ls -la'
 alias llz='ls -lZ'
 alias nodeactivate='PATH=$(npm bin):$PATH; '
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
+alias screenhere='screen -DRS "$(basename $(pwd))"'
 alias shfmtg='shfmt -i 2 -ci' # shfmt by Google's Style guide
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 alias sudo='sudo ' # to allow sudoing with aliases
