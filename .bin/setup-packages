@@ -2,6 +2,7 @@
 
 echo 'Install a bunch of basic packages...'
 sudo apt-get install \
+  curl \
   gnuplot-x11 \
   htop \
   jq \
