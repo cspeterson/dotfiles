@@ -23,6 +23,7 @@ alias screenhere='screen -DRS "$(basename $(pwd))"'
 alias shfmtg='shfmt -i 2 -ci' # shfmt by Google's Style guide
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 alias sudo='sudo ' # to allow sudoing with aliases
+alias xo='xdg-open'
 
 #
 # Packaging
