@@ -6,6 +6,7 @@ sudo apt-get install \
   autoconf \
   build-essential \
   golang \
+  intltool \
   libglib2.0-dev \
   python \
   python-pip \
