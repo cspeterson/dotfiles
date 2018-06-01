@@ -6,7 +6,7 @@ set -e
 # Install
 ###
 # Normal packages
-echo "::::Install tools and applets upon which the i3 config will rely..."
+echo '::::Install tools and applets upon which the i3 config will rely...'
 sudo apt-get install \
   adwaita-icon-theme-full \
   blueman \
@@ -27,8 +27,13 @@ sudo apt-get install \
   xautolock \
 
 ## Other
-# Vim-anywhere
-git clone https://github.com/cknadler/vim-anywhere.git "${HOME}/.bin/vim-anywhere"
+echo '::::Install from misc...'
+# Vim-
+if [ ! -d "${HOME}/.bin/vim-anywhere" ]; then
+  git clone https://github.com/cknadler/vim-anywhere.git "${HOME}/.bin/vim-anywhere"
+else
+  git -C "${HOME}/.bin/vim-anywhere" pull
+fi
 
 # i3ipc
 echo '::::Pip install the i3ipc module for this user...'
@@ -38,6 +43,8 @@ wget -O ~/.config/i3/focus-next-visible.py https://raw.githubusercontent.com/acr
 ls -l ~/.config/i3/focus-next-visible.py
 
 # uniemoji
+echo '::::Install ibus-uniemejoi manually...'
+rm -rf /tmp/uniemoji || echo
 git clone https://github.com/salty-horse/ibus-uniemoji /tmp/uniemoji
 cd /tmp/uniemoji
 sudo make install
