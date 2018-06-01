@@ -92,6 +92,7 @@
 
 !.screenlayout/
 !.screenlayout/setscreens
+!.screenlayout/desktop01
 
 !.vimrc
 !.vim_plugins
