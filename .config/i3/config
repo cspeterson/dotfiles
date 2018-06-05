@@ -235,7 +235,7 @@ for_window [class="Gvim"] floating enable
 # Application key combos
 #
 # ibus engine toggler
-bindsym $mod+slash exec "$HOME/.bin/ibus-switch.py xkb:us::eng uniemoji; bash $HOME/.xsession"
+bindsym $mod+slash exec "$HOME/.bin/splatmoji/splatmoji type"
 # Lastpass cli popups
 ## Password to clipboard
 bindsym $mod+l exec "$HOME/.bin/lastpass-dmenu"

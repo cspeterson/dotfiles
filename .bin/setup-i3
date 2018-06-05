@@ -20,6 +20,7 @@ sudo apt-get install \
   pasystray \
   pavucontrol \
   pcmanfm-qt \
+  rofi \
   shutter \
   terminator \
   ubuntu-restricted-extras \
@@ -42,14 +43,14 @@ echo '::::Download focus-next-visible.py from the i3ipc-python github repo...'
 wget -O ~/.config/i3/focus-next-visible.py https://raw.githubusercontent.com/acrisci/i3ipc-python/master/examples/focus-next-visible.py
 ls -l ~/.config/i3/focus-next-visible.py
 
-# uniemoji
-echo '::::Install ibus-uniemejoi manually...'
-rm -rf /tmp/uniemoji || echo
-git clone https://github.com/salty-horse/ibus-uniemoji /tmp/uniemoji
-cd /tmp/uniemoji
-sudo make install
-ibus restart
-
+# emoji input via my splatmoji script
+# https://github.com/cspeterson/splatmoji
+echo '::::Install/update splatmoji...'
+if [ ! -d "${HOME}/.bin/splatmoji" ]; then
+  git clone https://github.com/cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
+else
+  git -C "${HOME}/.bin/splatmoji" pull
+fi
 
 ###
 # Config
