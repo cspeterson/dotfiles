@@ -3,6 +3,12 @@
 set -e
 
 ###
+# Repos
+###
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt-get update
+
+###
 # Install
 ###
 # Normal packages
@@ -20,6 +26,7 @@ sudo apt-get install \
   pasystray \
   pavucontrol \
   pcmanfm-qt \
+  peek \
   rofi \
   shutter \
   terminator \
