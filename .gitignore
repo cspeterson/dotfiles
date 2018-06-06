@@ -108,6 +108,7 @@
 !.vim/ftplugin/python.vim
 !.vim/ftplugin/ruby.vim
 !.vim/ftplugin/sh.vim
+!.vim/ftplugin/vim.vim
 !.vim/ftplugin/yaml.vim
 
 !.xsession
