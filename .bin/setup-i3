@@ -54,7 +54,7 @@ ls -l ~/.config/i3/focus-next-visible.py
 # https://github.com/cspeterson/splatmoji
 echo '::::Install/update splatmoji...'
 if [ ! -d "${HOME}/.bin/splatmoji" ]; then
-  git clone https://github.com/cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
+  git clone git@github.com:cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
 else
   git -C "${HOME}/.bin/splatmoji" pull
 fi
