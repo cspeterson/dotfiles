@@ -7,7 +7,6 @@ setlocal shiftwidth=2
 setlocal smartindent
 setlocal softtabstop=2
 setlocal tabstop=2
-setlocal textwidth=100
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

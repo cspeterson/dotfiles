@@ -6,4 +6,3 @@ setlocal shiftwidth=2
 setlocal smartindent
 setlocal softtabstop=2
 setlocal tabstop=2	" Sets a 'tab' to 4 spaces
-setlocal textwidth=120

@@ -7,7 +7,6 @@ setlocal shiftwidth=4
 setlocal smartindent
 setlocal softtabstop=4
 setlocal tabstop=4	" Sets a 'tab' to 4 spaces
-setlocal textwidth=79
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
