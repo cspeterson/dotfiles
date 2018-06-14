@@ -254,7 +254,7 @@ bindsym $mod+Control+Shift+Print exec "xwd -silent -root | convert xwd:- ~/downl
 # Terminal
 bindsym $mod+t exec i3-sensible-terminal
 # Vim-anywhere
-bindsym Control+Mod1+v exec ~/.bin/vim-anywhere/bin/run
+bindsym Control+Mod1+v exec "$HOME/.bin/vim-anywhere/bin/run"
 
 # Brightness controls
 bindsym XF86MonBrightnessUp exec sudo $HOME/.bin/bright up; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
