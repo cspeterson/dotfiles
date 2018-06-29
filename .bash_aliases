@@ -11,8 +11,11 @@ alias digs='dig +short' # reduce dig output
 alias duhso='du -h | sort -Vr | head' # Human-readable disk usage top offenders in curr dir
 alias duso='du | sort -Vr | head' # Disk usage top offenders in curr dir
 alias egrep='grep  --exclude-dir=".svn"--exclude-dir=".git" -E'
+alias egrpe='grep  --exclude-dir=".svn"--exclude-dir=".git" -E' # I always frickin' do that
 alias fgrep='grep --exclude-dir=".svn" --exclude-dir=".git" -F'
+alias fgrpe='grep --exclude-dir=".svn" --exclude-dir=".git" -F' # I always frickin' do that
 alias grep='grep  --exclude-dir=".svn"--exclude-dir=".git"'
+alias grpe='grep  --exclude-dir=".svn"--exclude-dir=".git"' # I always frickin' do that
 alias grepi='grep --exclude-dir=".svn"--exclude-dir=".git" -i' # case-insensitive grep
 alias ll='ls -l'
 alias lla='ls -la'
