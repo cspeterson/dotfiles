@@ -18,6 +18,6 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Set up screen layout
-if [ -f "$HOME/.screenlayout/setscreens" ]; then
-  "$HOME/.screenlayout/setscreens"
+if [ -f "$HOME/.screenlayout/screenlayout" ]; then
+  "$HOME/.screenlayout/screenlayout"
 fi
