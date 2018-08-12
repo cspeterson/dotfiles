@@ -60,7 +60,7 @@ selid=$(printf '%s\n' "${entries[@]}" |
   dmenu -i -p 'LastPass: ' -l 7 |
   sed 's/^.*\[id: \([0-9]\{1,\}\)\].*$/\1/')
 
-if [ $typeit == "--typeit" ]; then
+if [ "$typeit" == "--typeit" ]; then
   lpass show --password ${selid} |
     tr -d '\n' |
     awk '{print "type \""$0"\""}' |
