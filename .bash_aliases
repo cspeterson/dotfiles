@@ -93,7 +93,7 @@ hr() {
 
 # http get content length from remote url
 httplen() {
-  curl -L --head "${3}" 2>/dev/null | tr '^M' '\n' | grep -P '^Content-Length:' | cut -d ' ' -f 2
+  curl -L --head "${1}" 2>/dev/null | tr '^M' '\n' | grep -P '^Content-Length:' | cut -d ' ' -f 2
 }
 
 # id3 add image to mp3 file with eyeD3
