@@ -16,6 +16,7 @@
 !.audacity-files/
 
 !.bash_aliases
+!.bash_completion
 !.bash_git
 !.bash_logout
 !.bash_profile
