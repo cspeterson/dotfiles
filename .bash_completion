@@ -26,7 +26,7 @@ _rclone_remote_ls() {
 
   # Check first that `cur` is an rclone remote in the form of
   # `remotename:words/`.  A slash (or multiple) may or may or may not be present.
-  if ! [[ "${cur}" =~ ^[a-zA-Z0-9]*:.*/?.* ]]; then
+  if ! [[ "${cur}" =~ ^[a-zA-Z0-9]*:/?.*/?.* ]]; then
     return
   fi
 
