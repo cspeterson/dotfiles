@@ -1,6 +1,5 @@
 # This file provides a bash completion function for autocompleting remote
-# Google Drive paths with vimgd:
-#   [https://github.com/cspeterson/vimgd]
+# Google Drive paths with rclone
 # It might well work with other cloud services supported by rclone, but I have
 # not tested any others.
 
