@@ -9,6 +9,9 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# Fix ls to not be wrong
+export QUOTING_STYLE=literal
+
 # Go
 export GOPATH=$HOME/.go
 export GOBIN=$HOME/.go/bin
