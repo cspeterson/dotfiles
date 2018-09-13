@@ -22,6 +22,6 @@ xrandr \
     --rotate left \
   --output GPU-1.DVI-I-2 \
     --mode 1920x1080 \
-    --pos 4920x290 \
+    --pos 4940x290 \
     --rotate left \
 
