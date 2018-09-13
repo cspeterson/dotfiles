@@ -35,7 +35,7 @@ _rclone_remote_ls() {
   remotename=${cur%:*}
   remotepath=${cur#*\:}
 
-  remotes=($(rclone listremotes | sed 's/:$//g'))
+  remotes=($(rclone --quiet listremotes | sed 's/:$//g'))
 
   # Look for a remote drive matching the input
   foundremote=0
@@ -66,11 +66,10 @@ _rclone_remote_ls() {
     else
       line=("${rpath_start}/${line}")
     fi
-    echo "${line}" | grep -P "^${remotepath}" 2>&1 >/dev/null
-    if [ "$?" -eq 0 ]; then
+    if [[ "${line}" == "${remotepath}"* ]]; then
       opts+=("${line}")
     fi
-  done < <(rclone lsf --max-depth 1 "${remotename}:${rpath_start}" 2>/dev/null)
+  done < <(rclone --quiet lsf --max-depth 1 "${remotename}:${rpath_start}" 2>/dev/null)
 
   COMPREPLY=("${opts[@]}")
   return
