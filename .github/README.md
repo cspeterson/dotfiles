@@ -24,8 +24,10 @@ Then you'll need to clone this repo to an empty directory and then move the file
 ~$ cd clonehere
 ~/clonehere$ git clone <repo uri> .
 # This could overwrite things! So back things up or whatever.
-~/clonehere$ rsync -a ./* ~/
+~/clonehere$ rsync -a ./.* ~/
 ```
+
+Or use some of the bunch of tools that manage this sort of thing, Up to you!
 
 ### Run setups
 
