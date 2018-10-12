@@ -24,7 +24,6 @@
 " vim +PluginInstall +qall
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'JamshedVesuna/vim-markdown-preview'    " Preview markdown from vim in browser
-Plugin 'Valloric/YouCompleteMe'        " Code completion
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
 Plugin 'cspeterson/vim-convert'	" Unit conversion
 Plugin 'elzr/vim-json'           " Better than standard javascript highlighting

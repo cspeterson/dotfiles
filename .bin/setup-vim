@@ -12,14 +12,6 @@ vim +PluginInstall +qall || echo 'Failed to install Vundle and Vim plguins. Try 
 echo 'Installing grip with pip...'
 pip install --user --upgrade grip >/dev/null
 
-if [ -d ~/.vim/bundle/YouCompleteMe ]; then
-	echo "Install build tools for YCM..."
-	sudo apt-get install build-essential cmake
-fi
-# Now compile YCM
-$(cd ~/.vim/bundle/YouCompleteMe &&
-	./install.py --clang-completer)
-
 which xdotool
 if [ $? -ne 0 ]; then
 	echo "sudo up to install xdotool..."
