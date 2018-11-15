@@ -36,6 +36,10 @@ sudo apt-get install \
 
 ## Other
 echo '::::Install from misc...'
+
+echo 'Install tomaatti pomodoro timer for i3...'
+pip3 install tomaatti
+
 # Vim-
 if [ ! -d "${HOME}/.bin/vim-anywhere" ]; then
   git clone https://github.com/cspeterson/vim-anywhere.git "${HOME}/.bin/vim-anywhere"
@@ -54,7 +58,7 @@ ls -l ~/.config/i3/focus-next-visible.py
 # https://github.com/cspeterson/splatmoji
 echo '::::Install/update splatmoji...'
 if [ ! -d "${HOME}/.bin/splatmoji" ]; then
-  git clone git@github.com:cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
+  git clone https://github.com/cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
 else
   git -C "${HOME}/.bin/splatmoji" pull
 fi

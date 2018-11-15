@@ -47,6 +47,11 @@ command=amixer -D pulse get Master  | grep -Eo '[[0-9]+%]' | head -n 1
 interval=once
 signal=1
 
+# Pomodoro Timer
+[pomodoro]
+interval=5
+command=~/.local/bin/tomaatti
+
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.

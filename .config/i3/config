@@ -227,6 +227,8 @@ for_window [title="CSSH"] floating enable
 for_window [class="Firefox"] stacking enable
 # Pop-up calendar (opens from i3blocks click event)
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 10 px
+# Tomaatti pomodoro timer
+for_window [title="(?i)tomaatti" class="(?i)tk"] floating enable move position center urgent
 # Vim-anywhere
 for_window [class="Gvim"] floating enable
 
