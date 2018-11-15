@@ -38,7 +38,7 @@ sudo apt-get install \
 echo '::::Install from misc...'
 # Vim-
 if [ ! -d "${HOME}/.bin/vim-anywhere" ]; then
-  git clone https://github.com/cknadler/vim-anywhere.git "${HOME}/.bin/vim-anywhere"
+  git clone https://github.com/cspeterson/vim-anywhere.git "${HOME}/.bin/vim-anywhere"
 else
   git -C "${HOME}/.bin/vim-anywhere" pull
 fi
