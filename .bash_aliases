@@ -52,13 +52,15 @@ alias unetbootin='xhost local:root && sudo QT_X11_NO_MITSHM=1 unetbootin'
 #
 # Functions
 #
-# DecipherMedia.tv (i.e. dm) website etc helpers
-dmaddmovie() {
-  # Add a movie to decipherscifi's movie data with an easy-to-access key
-  jsonfile=$1
-  jq --sort-keys --slurpfile oldjson "${jsonfile}" '. | {(.title + " " + .release_year): .} + $oldjson[]'
-}
+boxscale() {
+  # Scale up a video up or down to the specified dimensions, maintaining
+  # aspect ratio and letter/pillarboxing as necessary
+  local infile=$1
+  local dimensions=$2
+  local outfile=$3
 
+  ffmpeg -i "${infile}" -vf "scale=${dimensions}:force_original_aspect_ratio=decrease,pad=${dimensions}:(ow-iw)/2:(oh-ih)/2" "${outfile}"
+}
 
 # Ssh
 dossh() {
@@ -105,16 +107,6 @@ id3img() {
   mp3file="${2}"
 
   eyeD3 --add-image "${imgpath}:FRONT_COVER" "${mp3file}"
-}
-
-boxscale() {
-  # Scale up a video up or down to the specified dimensions, maintaining
-  # aspect ratio and letter/pillarboxing as necessary
-  local infile=$1
-  local dimensions=$2
-  local outfile=$3
-
-  ffmpeg -i "${infile}" -vf "scale=${dimensions}:force_original_aspect_ratio=decrease,pad=${dimensions}:(ow-iw)/2:(oh-ih)/2" "${outfile}"
 }
 
 # md5sum comparison
