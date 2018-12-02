@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+printhelp() {
+  echo 'Loop video with ffmpeg copy LOOPTIMES times. If no target filename is '
+  echo 'provided, it will be named as `inputfilebasename.loop.ext`.'
+  echo "Usage: "
+  echo "    ${0} INPUTFILENAME LOOPTIMES [OUTPUTFILENAME]"
+}
+
+# Loop videos with ffmpeg
+if [ $# -lt 2 ] || [ $# -gt 3 ]; then
+  printhelp
+  exit 0
+fi
+
+videofilepath=$(realpath "${1}")
+looptimes="${2}"
+if [ ! -f "${videofilepath}" ]; then
+  echo "${videofilepath} not a valid file. Quitting."
+  echo
+  printhelp
+  exit 1
+fi
+
+if [ -z "${3}" ]; then
+  # With no target filename given, stick in '.loop' before the final ext
+  dirpath=$(dirname "${videofilepath}")
+  filename=$(basename "${videofilepath}")
+  if [[ "${filename}" == *"."* ]]; then
+    filename_base=${filename%.*}
+    filename_ext=${filename##*.}
+    outfilepath="${dirpath}/${filename_base}.loop.${filename_ext}"
+  else
+    outfilepath="${dirpath}/${filename}.loop.mp4"
+  fi
+else
+  outfilepath="${3}"
+fi
+
+tmpfilepath=$(mktemp)
+for ((x=1; x<=$looptimes; x++)) {
+  echo "file '${videofilepath}'" >> "${tmpfilepath}"
+}
+
+echo "+++++++++++++++++++++++++++++++++"
+cat $tmpfilepath
+ffmpeg -f concat -safe 0 -i "${tmpfilepath}" -c copy "${outfilepath}"
+rm "${tmpfilepath}"
