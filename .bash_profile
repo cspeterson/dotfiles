@@ -22,10 +22,11 @@ export GEM_HOME="$HOME/.gems"
 # Add other bins to path if exist
 bindirs=(
 "$HOME/.bin"
+"$HOME/.cargo/bin"
+"$HOME/.gems/bin"
 "$HOME/.go/bin"
 "$HOME/.local/bin"
 "$HOME/bin"
-"$HOME/.gems/bin"
 )
 for bindir in "${bindirs[@]}"; do
   if [ -d $bindir ] ; then
