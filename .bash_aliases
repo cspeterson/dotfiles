@@ -17,6 +17,7 @@ alias fgrpe='grep --exclude-dir=".svn" --exclude-dir=".git" -F' # I always frick
 alias grep='grep  --exclude-dir=".svn"--exclude-dir=".git"'
 alias grpe='grep  --exclude-dir=".svn"--exclude-dir=".git"' # I always frickin' do that
 alias grepi='grep --exclude-dir=".svn"--exclude-dir=".git" -i' # case-insensitive grep
+alias jql='jq -C "." | less -FR' # Pipe jq directly into less with colors. Only paginate if longer than screen.
 alias ll='ls -l'
 alias lla='ls -la'
 alias llz='ls -lZ'

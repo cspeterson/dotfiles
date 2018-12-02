@@ -36,25 +36,22 @@ sudo apt-get install \
 
 ## Other
 echo '::::Install from misc...'
+
+echo 'Install tomaatti pomodoro timer for i3...'
+pip3 install tomaatti
+
 # Vim-
 if [ ! -d "${HOME}/.bin/vim-anywhere" ]; then
-  git clone https://github.com/cknadler/vim-anywhere.git "${HOME}/.bin/vim-anywhere"
+  git clone https://github.com/cspeterson/vim-anywhere.git "${HOME}/.bin/vim-anywhere"
 else
   git -C "${HOME}/.bin/vim-anywhere" pull
 fi
-
-# i3ipc
-echo '::::Pip install the i3ipc module for this user...'
-pip3 install --user --upgrade i3ipc
-echo '::::Download focus-next-visible.py from the i3ipc-python github repo...'
-wget -O ~/.config/i3/focus-next-visible.py https://raw.githubusercontent.com/acrisci/i3ipc-python/master/examples/focus-next-visible.py
-ls -l ~/.config/i3/focus-next-visible.py
 
 # emoji input via my splatmoji script
 # https://github.com/cspeterson/splatmoji
 echo '::::Install/update splatmoji...'
 if [ ! -d "${HOME}/.bin/splatmoji" ]; then
-  git clone git@github.com:cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
+  git clone https://github.com/cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
 else
   git -C "${HOME}/.bin/splatmoji" pull
 fi

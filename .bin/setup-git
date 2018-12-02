@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 echo 'Installing git-completion.bash from the github git repo'
-wget -O ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+wget -O ~/.git-completion.bash https://raw.githubusercontent.com/git/git/v1.8.3.1/contrib/completion/git-completion.bash
 echo 'Installing git-prompt from the github git repo'
 wget -O ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
