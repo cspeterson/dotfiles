@@ -136,6 +136,9 @@ function Jekyll_date()
   let @n = regbak
 endfunction
 
+# Delete all trailing whitespace
+command Trailing :%s/\s\+$//e
+
 "###############################################3
 "## Plugins!
 "###############################################3
