@@ -260,7 +260,9 @@ bindsym Control+Mod1+v exec "$HOME/.bin/vim-anywhere/bin/run"
 # Vim-anywhere as above but prepopulate with clipboard contents
 bindsym Shift+Mod1+v exec "$HOME/.bin/vim-anywhere/bin/run -c"
 # Calculator qalc simple pop via rofi
-bindsym $mod+c exec "rofi -show calc -modi 'calc:qalc +u9 -nocurrencies'"
+bindsym $mod+c exec "rofi -show calc -modi 'calc:qalc +u8 -nocurrencies'"
+# i3 show key combos
+bindsym $mod+i exec "$HOME/.bin/i3keys"
 
 # Brightness controls
 bindsym XF86MonBrightnessUp exec sudo $HOME/.bin/bright up; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
