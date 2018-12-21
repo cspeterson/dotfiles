@@ -29,7 +29,7 @@
 !.bin/dotfiles-setup.py
 !.bin/gifgen
 !.bin/h5toflac
-!.bin/ibus-switch.py
+!.bin/i3keys
 !.bin/instagif
 !.bin/lastpass-dmenu
 !.bin/lockblank

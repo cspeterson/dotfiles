@@ -9,8 +9,9 @@ sudo apt-get install \
   gimp-gap \
   gimp-gmic \
   gimp-lensfun \
-  gimp-plugin-registry \
-  gimp-texturize
+  gimp-texturize \
+  libgimp2.0-dev \
+
 
 echo 'Install icc color profiles...'
 sudo apt-get install icc-profiles-free
