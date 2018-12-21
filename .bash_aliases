@@ -12,6 +12,7 @@ alias duhso='du -h | sort -Vr | head' # Human-readable disk usage top offenders 
 alias duso='du | sort -Vr | head' # Disk usage top offenders in curr dir
 alias egrep='grep  --exclude-dir=".svn"--exclude-dir=".git" -E'
 alias egrpe='grep  --exclude-dir=".svn"--exclude-dir=".git" -E' # I always frickin' do that
+alias ffmpeg='ffmpeg -hide_banner' # Hide the giant dump that ffmpeg does on each run by default
 alias fgrep='grep --exclude-dir=".svn" --exclude-dir=".git" -F'
 alias fgrpe='grep --exclude-dir=".svn" --exclude-dir=".git" -F' # I always frickin' do that
 alias grep='grep  --exclude-dir=".svn"--exclude-dir=".git"'
