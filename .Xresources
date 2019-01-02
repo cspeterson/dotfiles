@@ -23,8 +23,6 @@ XTerm*reverseVideo: on
 	#define HINTING 1
 	#define ANTIALIAS 1
 	#define RGBA rgb
-
-	#define I3BARFONTSIZE 16
 #endif
 Xft.dpi: DPI
 Xft.autohint: AUTOHINT
@@ -34,4 +32,3 @@ Xft.hinting: HINTING
 Xft.antialias: ANTIALIAS
 Xft.rgba: RGBA
 ! Set this variable for use in i3 config
-*i3barfontsize: I3BARFONTSIZE
