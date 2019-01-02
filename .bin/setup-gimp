@@ -2,7 +2,9 @@
 
 set -e
 
-echo 'Install gimp and some plugins'
+echo 'Install ppa, gimp, and some plugins'
+sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
+sudo apt-get update
 sudo apt-get install \
   gimp \
   gimp-data-extras \
