@@ -10,6 +10,7 @@ sudo apt-get install \
   links \
   moreutils \
   mosh \
+  pandoc \
   ranger \
   screen \
   texlive-fonts-recommended \
