@@ -79,18 +79,6 @@ map <C-f> :NERDTreeToggle<CR>  " Ctrl+f toggles file pane
 "let g:vim_json_syntax_conceal = 0
 
 "###############################################3
-"# Code completion
-"###############################################3
-" Via youCompleteMe plugin
-" YCM only supports 7.4.1578+
-if v:version <= 7.4.1578
-        let g:loaded_youcompleteme = 1 
-else
-        let g:ycm_autoclose_preview_window_after_completion=1
-        map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-endif
-
-"###############################################3
 "# Markdown Preview
 "###############################################3
 :command Md MarkdownPreview
