@@ -33,6 +33,12 @@ nnoremap <CR> :nohlsearch<cr> " enter clears search highlighting
 nmap <C-Up> 4k
 nmap <C-Down> 4j
 
+" Split directionally
+command Spl leftabove vsplit
+command Spr rightbelow vsplit
+command Spu leftabove split
+command Spd rightbelow split
+
 " Statusline
 set laststatus=2 " always show status line
 set statusline=
@@ -81,17 +87,26 @@ nnoremap <Tab>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 
 " Redundant mappings for common functions because I always typo
-" split
-command Sp sp
-command SP sp
 " quit all
 command Q q
 command Qa qa
 command QA qa
+" split
+command Sp sp
+command SP sp
 " split vert
-command VSp sp
-command VSP sp
-command VsP sp
+command VSp vsp
+command VSP vsp
+command VsP vsp
+" split directional as above but with typos
+command SPl Spl
+command SPL Spl
+command SPr Spr
+command SPR Spr
+command SPu Spr
+command SPU Spr
+command SPd Spd
+command SPD Spd
 " write/save/quit
 command W w
 command Wq wq
