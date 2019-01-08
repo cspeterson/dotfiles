@@ -8,7 +8,6 @@ mkdir -p "${addon_path}"
 
 # Simple single-file downloads
 wget -O "${addon_path}/vse-loop.py" 'https://raw.githubusercontent.com/mutantbob/blender-vse-loop/master/vse-loop.py'
-wget -O "${addon_path}/VSE_Transform_Tool.py" 'https://raw.githubusercontent.com/kgeogeo/VSE_Transform_Tools/master/VSE_Transform_Tool.py'
 
 # Blender Power sequencer
 # https://github.com/GDquest/Blender-power-sequencer
@@ -21,3 +20,10 @@ chmod -R o-rwx "${addon_path}/power-sequencer/"
 # https://sites.google.com/site/pointatstuffweb/
 wget -O /tmp/realtimeanimation.zip 'https://sites.google.com/site/pointatstuffweb/real_time_animation_2_6.zip?attredirects=0&d=1'
 unzip -j /tmp/realtimeanimation.zip real_time_animation_2_6/real_time_animation.py -d "${addon_path}"
+
+# VSE Transform tool (updated, doakey3)
+# https://github.com/doakey3/VSE_Transform_Tools
+wget -O /tmp/VSE_Transform_Tools.zip 'https://github.com/doakey3/VSE_Transform_Tools/releases/download/1.2.4/VSE_Transform_Tools.zip'
+unzip /tmp/VSE_Transform_Tools.zip -d "${addon_path}"
+chmod -R g-rwx "${addon_path}/VSE_Transform_Tools/"
+chmod -R o-rwx "${addon_path}/VSE_Transform_Tools/"
