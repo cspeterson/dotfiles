@@ -152,7 +152,7 @@ function Jekyll_date()
 endfunction
 
 " Delete all trailing whitespace
-command Trailing :%s/\s\+$//e
+command Endwhitespace :%s/\s\+$//e
 
 "###############################################3
 "## Plugins!
