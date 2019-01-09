@@ -35,12 +35,14 @@ alias xo='xdg-open'
 #
 # Packaging
 #
+alias aptinst='apt-get install'
+alias aptls='apt list --installed'
+alias aptrm='apt-get remove'
 alias apts='apt-cache search'
 alias aptshow='apt-cache show'
-alias aptinst='apt-get install'
+alias aptsh='aptshow'
 alias aptupd='apt-get update'
 alias aptupg='apt-get upgrade'
-alias aptrm='apt-get remove'
 
 #
 # Aliases rather particular to my use-case
