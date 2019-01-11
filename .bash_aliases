@@ -232,8 +232,8 @@ ssh_mux() {
 }
 
 uconv() {
-  # Convert units using GNU Units but remove the noise
-  # Also filter out "to" from the arugments because units doesn't speak Englinewargs[-1]h
+  # Convert units using GNU Units but remove the noise. Cut off the units.
+  # Also filter out "to" from the arugments because units doesn't speak English
   # And my brain always seems to type it this way
   newargs=()
   for arg in "$@"; do
@@ -245,7 +245,7 @@ uconv() {
 }
 
 uconvu() {
-  # Convert units using GNU Units but remove the noise
+  # Convert units using GNU Units but remove the noise. LEave the units.
   # Also filter out "to" from the arugments because units doesn't speak English
   # And my brain always seems to type it this way
   newargs=()
