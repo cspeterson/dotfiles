@@ -3,6 +3,14 @@
   focus = system
   title_transmit_bg_color = "#d30102"
 [keybindings]
+  broadcast_all = null
+  broadcast_group = null
+  broadcast_off = null
+  go_down = null
+  go_left = null
+  go_right = null
+  go_up = null
+  layout_launcher = null
 [layouts]
   [[default]]
     [[[child1]]]
