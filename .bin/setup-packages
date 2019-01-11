@@ -18,7 +18,9 @@ sudo apt-get install \
   vim \
   w3m \
   x11-utils \
-  xclip
+  xclip \
+  units \
+
 
 # echo 'Install some basic packages from pip...'
 # pip install \
