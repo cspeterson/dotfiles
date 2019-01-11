@@ -180,40 +180,55 @@ newpass() {
 
 
 
-sshr() {
-  # Open ssh to host $1 with a screen session as root
-  ssh_screen $1 '' 'sudo'
+sshsr() {
+  # Open ssh to host "${1}" with a screen session as root
+  ssh_mux 'screen' "${1}" '' 'sudo'
 }
-
-
 sshs() {
-  # Open ssh to host $1 with a screen session as same user
-  ssh_screen $1
+  # Open ssh to host "${1}" with a screen session as same user
+  ssh_mux 'screen' "${1}"
+}
+sshtr() {
+  # Open ssh to host "${1}" with a tmux session as root
+  ssh_mux 'tmux' "${1}" '' 'sudo'
 }
 
-ssh_screen() {
-  # Connect to ssh with a screen session.
+ssht() {
+  # Open ssh to host "${1}" with a tmux session as same user
+  ssh_mux 'tmux' "${1}"
+}
+
+ssh_mux() {
+  # Connect to ssh with a screen/tmux multiplexer session.
   #
   # Params:
-  #  $1: Hostname
-  #  $2: Screen session name. If not given defaults to username
-  #  $3: sudo? Sudos if nonempty
+  #  $1: [screen|tmux]
+  #  $2: Hostname
+  #  $3: Tmux session name. If not given defaults to username
+  #  $4: sudo? Sudos if nonempty
 
-  local screenname
-  if [ ! -z "$2" ]; then
-    screenname=$2
+  (! [ -z "${1}" ] && ! [ -z "${2}" ]) || return 1
+
+  local session_name
+  if [ ! -z "$3" ]; then
+    session_name=$3
   else
-    screenname=$(whoami)
+    session_name=$(whoami)
   fi
   local sudocmd
-  if [ ! -z "$3" ]; then
+  if [ ! -z "$4" ]; then
     sudocmd='sudo '
   else
     sudocmd=' '
   fi
   local hostnameshellcmd
   hostnameshellcmd='$(hostname)'
-  ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+
+  if [ "${1}" == 'tmux' ]; then
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} tmux new-session -A -s ${session_name}"
+  else
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DRS ${session_name}"
+  fi
 }
 
 uconv() {
