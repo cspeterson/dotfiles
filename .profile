@@ -11,10 +11,10 @@
 
 # If running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bash_profile" ]; then
-	. "$HOME/.bash_profile"
-    fi
+  # include .bashrc if it exists
+  if [ -f "$HOME/.bash_profile" ]; then
+    source "$HOME/.bash_profile"
+  fi
 fi
 
 # Set up screen layout

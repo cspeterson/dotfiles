@@ -5,6 +5,7 @@
 #
 alias axfr='dig AXFR' # Zone transfer
 alias be='bundler exec'
+alias cd..='cd ..' # I typo this often
 alias clip='xclip -selection clipboard' # Put input to x primary clipboard
 alias clr='clear'
 alias digs='dig +short' # reduce dig output
@@ -25,21 +26,26 @@ alias llz='ls -lZ'
 alias less='less -XF' # X prevents clearing screen after and F ditches pagination if too short
 alias nodeactivate='PATH=$(npm bin):$PATH; '
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
+alias screen='TERM=screen-256color screen'
 alias screenhere='screen -DRS "$(basename $(pwd))"'
 alias shfmtg='shfmt -i 2 -ci' # shfmt by Google's Style guide
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 alias sudo='sudo ' # to allow sudoing with aliases
+alias tmux='TERM=screen-256color tmux'
+alias tmhere='tmux new-session -A -s "$(basename $(pwd))"'
 alias xo='xdg-open'
 
 #
 # Packaging
 #
+alias aptinst='apt-get install'
+alias aptls='apt list --installed'
+alias aptrm='apt-get remove'
 alias apts='apt-cache search'
 alias aptshow='apt-cache show'
-alias aptinst='apt-get install'
+alias aptsh='aptshow'
 alias aptupd='apt-get update'
 alias aptupg='apt-get upgrade'
-alias aptrm='apt-get remove'
 
 #
 # Aliases rather particular to my use-case
@@ -174,45 +180,60 @@ newpass() {
 
 
 
-sshr() {
-  # Open ssh to host $1 with a screen session as root
-  ssh_screen $1 '' 'sudo'
+sshsr() {
+  # Open ssh to host "${1}" with a screen session as root
+  ssh_mux 'screen' "${1}" '' 'sudo'
 }
-
-
 sshs() {
-  # Open ssh to host $1 with a screen session as same user
-  ssh_screen $1
+  # Open ssh to host "${1}" with a screen session as same user
+  ssh_mux 'screen' "${1}"
+}
+sshtr() {
+  # Open ssh to host "${1}" with a tmux session as root
+  ssh_mux 'tmux' "${1}" '' 'sudo'
 }
 
-ssh_screen() {
-  # Connect to ssh with a screen session.
+ssht() {
+  # Open ssh to host "${1}" with a tmux session as same user
+  ssh_mux 'tmux' "${1}"
+}
+
+ssh_mux() {
+  # Connect to ssh with a screen/tmux multiplexer session.
   #
   # Params:
-  #  $1: Hostname
-  #  $2: Screen session name. If not given defaults to username
-  #  $3: sudo? Sudos if nonempty
+  #  $1: [screen|tmux]
+  #  $2: Hostname
+  #  $3: Tmux session name. If not given defaults to username
+  #  $4: sudo? Sudos if nonempty
 
-  local screenname
-  if [ ! -z "$2" ]; then
-    screenname=$2
+  (! [ -z "${1}" ] && ! [ -z "${2}" ]) || return 1
+
+  local session_name
+  if [ ! -z "$3" ]; then
+    session_name=$3
   else
-    screenname=$(whoami)
+    session_name=$(whoami)
   fi
   local sudocmd
-  if [ ! -z "$3" ]; then
+  if [ ! -z "$4" ]; then
     sudocmd='sudo '
   else
     sudocmd=' '
   fi
   local hostnameshellcmd
   hostnameshellcmd='$(hostname)'
-  ssh -t ${1} "clear; echo \"Logging into host ${1}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DR -S ${screenname}"
+
+  if [ "${1}" == 'tmux' ]; then
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} tmux new-session -A -s ${session_name}"
+  else
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DRS ${session_name}"
+  fi
 }
 
 uconv() {
-  # Convert units using GNU Units but remove the noise
-  # Also filter out "to" from the arugments because units doesn't speak Englinewargs[-1]h
+  # Convert units using GNU Units but remove the noise. Cut off the units.
+  # Also filter out "to" from the arugments because units doesn't speak English
   # And my brain always seems to type it this way
   newargs=()
   for arg in "$@"; do
@@ -224,7 +245,7 @@ uconv() {
 }
 
 uconvu() {
-  # Convert units using GNU Units but remove the noise
+  # Convert units using GNU Units but remove the noise. LEave the units.
   # Also filter out "to" from the arugments because units doesn't speak English
   # And my brain always seems to type it this way
   newargs=()

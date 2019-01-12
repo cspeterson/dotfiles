@@ -96,6 +96,8 @@
 !.screenlayout/screenlayout
 !.screenlayout/desktop01
 
+!.tmux.conf
+
 !.vimrc
 !.vim_plugins
 !.vim/
