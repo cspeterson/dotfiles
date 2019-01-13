@@ -15,6 +15,7 @@ sudo apt-get install \
   screen \
   texlive-fonts-recommended \
   texlive-latex-recommended \
+  tmux \
   vim \
   w3m \
   x11-utils \
