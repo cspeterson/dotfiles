@@ -180,7 +180,7 @@ newpass() {
 
 
 
-sshsr() {
+sshrs() {
   # Open ssh to host "${1}" with a screen session as root
   ssh_mux 'screen' "${1}" '' 'sudo'
 }
@@ -188,7 +188,7 @@ sshs() {
   # Open ssh to host "${1}" with a screen session as same user
   ssh_mux 'screen' "${1}"
 }
-sshtr() {
+sshrt() {
   # Open ssh to host "${1}" with a tmux session as root
   ssh_mux 'tmux' "${1}" '' 'sudo'
 }
