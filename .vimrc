@@ -34,10 +34,10 @@ nmap <C-Up> 4k
 nmap <C-Down> 4j
 
 " Split directionally
-command Spl leftabove vsplit
-command Spr rightbelow vsplit
-command Spu leftabove split
-command Spd rightbelow split
+command -complete=file -nargs=? Spl leftabove vsplit <args>
+command -complete=file -nargs=? Spr rightbelow vsplit <args>
+command -complete=file -nargs=? Spu leftabove split <args>
+command -complete=file -nargs=? Spd rightbelow split <args>
 
 " Statusline
 set laststatus=2 " always show status line
