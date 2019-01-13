@@ -10,7 +10,7 @@ set spell spelllang=en_us " spellcheck on
 " " Toggles
 set pastetoggle=<F2>
 " Spell check
-nnoremap <F4> :setlocal spell! spelllang=en_us<CR> 
+nnoremap <F4> :setlocal spell! spelllang=en_us<CR>
 " Toggle whitespace char representation
 nnoremap <C-l> :set list!<CR>
 " Toggle nu
@@ -37,10 +37,10 @@ nmap <C-Up> 4k
 nmap <C-Down> 4j
 
 " Split directionally
-command -complete=file -nargs=? Spl leftabove vsplit <args>
-command -complete=file -nargs=? Spr rightbelow vsplit <args>
-command -complete=file -nargs=? Spu leftabove split <args>
-command -complete=file -nargs=? Spd rightbelow split <args>
+command! -complete=file -nargs=? Spl leftabove vsplit <args>
+command! -complete=file -nargs=? Spr rightbelow vsplit <args>
+command! -complete=file -nargs=? Spu leftabove split <args>
+command! -complete=file -nargs=? Spd rightbelow split <args>
 
 " Statusline
 set laststatus=2 " always show status line
@@ -91,32 +91,32 @@ nnoremap <C-t>     :tabnew<CR>
 
 " Redundant mappings for common functions because I always typo
 " quit all
-command Q q
-command Qa qa
-command QA qa
+command! Q q
+command! Qa qa
+command! QA qa
 " split
-command Sp sp
-command SP sp
+command! Sp sp
+command! SP sp
 " split vert
-command VSp vsp
-command VSP vsp
-command VsP vsp
+command! VSp vsp
+command! VSP vsp
+command! VsP vsp
 " split directional as above but with typos
-command SPl Spl
-command SPL Spl
-command SPr Spr
-command SPR Spr
-command SPu Spr
-command SPU Spr
-command SPd Spd
-command SPD Spd
+command! SPl Spl
+command! SPL Spl
+command! SPr Spr
+command! SPR Spr
+command! SPu Spr
+command! SPU Spr
+command! SPd Spd
+command! SPD Spd
 " write/save/quit
-command W w
-command Wq wq
-command WQ wq
-command Wqa wqa
-command WQa wqa
-command WQA wqa
+command! W w
+command! Wq wq
+command! WQ wq
+command! Wqa wqa
+command! WQa wqa
+command! WQA wqa
 
 " Saving if forgot sudo
 cmap w!! w !sudo tee > /dev/null %
@@ -138,7 +138,7 @@ nnoremap <space> za
 " Basically I just want to be able to execute bash aliases once in a while
 " Use example:
 " :Exi %!myalias arg1 arg2
-command -nargs=+ Exi
+command! -nargs=+ Exi
   \ let shellcmdflag_orig = &shellcmdflag |
   \ let &shellcmdflag='-ci' |
   \ execute ':' . "<args>" |
@@ -146,8 +146,8 @@ command -nargs=+ Exi
 
 " Jdate - "jekyll date"
 " 'Find your special Jekyll datestring' and insert after the cursor
-command Jdate call Jekyll_date()
-function Jekyll_date()
+command! Jdate call Jekyll_date()
+function! Jekyll_date()
   let regbak = @n
   let @n = strftime('%Y-%m-%d %H:%M:%S %z')
   normal! "np
@@ -155,7 +155,7 @@ function Jekyll_date()
 endfunction
 
 " Delete all trailing whitespace
-command Endwhitespace :%s/\s\+$//e
+command! Endwhitespace :%s/\s\+$//e
 
 "###############################################3
 "## Plugins!

@@ -81,8 +81,8 @@ map <C-f> :NERDTreeToggle<CR>  " Ctrl+f toggles file pane
 "###############################################3
 "# Markdown Preview
 "###############################################3
-:command Md MarkdownPreview
-:command Mds MarkdownPreviewStop
+:command! Md MarkdownPreview
+:command! Mds MarkdownPreviewStop
 
 "###############################################3
 "# Theming
