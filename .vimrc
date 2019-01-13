@@ -28,6 +28,9 @@ set smartcase
 set hlsearch
 set incsearch
 nnoremap <CR> :nohlsearch<cr> " enter clears search highlighting
+" Search only within lines on screen
+" https://www.reddit.com/r/vim/comments/8mrwu3/search_in_part_of_file/?utm_source=reddit-android
+nnoremap <expr> z/ '/\%(\%>'.(line('w0')-1).'l\%<'.(line('w$')+1).'l\)\&'
 
 " Navigation
 nmap <C-Up> 4k
