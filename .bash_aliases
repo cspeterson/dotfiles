@@ -225,7 +225,7 @@ ssh_mux() {
   hostnameshellcmd='$(hostname)'
 
   if [ "${1}" == 'tmux' ]; then
-    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} tmux -f ~$(whoami)/.tmux.conf new-session -A -s ${session_name}"
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} tmux -f ~$(whoami)/.tmux.conf attach-session -t ${session_name} || tmux -f ~$(whoami)/.tmux.conf new-session -s ${session_name}"
   else
     ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DRS ${session_name}"
   fi
