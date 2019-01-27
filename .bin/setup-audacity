@@ -5,7 +5,7 @@ echo "Installing audacity..."
 sudo apt-get install audacity
 
 plugins=(
-  'http://wiki.audacityteam.org/w/images/7/75/Noisegate.ny'
+  'https://wiki.audacityteam.org/w/images/7/75/Noisegate.ny'
   'https://raw.githubusercontent.com/theDanielJLewis/dynamic-compressor-for-audacity/master/compress.ny'
 )
 
