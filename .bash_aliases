@@ -231,6 +231,26 @@ ssh_mux() {
   fi
 }
 
+tmux-chdir() {
+  # Change PWD from within tmux session so new windows open there.
+  # This depends upon the particular Tmux config in these dotfiles, including
+  # an external script and custom aliases which set required environment
+  # variables, in order to actually have any effect.
+
+  local newdir
+
+  newdir="${1}"
+
+  if [ -z "${TMUX}" ]; then
+    return 1
+  fi
+  if ! [ -d "${newdir}" ]; then
+    return 1
+  fi
+
+  tmux set-environment PWD "${newdir}"
+}
+
 uconv() {
   # Convert units using GNU Units but remove the noise. Cut off the units.
   # Also filter out "to" from the arugments because units doesn't speak English
