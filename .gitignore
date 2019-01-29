@@ -98,6 +98,7 @@
 !.screenlayout/desktop01
 
 !.tmux.conf
+!.tmux-newwin
 
 !.vimrc
 !.vim_plugins

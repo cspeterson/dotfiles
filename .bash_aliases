@@ -31,7 +31,7 @@ alias screenhere='screen -DRS "$(basename $(pwd))"'
 alias shfmtg='shfmt -i 2 -ci' # shfmt by Google's Style guide
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 alias sudo='sudo ' # to allow sudoing with aliases
-alias tmux="TERM=screen-256color TMUX_VERSION=$(tmux -V | cut -c 6-) tmux"
+alias tmux="TERM=screen-256color TMUX_VERSION=$(tmux -V | cut -c 6-) TMUX_CONFDIR=\"${HOME}\" tmux"
 alias tmhere='tmux new-session -A -s "$(basename $(pwd))"'
 alias xo='xdg-open'
 
@@ -225,7 +225,7 @@ ssh_mux() {
   hostnameshellcmd='$(hostname)'
 
   if [ "${1}" == 'tmux' ]; then
-    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} TMUX_VERSION=\$(tmux -V | cut -c 6-) tmux -f ~$(whoami)/.tmux.conf attach-session -t ${session_name} || ${sudocmd}  TMUX_VERSION=\$(tmux -V | cut -c 6-) tmux -f ~$(whoami)/.tmux.conf new-session -s ${session_name}"
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} TMUX_VERSION=\$(tmux -V | cut -c 6-) TMUX_CONFDIR=\"${HOME}\" tmux -f  \"${HOME}/.tmux.conf\" attach-session -t ${session_name} || ${sudocmd} TMUX_VERSION=\$(tmux -V | cut -c 6-) TMUX_CONFDIR=\"${HOME}\" tmux -f \"${HOME}/.tmux.conf\" new-session -s ${session_name}"
   else
     ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DRS ${session_name}"
   fi
