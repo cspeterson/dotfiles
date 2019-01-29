@@ -28,3 +28,7 @@ sudo apt-get install \
 
 # echo 'Install some basic Go packages...'
 # go get \
+
+# echo 'Install odd scripts...'
+wget -O "${HOME}/.bin/tmux-cssh" https://raw.githubusercontent.com/peikk0/tmux-cssh/master/tmux-cssh
+chmod +x "${HOME}/.bin/tmux-cssh"
