@@ -24,8 +24,11 @@ tmux_vers="${1}"
 sessionname=$(tmux display-message -p '#S')
 pwd=$(tmux show-environment | grep -E -m 1 '^PWD=' | sed 's/^PWD=//')
 
-if [ "$(echo "$tmux_vers < 1.9" | bc)" = 1 ]; then
+if [ "$(echo "$tmux_vers < 1.7" | bc)" = 1 ]; then
   tmux set-option default-path "${pwd}"
+  tmux new-window
+elif [ "$(echo "$tmux_vers < 1.9" | bc)" = 1 ]; then
+  tmux set-option -q default-path "${pwd}"
   tmux new-window
 else
   tmux new-window -c "${pwd}"
