@@ -176,7 +176,10 @@ newpass() {
     len="${1}"
   fi
   openssl rand -base64 "${len}" | tr -d '\n' | head -c "${len}"
-  echo
+  # Output a newline if westdout is a terminal
+  if [ -t 1 ]; then
+    echo
+  fi
 }
 
 
