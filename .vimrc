@@ -81,6 +81,8 @@ set statusline+=/%L
 " Layouts
 set splitbelow " when splitting layout, new horizontal splits go below
 set splitright " when splitting layout, new vert splits go to the rights
+" Automatically rescale splits on window resize
+autocmd VimResized * wincmd =
 
 " Tab nav controls sorta in the vein of Firefox etc
 " Not using Ctrl-Tab etc because X and/or the terminal don't let the ind. keys
