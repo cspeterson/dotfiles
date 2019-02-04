@@ -25,6 +25,7 @@ alias lla='ls -la'
 alias llz='ls -lZ'
 alias less='less -XF' # X prevents clearing screen after and F ditches pagination if too short
 alias nodeactivate='PATH=$(npm bin):$PATH; '
+alias pythong='python' # Screw it I give up
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" # For REALLY improtant security things
 alias screen='TERM=screen-256color screen'
 alias screenhere='screen -DRS "$(basename $(pwd))"'
