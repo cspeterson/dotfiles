@@ -4,5 +4,5 @@
 [push]
 	default = current
 [alias]
-	loga = !git log --graph --abbrev-commit
+	alog = !git log --graph --abbrev-commit
 	la = !git config --list | grep -F alias
