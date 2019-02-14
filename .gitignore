@@ -1,121 +1,125 @@
 ########
+# Ignore all
 *
-.bash_local
+
+# Explicitly ignore
+/.bash_local
 .ssh/
+.gnupg/
 
 #########
 # Include
 #########
-!.Xresources
-!.Xmodmap
+!/.Xresources
+!/.Xmodmap
 
-!.audacity-data/
-!.audacity-data/audacity.cfg
-!.audacity-data/pluginsettings.cfg
-!.audacity-data/Tags.xml
-!.audacity-files/
+!/.audacity-data/
+!/.audacity-data/audacity.cfg
+!/.audacity-data/pluginsettings.cfg
+!/.audacity-data/Tags.xml
+!/.audacity-files/
 
-!.bash_aliases
-!.bash_completion
-!.bash_git
-!.bash_logout
-!.bash_profile
-!.bash_ps1
-!.bash_settings
-!.bashrc
+!/.bash_aliases
+!/.bash_completion
+!/.bash_git
+!/.bash_logout
+!/.bash_profile
+!/.bash_ps1
+!/.bash_settings
+!/.bashrc
 
-!.bin/
-!.bin/bright
-!.bin/dotfiles-setup.py
-!.bin/gifgen
-!.bin/h5toflac
-!.bin/i3keys
-!.bin/instagif
-!.bin/lastpass-dmenu
-!.bin/lockblank
-!.bin/loopvideo
-!.bin/setup-audacity
-!.bin/setup-blender
-!.bin/setup-dev
-!.bin/setup-gimp
-!.bin/setup-i3
-!.bin/setup-packages
-!.bin/setup-vim
-!.bin/sizerate
+!/.bin/
+!/.bin/bright
+!/.bin/dotfiles-setup.py
+!/.bin/gifgen
+!/.bin/h5toflac
+!/.bin/i3keys
+!/.bin/instagif
+!/.bin/lastpass-dmenu
+!/.bin/lockblank
+!/.bin/loopvideo
+!/.bin/setup-audacity
+!/.bin/setup-blender
+!/.bin/setup-dev
+!/.bin/setup-gimp
+!/.bin/setup-i3
+!/.bin/setup-packages
+!/.bin/setup-vim
+!/.bin/sizerate
 
-!.bundle/
-!.bundle/config
+!/.bundle/
+!/.bundle/config
 
-!.clusterssh/
-!.clusterssh/config
+!/.clusterssh/
+!/.clusterssh/config
 
-!.config/
-!.config/user-dirs.dirs
+!/.config/
+!/.config/user-dirs.dirs
 
-!.config/gsimplecal/
-!.config/gsimplecal/config
+!/.config/gsimplecal/
+!/.config/gsimplecal/config
 
-!.config/i3/
-!.config/i3/config
-!.config/i3/lastpass-dmenu
+!/.config/i3/
+!/.config/i3/config
+!/.config/i3/lastpass-dmenu
 
-!.config/i3blocks/
-!.config/i3blocks/config
-!.config/i3blocks/datetimecal.sh
+!/.config/i3blocks/
+!/.config/i3blocks/config
+!/.config/i3blocks/datetimecal.sh
 
-!.config/pcmanfm-qt/
-!.config/pcmanfm-qt/default
-!.config/pcmanfm-qt/default/settings.conf
+!/.config/pcmanfm-qt/
+!/.config/pcmanfm-qt/default
+!/.config/pcmanfm-qt/default/settings.conf
 
-!.config/pulse/
-!.config/pulse/default.pa
+!/.config/pulse/
+!/.config/pulse/default.pa
 
-!.config/terminator/
-!.config/terminator/config
+!/.config/terminator/
+!/.config/terminator/config
 
-!.gemrc
+!/.gemrc
 
-!.gimp-2.8/
-!.gimp-2.8/gimprc
-!.gimp-2.8/menurc
+!/.gimp-2.8/
+!/.gimp-2.8/gimprc
+!/.gimp-2.8/menurc
 
 
-!.github/
-!.github/LICENSE
-!.github/README.md
+!/.github/
+!/.github/LICENSE
+!/.github/README.md
 
-!.gitignore
-!.gitconfig
+!/.gitignore
+!/.gitconfig
 
-!.profile
+!/.profile
 
-!.README.md
+!/.README.md
 
-!.screenrc
+!/.screenrc
 
-!.screenlayout/
-!.screenlayout/screenlayout
-!.screenlayout/desktop01
+!/.screenlayout/
+!/.screenlayout/screenlayout
+!/.screenlayout/desktop01
 
-!.tmux-newwin
-!.tmux-send-keys-to-all-panes
-!.tmux.conf
+!/.tmux-newwin
+!/.tmux-send-keys-to-all-panes
+!/.tmux.conf
 
-!.vimrc
-!.vim_plugins
-!.vim/
-!.vim/ftdetect/
-!.vim/ftdetect/puppet.vim
-!.vim/ftplugin/
-!.vim/ftplugin/html.vim
-!.vim/ftplugin/javascript.vim
-!.vim/ftplugin/json.vim
-!.vim/ftplugin/markdown.vim
-!.vim/ftplugin/puppet.vim
-!.vim/ftplugin/python.vim
-!.vim/ftplugin/ruby.vim
-!.vim/ftplugin/sh.vim
-!.vim/ftplugin/vim.vim
-!.vim/ftplugin/yaml.vim
+!/.vimrc
+!/.vim_plugins
+!/.vim/
+!/.vim/ftdetect/
+!/.vim/ftdetect/puppet.vim
+!/.vim/ftplugin/
+!/.vim/ftplugin/html.vim
+!/.vim/ftplugin/javascript.vim
+!/.vim/ftplugin/json.vim
+!/.vim/ftplugin/markdown.vim
+!/.vim/ftplugin/puppet.vim
+!/.vim/ftplugin/python.vim
+!/.vim/ftplugin/ruby.vim
+!/.vim/ftplugin/sh.vim
+!/.vim/ftplugin/vim.vim
+!/.vim/ftplugin/yaml.vim
 
-!.xsession
+!/.xsession
