@@ -111,8 +111,8 @@ command! SPl Spl
 command! SPL Spl
 command! SPr Spr
 command! SPR Spr
-command! SPu Spr
-command! SPU Spr
+command! SPu Spu
+command! SPU Spu
 command! SPd Spd
 command! SPD Spd
 " write/save/quit
