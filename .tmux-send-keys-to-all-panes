@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+read -r -d '' helptext <<EOF
+This script sends its separate arguments along to \`tmux send-keys\` for the
+current Tmux session.
+As per Tmux docs, "if the string is not recognised as a key, it is sent as a
+series of characters."
+
+Usage:
+  # To send arbitary normal keys
+  $(basename "${0}") "abcdefg"
+
+  # To use non-alphanum keys, e.g. to quit Vim by sending a literal CR,
+  # separate it as its own argument
+  $(basename "${0}") ":qa" 'Enter'
+EOF
+
+if [ "${1}" == '-h' ] || [ "${1}" == '--help' ]; then
+  echo "${helptext}"
+  exit 0
+elif [ -z "${1}" ]; then
+  echo "${helptext}"
+  exit 1
+fi
+
+for target in $(tmux list-panes -s | cut -f 1 -d ':'); do
+  tmux send-keys -t "${target}" "$@"
+done

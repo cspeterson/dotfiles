@@ -97,8 +97,9 @@
 !.screenlayout/screenlayout
 !.screenlayout/desktop01
 
-!.tmux.conf
 !.tmux-newwin
+!.tmux-send-keys-to-all-panes
+!.tmux.conf
 
 !.vimrc
 !.vim_plugins
