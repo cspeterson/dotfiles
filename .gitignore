@@ -101,8 +101,10 @@
 !/.screenlayout/screenlayout
 !/.screenlayout/desktop01
 
-!/.tmux-newwin
-!/.tmux-send-keys-to-all-panes
+!/.tmux/
+!/.tmux/bin/
+!/.tmux/bin/tmux-newwin
+!/.tmux/bin/.tmux-send-keys-to-all-panes
 !/.tmux.conf
 
 !/.vimrc
