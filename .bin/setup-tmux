@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "Install tmux"...
+sudo apt-get install tmux
+
+echo "Create tmux config dir and set up plugin manager..."
+mkdir -p "${HOME}/.tmux/plugins"
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm || git -C $HOME/.tmux/plugins/tpm pull
+
+echo "Install plugins..."
+$HOME/.tmux/plugins/tpm/scripts/install_plugins.sh
