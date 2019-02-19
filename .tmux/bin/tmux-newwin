@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
 
-# This script exists to be called from within tmux (most likely from a
-# keybinding)
-# Assuming PWD is set in the tmux *session*, it will open a new window
-# into that dir. It handles this differently for version pre- and post-1.9
-# due to breaking changes on the new-window command starting with 1.9.
-#
-# The idea being to open new windows into the set `$PWD` with this script,
-# while another binding per-version inside `.tmux.conf` will handle opening
-# new windows into the same directory as the current pane
-#
-# It uses a `$PWD` settings in the tmux session environment for this so that
-# the value can be altered on-the-fly
+read -r -d '' helptext <<EOF
+This script exists to be called from within tmux (most likely from a
+keybinding)
+Assuming PWD is set in the tmux *session*, it will open a new window
+into that dir. It handles this differently for version pre- and post-1.9
+due to breaking changes on the new-window command starting with 1.9.
 
-if [ -z "${TMUX}" ]; then
-  exit 1
-elif [ -z "${1}" ]; then
+The idea being to open new windows into the set \`\$PWD\` with this script,
+while another binding per-version inside \`.tmux.conf\` will handle opening
+new windows into the same directory as the current pane
+
+It uses a \`\$PWD\` setting in the tmux session environment for this so that
+the value can be altered on-the-fly
+
+Usage:
+  $(basename "${0}") <tmux version>
+EOF
+
+if [ "${1}" == '-h' ] || [ "${1}" == '--help' ]; then
+  echo "${helptext}"
+  exit 0
+elif [ -z "${TMUX}" ] || [ -z "${1}" ]; then
+  echo "${helptext}"
   exit 1
 fi
 
