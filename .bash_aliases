@@ -53,7 +53,6 @@ alias aptupg='apt-get upgrade'
 #
 alias jdate="date '+%Y-%m-%d %H:%M:%S %z'"
 alias locksleep='sudo echo && sudo -u csp i3lock -I 10 && sudo pm-suspend'
-alias sizerate='$HOME/.bin/sizerate'
 # unetbootin and sudo as per https://askubuntu.com/a/1006483/362696
 alias unetbootin='xhost local:root && sudo QT_X11_NO_MITSHM=1 unetbootin'
 
