@@ -1,7 +1,8 @@
 "###############################################3
 "## General goodness
 "###############################################3
-set nu " line numbers
+set number " line numbers
+set relativenumber " in combo with above, makes 'hybrid mode'
 set term=xterm-256color " behave sensibly
 set cursorline " highlight the line being edited
 set scrolloff=3 " keep 3 lines above or below when scrolling up and down
