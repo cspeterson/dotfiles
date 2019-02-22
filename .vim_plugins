@@ -22,6 +22,7 @@
 " Install plugins here.
 " They can be easily installed without entering Vim by running:
 " vim +PluginInstall +qall
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'JamshedVesuna/vim-markdown-preview'    " Preview markdown from vim in browser
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
