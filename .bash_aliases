@@ -32,7 +32,7 @@ alias screenhere='screen -DRS "$(basename $(pwd))"'
 alias shfmtg='shfmt -i 2 -ci' # shfmt by Google's Style guide
 alias sortip='sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4' # Sort ip addresses
 alias sudo='sudo ' # to allow sudoing with aliases
-alias tmux="TERM=screen-256color TMUX_VERSION=$(tmux -V | cut -c 6-) TMUX_CONFDIR=\"${HOME}\" tmux"
+command -v 'tmux' > /dev/null && alias tmux="TERM=screen-256color TMUX_VERSION=$(tmux -V | cut -c 6-) TMUX_CONFDIR=\"${HOME}\" tmux"
 alias tmhere='tmux new-session -A -s "$(basename $(pwd) | tr '.' '_')"' # protip: tmux doesn't like dots in session names
 alias xo='xdg-open'
 
