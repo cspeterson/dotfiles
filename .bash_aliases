@@ -220,7 +220,7 @@ ssh_mux() {
   fi
   local sudocmd
   if [ ! -z "$4" ]; then
-    sudocmd='sudo '
+    sudocmd='sudo -E -s '
   else
     sudocmd=' '
   fi
