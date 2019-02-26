@@ -150,16 +150,6 @@ command! -nargs=+ Exi
   \ execute ':' . "<args>" |
   \ let &shellcmdflag=shellcmdflag_orig
 
-" Jdate - "jekyll date"
-" 'Find your special Jekyll datestring' and insert after the cursor
-command! Jdate call Jekyll_date()
-function! Jekyll_date()
-  let regbak = @n
-  let @n = strftime('%Y-%m-%d %H:%M:%S %z')
-  normal! "np
-  let @n = regbak
-endfunction
-
 " Delete all trailing whitespace
 command! Endwhitespace :%s/\s\+$//e
 
