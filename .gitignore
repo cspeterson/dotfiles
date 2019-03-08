@@ -35,6 +35,7 @@
 !/.bin/h5toflac
 !/.bin/i3keys
 !/.bin/instagif
+!/.bin/lastpass-dmenu.git
 !/.bin/lastpass-dmenu
 !/.bin/lockblank
 !/.bin/loopvideo
@@ -89,8 +90,9 @@
 !/.github/LICENSE
 !/.github/README.md
 
-!/.gitignore
 !/.gitconfig
+!/.gitignore
+!/.gitmodules
 
 !/.profile
 

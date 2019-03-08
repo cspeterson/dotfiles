@@ -1,0 +1,3 @@
+[submodule ".bin/lastpass-dmenu.git"]
+	path = .bin/lastpass-dmenu.git
+	url = git@github.com:cspeterson/lastpass-dmenu.git

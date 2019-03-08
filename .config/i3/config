@@ -240,9 +240,9 @@ for_window [class="Gvim"] floating enable
 bindsym $mod+slash exec "$HOME/.bin/splatmoji/splatmoji type"
 # Lastpass cli popups
 ## Password to clipboard
-bindsym $mod+l exec "$HOME/.bin/lastpass-dmenu"
+bindsym $mod+l exec "$HOME/.bin/lastpass-dmenu copy"
 ## Password typed out by xdotool
-bindsym $mod+Control+l exec "$HOME/.bin/lastpass-dmenu --typeit"
+bindsym $mod+Control+l exec "$HOME/.bin/lastpass-dmenu type"
 # PCManfm-qt GUI file browser
 bindsym $mod+z exec pcmanfm-qt
 # Screenshot: shutter screenshot full desktop
