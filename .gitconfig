@@ -6,3 +6,5 @@
 [alias]
 	alog = !git log --graph --abbrev-commit
 	la = !git config --list | grep -F alias
+[color]
+	ui = auto
