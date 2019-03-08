@@ -23,6 +23,8 @@ Then you'll need to clone this repo to an empty directory and then move the file
 ~$ mkdir clonehere
 ~$ cd clonehere
 ~/clonehere$ git clone <repo uri> .
+git submodule init
+git submodule update
 # This could overwrite things! So back things up or whatever.
 ~/clonehere$ rsync -a ./.* ~/
 ```
