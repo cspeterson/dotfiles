@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+# [Christopher Peterson](https://chrispeterson.info)
+
+######
+# Traps
+######
+trap early_exit SIGINT
+early_exit() {
+  echo 'handle cleanup?'
+  exit $?
+}
+
+######
+# Argpargse
+######
+
+read -r -d '' helpoutput <<EOF
+  Usage:
+    ${0} [OPTIONS]... [ARGS]
+
+      Description of script function.
+
+  Options:
+    -s, --single-option
+        Takes no sub argument.
+        Default: value
+
+    -l, --list-option
+        Takes a comma-separated list of sub-arguments.
+        Default: a,b,c
+
+  Positional arguments:
+    [ARGS]
+        Description of arg.
+
+  Examples
+    Some example case:
+        ${0} opts args
+
+
+  Other info
+    Other details
+EOF
+
+if [ $# -eq 0 ]; then
+  echo "${helpoutput}"
+  exit 0
+fi
+
+# Before running through `getopts`, translate out convenient long-versions
+# within $@ because we're using bash built-in getopts which does not support
+# long args
+for opt in "$@"; do
+  shift
+  case "${opt}" in
+    '--single-option') set -- "$@" '-s' ;;
+    '--list-option')   set -- "$@" '-l' ;;
+    '--help')          set -- "$@" '-h' ;;
+    *)                 set -- "$@" "${opt}" ;;
+  esac
+done
+
+# Back to the beginning now and get our opts
+OPTIND=1
+while getopts ':hl:s' opt; do
+  case "${opt}" in
+    h)
+      echo "${helpoutput}"
+      exit 0
+      ;;
+    l)
+      IFS=',' read -a some_array <<< "${OPTARG}"
+      ;;
+    s)
+      echo 'do something'
+      ;;
+    *)
+      echo "Invalid option ${OPTARG}" >&2
+      echo "${helpoutput}" >&2
+      exit 1
+      ;;
+  esac
+done
+
+shift $(( $OPTIND - 1 ))
+positional_args=( "${@}" )
+
+######
+# Main
+######
+
+echo 'do stuff here'
