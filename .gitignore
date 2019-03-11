@@ -95,6 +95,8 @@
 !/.gitignore
 !/.gitmodules
 
+!/.inputrc
+
 !/.profile
 
 !/.README.md
