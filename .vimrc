@@ -17,7 +17,7 @@ nnoremap <F4> :setlocal spell! spelllang=en_us<CR>
 " Toggle whitespace char representation
 nnoremap <C-l> :set list!<CR>
 " Toggle nu
-nnoremap <C-n> :set number!<CR>
+nnoremap <C-n> :set number!<CR> :set relativenumber!<CR>
 
 " Registers
 " map register c to x11 'clipboard' register because "+ is more work
