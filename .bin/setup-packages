@@ -23,7 +23,9 @@ sudo apt-get install \
 
 
 # echo 'Install some basic packages from pip...'
-# pip install \
+pip install \
+  cookiecutter \
+
 
 # echo 'Install some basic Go packages...'
 # go get \

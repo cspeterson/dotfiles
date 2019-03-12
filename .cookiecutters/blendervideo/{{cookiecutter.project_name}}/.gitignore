@@ -1,0 +1,9 @@
+*.blend1
+.*.swo
+.*.swp
+.venv
+.virtualenv
+__pycache__
+render/
+venv
+virtualenv
