@@ -21,13 +21,14 @@
 
 !/.bash.skeleton
 !/.bash_aliases
-!/.bash_completion
 !/.bash_git
 !/.bash_logout
 !/.bash_profile
 !/.bash_ps1
 !/.bash_settings
 !/.bashrc
+!/.bash_completion.d/
+!/.bash_completion.d/**
 
 !/.bin/
 !/.bin/bright
