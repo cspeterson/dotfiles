@@ -1,0 +1,33 @@
+# Bash auto-completion for cookiecutter, a command-line utility that creates
+# projects from project templates:
+# https://github.com/audreyr/cookiecutter
+
+_cookiecutter_project_completion() {
+  local cookiecutters_files
+  local cur
+  local project
+  local project_name
+  local project_names
+
+  COMPREPLY=()
+  cur=${COMP_WORDS[COMP_CWORD]}
+
+  # Pull valid project names from cookiecutters dir
+  cookiecutters_files=( "${HOME:-~}/.cookiecutters/"* )
+  project_names=()
+  for project in "${cookiecutters_files[@]}"; do
+    if [ -d "${project}" ] && [ -f "${project}/cookiecutter.json" ]; then
+      # Cut to basename
+      project="${project%/}"
+      project_name="${project##*/}"
+
+      project_names=( "${project_names[@]}" "${project_name}" )
+    fi
+  done
+
+  COMPREPLY=( $(compgen -W "${project_names[*]}" -- "${cur}") )
+
+  return
+}
+
+complete -o filenames -F _cookiecutter_project_completion cookiecutter

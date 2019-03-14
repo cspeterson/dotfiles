@@ -121,17 +121,16 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -d "${HOME}/.bash.d" ]; then
+  for f in "${HOME}/.bash.d"/*; do
+    source "${f}"
+  done
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -d /usr/share/bash-completion/bash_completion.d ]; then
-    source "${HOME}/.bash_completion.d/"*
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+if [ -d "${HOME}/.bash_completion.d" ]; then
+  for f in "${HOME}/.bash_completion.d"/*; do
+    source "${f}"
+  done
+elif [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
 fi
