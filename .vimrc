@@ -7,6 +7,7 @@ set term=xterm-256color " behave sensibly
 set cursorline " highlight the line being edited
 set scrolloff=3 " keep 3 lines above or below when scrolling up and down
 set spell spelllang=en_us " spellcheck on
+set virtualedit=onemore
 " repeat last substitution on current line
 nnoremap ! &
 
