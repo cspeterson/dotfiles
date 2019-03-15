@@ -1,0 +1,10 @@
+alias grep='\grep  --exclude-dir=".svn"--exclude-dir=".git"'
+alias grpe='grep'
+
+alias grepi='grep -i'
+
+alias egrep='grep -E'
+alias egrpe='egrep'
+
+alias fgrep='grep -F'
+alias fgrpe='fgrep'

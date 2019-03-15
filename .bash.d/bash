@@ -11,14 +11,7 @@ alias clr='clear'
 alias digs='dig +short' # reduce dig output
 alias duhso='du -h | sort -Vr | head' # Human-readable disk usage top offenders in curr dir
 alias duso='du | sort -Vr | head' # Disk usage top offenders in curr dir
-alias egrep='grep  --exclude-dir=".svn"--exclude-dir=".git" -E'
-alias egrpe='grep  --exclude-dir=".svn"--exclude-dir=".git" -E' # I always frickin' do that
-alias ffmpeg='ffmpeg -hide_banner' # Hide the giant dump that ffmpeg does on each run by default
-alias fgrep='grep --exclude-dir=".svn" --exclude-dir=".git" -F'
-alias fgrpe='grep --exclude-dir=".svn" --exclude-dir=".git" -F' # I always frickin' do that
-alias grep='grep  --exclude-dir=".svn"--exclude-dir=".git"'
-alias grpe='grep  --exclude-dir=".svn"--exclude-dir=".git"' # I always frickin' do that
-alias grepi='grep --exclude-dir=".svn"--exclude-dir=".git" -i' # case-insensitive grep
+alias ffmpeg='\ffmpeg -hide_banner' # Hide the giant dump that ffmpeg does on each run by default
 alias jql='jq -C "." | less -FR' # Pipe jq directly into less with colors. Only paginate if longer than screen.
 alias ll='ls -l'
 alias lla='ls -la'

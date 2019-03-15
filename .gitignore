@@ -6,6 +6,8 @@
 /.bash_local
 .ssh/
 .gnupg/
+.*.swp
+.*.swo
 
 #########
 # Include
