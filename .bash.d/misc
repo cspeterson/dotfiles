@@ -1,0 +1,2 @@
+# For REALLY improtant security things
+alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"

@@ -1,0 +1,12 @@
+alias ffmpeg='\ffmpeg -hide_banner' # Hide the giant dump that ffmpeg does on each run by default
+
+
+boxscale() {
+  # Scale up a video up or down to the specified dimensions, maintaining
+  # aspect ratio and letter/pillarboxing as necessary
+  local infile=$1
+  local dimensions=$2
+  local outfile=$3
+
+  ffmpeg -i "${infile}" -vf "scale=${dimensions}:force_original_aspect_ratio=decrease,pad=${dimensions}:(ow-iw)/2:(oh-ih)/2" "${outfile}"
+}

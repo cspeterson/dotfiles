@@ -1,0 +1,1 @@
+alias locksleep='sudo echo && sudo -u csp i3lock -I 10 && sudo pm-suspend'

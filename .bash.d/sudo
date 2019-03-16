@@ -1,0 +1,2 @@
+# To allow sudoing with aliases
+alias sudo='sudo '

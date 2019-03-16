@@ -1,0 +1,61 @@
+
+dossh() {
+  # Keep trying to connect over ssh
+        ssh "$1"
+        until [ $? -eq 0 ]; do
+                sleep 1; ssh "$1"
+        done
+}
+
+sshrs() {
+  # Open ssh to host "${1}" with a screen session as root
+  ssh_mux 'screen' "${1}" '' 'sudo'
+}
+
+sshs() {
+  # Open ssh to host "${1}" with a screen session as same user
+  ssh_mux 'screen' "${1}"
+}
+
+sshrt() {
+  # Open ssh to host "${1}" with a tmux session as root
+  ssh_mux 'tmux' "${1}" '' 'sudo'
+}
+
+ssht() {
+  # Open ssh to host "${1}" with a tmux session as same user
+  ssh_mux 'tmux' "${1}"
+}
+
+ssh_mux() {
+  # Connect to ssh with a screen/tmux multiplexer session.
+  #
+  # Params:
+  #  $1: [screen|tmux]
+  #  $2: Hostname
+  #  $3: Tmux session name. If not given defaults to username
+  #  $4: sudo? Sudos if nonempty
+
+  (! [ -z "${1}" ] && ! [ -z "${2}" ]) || return 1
+
+  local session_name
+  if [ ! -z "$3" ]; then
+    session_name=$3
+  else
+    session_name=$(whoami)
+  fi
+  local sudocmd
+  if [ ! -z "$4" ]; then
+    sudocmd='sudo -E -s '
+  else
+    sudocmd=' '
+  fi
+  local hostnameshellcmd
+  hostnameshellcmd='$(hostname)'
+
+  if [ "${1}" == 'tmux' ]; then
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} TMUX_VERSION=\$(tmux -V | cut -c 6-) TMUX_CONFDIR=\"${HOME}\" tmux -f  \"${HOME}/.tmux.conf\" attach-session -t ${session_name} || ${sudocmd} TMUX_VERSION=\$(tmux -V | cut -c 6-) TMUX_CONFDIR=\"${HOME}\" tmux -f \"${HOME}/.tmux.conf\" new-session -s ${session_name}"
+  else
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DRS ${session_name}"
+  fi
+}

@@ -1,0 +1,13 @@
+alias xo='xdg-open'
+
+g() {
+  # Google some input directly from cli
+  # via Avinash Raj on AskUbuntu https://askubuntu.com/a/486021
+
+  local search=""
+  echo "Googling: $@"
+  for term in $@; do
+      search="$search%20$term"
+  done
+  xdg-open "https://www.google.com/search?q=$search"
+}

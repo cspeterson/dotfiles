@@ -1,0 +1,20 @@
+# Md5sum comparison
+md5comp() {
+  local md5sum
+  local newsum
+
+  md5sum=$(md5sum "$1" | tr -s ' ' | cut -d ' ' -f 1)
+  shift
+
+  for filename in "$@"; do
+    echo "${filename} <<<<<<"
+    newsum=$(md5sum "$filename" | tr -s ' ' | cut -d ' ' -f 1)
+    if [ "$newsum" != "$md5sum" ]; then
+      echo "No match"
+      return 1
+    fi
+  done
+
+  echo "Match"
+  return 0
+}

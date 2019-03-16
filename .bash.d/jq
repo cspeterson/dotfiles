@@ -1,0 +1,1 @@
+alias jql='\jq -C "." | less -FR' # Pipe jq directly into less with colors. Only paginate if longer than screen.

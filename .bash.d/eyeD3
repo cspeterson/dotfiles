@@ -1,0 +1,9 @@
+# Id3 add image to mp3 file with eyeD3
+id3img() {
+  local imgpath
+  imgpath="${1}"
+  local mp3file
+  mp3file="${2}"
+
+  eyeD3 --add-image "${imgpath}:FRONT_COVER" "${mp3file}"
+}

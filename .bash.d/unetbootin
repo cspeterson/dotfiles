@@ -1,0 +1,2 @@
+# Unetbootin and sudo as per https://askubuntu.com/a/1006483/362696
+alias unetbootin='xhost local:root && sudo QT_X11_NO_MITSHM=1 unetbootin'

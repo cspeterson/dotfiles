@@ -1,0 +1,12 @@
+newpass() {
+  # Generate password.
+  # Length=$1 else 30
+  local len
+
+  len="${1:-30}"
+  openssl rand -base64 "${len}" | tr -d '\n' | head -c "${len}"
+  # Output a newline if westdout is a terminal
+  if [ -t 1 ]; then
+    echo
+  fi
+}

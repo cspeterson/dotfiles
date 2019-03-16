@@ -1,0 +1,2 @@
+alias screen='TERM=screen-256color screen'
+alias screenhere='screen -DRS "$(basename $(pwd))"'

@@ -1,0 +1,1 @@
+alias clip='xclip -selection clipboard' # Put input to x primary clipboard

@@ -1,0 +1,2 @@
+# X prevents clearing screen after and F ditches pagination if too short
+alias less='less -XF'

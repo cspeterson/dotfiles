@@ -1,0 +1,2 @@
+alias axfr='\dig AXFR'
+alias digs='\dig +short'

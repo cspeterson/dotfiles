@@ -1,0 +1,8 @@
+alias aptinst='apt-get install'
+alias aptls='apt list --installed'
+alias aptrm='apt-get remove'
+alias apts='apt-cache search'
+alias aptsh='aptshow'
+alias aptshow='apt-cache show'
+alias aptupd='apt-get update'
+alias aptupg='apt-get upgrade'
