@@ -6,5 +6,6 @@
 [alias]
 	alog = !git log --graph --abbrev-commit
 	la = !git config --list | grep -F alias
+	stat=!git status
 [color]
 	ui = auto
