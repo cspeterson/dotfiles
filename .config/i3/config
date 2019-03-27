@@ -265,8 +265,12 @@ bindsym $mod+c exec "rofi -show calc -modi 'calc:qalc +u8 -nocurrencies'"
 bindsym $mod+i exec "$HOME/.bin/i3keys"
 
 # Brightness controls
+# Up
 bindsym XF86MonBrightnessUp exec sudo $HOME/.bin/bright up; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
+bindsym $mod+Shift+plus exec sudo $HOME/.bin/bright up; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
+# Down
 bindsym XF86MonBrightnessDown exec sudo $HOME/.bin/bright down; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
+bindsym $mod+Shift+minus exec sudo $HOME/.bin/bright down; exec notify-send -t 1 "Brightness: $($HOME/.bin/bright current)%"
 
 # Media keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+ unmute

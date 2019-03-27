@@ -74,6 +74,7 @@ ffmpeg -i "${INFILE}" \
        -filter_complex "loop=${loops}:32767:0,scale=trunc(iw/2)*2:trunc(ih/2)*2" \
        -f mp4 \
        -y \
+       -r 24 \
        -preset slow \
        -pix_fmt yuv420p \
        "${OUTFILE}" >/dev/null 2>&1
