@@ -18,16 +18,12 @@ sudo apt-get install \
 echo 'Install icc color profiles...'
 sudo apt-get install icc-profiles-free
 
-echo 'Download Heal selection fix script directly from gimp plugin registry...'
-cd ~/.gimp-2.8/
-wget -O scripts/smart-remove-fix.scm http://registry.gimp.org/files/smart-remove.scm
-echo 'Change the meta name of the fixed heal selection script to distinguish from orig...'
-sed -i scripts/smart-remove-fix.scm 's?"<Image>/Filters/Enhance/Heal selection..."?"<Image>/Filters/Enhance/Heal selection (fix)..."?'
-
 echo "Clone 'export layer' plugin from github and install..."
-mkdir -p /tmp/gimp-export-layers
-git clone https://github.com/khalim19/gimp-plugin-export-layers.git /tmp/gimp-export-layers
-cd /tmp/gimp-export-layers
-cp -r export_layers export_layers.py pygimplib ~/.gimp-2.8/plug-ins/
-cd ~/.gimp-2.8/
-rm -rf /tmp/gimp-export-layers
+plugin_tmp="$(mktemp -d)"
+export_layers_tmp="${plugin_tmp}/gimp-export-layers"
+mkdir -p "${plugin_tmp}/${export_layers_tmp}"
+git clone https://github.com/khalim19/gimp-plugin-export-layers.git "${export_layers_tmp}"
+cp -r "${export_layers_tmp}/"{export_layers,export_layers.py} "${XDG_CONFIG_HOME:-${HOME}/.config}/GIMP/2.10/plug-ins/"
+
+
+echo "Temporary files left in '${plugin_tmp}'"
