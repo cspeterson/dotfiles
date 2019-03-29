@@ -13,6 +13,8 @@ set virtualedit=onemore
 
 " repeat last substitution on current line
 nnoremap ! &
+" split line before cursor
+nnoremap <C-j> i<Enter><Esc>
 
 " " Toggles
 set pastetoggle=<F2>
