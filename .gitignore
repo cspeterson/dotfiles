@@ -120,8 +120,7 @@
 !/.tmux/bin/.tmux-send-keys-to-all-panes
 !/.tmux.conf
 
-!/.vimrc
-!/.vim_plugins
+!.vim/ftdetect/markdown.vim
 !/.vim/
 !/.vim/ftdetect/
 !/.vim/ftdetect/puppet.vim
@@ -136,5 +135,7 @@
 !/.vim/ftplugin/sh.vim
 !/.vim/ftplugin/vim.vim
 !/.vim/ftplugin/yaml.vim
+!/.vim_plugins
+!/.vimrc
 
 !/.xsession
