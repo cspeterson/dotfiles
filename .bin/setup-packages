@@ -15,11 +15,12 @@ sudo apt-get install \
   screen \
   texlive-fonts-recommended \
   texlive-latex-recommended \
+  translate-shell \
+  units \
   vim \
   w3m \
   x11-utils \
   xclip \
-  units \
 
 
 # echo 'Install some basic packages from pip...'
