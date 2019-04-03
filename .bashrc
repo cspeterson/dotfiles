@@ -96,24 +96,35 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+  fi
+fi
+
 # Usage-related bash settings
 if [ -f ~/.bash_settings ]; then
-	. ~/.bash_settings
+	source ~/.bash_settings
 fi
 
 # Prompty things
 if [ -f ~/.bash_ps1 ]; then
-	. ~/.bash_ps1
+	source ~/.bash_ps1
 fi
 
 # Bash aliases etc specific to this machine/site
 if [ -f ~/.bash_local ]; then
-	. ~/.bash_local
+	source ~/.bash_local
 fi
 
 # Git things
 if [ -f ~/.bash_git ]; then
-	. ~/.bash_git
+	source ~/.bash_git
 fi
 
 # Alias definitions.
@@ -132,5 +143,5 @@ if [ -d "${HOME}/.bash_completion.d" ]; then
     source "${f}"
   done
 elif [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
+  source /etc/bash_completion
 fi
