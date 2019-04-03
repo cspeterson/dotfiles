@@ -26,6 +26,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'JamshedVesuna/vim-markdown-preview'    " Preview markdown from vim in browser
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
+Plugin 'christoomey/vim-sort-motion'
 Plugin 'cspeterson/vim-convert'	" Unit conversion
 Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
 Plugin 'godlygeek/tabular'         " Aligns text
