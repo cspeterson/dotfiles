@@ -31,6 +31,7 @@ Plugin 'cspeterson/vim-convert'	" Unit conversion
 Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
 Plugin 'godlygeek/tabular'         " Aligns text
 Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPreview and MarkdownPreviewStop
+Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'kana/vim-textobj-entire' " Requires kana/vim-textobj-user
 Plugin 'kana/vim-textobj-line' " Requires kana/vim-textobj-use
 Plugin 'kana/vim-textobj-user'
