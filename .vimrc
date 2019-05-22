@@ -10,6 +10,7 @@ set spell spelllang=en_us " spellcheck on
 set term=xterm-256color " behave sensibly
 set ttyfast
 set virtualedit=onemore
+let mapleader = '\'
 
 " repeat last substitution on current line
 nnoremap ! &
