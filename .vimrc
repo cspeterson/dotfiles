@@ -11,6 +11,8 @@ set term=xterm-256color " behave sensibly
 set ttyfast
 set virtualedit=onemore
 let mapleader = '\'
+nnoremap Q q
+nnoremap q <Nop>
 
 " repeat last substitution on current line
 nnoremap ! &
