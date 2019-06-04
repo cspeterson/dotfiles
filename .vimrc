@@ -13,6 +13,7 @@ set virtualedit=onemore
 let mapleader = '\'
 nnoremap Q q
 nnoremap q <Nop>
+set nomodeline
 
 " repeat last substitution on current line
 nnoremap ! &
