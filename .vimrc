@@ -54,6 +54,15 @@ command! -complete=file -nargs=? Spl leftabove vsplit <args>
 command! -complete=file -nargs=? Spr rightbelow vsplit <args>
 command! -complete=file -nargs=? Spu leftabove split <args>
 command! -complete=file -nargs=? Spd rightbelow split <args>
+" Split operations
+" Change split to horizontal
+nnoremap <Leader>sh <C-w>t<C-w>K
+" Change split to vertical
+nnoremap <Leader>sv <C-w>t<C-w>H
+" Maximize current split
+nnoremap <Leader>s_ <C-w>_
+" Equalize current split
+nnoremap <Leader>s= <C-w>=
 
 " Statusline
 set laststatus=2 " always show status line
