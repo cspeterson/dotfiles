@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-addon_path="${HOME}/.config/blender/2.79/scripts/addons"
+addon_path="${HOME}/.config/blender/2.80/scripts/addons"
 
 echo 'Install blender plugins...'
 mkdir -p "${addon_path}"
@@ -15,6 +15,10 @@ wget -O /tmp/power-sequencer.zip 'https://github.com/GDquest/Blender-power-seque
 unzip /tmp/power-sequencer.zip -d "${addon_path}"
 chmod -R g-rwx "${addon_path}/power-sequencer/"
 chmod -R o-rwx "${addon_path}/power-sequencer/"
+
+# Doakey3/Subsimport (srt subtitle importer)
+mkdir -p ${addon_path}/subsimport/
+git clone https://github.com/doakey3/Subsimport.git ${addon_path}/subsimport
 
 # Real Time Animation
 # https://sites.google.com/site/pointatstuffweb/
