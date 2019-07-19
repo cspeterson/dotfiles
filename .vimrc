@@ -15,8 +15,10 @@ nnoremap Q q
 nnoremap q <Nop>
 set nomodeline
 
-" repeat last substitution on current line
-nnoremap ! &
+" repeat last substitution on current line or selection
+nnoremap ! :&<CR>
+vnoremap ! :&<CR>
+
 " split line before cursor
 nnoremap <C-j> i<Enter><Esc>
 
@@ -46,8 +48,10 @@ nnoremap <CR> :nohlsearch<cr> " enter clears search highlighting
 nnoremap <expr> z/ '/\%(\%>'.(line('w0')-1).'l\%<'.(line('w$')+1).'l\)\&'
 
 " Navigation
-nmap <C-Up> 4k
-nmap <C-Down> 4j
+nnoremap <C-Up> 4k
+nnoremap <C-Down> 4j
+vnoremap <C-Up> 4k
+vnoremap <C-Down> 4j
 
 " Split directionally
 command! -complete=file -nargs=? Spl leftabove vsplit <args>
