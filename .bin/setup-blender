@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-addon_path="${HOME}/.config/blender/2.79/scripts/addons"
+addon_path="${HOME}/.config/blender/2.80/scripts/addons"
 
 echo 'Install blender plugins...'
 mkdir -p "${addon_path}"
@@ -11,10 +11,10 @@ wget -O "${addon_path}/vse-loop.py" 'https://raw.githubusercontent.com/mutantbob
 
 # Blender Power sequencer
 # https://github.com/GDquest/Blender-power-sequencer
-wget -O /tmp/power-sequencer.zip 'https://github.com/GDquest/Blender-power-sequencer/releases/download/1.2.0/power-sequencer-1.2.zip'
-unzip /tmp/power-sequencer.zip -d "${addon_path}"
-chmod -R g-rwx "${addon_path}/power-sequencer/"
-chmod -R o-rwx "${addon_path}/power-sequencer/"
+git clone https://github.com/GDquest/Blender-power-sequencer.git "${addon_path}/power-sequencer/" || git -C "${addon_path}/power-sequencer/" pull
+
+# Doakey3/Subsimport (srt subtitle importer)
+git clone https://github.com/doakey3/Subsimport.git "${addon_path}/subsimport" || git -C "${addon_path}/subsimport" pull
 
 # Real Time Animation
 # https://sites.google.com/site/pointatstuffweb/
@@ -23,7 +23,4 @@ unzip -j /tmp/realtimeanimation.zip real_time_animation_2_6/real_time_animation.
 
 # VSE Transform tool (updated, doakey3)
 # https://github.com/doakey3/VSE_Transform_Tools
-wget -O /tmp/VSE_Transform_Tools.zip 'https://github.com/doakey3/VSE_Transform_Tools/releases/download/1.2.4/VSE_Transform_Tools.zip'
-unzip /tmp/VSE_Transform_Tools.zip -d "${addon_path}"
-chmod -R g-rwx "${addon_path}/VSE_Transform_Tools/"
-chmod -R o-rwx "${addon_path}/VSE_Transform_Tools/"
+git clone https://github.com/doakey3/VSE_Transform_Tools.git "${addon_path}/VSE_Transform_Tools" || git -C "${addon_path}/VSE_Transform_Tools" pull
