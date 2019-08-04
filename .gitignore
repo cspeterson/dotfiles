@@ -38,10 +38,11 @@
 !/.bin/dotfiles-setup.py
 !/.bin/gifgen
 !/.bin/h5toflac
+!/.bin/httplen
 !/.bin/i3keys
 !/.bin/instagif
-!/.bin/lastpass-dmenu.git
 !/.bin/lastpass-dmenu
+!/.bin/lastpass-dmenu.git
 !/.bin/lockblank
 !/.bin/loopvideo
 !/.bin/setup-audacity
