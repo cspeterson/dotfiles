@@ -1,1 +1,2 @@
 alias clip='xclip -selection clipboard' # Put input to x primary clipboard
+alias clipn='perl -pe "chomp if eof" | clip' # As above but remove any trailing newlines
