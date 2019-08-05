@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# [Christopher Peterson](https://chrispeterson.info)
+
+######
+# Traps
+######
+trap early_exit SIGINT
+early_exit() {
+  echo 'handle cleanup?'
+  exit $?
+}
+
+######
+# Argpargse
+######
+
+cmd=$(basename "${0}")
+read -r -d '' helpoutput <<EOF
+  Usage:
+    ${cmd} [OPTIONS]... [ARGS]
+
+      Gets the http content-length for a url without downloading, by making a
+      HEAD request only.
+
+  Options:
+    -n, --no-newline
+        If provided, omits the newline after the ouput.
+        This is intended to make it easier to pipe the value directly into a
+        clipboard selection.
+
+  Positional arguments:
+    [URL]
+        HTTP/S URL to fetch content-length for.
+
+  Examples
+    Get content-length for a thing:
+        ${cmd} https://domain.tld/podcast.mp3
+
+    Pipe the content-length for a resource directly into a clipboard selection:
+        ${cmd} -n https://domain.tld/podcast.mp3 | xclip -selection clipboard
+EOF
+
+if [ $# -eq 0 ]; then
+  echo "${helpoutput}"
+  exit 0
+fi
+
+# Back to the beginning now and get our opts
+while getopts ':hn' opt; do
+  case "${opt}" in
+    h)
+      echo "${helpoutput}"
+      exit 0
+      ;;
+    n)
+      omit_newline=true
+      ;;
+    *)
+      echo "Invalid option ${OPTARG}" >&2
+      echo "${helpoutput}" >&2
+      exit 1
+      ;;
+  esac
+
+done
+
+shift $(( $OPTIND - 1 ))
+positional_args=( "${@}" )
+
+######
+# Main
+######
+
+url="${positional_args[0]}"
+len=$(curl -L --head "${url}" 2>/dev/null | tr -d '\r' | grep -P '^Content-Length:' | cut -d ' ' -f 2)
+
+if [ "${omit_newline}" == true ]; then
+  echo -n "${len}"
+else
+  echo "${len}"
+fi
