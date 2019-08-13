@@ -44,8 +44,11 @@ set hlsearch
 set incsearch
 nnoremap <CR> :nohlsearch<cr> " enter clears search highlighting
 " Search only within lines on screen
-" https://www.reddit.com/r/vim/comments/8mrwu3/search_in_part_of_file/?utm_source=reddit-android
+" https://www.reddit.couuuV
 nnoremap <expr> z/ '/\%(\%>'.(line('w0')-1).'l\%<'.(line('w$')+1).'l\)\&'
+" Delete all trailing whitespace
+nnoremap <Leader>ws :%s/\s\+$//e<Enter>
+vnoremap <Leader>ws :s/\s\+$//e<Enter>
 
 " Navigation
 nnoremap <C-Up> 4k
@@ -157,7 +160,6 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-
 "###############################################3
 ""## My functions or long-form commands
 "###############################################3
@@ -174,9 +176,6 @@ command! -nargs=+ Exi
   \ let &shellcmdflag='-ci' |
   \ execute ':' . "<args>" |
   \ let &shellcmdflag=shellcmdflag_orig
-
-" Delete all trailing whitespace
-command! Endwhitespace :%s/\s\+$//e
 
 "###############################################3
 "## Plugins!
