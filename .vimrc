@@ -69,9 +69,9 @@ command! -complete=file -nargs=? Spd rightbelow split <args>
 nnoremap <Leader>sh <C-w>t<C-w>K
 " Change split to vertical
 nnoremap <Leader>sv <C-w>t<C-w>H
-" Maximize current horizontal split
-nnoremap <Leader>s_ <C-w>_
-" Equalize current split
+" Maximize current horizontal or vertical split
+nnoremap <Leader>s_ <C-w>_<C-w>\|
+" Equalize splits
 nnoremap <Leader>s= <C-w>=
 
 " Statusline
