@@ -71,6 +71,7 @@ nnoremap <Leader>sh <C-w>t<C-w>K
 nnoremap <Leader>sv <C-w>t<C-w>H
 " Maximize current horizontal or vertical split
 nnoremap <Leader>s_ <C-w>_<C-w>\|
+nnoremap <Leader>s\| <C-w>_<C-w>\|
 " Equalize splits
 nnoremap <Leader>s= <C-w>=
 
