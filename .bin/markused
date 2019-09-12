@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+
+# This script takes all the files provided as args, and
+# * lets GTK know to show them as "recently used" in the GUI
+# * updates their utime so they show up on top
+#
+# It is based on this StackOverflow answer by Stephen Kitt:
+# https://unix.stackexchange.com/a/509417/103373
+
+import gi, os, sys
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gio, GLib
+
+rec_mgr = Gtk.RecentManager.get_default()
+
+for arg in sys.argv[1:]:
+    os.utime(arg, None)
+    rec_mgr.add_item(Gio.File.new_for_path(arg).get_uri())
+
+GLib.idle_add(Gtk.main_quit)
+Gtk.main()
