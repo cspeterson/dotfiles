@@ -6,6 +6,7 @@ set lazyredraw
 set number " line numbers
 set relativenumber " in combo with above, makes 'hybrid mode'
 set scrolloff=3 " keep 3 lines above or below when scrolling up and down
+set showcmd " in visual mode, shows char or line count of selected area
 set spell spelllang=en_us " spellcheck on
 set term=xterm-256color " behave sensibly
 set ttyfast
