@@ -54,6 +54,10 @@ vnoremap <Leader>wb :s/^\s*$\n\n\{1,}/\r/ge<Enter>
 nnoremap <Leader>ws :%s/\s\+$//e<Enter>
 vnoremap <Leader>ws :s/\s\+$//e<Enter>
 
+" Numbers
+nnoremap <Leader>na <C-a>
+nnoremap <Leader>nx <C-x>
+
 " Navigation
 nnoremap <C-Up> 4k
 nnoremap <C-Down> 4j
