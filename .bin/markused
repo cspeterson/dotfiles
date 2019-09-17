@@ -14,8 +14,11 @@ from gi.repository import Gtk, Gio, GLib
 rec_mgr = Gtk.RecentManager.get_default()
 
 for arg in sys.argv[1:]:
-    os.utime(arg, None)
-    rec_mgr.add_item(Gio.File.new_for_path(arg).get_uri())
+    if os.path.exists(arg):
+        os.utime(arg, None)
+        rec_mgr.add_item(Gio.File.new_for_path(arg).get_uri())
+    else:
+        sys.exit(1)
 
 GLib.idle_add(Gtk.main_quit)
 Gtk.main()
