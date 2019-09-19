@@ -127,6 +127,9 @@ if [ -f ~/.bash_git ]; then
 	source ~/.bash_git
 fi
 
+# Fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
