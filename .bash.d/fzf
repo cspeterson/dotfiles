@@ -1,0 +1,1 @@
+alias fzf='fzf -m --height 85% --reverse'

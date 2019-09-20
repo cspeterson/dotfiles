@@ -36,3 +36,7 @@ done
 
 # Make lastpass cli limit paste requests on clipboarded passwords
 export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
+
+# Fzf
+export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
+export FZF_COMPLETION_TRIGGER='~~'
