@@ -25,8 +25,8 @@ moviename=$(basename "$episode_dir" | sed 's/^[0-9 ]*//')
 mkdir -p "$episode_dir"
 
 for file in "${files[@]}"; do
-  num=$(echo "$file" | grep -Po '([0-9]|LR)(?=\.[^\.]+$)')
-  num=$(echo "$num" | sed 's/LR/0/')
+  num=$(echo "$file" | grep -Po '([0-9]|LR|L|R)(?=\.[^\.]+$)')
+  num=$(echo "$num" | sed -E 's/LR|L|R/0/')
   ffmpeg \
     -i "$file" \
     -ac 1 \
