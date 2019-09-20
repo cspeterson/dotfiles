@@ -23,7 +23,7 @@
 " They can be easily installed without entering Vim by running:
 " vim +PluginInstall +qall
 
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'AndrewRadev/linediff.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
@@ -34,6 +34,7 @@ Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
 Plugin 'godlygeek/tabular'         " Aligns text
 Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPreview and MarkdownPreviewStop
 Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'kana/vim-textobj-entire' " Requires kana/vim-textobj-user
 Plugin 'kana/vim-textobj-line' " Requires kana/vim-textobj-use
 Plugin 'kana/vim-textobj-user'
