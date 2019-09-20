@@ -119,6 +119,14 @@ let g:vim_markdown_yaml_frontmatter = 1
 :command! Mdprevs MarkdownPreviewStop
 
 "###############################################3
+"# Linediff
+"###############################################3
+nnoremap <Leader>ld :Linediff<Enter>
+vnoremap <Leader>ld :Linediff<Enter>
+nnoremap <Leader>ldr :LinediffReset<Enter>
+vnoremap <Leader>ldr :LinediffReset<Enter>
+
+"###############################################3
 "# Theming
 "###############################################3
 syntax enable
