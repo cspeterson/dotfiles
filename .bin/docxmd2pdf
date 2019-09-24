@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Script for converting Decipher Media show notes from markdown inside a docx (from Google Drive) to a pdf
+# Prereq:
+#   * pandoc working for PDFs which requires a buncha latex business
+#     - take a look at: https://pandoc.org/MANUAL.html#creating-a-pdf
+#   * xelatex packages for latex to support emoji
+
+indoc="${1}"
+outdoc="${2}"
+
+tmpfile='/tmp/delme.md'
+pandoc -t plain -o "${tmpfile}" -f docx "${indoc}" && sed -i 2d "${tmpfile}"
+pandoc --pdf-engine=xelatex -V mainfont="DejaVu Sans" -f markdown -o "${outdoc}" -t latex "${tmpfile}"

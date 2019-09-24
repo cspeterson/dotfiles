@@ -35,6 +35,7 @@
 
 !/.bin/
 !/.bin/bright
+!/.bin/docxmd2pdf
 !/.bin/dotfiles-setup.py
 !/.bin/gifgen
 !/.bin/h5toflac
