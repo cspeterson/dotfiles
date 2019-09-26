@@ -24,7 +24,6 @@
 " vim +PluginInstall +qall
 
 Plugin 'AndrewRadev/linediff.vim'
-Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
 Plugin 'christoomey/vim-sort-motion'
@@ -46,7 +45,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'rhysd/vim-textobj-anyblock'
 Plugin 'rodjek/vim-puppet'
-Plugin 'scrooloose/nerdtree'
 Plugin 'sk1418/HowMuch'
 Plugin 'tmhedberg/SimpylFold'  " smarter code folding
 Plugin 'tmhedberg/matchit'
