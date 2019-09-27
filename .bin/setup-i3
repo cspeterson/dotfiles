@@ -19,22 +19,24 @@ sudo apt-get install \
   blueman \
   dmenu \
   fonts-font-awesome \
+  gpick \
   gsimplecal \
   i3blocks \
   i3lock \
   lastpass-cli \
   libimage-exiftool-perl \
+  pastel-musl \
   pasystray \
   pavucontrol \
   pcmanfm-qt \
   peek \
+  qalc \
   rofi \
   shutter \
   terminator \
   ubuntu-restricted-extras \
   vim-gtk3 \
   xautolock \
-  qalc \
 
 
 ## Other
