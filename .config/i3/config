@@ -261,6 +261,9 @@ bindsym Shift+Mod1+v exec "$HOME/.bin/vim-anywhere/bin/run -c"
 bindsym $mod+c exec "rofi -show calc -modi 'calc:qalc +u8 -nocurrencies'"
 # i3 show key combos
 bindsym $mod+i exec "$HOME/.bin/i3keys"
+# gpick color picker into clipboard
+bindsym $mod+p exec --no-startup-id "gpick --pick --single --output --no-newline | xclip -selection clipboard"
+
 
 # Brightness controls
 # Up
