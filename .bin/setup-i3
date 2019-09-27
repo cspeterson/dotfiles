@@ -6,7 +6,7 @@ set -e
 # Repos
 ###
 sudo add-apt-repository -y ppa:peek-developers/stable
-sudo add-apt-repository -y ppa:ubuntuhandbook1/shutter
+sudo add-apt-repository -y ppa:linuxuprising/shutter
 sudo apt-get update
 
 ###
