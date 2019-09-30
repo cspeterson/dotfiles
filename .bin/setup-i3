@@ -25,7 +25,6 @@ sudo apt-get install \
   i3lock \
   lastpass-cli \
   libimage-exiftool-perl \
-  pastel \
   pasystray \
   pavucontrol \
   pcmanfm-qt \
