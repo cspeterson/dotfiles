@@ -18,7 +18,8 @@
 !/.audacity-data/
 !/.audacity-data/audacity.cfg
 !/.audacity-data/pluginsettings.cfg
-!/.audacity-data/Tags.xml
+!/.audacity-data/tags-decipherhistory.xml
+!/.audacity-data/tags-decipherscifi.xml
 !/.audacity-files/
 
 !/.bash.d/
