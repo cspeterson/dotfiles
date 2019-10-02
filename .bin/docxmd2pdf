@@ -11,4 +11,4 @@ outdoc="${2}"
 
 tmpfile='/tmp/delme.md'
 pandoc -t plain -o "${tmpfile}" -f docx "${indoc}" && sed -i 2d "${tmpfile}"
-pandoc --pdf-engine=xelatex -V mainfont="DejaVu Sans" -f markdown -o "${outdoc}" -t latex "${tmpfile}"
+pandoc --variable urlcolor=cyan --pdf-engine=xelatex -V mainfont="DejaVu Sans" -f markdown -o "${outdoc}" -t latex "${tmpfile}"
