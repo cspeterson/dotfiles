@@ -71,7 +71,7 @@ command! -complete=file -nargs=? Spu leftabove split <args>
 command! -complete=file -nargs=? Spd rightbelow split <args>
 " Split current buffer directionally by leader
 nnoremap <Leader>sl :leftabove vsplit<CR>
-nnoremap <Leader>sr :rightabove vsplit<CR>
+nnoremap <Leader>sr :rightbelow vsplit<CR>
 nnoremap <Leader>su :leftabove split<CR>
 nnoremap <Leader>sd :rightbelow split<CR>
 " Split operations
