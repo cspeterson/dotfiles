@@ -64,12 +64,12 @@ nnoremap <C-Down> 4j
 vnoremap <C-Up> 4k
 vnoremap <C-Down> 4j
 
-" Split directionally by command
+" Split directionally by command and potentially with a new file
 command! -complete=file -nargs=? Spl leftabove vsplit <args>
 command! -complete=file -nargs=? Spr rightbelow vsplit <args>
 command! -complete=file -nargs=? Spu leftabove split <args>
 command! -complete=file -nargs=? Spd rightbelow split <args>
-" Split directionally by leader
+" Split current buffer directionally by leader
 nnoremap <Leader>sl :leftabove vsplit<CR>
 nnoremap <Leader>sr :rightabove vsplit<CR>
 nnoremap <Leader>su :leftabove split<CR>
