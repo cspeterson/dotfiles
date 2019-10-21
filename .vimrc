@@ -64,11 +64,16 @@ nnoremap <C-Down> 4j
 vnoremap <C-Up> 4k
 vnoremap <C-Down> 4j
 
-" Split directionally
+" Split directionally by command
 command! -complete=file -nargs=? Spl leftabove vsplit <args>
 command! -complete=file -nargs=? Spr rightbelow vsplit <args>
 command! -complete=file -nargs=? Spu leftabove split <args>
 command! -complete=file -nargs=? Spd rightbelow split <args>
+" Split directionally by leader
+nnoremap <Leader>sl :leftabove vsplit<CR>
+nnoremap <Leader>sr :rightabove vsplit<CR>
+nnoremap <Leader>su :leftabove split<CR>
+nnoremap <Leader>sd :rightbelow split<CR>
 " Split operations
 " Change split to horizontal
 nnoremap <Leader>sh <C-w>t<C-w>K
