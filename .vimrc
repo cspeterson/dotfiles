@@ -64,6 +64,12 @@ nnoremap <C-Down> 4j
 vnoremap <C-Up> 4k
 vnoremap <C-Down> 4j
 
+" Navigate splits easier
+nnoremap <S-Left> <C-W><C-H>
+nnoremap <S-Right> <C-W><C-L>
+nnoremap <S-Up> <C-W><C-K>
+nnoremap <S-Down> <C-W><C-J>
+
 " Split directionally by command and potentially with a new file
 command! -complete=file -nargs=? Spl leftabove vsplit <args>
 command! -complete=file -nargs=? Spr rightbelow vsplit <args>
