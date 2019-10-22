@@ -90,6 +90,8 @@ nnoremap <Leader>s_ <C-w>_<C-w>\|
 nnoremap <Leader>s\| <C-w>_<C-w>\|
 " Equalize splits
 nnoremap <Leader>s= <C-w>=
+" Close all other windows in current tabview but current
+nnoremap <Leader>so <C-w>o
 
 " Statusline
 set laststatus=2 " always show status line
