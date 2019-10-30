@@ -85,9 +85,10 @@ nnoremap <Leader>sd :rightbelow split<CR>
 nnoremap <Leader>sh <C-w>t<C-w>K
 " Change split to vertical
 nnoremap <Leader>sv <C-w>t<C-w>H
-" Maximize current horizontal or vertical split
+" Maximize current split
 nnoremap <Leader>s_ <C-w>_<C-w>\|
 nnoremap <Leader>s\| <C-w>_<C-w>\|
+nnoremap <Leader>sM <C-w>_<C-w>\|
 " Minimize current split
 nnoremap <Leader>sm <C-w>1_<C-w>1\|
 " Equalize splits
