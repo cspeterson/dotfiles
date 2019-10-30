@@ -15,6 +15,7 @@ set output-meta on
 # which is annoying to those which don't need to type in 8-bit characters.
 
 # set convert-meta off
+set convert-meta on
 
 # try to enable the application keypad when it is called.  Some systems
 # need this to enable the arrow keys.
@@ -68,5 +69,9 @@ $endif
 # for freebsd console
 # "\e[H": beginning-of-line
 # "\e[F": end-of-line
+
+# Jump by whitespace delimiters with vim-ish keys
+"\M-b": shell-backward-word
+"\M-w": shell-forward-word
 
 $endif
