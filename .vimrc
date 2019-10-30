@@ -88,6 +88,8 @@ nnoremap <Leader>sv <C-w>t<C-w>H
 " Maximize current horizontal or vertical split
 nnoremap <Leader>s_ <C-w>_<C-w>\|
 nnoremap <Leader>s\| <C-w>_<C-w>\|
+" Minimize current split
+nnoremap <Leader>sm <C-w>1_<C-w>1\|
 " Equalize splits
 nnoremap <Leader>s= <C-w>=
 " Close all other windows in current tabview but current
