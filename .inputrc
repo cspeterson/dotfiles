@@ -71,7 +71,7 @@ $endif
 # "\e[F": end-of-line
 
 # Jump by whitespace delimiters with vim-ish keys
-"\M-b": shell-backward-word
+"\M-q": shell-backward-word
 "\M-w": shell-forward-word
 
 $endif
