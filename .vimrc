@@ -50,6 +50,9 @@ nnoremap <expr> z/ '/\%(\%>'.(line('w0')-1).'l\%<'.(line('w$')+1).'l\)\&'
 " Compress empty lines within entire buffer/selection if more than one
 nnoremap <Leader>wb :%s/^\s*$\n\n\{1,}/\r/ge<Enter>
 vnoremap <Leader>wb :s/^\s*$\n\n\{1,}/\r/ge<Enter>
+" Delete all empty/whitespace-only lines
+nnoremap <Leader>wda :%s/^\s*$\n//ge<Enter>
+vnoremap <Leader>wda :s/^\s*$\n//ge<Enter>
 " Delete all trailing whitespace
 nnoremap <Leader>ws :%s/\s\+$//e<Enter>
 vnoremap <Leader>ws :s/\s\+$//e<Enter>
@@ -117,7 +120,7 @@ set statusline+=%{&spell?'spell':'nospell'}
 set statusline+=\ \|
 " Character value
 set statusline+=\ A:%b\ U\+%B
-set statusline+=\ \|\ 
+set statusline+=\ \|\
 " File type as detected by vim, specifying when none
 set statusline+=[%{&filetype!=#''?&filetype:'none'}]
 " Show file encoding ig
