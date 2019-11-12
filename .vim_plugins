@@ -77,11 +77,6 @@ Plugin 'vim-syntastic/syntastic'
 
 
 "###############################################3
-"# NerdTREE file browser
-"###############################################3
-map <C-f> :NERDTreeToggle<CR>  " Ctrl+f toggles file pane
-
-"###############################################3
 "# vim-json
 "###############################################3
 " If this is left on (default), the editor only shows the quotes around keys and values
