@@ -35,6 +35,7 @@ nnoremap <C-n> :set number!<CR> :set relativenumber!<CR>
 " Registers
 " map register c to x11 'clipboard' register because "+ is more work
 map "c "+
+nnoremap <silent> "" :registers<CR>
 
 " Search
 " Use ignore case, smart case, highlight results, incrementally
