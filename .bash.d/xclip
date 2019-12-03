@@ -1,3 +1,9 @@
 alias clip='xclip -selection clipboard' # Put input to x primary clipboard
 alias clipn='perl -pe "chomp if eof" | clip' # As above but remove any trailing newlines
 alias xpaste='xclip -o -selection clipboard'
+
+# Take a formatted text file and output the rendered version directly to the clipboard
+function htmlclip {
+  filepath="${1}"
+  pandoc "${filepath}" | xclip -t text/html -selection  clipboard
+}
