@@ -1,3 +1,6 @@
+# Because wtf who capitalizes a command
+alias eyed3='eyeD3'
+
 # Id3 add image to mp3 file with eyeD3
 id3img() {
   local imgpath
