@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# [Christopher Peterson](https://chrispeterson.info)
+
+######
+# Argpargse
+######
+
+read -r -d '' helpoutput <<EOF
+  Usage:
+    ${0} [OPTIONS]... [ARGS]
+
+      Open a file in vim with the contents of a template read in at the top
+
+  Options:
+    -t, --template
+        Takes a filename to use as a template
+
+  Positional arguments:
+    [FILE]
+        Path to the working file
+
+  Examples
+    Some example case:
+        ${0} opts args
+EOF
+
+if [ $# -eq 0 ]; then
+  echo "${helpoutput}"
+  exit 0
+fi
+
+# Before running through `getopts`, translate out convenient long-versions
+# within $@ because we're using bash built-in getopts which does not support
+# long args
+for opt in "$@"; do
+  shift
+  case "${opt}" in
+    '--template')      set -- "$@" '-t' ;;
+    '--help')          set -- "$@" '-h' ;;
+    *)                 set -- "$@" "${opt}" ;;
+  esac
+done
+
+# Back to the beginning now and get our opts
+OPTIND=1
+while getopts ':ht:' opt; do
+  case "${opt}" in
+    h)
+      echo "${helpoutput}"
+      exit 0
+      ;;
+    t)
+      templatefile="${OPTARG}"
+      ;;
+    *)
+      echo "Invalid option ${OPTARG}" >&2
+      echo "${helpoutput}" >&2
+      exit 1
+      ;;
+  esac
+done
+
+shift $(( OPTIND - 1 ))
+positional_args=( "${@}" )
+
+######
+# Main
+######
+
+workfile="${positional_args[0]}"
+vim -c ":read ${templatefile}" "${workfile}"

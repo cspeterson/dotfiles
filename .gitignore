@@ -57,6 +57,7 @@
 !/.bin/setup-tmux
 !/.bin/setup-vim
 !/.bin/sizerate
+!/.bin/vimt
 
 !/.bundle/
 !/.bundle/config
