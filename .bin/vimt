@@ -63,6 +63,12 @@ done
 shift $(( OPTIND - 1 ))
 positional_args=( "${@}" )
 
+if [ "${#positional_args[@]}" -gt 1 ]; then
+  echo "Too many positional filenames!" >&2
+  echo "${helpoutput}" >&2
+  exit 1
+fi
+
 ######
 # Main
 ######
