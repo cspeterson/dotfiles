@@ -88,3 +88,24 @@ PathShort="\w"
 PathFull="\W"
 NewLine="\n"
 Jobs="\j"
+
+
+# Git PS1
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWUNTRACKEDFILES=true
+PROMPT_DIRTRIM=4
+
+# Do it
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+if [ "$color_prompt" = yes ]; then
+  GIT_PS1_SHOWCOLORHINTS=true
+else
+  GIT_PS1_SHOWCOLORHINTS=''
+fi
+unset color_prompt force_color_prompt
+
+# This sets the PS1=
+PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
