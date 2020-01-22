@@ -1,4 +1,4 @@
-alias grep='\grep  --exclude-dir=".svn"--exclude-dir=".git"'
+alias grep='\grep  --exclude-dir=".svn"--exclude-dir=".git" --color=auto'
 alias grpe='grep'
 
 alias grepi='grep -i'
@@ -8,3 +8,6 @@ alias egrpe='egrep'
 
 alias fgrep='grep -F'
 alias fgrpe='fgrep'
+
+alias pgrep='grep -P'
+alias pgrpe='grep -P'
