@@ -66,18 +66,19 @@ if [ -f ~/.bash_local ]; then
 fi
 
 # Git things
-# Source from home if possible else assume an Ubuntu system install
+# Source from home if possible else assume an Ubuntu system install. Then, finally, CentOS.
 { [ -f "${HOME}.git-completion.bash" ] && source "${HOME}.git-completion.bash"; } ||
-{ [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git; }
+  { [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git; }
 { [ -f "${HOME}/.git-prompt.sh" ] && source "${HOME}/.git-prompt.sh"; } ||
-{ [ -f /etc/bash_completion.d/git-prompt ] && source /etc/bash_completion.d/git-prompt; }
+  { [ -f /etc/bash_completion.d/git-prompt ] && source /etc/bash_completion.d/git-prompt; } ||
+    { [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && source /usr/share/git-core/contrib/completion/git-prompt.sh; }
 
 # Fzf
 # Source from home if possible else assume an Ubuntu system install
 { [ -f "${HOME}/.fzf/shell/completion.bash" ] && source "${HOME}/.fzf/shell/completion.bash"; } ||
-{ [ -f '/usr/share/bash-completion/completions/fzf' ] && source '/usr/share/bash-completion/completions/fzf' 2> /dev/null; }
+  { [ -f '/usr/share/bash-completion/completions/fzf' ] && source '/usr/share/bash-completion/completions/fzf' 2> /dev/null; }
 { [ -f "${HOME}/.fzf/shell/key-bindings.bash" ] && source "${HOME}/.fzf/shell/key-bindings.bash"; } ||
-{ [ -f '/usr/share/doc/fzf/examples/key-bindings.bash' ] && source '/usr/share/doc/fzf/examples/key-bindings.bash'; }
+  { [ -f '/usr/share/doc/fzf/examples/key-bindings.bash' ] && source '/usr/share/doc/fzf/examples/key-bindings.bash'; }
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
