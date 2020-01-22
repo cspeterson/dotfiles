@@ -128,7 +128,11 @@ if [ -f ~/.bash_git ]; then
 fi
 
 # Fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Source from home if possible else assume an Ubuntu system install
+{ [ -f "${HOME}/.fzf/shell/completion.bash" ] && source "${HOME}/.fzf/shell/completion.bash"; } ||
+[ -f '/usr/share/bash-completion/completions/fzf' ] && source '/usr/share/bash-completion/completions/fzf' 2> /dev/null
+{ [ -f "${HOME}/.fzf/shell/key-bindings.bash" ] && source "${HOME}/.fzf/shell/key-bindings.bash"; } ||
+[ -f '/usr/share/doc/fzf/examples/key-bindings.bash' ] && source '/usr/share/doc/fzf/examples/key-bindings.bash'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

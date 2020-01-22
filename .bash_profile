@@ -23,6 +23,7 @@ export GEM_HOME="$HOME/.gems"
 bindirs=(
 "$HOME/.bin"
 "$HOME/.cargo/bin"
+"$HOME/.fzf/bin"
 "$HOME/.gems/bin"
 "$HOME/.go/bin"
 "$HOME/.local/bin"
