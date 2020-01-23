@@ -82,6 +82,8 @@
 !/.config/i3blocks/config
 !/.config/i3blocks/datetimecal.sh
 
+!/.config/mimeapps.list
+
 !/.config/pcmanfm-qt/
 !/.config/pcmanfm-qt/default
 !/.config/pcmanfm-qt/default/settings.conf

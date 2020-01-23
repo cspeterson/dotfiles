@@ -1,0 +1,23 @@
+[Default Applications]
+video/mp4=vlc.desktop
+audio/flac=vlc.desktop
+text/plain=gvim.desktop
+application/msword=libreoffice-startcenter.desktop
+video/x-msvideo=vlc.desktop
+video/x-matroska=vlc.desktop
+image/x-xcf=gimp.desktop
+application/pdf=org.gnome.Evince.desktop
+x-scheme-handler/sgnl=signal-desktop.desktop
+
+[Added Associations]
+video/mp4=vlc.desktop;
+audio/flac=vlc.desktop;
+audio/mpeg=vlc.desktop;
+image/jpeg=gimp.desktop;
+text/plain=vim.desktop;
+application/octet-stream=vim.desktop;
+application/msword=libreoffice-startcenter.desktop;
+video/x-msvideo=vlc.desktop;
+video/x-matroska=vlc.desktop;
+image/x-xcf=gimp.desktop;
+application/pdf=gimp.desktop;org.gnome.Evince.desktop;
