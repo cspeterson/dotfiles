@@ -4,6 +4,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 fi
 
-alias ll='ls -alF'
+alias ll='ls -lF'
+alias lla='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
