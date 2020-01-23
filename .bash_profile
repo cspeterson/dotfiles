@@ -9,16 +9,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Fix ls to not be wrong
-export QUOTING_STYLE=literal
-
-# Go
-export GOPATH=$HOME/.go
-export GOBIN=$HOME/.go/bin
-
-# Ruby
-export GEM_HOME="$HOME/.gems"
-
 # Add other bins to path if exist
 bindirs=(
 "$HOME/.bin"
@@ -35,9 +25,22 @@ for bindir in "${bindirs[@]}"; do
   fi
 done
 
-# Make lastpass cli limit paste requests on clipboarded passwords
-export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
-
 # Fzf
 export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
 export FZF_COMPLETION_TRIGGER='~~'
+
+# Go
+export GOPATH=$HOME/.go
+export GOBIN=$HOME/.go/bin
+
+# LastPass: make lastpass cli limit paste requests on clipboarded passwords
+export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
+
+# Ls: fix ls to not be wrong
+export QUOTING_STYLE=literal
+
+# Ruby
+export GEM_HOME="$HOME/.gems"
+
+# Vim
+export EDITOR=vim

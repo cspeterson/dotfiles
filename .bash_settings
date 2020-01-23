@@ -5,16 +5,8 @@ export HISTSIZE=''
 export HISTFILESIZE=''
 # Ignore both duplicate entries and entries preceeded by empty space
 export HISTCONTROL=ignoreboth
-# Vim ftw
-export EDITOR=vim
 # Specify 256 color TERM
 export TERM=xterm-256color
-# Add home bin to PATH
-if [ -d "$HOME/.bin" ] ; then
-  export PATH=$PATH:$HOME/.bin
-fi
 
 # shopts
 shopt -s globstar
-
-
