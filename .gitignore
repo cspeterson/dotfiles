@@ -117,6 +117,11 @@
 
 !/.ldaprc
 
+!/.local/
+!/.local/share/
+!/.local/share/applications/
+!/.local/share/applications/vim.desktop
+
 !/.profile
 
 !/.README.md
