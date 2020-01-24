@@ -1,3 +1,8 @@
+# Quickly fetch the last used shell command in useable form
+alias hist1='fc -ln -1 | sed "s/^[[:space:]]*//g"'
+# Or go straight to clipboard
+alias hist1c='fc -ln -1 | sed "s/^[[:space:]]*//g" | clipn'
+
 hr() {
   # hr print horizontal rule, default with '-' but char can be provided
   # based on: https://www.reddit.com/r/commandline/comments/7zvmze/show_hr_a_cli_program_that_outputs_a_horizontal/durci2h/
