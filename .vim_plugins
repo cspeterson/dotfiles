@@ -33,6 +33,8 @@ Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
 Plugin 'godlygeek/tabular'         " Aligns text
 Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPreview and MarkdownPreviewStop
 Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'kana/vim-textobj-entire' " Requires kana/vim-textobj-user
 Plugin 'kana/vim-textobj-line' " Requires kana/vim-textobj-use
 Plugin 'kana/vim-textobj-user'
@@ -146,3 +148,10 @@ let g:syntastic_python_checkers = ['python3']
 "###############################################3
 
 runtime ftplugin/man.vim
+
+"###############################################3
+"# Fzf
+"###############################################3
+
+imap <c-x><c-f> <plug>(fzf-complete-file)
+imap <c-x><c-l> <plug>(fzf-complete-line)
