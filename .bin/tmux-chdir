@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+# [Christopher Peterson](https://chrispeterson.info)
+
+# Details of this script's function are in the help output
+
+# Establish random session name
+chars='123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+tmp_session=$(
+  for i in {1..8}; do
+    echo -n "${chars:RANDOM%${#chars}:1}"
+  done
+)
+
+######
+# Args
+######
+read -r -d '' helpoutput <<EOF
+  Usage:
+    ${0} [ARGS]
+
+      Changes the default path for new windows from *within* a Tmux session.
+      (Works with versions both before 1.9 and after)
+
+  Positional arguments:
+    [ARGS]
+        A new default path in which Tmux should open new windows.
+
+  Example
+      ${0} /new/default/path
+
+  Dependencies:
+    * Bash
+    * Tmux
+    * bc
+    * grep
+EOF
+
+fail_help() {
+  echo "${helpoutput}"
+  exit 1
+}
+
+if [ $# -ne 1 ]; then
+  fail_help
+fi
+
+######
+# Deps
+######
+command -v bash >/dev/null || fail_help
+command -v bc >/dev/null || fail_help
+command -v grep >/dev/null || fail_help
+command -v tmux >/dev/null || fail_help
+command -v wc >/dev/null || fail_help
+
+######
+# Traps
+######
+trap early_exit SIGINT
+early_exit() {
+  tmux kill-session -t "${tmp_session}"
+  exit $?
+}
+
+######
+# Main
+######
+newdir="${1}"
+if ! [ -d "${newdir}" ]; then
+  exit 1
+fi
+
+session_client_count () {
+  sess="${1}"
+  count=$(tmux list-clients -t "${sess}" | wc -l)
+  echo "${count}"
+}
+
+if [ -z "${TMUX}" ]; then
+  exit 1
+fi
+vers=$(tmux -V | grep -Po '[0-9\.]*')
+
+curr_session=$(tmux display -p '#S')
+
+# This is dumb but stay with me - Tmux doesn't use semver
+if (( $(echo "${vers} < 1.9" | bc -l) )); then
+  tmux set-option -t "${curr_session}" -s default-path "${newdir}"
+else
+  # In order to change the default working directory in Tmux >=1.9 from
+  # *within* the same session, we'll need to jump through some hoops.
+  # So! Make a new session and inside that session, attach the *first* session
+  # in a manner that alters the default path. Then, kill the second session and
+  # you're back where you started, but with a new working dir 👍
+  tmux new-session -d -t "${tmp_session}"
+  tmux send-keys -t "${tmp_session}" 'unset TMUX' Enter
+  client_count=$(session_client_count "${curr_session}")
+  tmux send-keys -t "${tmp_session}" "tmux attach-session -t \"${curr_session}\" -c \"${newdir}\"" Enter
+  start_count="${client_count}"
+  while (( client_count <= start_count )); do
+    client_count=$(session_client_count "${curr_session}")
+  done
+  tmux kill-session -t "${tmp_session}"
+fi
