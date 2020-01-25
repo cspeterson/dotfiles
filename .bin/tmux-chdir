@@ -85,7 +85,7 @@ curr_session=$(tmux display -p '#S')
 
 # This is dumb but stay with me - Tmux doesn't use semver
 if (( $(echo "${vers} < 1.9" | bc -l) )); then
-  tmux set-option -t "${curr_session}" -s default-path "${newdir}"
+  tmux set-option default-path "${newdir}"
 else
   # In order to change the default working directory in Tmux >=1.9 from
   # *within* the same session, we'll need to jump through some hoops.
