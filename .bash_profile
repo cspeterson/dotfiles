@@ -28,6 +28,7 @@ done
 # Fzf
 export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
 export FZF_COMPLETION_TRIGGER='~~'
+export FZF_DEFAULT_COMMAND='find -L'
 
 # Go
 export GOPATH=$HOME/.go
