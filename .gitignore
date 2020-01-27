@@ -101,6 +101,9 @@
 !/.config/terminator/
 !/.config/terminator/config
 
+!.config/udiskie/
+!.config/udiskie/config.yml
+
 !/.gemrc
 
 !/.gimp-2.8/

@@ -214,6 +214,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pidgin
 # Sound
 exec --no-startup-id pasystray
+# Udiskie
+exec --no-startup-id udiskie --no-automount --tray
 # X Screen lock for inactivity
 exec --no-startup-id xautolock -time 10 -locker $lock_cmd
 

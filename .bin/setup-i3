@@ -33,6 +33,7 @@ sudo apt-get install \
   scrot \
   terminator \
   ubuntu-restricted-extras \
+  udiskie \
   vim-gtk3 \
   xautolock \
 
