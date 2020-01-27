@@ -26,9 +26,10 @@ for bindir in "${bindirs[@]}"; do
 done
 
 # Fzf
-export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
 export FZF_COMPLETION_TRIGGER='~~'
-export FZF_DEFAULT_COMMAND='find -L'
+export FZF_CTRL_T_COMMAND='find'
+export FZF_DEFAULT_COMMAND='find'
+export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
 
 # Go
 export GOPATH=$HOME/.go
