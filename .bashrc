@@ -80,11 +80,8 @@ fi
 { [ -f "${HOME}/.fzf/shell/key-bindings.bash" ] && source "${HOME}/.fzf/shell/key-bindings.bash"; } ||
   { [ -f '/usr/share/doc/fzf/examples/key-bindings.bash' ] && source '/usr/share/doc/fzf/examples/key-bindings.bash'; }
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+# Collections
 if [ -d "${HOME}/.bash.d" ]; then
   for f in "${HOME}/.bash.d"/*; do
     source "${f}"

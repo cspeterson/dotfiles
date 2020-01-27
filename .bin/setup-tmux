@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-echo "Install tmux"...
+echo 'Install tmux...'
 sudo apt-get install tmux
 
-echo "Create tmux config dir and set up plugin manager..."
-mkdir -p "${HOME}/.tmux/plugins"
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm || git -C $HOME/.tmux/plugins/tpm pull
+echo 'Install Bash autcomplete for Tmux...'
+mkdir -p "${HOME}/.bash_completion.d/"
+wget -O "${HOME}/.bash_completion.d/tmux" 'https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux'
 
-echo "Install plugins..."
-$HOME/.tmux/plugins/tpm/scripts/install_plugins.sh
+# echo 'Create tmux config dir and set up plugin manager...'
+# mkdir -p "${HOME}/.tmux/plugins"
+# git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm || git -C $HOME/.tmux/plugins/tpm pull
+
+# echo 'Install plugins...'
+# $HOME/.tmux/plugins/tpm/scripts/install_plugins.sh

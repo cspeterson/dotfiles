@@ -33,6 +33,8 @@
 !/.bash_ps1
 !/.bash_settings
 !/.bashrc
+# Exclude for license
+/.bash_completion.d/tmux
 
 !/.bin/
 !/.bin/bright
