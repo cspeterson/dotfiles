@@ -95,6 +95,8 @@
 !/.config/pulse/default.pa
 
 !/.config/ranger/
+!/.config/ranger/plugins/
+!/.config/ranger/plugins/fzf.py
 !/.config/ranger/rc.conf
 !/.config/ranger/rifle.conf
 
