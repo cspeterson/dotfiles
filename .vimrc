@@ -48,12 +48,14 @@ nnoremap <CR> :nohlsearch<cr> " enter clears search highlighting
 " Search only within lines on screen
 " https://www.reddit.couuuV
 nnoremap <expr> z/ '/\%(\%>'.(line('w0')-1).'l\%<'.(line('w$')+1).'l\)\&'
+
+" Whitespace
 " Compress empty lines within entire buffer/selection if more than one
-nnoremap <Leader>wb :%s/^\s*$\n\n\{1,}/\r/ge<Enter>
-vnoremap <Leader>wb :s/^\s*$\n\n\{1,}/\r/ge<Enter>
+nnoremap <Leader>wc :%s/^\s*$\n\n\{1,}/\r/ge<Enter>
+vnoremap <Leader>wc :s/^\s*$\n\n\{1,}/\r/ge<Enter>
 " Delete all empty/whitespace-only lines
-nnoremap <Leader>wda :%s/^\s*$\n//ge<Enter>
-vnoremap <Leader>wda :s/^\s*$\n//ge<Enter>
+nnoremap <Leader>wd :%s/^\s*$\n//ge<Enter>
+vnoremap <Leader>wd :s/^\s*$\n//ge<Enter>
 " Delete all trailing whitespace
 nnoremap <Leader>ws :%s/\s\+$//e<Enter>
 vnoremap <Leader>ws :s/\s\+$//e<Enter>
