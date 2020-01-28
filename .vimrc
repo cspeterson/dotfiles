@@ -191,6 +191,13 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
+" Pipe out buffer/selection into pandoc for rendering to html in clipboard
+" This could be made more generalized and use `filetype` to set input format
+" automatically if I find myself using this for other things too
+" Markdown
+nnoremap <Leader>cm :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
+vnoremap <Leader>cm :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
+
 "###############################################3
 ""## My functions or long-form commands
 "###############################################3
