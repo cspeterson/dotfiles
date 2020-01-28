@@ -5,6 +5,7 @@ sudo apt-get install \
   curl \
   gnuplot-x11 \
   htop \
+  jmtpfs \
   jq \
   libgimp2.0-dev \
   links \
