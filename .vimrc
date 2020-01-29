@@ -182,6 +182,8 @@ command! WQ wq
 command! Wqa wqa
 command! WQa wqa
 command! WQA wqa
+" Sub
+cmap S/ s/
 
 " Saving if forgot sudo
 cmap w!! w !sudo tee > /dev/null %
