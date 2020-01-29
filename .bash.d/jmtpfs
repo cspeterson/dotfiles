@@ -1,2 +1,2 @@
-mtp='jmtpfs'
-mtpu='fusermount -u'
+alias mtp='jmtpfs'
+alias mtpu='fusermount -u'
