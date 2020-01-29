@@ -1,0 +1,10 @@
+#/usr/bin/env bash
+
+# Open with xdg and manually mark the item as recently used w/ gtk
+# Since some things are associated by xdg with e.g. gvim, which makes no such
+# efforts
+
+file="${1}"
+
+$HOME/.bin/markused "${file}"
+$(xdg-open "${file}" &)

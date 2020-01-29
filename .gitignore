@@ -61,6 +61,7 @@
 !/.bin/sizerate
 !/.bin/tmux-chdir
 !/.bin/vimt
+!/.bin/xo
 
 !/.bundle/
 !/.bundle/config
