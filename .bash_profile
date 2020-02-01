@@ -27,8 +27,9 @@ done
 
 # Fzf
 export FZF_COMPLETION_TRIGGER='~~'
-export FZF_CTRL_T_COMMAND='find'
-export FZF_DEFAULT_COMMAND='find'
+FZF_COMMAND='if ([ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1); then git ls-files; else find 2>/dev/null; fi'
+export FZF_CTRL_T_COMMAND="${FZF_COMMAND}"
+export FZF_DEFAULT_COMMAND="${FZF_COMMAND}"
 export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
 
 # Go
