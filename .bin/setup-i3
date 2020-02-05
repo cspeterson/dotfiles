@@ -45,7 +45,7 @@ echo 'Install pastel from github releases'
 curl -s https://api.github.com/repos/sharkdp/pastel/releases/latest  | jq --raw-output '.["assets"][]  | select (.content_type | contains("application/x-debian-package")) | .browser_download_url' | grep -P 'pastel_[0-9\.-]*_amd64.deb' | xargs wget -O /tmp/pastel.deb && sudo apt-get install /tmp/pastel.deb
 
 echo 'Install tomaatti pomodoro timer for i3...'
-pip3 install tomaatti
+pip3 install --user --upgrade tomaatti
 
 # Vim-
 if [ ! -d "${HOME}/.bin/vim-anywhere" ]; then
