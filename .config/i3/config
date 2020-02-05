@@ -236,7 +236,7 @@ for_window [title="(?i)tomaatti" class="(?i)tk"] floating enable move position c
 #
 # Application key combos
 #
-# Emoti/emoticon selection
+# Emoji/emoticon selection
 bindsym $mod+slash exec "$HOME/.bin/splatmoji/splatmoji type"
 # Lastpass cli popups
 ## Password to clipboard
@@ -265,7 +265,8 @@ bindsym $mod+c exec "rofi -show calc -modi 'calc:qalc +u8 -nocurrencies'"
 bindsym $mod+i exec "$HOME/.bin/i3keys"
 # gpick color picker into clipboard
 bindsym $mod+p exec --no-startup-id "gpick --pick --single --output --no-newline | xclip -selection clipboard"
-
+# find cursor pls
+bindsym Mod1+grave exec --no-startup-id "${HOME}/.bin/find-cursor -f -o"
 
 # Brightness controls
 # Up

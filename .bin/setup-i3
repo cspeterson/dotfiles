@@ -60,13 +60,15 @@ echo '::::Install/update splatmoji...'
 if [ ! -d "${HOME}/.bin/splatmoji" ]; then
   git clone https://github.com/cspeterson/splatmoji.git "${HOME}/.bin/splatmoji"
 else
-  git -C "${HOME}/.bin/splatmoji" pull
+  git -C "${HOME}/.bin/splatmoji" pull || echo
 fi
 
 if [ ! -f "${HOME}/.bin/find-cursor" ]; then
-  git clone https://github.com/arp242/find-cursor.git /tmp/find-cursor
-  $(cd /tmp/find-cursor && make)
+  rm -rf /tmp/find-cursor
+  git clone https://github.com/arp242/find-cursor.git /tmp/find-cursor/
+  $(cd /tmp/find-cursor && make) || echo
   cp /tmp/find-cursor/find-cursor "${HOME}/.bin/find-cursor"
+  rm -rf /tmp/find-cursor/
 fi
 
 ###
