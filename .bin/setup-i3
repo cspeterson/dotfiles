@@ -63,6 +63,12 @@ else
   git -C "${HOME}/.bin/splatmoji" pull
 fi
 
+if [ ! -f "${HOME}/.bin/find-cursor" ]; then
+  git clone https://github.com/arp242/find-cursor.git /tmp/find-cursor
+  $(cd /tmp/find-cursor && make)
+  cp /tmp/find-cursor/find-cursor "${HOME}/.bin/find-cursor"
+fi
+
 ###
 # Config
 ###
