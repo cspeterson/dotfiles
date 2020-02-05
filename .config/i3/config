@@ -246,13 +246,13 @@ bindsym $mod+Control+l exec "$HOME/.bin/lastpass-dmenu type"
 # PCManfm-qt GUI file browser
 bindsym $mod+z exec pcmanfm-qt
 # Screenshot: shutter screenshot full desktop
-bindsym Print exec "type='full'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; scrot ${filename} && $HOME/.bin/markused {$filename}; notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp}"
+bindsym Print exec "type='full'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; scrot ${filename}; $HOME/.bin/markused ${filename} && notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp}"
 # Screenshot: shutter screenshot focused window
-bindsym Shift+Print exec "type='window'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; scrot -u ${filename} && $HOME/.bin/markused {$filename}; notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp}"
+bindsym Shift+Print exec "type='window'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; scrot -u ${filename}; $HOME/.bin/markused ${filename} && notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp}"
 # Screenshot: shutter screenshot with selection
-bindsym --release $mod+Shift+Print exec "type='selection'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; scrot --select --freeze --line style=dash,width=2 ${filename} && $HOME/.bin/markused {$filename}; notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp};"
+bindsym --release $mod+Shift+Print exec "type='selection'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; scrot --select --freeze --line style=dash,width=2 ${filename} && $HOME/.bin/markused ${filename}; notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp};"
 # Screenshot: full X sreeen dump with xwd, save with imagemagick
-bindsym --release $mod+Control+Shift+Print exec "type='fullx'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; xwd -silent -root | convert xwd:- ${filename} && $HOME/.bin/markused ${filename}; notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp}"
+bindsym --release $mod+Control+Shift+Print exec "type='fullx'; timestamp=$(date '+%Y-%m-%d--%H.%M.%S'); filename=~/downloads/screenshot-${timestamp}.${type}.png; xwd -silent -root | convert xwd:- ${filename}; $HOME/.bin/markused ${filename} && notify-send -t 2000 Screenshot\ type\ ${type}:\ ${timestamp}"
 # Terminal
 bindsym $mod+t exec i3-sensible-terminal
 # Vim-anywhere
