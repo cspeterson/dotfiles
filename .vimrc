@@ -193,6 +193,17 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
+" Incrementing/decrementing
+nunmap <C-a>
+nnoremap + <C-a>
+vnoremap + <C-a>
+nnoremap = <C-a>
+vnoremap = <C-a>
+nnoremap - <C-x>
+vnoremap - <C-x>
+nnoremap _ <C-x>
+vnoremap _ <C-x>
+
 " Pipe out buffer/selection into pandoc for rendering to html in clipboard
 " This could be made more generalized and use `filetype` to set input format
 " automatically if I find myself using this for other things too
