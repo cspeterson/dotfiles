@@ -81,11 +81,21 @@ command! -complete=file -nargs=? Spl leftabove vsplit <args>
 command! -complete=file -nargs=? Spr rightbelow vsplit <args>
 command! -complete=file -nargs=? Spu leftabove split <args>
 command! -complete=file -nargs=? Spd rightbelow split <args>
+" Split directionally by command and potentially with a new file BUT with fzf
+command! Sprl call fzf#run({ 'down': '40%',   'sink': 'leftabove vsplit' })
+command! Sprf call fzf#run({ 'down': '40%',   'sink': 'rightbelow vsplit' })
+command! Spuf call fzf#run({ 'down': '40%',   'sink': 'leftabove split' })
+command! Spdf call fzf#run({ 'down': '40%',   'sink': 'rightbelow split' })
 " Split current buffer directionally by leader
 nnoremap <Leader>sl :leftabove vsplit<CR>
 nnoremap <Leader>sr :rightbelow vsplit<CR>
 nnoremap <Leader>su :leftabove split<CR>
 nnoremap <Leader>sd :rightbelow split<CR>
+" Split current buffer directionally by leader BUT with fzf
+nnoremap <Leader>slf :call fzf#run({ 'down': '40%', 'sink': 'leftabove vsplit' })<CR>
+nnoremap <Leader>srf :call fzf#run({ 'down': '40%', 'sink': 'rightbelow vsplit' })<CR>
+nnoremap <Leader>suf :call fzf#run({ 'down': '40%', 'sink': 'leftabove split' })<CR>
+nnoremap <Leader>sdf :call fzf#run({ 'down': '40%', 'sink': 'rightbelow split' })<CR>
 " Split operations
 " Change split to horizontal
 nnoremap <Leader>sh <C-w>t<C-w>K
