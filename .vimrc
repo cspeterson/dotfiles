@@ -204,7 +204,7 @@ set foldlevel=99
 nnoremap <space> za
 
 " Incrementing/decrementing
-nunmap <C-a>
+nnoremap <C-a> <Nop>
 nnoremap + <C-a>
 vnoremap + <C-a>
 nnoremap = <C-a>
