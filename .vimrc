@@ -215,7 +215,7 @@ nnoremap _ <C-x>
 vnoremap _ <C-x>
 
 " Redraw
-nnoremap <C-r> :redraw!<CR>
+nnoremap <Leader>r :redraw!<CR>
 
 " Pipe out buffer/selection into pandoc for rendering to html in clipboard
 " This could be made more generalized and use `filetype` to set input format
