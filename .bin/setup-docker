@@ -2,6 +2,6 @@
 
 echo 'Download Docker bash completions...'
 
-wget -O "${HOME}/.bash_completion/docker" 'https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker'
+wget -O "${HOME}/.bash_completion.d/docker" 'https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker'
 
-wget -O "${HOME}/.bash_completion/docker-completion" 'https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose' 
+wget -O "${HOME}/.bash_completion.d/docker-completion" 'https://raw.githubusercontent.com/docker/compose/master/contrib/completion/bash/docker-compose' 
