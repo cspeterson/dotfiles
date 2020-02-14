@@ -82,7 +82,7 @@ command! -complete=file -nargs=? Spr rightbelow vsplit <args>
 command! -complete=file -nargs=? Spu leftabove split <args>
 command! -complete=file -nargs=? Spd rightbelow split <args>
 " Split directionally by command and potentially with a new file BUT with fzf
-command! Sprl call fzf#run({ 'down': '40%',   'sink': 'leftabove vsplit' })
+command! Splf call fzf#run({ 'down': '40%',   'sink': 'leftabove vsplit' })
 command! Sprf call fzf#run({ 'down': '40%',   'sink': 'rightbelow vsplit' })
 command! Spuf call fzf#run({ 'down': '40%',   'sink': 'leftabove split' })
 command! Spdf call fzf#run({ 'down': '40%',   'sink': 'rightbelow split' })
