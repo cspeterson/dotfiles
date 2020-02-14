@@ -53,6 +53,7 @@
 !/.bin/setup-audacity
 !/.bin/setup-blender
 !/.bin/setup-dev
+!/.bin/setup-docker
 !/.bin/setup-gimp
 !/.bin/setup-i3
 !/.bin/setup-packages
