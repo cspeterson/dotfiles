@@ -5,9 +5,10 @@
 	default = current
 [alias]
 	alog = !git log --graph --abbrev-commit
-	la = !git config --list | grep -F alias
-	stat=!git status
 	# Show branches sorted by last commit and include the date in the output
 	branchl=!git for-each-ref --sort=authordate --format "'%(authordate:iso) * %1B[0;32m%(refname:short)%1B[m %(subject)' --sort=-committerdate refs/heads"
+	diffs=!git diff --staged
+	la = !git config --list | grep -F alias
+	stat=!git status
 [color]
 	ui = auto
