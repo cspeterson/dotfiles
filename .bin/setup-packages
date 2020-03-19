@@ -12,6 +12,7 @@ sudo apt-get install \
   moreutils \
   mosh \
   pandoc \
+  python3-pip \
   ranger \
   screen \
   texlive-fonts-recommended \
