@@ -33,7 +33,10 @@
 !/.bash_ps1
 !/.bash_settings
 !/.bashrc
+
 # Exclude for license
+/.bash_completion.d/docker
+/.bash_completion.d/docker-completion
 /.bash_completion.d/tmux
 
 !/.bin/
