@@ -35,6 +35,7 @@ sudo apt-get install \
   ubuntu-restricted-extras \
   udiskie \
   vim-gtk3 \
+  vlc \
   xautolock \
 
 
