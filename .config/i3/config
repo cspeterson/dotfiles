@@ -211,7 +211,7 @@ exec --no-startup-id ibus-daemon -drx
 # Network manager
 exec --no-startup-id nm-applet
 # Pidgin
-exec --no-startup-id pidgin
+exec --no-startup-id gajim
 # Sound
 exec --no-startup-id pasystray
 # Udiskie

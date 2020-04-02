@@ -18,6 +18,7 @@ sudo apt-get install \
   blueman \
   dmenu \
   fonts-font-awesome \
+  gajim \
   gpick \
   gsimplecal \
   i3blocks \
