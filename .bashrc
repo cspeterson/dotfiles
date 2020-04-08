@@ -55,7 +55,15 @@ if [ -f ~/.bash_settings ]; then
 	source ~/.bash_settings
 fi
 
-# Prompty things
+# Git things
+# Source from home if possible else assume an Ubuntu system install. Then, finally, CentOS.
+{ [ -f "${HOME}.git-completion.bash" ] && source "${HOME}.git-completion.bash"; } ||
+  { [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git; }
+{ [ -f "${HOME}/.git-prompt.sh" ] && source "${HOME}/.git-prompt.sh"; } ||
+  { [ -f /etc/bash_completion.d/git-prompt ] && source /etc/bash_completion.d/git-prompt; } ||
+    { [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && source /usr/share/git-core/contrib/completion/git-prompt.sh; }
+
+# Prompty things (should come after git as we are using git prompt)
 if [ -f ~/.bash_ps1 ]; then
 	source ~/.bash_ps1
 fi
@@ -64,14 +72,6 @@ fi
 if [ -f ~/.bash_local ]; then
 	source ~/.bash_local
 fi
-
-# Git things
-# Source from home if possible else assume an Ubuntu system install. Then, finally, CentOS.
-{ [ -f "${HOME}.git-completion.bash" ] && source "${HOME}.git-completion.bash"; } ||
-  { [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git; }
-{ [ -f "${HOME}/.git-prompt.sh" ] && source "${HOME}/.git-prompt.sh"; } ||
-  { [ -f /etc/bash_completion.d/git-prompt ] && source /etc/bash_completion.d/git-prompt; } ||
-    { [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && source /usr/share/git-core/contrib/completion/git-prompt.sh; }
 
 # Fzf
 # Source from home if possible else assume an Ubuntu system install
