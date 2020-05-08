@@ -282,12 +282,12 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 10%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 # Volume incr/decr will: increase volume, play a noise to indicate change, notify the current volume in popup, and then make sure the bar updates the value
 # Increase
-bindsym $mod+plus exec amixer -D pulse sset Master 10%+; exec $dripsound; exec notify-send -t 1 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
-bindsym $mod+KP_Add exec amixer -D pulse sset Master 10%+; exec $dripsound; exec notify-send -t 1 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
+bindsym $mod+plus exec amixer -D pulse sset Master 10%+; exec $dripsound; exec notify-send -t 100 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
+bindsym $mod+KP_Add exec amixer -D pulse sset Master 10%+; exec $dripsound; exec notify-send -t 100 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
 # Decrease
-bindsym $mod+minus exec amixer -D pulse sset Master 10%-; exec $dripsound; exec notify-send -t 1 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
-bindsym $mod+KP_Subtract exec amixer -D pulse sset Master 10%-; exec $dripsound; exec notify-send -t 1 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
-# Sorta not-really mute (volume to zero)
+bindsym $mod+minus exec amixer -D pulse sset Master 10%-; exec $dripsound; exec notify-send -t 100 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
+bindsym $mod+KP_Subtract exec amixer -D pulse sset Master 10%-; exec $dripsound; exec notify-send -t 100 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
+# Mute (volume to zero)
 bindsym $mod+m exec amixer -D pulse sset Master 0%; exec notify-send -t 1 --icon=gtk-info Vol $mastervol; exec $update_i3blocks
 
 
