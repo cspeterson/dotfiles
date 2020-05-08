@@ -1,0 +1,17 @@
+function_a() {
+  # Description
+  #
+  # $1: what
+  # $2: are
+  # $3: these
+  #
+  # returns: bla bla on STDOUT
+}
+
+function_b() {
+  # Description
+  #
+  # $1: nameref of array etc on which to operate
+  #
+  # returns: values in $1 by nameref
+}

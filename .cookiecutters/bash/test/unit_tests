@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+# shellcheck disable=SC1091
+source ./lib/functions
+# shellcheck disable=SC1091
+if [ -s ./lib/test_helpers ]; then source ./lib/test_helpers; fi
+
+# PROGDIR that the main script and functions expect is the root of the source
+# tree. One up relative to the test dir..
+progdir="$( cd "$( dirname "$( readlink -f "${BASH_SOURCE[0]}" )" )" && pwd )"
+readonly PROGDIR="${progdir%/*}"
+unset progdir
+
+test_function_a() {
+  # assertEquals thing1 thing2
+  true
+}
+
+# shellcheck disable=SC1090
+# shellcheck disable=SC1091
+if [ -s "${SHUNIT2_PATH}" ]; then
+  source "${SHUNIT2_PATH}"
+elif [ -s "$(type -p shunit2)" ]; then
+  # On $PATH
+  source "$(type -p shunit2)"
+elif [ -s '/usr/share/shunit2/shunit2' ]; then
+  # EL puts it here
+  source '/usr/share/shunit2/shunit2'
+elif [ -s ./shunit2 ]; then
+  source ./shunit2
+fi

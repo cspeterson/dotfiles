@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 # [Christopher Peterson](https://chrispeterson.info)
+set -e
+set -o pipefail
+
+readonly PROGNAME="$(basename "${0}")"
+readonly PROGDIR="$( cd "$( dirname "$( readlink -f "${BASH_SOURCE[0]}" )" )" && pwd )"
+
+# shellcheck disable=SC1090
+# shellcheck disable=SC1091
+if [ -s "${PROGDIR}/lib/functions" ]; then
+  source "${PROGDIR}/lib/functions"
+fi
 
 ######
 # Traps
@@ -14,79 +25,93 @@ early_exit() {
 # Argpargse
 ######
 
-read -r -d '' helpoutput <<EOF
-  Usage:
-    ${0} [OPTIONS]... [ARGS]
+print_help() {
+  echo "
+    Usage:
+      ${0} [OPTIONS]... [ARGS]
 
-      Description of script function.
+        Description of script function.
 
-  Options:
-    -s, --single-option
-        Takes no sub argument.
-        Default: value
+    Options:
+      -s, --single-option
+          Takes no sub argument.
+          Default: value
 
-    -l, --list-option
-        Takes a comma-separated list of sub-arguments.
-        Default: a,b,c
+      -l, --list-option
+          Takes a comma-separated list of sub-arguments.
+          Default: a,b,c
 
-  Positional arguments:
-    [ARGS]
-        Description of arg.
+    Positional arguments:
+      [ARGS]
+          Description of arg.
 
-  Examples
-    Some example case:
-        ${0} opts args
+    Examples
+      Some example case:
+          ${0} opts args
 
 
-  Other info
-    Other details
-EOF
+    Other info
+      Other details
+  "
+}
 
 if [ $# -eq 0 ]; then
-  echo "${helpoutput}"
+  print_help
   exit 0
 fi
 
-# Before running through `getopts`, translate out convenient long-versions
-# within $@ because we're using bash built-in getopts which does not support
-# long args
-for opt in "$@"; do
-  shift
-  case "${opt}" in
-    '--single-option') set -- "$@" '-s' ;;
-    '--list-option')   set -- "$@" '-l' ;;
-    '--help')          set -- "$@" '-h' ;;
-    *)                 set -- "$@" "${opt}" ;;
-  esac
-done
+parse_args() {
+  # Before running through `getopts`, translate out convenient long-versions
+  # within $@ because we're using bash built-in getopts which does not support
+  # long args
+  for opt in "$@"; do
+    shift
+    case "${opt}" in
+      '--single-option') set -- "$@" '-s' ;;
+      '--list-option')   set -- "$@" '-l' ;;
+      '--help')          set -- "$@" '-h' ;;
+      *)                 set -- "$@" "${opt}" ;;
+    esac
+  done
 
-# Back to the beginning now and get our opts
-OPTIND=1
-while getopts ':hl:s' opt; do
-  case "${opt}" in
-    h)
-      echo "${helpoutput}"
+  # Back to the beginning now and get our opts
+  OPTIND=1
+  while getopts ':hl:s' opt; do
+    case "${opt}" in
+      h)
+        print_help
+        exit 0
+        ;;
+      l)
+        # shellcheck disable=SC2162
+        IFS=',' read -a some_array <<< "${OPTARG}"
+        ;;
+      s)
+        echo 'do something'
+        ;;
+      *)
+        echo "Invalid option ${OPTARG}" >&2
+        print_help
+        return 255
+        ;;
+    esac
+  done
+
+  shift $(( OPTIND - 1 ))
+  positional_args=( "${@}" )
+}
+
+main() {
+  parse_args "#@"
+  parse_args "$@" || \
+    if [[ $? -eq 255 ]]; then
+      # Printing help returns 255 as a signal to exit here with success
       exit 0
-      ;;
-    l)
-      IFS=',' read -a some_array <<< "${OPTARG}"
-      ;;
-    s)
-      echo 'do something'
-      ;;
-    *)
-      echo "Invalid option ${OPTARG}" >&2
-      echo "${helpoutput}" >&2
+    else
       exit 1
-      ;;
-  esac
-done
+    fi
 
-shift $(( $OPTIND - 1 ))
-positional_args=( "${@}" )
+  echo "do stuff"
+}
 
-######
-# Main
-######
-
-echo 'do stuff here'
+main "$@"
