@@ -77,6 +77,9 @@
 !/.cookiecutters/**
 
 !/.config/
+!/.config/kitty/
+!/.config/kitty/kitty.conf
+!/.config/kitty/theme.conf
 !/.config/GIMP/
 !/.config/GIMP/2.10
 !/.config/GIMP/2.10/menurc
