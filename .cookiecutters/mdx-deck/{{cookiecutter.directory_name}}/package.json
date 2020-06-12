@@ -1,5 +1,5 @@
 {
-  "name": "slides-documentation",
+  "name": "slides",
   "version": "0.0.1",
   "dependencies": {
     "@mdx-deck/components": "2.5.0",
@@ -7,6 +7,8 @@
     "mdx-deck": "4.1.1"
   },
   "scripts": {
+    "build": "mdx-deck build deck.mdx",
+    "pdf": "mdx-deck pdf deck.mdx",
     "start": "mdx-deck deck.mdx"
   }
 }
