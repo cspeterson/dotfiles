@@ -31,9 +31,12 @@ To serve an image from within the repo...
 
 ```markdown
 import img_name from './assets/img_name.png';
-<img src={img_name} />
 
+<img src={img_name} />
 ```
+
+*note*: the blank line after the import is necessary
+
 ## Presenter notes
 
 These only show up in presenter mode and are not displayed to the audience
