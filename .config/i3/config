@@ -237,7 +237,7 @@ for_window [title="(?i)tomaatti" class="(?i)tk"] floating enable move position c
 # Application key combos
 #
 # Emoji/emoticon selection
-bindsym $mod+slash exec "$HOME/.bin/splatmoji/splatmoji copy"
+bindsym $mod+slash exec "$HOME/.bin/splatmoji copy"
 # Lastpass cli popups
 ## Password to clipboard
 bindsym $mod+l exec "$HOME/.bin/lastpass-dmenu copy"
