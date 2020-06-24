@@ -202,6 +202,16 @@ cmap w!! w !sudo tee > /dev/null %
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
+nnoremap <Leader>zi :set foldmethod=indent<CR>
+nnoremap <Leader>zs :set foldmethod=syntax<CR>
+nnoremap <Leader>zm :set foldmethod=marker<CR>
+nnoremap <Leader>za :call FoldAround()<CR>
+function FoldAround()
+  " Fold all of the text *except* for the selection
+  " via https://stackoverflow.com/a/11862731/3366053
+  set foldmethod=manual
+  execute 'normal! `<kzfgg`>jzfG`<'
+endfunction
 
 " Incrementing/decrementing
 nnoremap <C-a> <Nop>
