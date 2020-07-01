@@ -162,7 +162,6 @@ autocmd FileType qf nnoremap <buffer> <Enter> <C-W><Enter><C-W>T
 " through :(
 nnoremap <S-Tab>   :tabprevious<CR>
 nnoremap <Tab>     :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
 
 " Redundant mappings for common functions because I always typo
 " quit all
