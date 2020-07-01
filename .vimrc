@@ -163,6 +163,14 @@ autocmd FileType qf nnoremap <buffer> <Enter> <C-W><Enter><C-W>T
 nnoremap <S-Tab>   :tabprevious<CR>
 nnoremap <Tab>     :tabnext<CR>
 
+" Ctags
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <Leader>t} <C-w>}
+nnoremap <Leader>t\ :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <Leader>t] <C-]>
+nnoremap <Leader>tz <C-w>z
+nnoremap <Leader>tt <C-t>
+
 " Redundant mappings for common functions because I always typo
 " quit all
 command! Q q
