@@ -59,7 +59,14 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'        " Easily work with surrounding objects eg parens, quotes, tags
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ReplaceWithRegister'
-Plugin 'vim-syntastic/syntastic'
+
+if v:version < 800
+  Plugin 'vim-syntastic/syntastic'
+  let syntax_checker = 'syntastic'
+else
+  Plugin 'dense-analysis/ale'
+  let syntax_checker = 'ale'
+endif
 
   "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   "" End list of plugins to install/manage
@@ -137,13 +144,15 @@ hi Normal ctermbg=NONE
 "###############################################3
 "# Snytax
 "###############################################3
-"# Syntax highlighting options for Syntastic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['python3']
+if syntax_checker ==# 'syntastic'
+  "# Syntax highlighting options for Syntastic plugin
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_python_checkers = ['python3']
+endif
 
 "###############################################3
 "# Man
