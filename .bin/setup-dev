@@ -18,8 +18,9 @@ sudo apt-get install \
 
 
 echo 'Install pip packages...'
-pip install \
+pip3 install \
   virtualenv \
+  proselint \
   yq \
 
 echo 'Install ruby gems...'
