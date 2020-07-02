@@ -2,26 +2,27 @@
 # .profile. So  let's put non-gui login stuff in here ok?
 
 # if running bash
-if [ -n "$BASH_VERSION" ]; then
+if [ -n "${BASH_VERSION}" ]; then
     # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-      source "$HOME/.bashrc"
+    if [ -f "${HOME}/.bashrc" ]; then
+      source "${HOME}/.bashrc"
     fi
 fi
 
 # Add other bins to path if exist
 bindirs=(
-"$HOME/.bin"
-"$HOME/.cargo/bin"
-"$HOME/.fzf/bin"
-"$HOME/.gems/bin"
-"$HOME/.go/bin"
-"$HOME/.local/bin"
-"$HOME/bin"
+  "${HOME}/.bin"
+  "${HOME}/.cargo/bin"
+  "${HOME}/.fzf/bin"
+  "${HOME}/.gems/bin"
+  "${HOME}/.go/bin"
+  "${HOME}/.local/bin"
+  "${HOME}/bin"
+  '/opt/puppetlabs/bin/'
 )
 for bindir in "${bindirs[@]}"; do
-  if [ -d $bindir ] ; then
-      export PATH="$bindir:$PATH"
+  if [ -d "${bindir}" ] ; then
+      export PATH="${bindir}:${PATH}"
   fi
 done
 
