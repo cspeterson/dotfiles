@@ -159,6 +159,8 @@
 !/.vim/ftplugin/sh.vim
 !/.vim/ftplugin/vim.vim
 !/.vim/ftplugin/yaml.vim
+!/.vim/spell/
+!/.vim/spell/en.utf-8.add
 !/.vim_plugins
 !/.vimrc
 
