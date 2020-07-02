@@ -36,6 +36,7 @@ Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPr
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/vader.vim'
 Plugin 'kana/vim-textobj-entire' " Requires kana/vim-textobj-user
 Plugin 'kana/vim-textobj-line' " Requires kana/vim-textobj-use
 Plugin 'kana/vim-textobj-user'
