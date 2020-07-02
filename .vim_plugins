@@ -65,7 +65,7 @@ if v:version < 800
   Plugin 'vim-syntastic/syntastic'
   let syntax_checker = 'syntastic'
 else
-  Plugin 'dense-analysis/ale'
+  Plugin 'cspeterson/ale'
   let syntax_checker = 'ale'
 endif
 
