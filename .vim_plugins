@@ -135,6 +135,9 @@ vnoremap <Leader>ldr :LinediffReset<Enter>
 syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
+" Set undercurl mode to get around underline fallback bug in some vim versions
+" https://github.com/vim/vim/issues/2424
+set t_Cs=
 " Toggle dark/light colors
 call togglebg#map("<F5>")
 " now set it so it doesn't do that awful ugly blocky coloring behind text
