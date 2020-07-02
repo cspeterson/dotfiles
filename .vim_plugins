@@ -157,6 +157,7 @@ if syntax_checker ==# 'syntastic'
   let g:syntastic_check_on_wq = 0
   let g:syntastic_python_checkers = ['python3']
 else
+  let g:ale_echo_msg_format = '%s [%linter%]'
   let g:ale_lint_on_enter = 1
   let g:ale_lint_on_insert_leave = 1
   let g:ale_lint_on_save = 1
