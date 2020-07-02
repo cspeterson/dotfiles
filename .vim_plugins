@@ -155,6 +155,14 @@ if syntax_checker ==# 'syntastic'
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
   let g:syntastic_python_checkers = ['python3']
+else
+  let g:ale_lint_on_enter = 1
+  let g:ale_lint_on_insert_leave = 1
+  let g:ale_lint_on_save = 1
+  let g:ale_lint_on_text_changed = 'never'
+  let g:ale_linters = { 'markdown': ['proselint']}
+  let g:ale_sign_error = '✘'
+  let g:ale_sign_warning = '⚠'
 endif
 
 "###############################################3
