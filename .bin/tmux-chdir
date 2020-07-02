@@ -40,7 +40,7 @@ fail_help() {
   exit 1
 }
 
-if [ $# -ne 1 ]; then
+if [ "${1}" == '-h' ] || [ "${1}" == '--help' ]; then
   fail_help
 fi
 
@@ -65,7 +65,11 @@ early_exit() {
 ######
 # Main
 ######
-newdir="${1}"
+if [ -z "${1}" ]; then
+  newdir="${PWD}"
+else
+  newdir="${1}"
+fi
 if ! [ -d "${newdir}" ]; then
   exit 1
 fi
