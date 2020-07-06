@@ -234,6 +234,18 @@ vnoremap _ <C-x>
 " Redraw
 nnoremap <Leader>r :redraw!<CR>
 
+" Spell
+"On config read, generate the lookup file from the spellfile if out of sync
+function UpdateSpellfileLookup()
+  silent exec 'mkspell! ~/.vim/spell/en.utf-8.add'
+endfunction
+let spellfile_mtime = system('stat -c %Y ~/.vim/spell/en.utf-8.add')
+let spelllookupfile_mtime = system('stat -c %Y ~/.vim/spell/en.utf-8.add.spl')
+if spellfile_mtime > spelllookupfile_mtime
+  call UpdateSpellfileLookup()
+endif
+
+
 " Pipe out buffer/selection into pandoc for rendering to html in clipboard
 " This could be made more generalized and use `filetype` to set input format
 " automatically if I find myself using this for other things too
