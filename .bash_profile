@@ -43,6 +43,12 @@ export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
 # Ls: fix ls to not be wrong
 export QUOTING_STYLE=literal
 
+# Nix
+if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then
+  # shellcheck disable=SC1090
+  source "${HOME}/.nix-profile/etc/profile.d/nix.sh"
+fi
+
 # Ruby
 export GEM_HOME="$HOME/.gems"
 
