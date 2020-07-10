@@ -2,6 +2,7 @@
 "## Plugin stuff
 "###############################################3
   " Vundle Plugins Setup
+  filetype off
   " set the runtime path to include Vundle and initialize
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
@@ -26,6 +27,7 @@
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
+Plugin 'chaimleib/vim-renpy'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'craigemery/vim-autotag'
