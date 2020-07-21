@@ -77,9 +77,6 @@
 !/.cookiecutters/**
 
 !/.config/
-!/.config/kitty/
-!/.config/kitty/kitty.conf
-!/.config/kitty/theme.conf
 !/.config/GIMP/
 !/.config/GIMP/2.10
 !/.config/GIMP/2.10/menurc
@@ -91,10 +88,15 @@
 !/.config/i3blocks/
 !/.config/i3blocks/config
 !/.config/i3blocks/datetimecal.sh
+!/.config/kitty/
+!/.config/kitty/kitty.conf
+!/.config/kitty/theme.conf
 !/.config/mimeapps.list
 !/.config/pcmanfm-qt/
 !/.config/pcmanfm-qt/default
 !/.config/pcmanfm-qt/default/settings.conf
+!/.config/proselint/
+!/.config/proselint/config
 !/.config/pulse/
 !/.config/pulse/default.pa
 !/.config/ranger/
