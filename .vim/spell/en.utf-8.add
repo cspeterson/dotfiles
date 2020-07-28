@@ -2,6 +2,7 @@ AppArmor
 Augeas
 Cron
 DHCP
+DuckDuckGo
 EL
 Fail2Ban
 Frontmatter
@@ -10,8 +11,10 @@ Heptapod
 IPv6
 Icinga
 ImageMagick
+Javascript
 Kramdown
 LDAP
+Lichtenberg
 MariaDB
 MySQL
 NFS
@@ -41,8 +44,6 @@ distro
 distros
 even
 files
-files
-files
 frontmatter
 gitlab
 gitlab-ci
@@ -50,6 +51,7 @@ hiera
 hieradata
 http
 iptables
+javascript
 jekyll
 kickstart
 ldap
@@ -66,7 +68,6 @@ ntpd
 other's
 param
 params
-per
 per
 php
 pluggable
@@ -88,9 +89,6 @@ syslog
 systemctl
 systemd
 thusly
+unbanning
 usermod
 virtualized
-Javascript
-DuckDuckGo
-javascript
-Lichtenberg
