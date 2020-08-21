@@ -1,0 +1,2 @@
+alias vim-md='vim +set\ filetype=markdown'
+alias vim-json='vim +set\ filetype=json'
