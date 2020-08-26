@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Automatically enable tap-click on any touchpads present
+set -e
+
+for id in $(xinput list | grep --fixed-strings --ignore-case touchpad | grep -Po '(?<=id=)\d+'); do
+  echo "${id}"
+  prop_id=$(xinput list-props "${id}" | grep 'Tapping Enabled (' | grep -oP '(?<=\()[0-9]*')
+  if [ -n "${prop_id}" ]; then
+    echo "prop!: " "${prop_id}"
+    xinput set-prop "${id}" "${prop_id}" 1
+  fi
+done
