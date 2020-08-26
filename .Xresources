@@ -1,7 +1,6 @@
 ! to enable any changes to this configuration:
 ! xrdb -merge ~/.Xresources
 
-Xcursor.size: 16
 
 ! Set front to truetype as the bitmap-based default fonts are dumb and
 ! tiny on high-DPI displays. Also wtf who wants bitmapped fonts
@@ -17,19 +16,21 @@ XTerm*reverseVideo: on
 ! Hi-DPI handling
 !
 #ifdef SRVR_csplt
-	#define DPI 180
-	#define AUTOHINT 0
-	#define LCDFILTER  lcddefault
-	#define HINTSTYLE  hintfull
-	#define HINTING 1
 	#define ANTIALIAS 1
+	#define AUTOHINT 0
+	#define CURSORSIZE 64
+	#define DPI 180
+	#define HINTING 1
+	#define HINTSTYLE  hintfull
+	#define LCDFILTER  lcddefault
 	#define RGBA rgb
 #endif
-Xft.dpi: DPI
-Xft.autohint: AUTOHINT
-Xft.lcdfilter: LCDFILTER
-Xft.hintstyle: HINTSTYLE
-Xft.hinting: HINTING
+Xcursor.size: CURSORSIZE
 Xft.antialias: ANTIALIAS
+Xft.autohint: AUTOHINT
+Xft.dpi: DPI
+Xft.hinting: HINTING
+Xft.hintstyle: HINTSTYLE
+Xft.lcdfilter: LCDFILTER
 Xft.rgba: RGBA
 ! Set this variable for use in i3 config
