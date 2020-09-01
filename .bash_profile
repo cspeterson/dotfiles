@@ -18,6 +18,7 @@ bindirs=(
   "${HOME}/.go/bin"
   "${HOME}/.local/bin"
   "${HOME}/bin"
+  "/var/lib/flatpak/exports/bin"
   '/opt/puppetlabs/bin/'
 )
 for bindir in "${bindirs[@]}"; do
