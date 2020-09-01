@@ -64,6 +64,7 @@
 !/.bin/setup-vim
 !/.bin/sizerate
 !/.bin/tmux-chdir
+!/.bin/touchpads-tapping-enable
 !/.bin/vimt
 !/.bin/xo
 
