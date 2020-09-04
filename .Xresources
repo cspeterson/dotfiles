@@ -1,5 +1,15 @@
 ! to enable any changes to this configuration:
 ! xrdb -merge ~/.Xresources
+!
+! If running gdm you may need to enable pre-processing for the conditional
+! defines below to work.
+! In that case, remove `-nocpp` from the following inside `/etc/gdm/Xsession`
+!
+! ```
+! if [ -f "$userresources" ]; then
+!   xrdb -nocpp -merge "$userresources"
+! fi
+! 111
 
 
 ! Set front to truetype as the bitmap-based default fonts are dumb and
