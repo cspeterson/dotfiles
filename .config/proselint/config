@@ -15,9 +15,9 @@
     "hedging.misc": true,
     "hyperbole.misc": true,
     "jargon.misc": true,
+    "lexical_illusions.misc": true,
     "lgbtq.offensive_terms": true,
     "lgbtq.terms": true,
-    "lexical_illusions.misc": true,
     "links.broken": true,
     "malapropisms.misc": true,
     "misc.apologizing": true,
@@ -54,6 +54,9 @@
     "psychology.misc": true,
     "redundancy.misc": true,
     "redundancy.ras_syndrome": true,
+    "security.credit_card": true,
+    "security.password": true,
+    "sexism.misc": true,
     "skunked_terms.misc": true,
     "spelling.able_atable": true,
     "spelling.able_ible": true,
@@ -62,9 +65,6 @@
     "spelling.er_or": true,
     "spelling.in_un": true,
     "spelling.misc": true,
-    "security.credit_card": true,
-    "security.password": true,
-    "sexism.misc": true,
     "terms.animal_adjectives": true,
     "terms.denizen_labels": true,
     "terms.eponymous_adjectives": true,
@@ -74,6 +74,6 @@
     "typography.symbols": false,
     "uncomparables.misc": true,
     "weasel_words.misc": true,
-    "weasel_words.very": true,
+    "weasel_words.very": true
   }
 }
