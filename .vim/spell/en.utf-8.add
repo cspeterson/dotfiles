@@ -64,6 +64,7 @@ backlight
 balancer
 bitmapped
 bundler
+buttplug
 c
 classism
 codebase
@@ -87,6 +88,7 @@ hieradata
 http
 i3
 i3wm
+io
 iptables
 javascript
 jekyll
@@ -102,6 +104,7 @@ metadata
 mlookup
 modularize
 mountpoint
+mtime
 mysql
 nav
 ntpd
@@ -131,6 +134,7 @@ sudo
 syslog
 systemctl
 systemd
+teledildonics
 thusly
 unbanning
 usermod
