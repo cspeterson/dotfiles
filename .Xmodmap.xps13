@@ -1,0 +1,6 @@
+! Swap Home/End with Pageup/Pagedown because of unhappy placement on XPS 13 keyboard
+
+keycode 112 = Home
+keycode 117 = End
+keycode 110 = Prior
+keycode 115 = Next
