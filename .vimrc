@@ -16,6 +16,11 @@ nnoremap Q q
 nnoremap q <Nop>
 set nomodeline
 
+" Unmap home/end in insert mode because I git them by accident a lot on my
+" laptop
+inoremap <Home> <Nop>
+inoremap <End> <Nop>
+
 " repeat last substitution on current line or selection
 nnoremap ! :&<CR>
 vnoremap ! :&<CR>
