@@ -38,10 +38,38 @@ nnoremap <C-l> :set list!<CR>
 nnoremap <C-n> :set number!<CR> :set relativenumber!<CR>
 
 " Registers
-" map register c to x11 'clipboard' register because "+ is more work
-map "c "+
-map "C "+
 nnoremap <silent> "" :registers<CR>
+" map register c to x11 'clipboard' register because "+ is more work
+if !empty($DISPLAY) && has('clipboard')
+  nnoremap "c "+
+  nnoremap "C "+
+elseif !empty($TMUX)
+  function! Yank_to_tmux()
+    " For use hooked by `TextYankPost` autocmd (as below)
+    "
+    " Takes the contents of the recently-yanked @c and puts it into the Tmux
+    " paste buffer `vim_reg_c`
+    if has_key(v:event, 'regname') && (v:event['regname'] ==# 'c')
+      :call system('cat <(pasteme=' . shellescape(@c) . ' printenv pasteme) | head -c -1 | tmux load-buffer -b vim_reg_c - ')
+    endif
+  endfunction
+  function! Pull_from_tmux()
+    " Pulls whatever is in the Tmux paste buffer `vim_reg_c` into @c
+    silent let c_tmp = system('tmux save-buffer -b vim_reg_c -')
+    if v:shell_error == 0
+      let @c = c_tmp
+    else
+      let @c = ''
+    endif
+  endfunction
+
+  nnoremap "C "c
+  autocmd TextYankPost * :call Yank_to_tmux()
+  nnoremap <Leader>ct :call Pull_from_tmux() <Enter>
+
+  " Always make the local reg match the tmux buffer at load
+  :call Pull_from_tmux()
+endif
 
 " Search
 " Use ignore case, smart case, highlight results, incrementally
