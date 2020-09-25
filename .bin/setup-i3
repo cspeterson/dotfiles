@@ -38,6 +38,7 @@ sudo apt-get install \
   vim-gtk3 \
   vlc \
   xautolock \
+  xsel \
 
 
 ## Other
