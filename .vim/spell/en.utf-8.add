@@ -1,4 +1,5 @@
 APIs
+AWS
 AppArmor
 Augeas
 CLI
@@ -10,8 +11,10 @@ EL
 Ender
 Ender's
 FFmpeg
+FQDN
 Fail2Ban
 Frontmatter
+GPG
 Galera
 GitLab
 HTTPS
@@ -42,8 +45,10 @@ Nagios
 Nginx
 OSX
 Pluggable
+Puppetized
 RPG
 RPGs
+RPMs
 Rclone
 RedHat
 Reddit
@@ -63,7 +68,9 @@ UX
 Vlambeer
 WordPress
 XTerm
+YAML
 allocoprophagy
+autocmd
 autocomplete
 autofs
 automount
@@ -74,6 +81,7 @@ bitmapped
 bundler
 buttplug
 c
+chocolatey
 classism
 codebase
 config
@@ -85,6 +93,7 @@ distros
 dmenu
 dotfiles
 even
+filename
 files
 frontmatter
 geekery
@@ -93,6 +102,8 @@ gitlab
 gitlab-ci
 hiera
 hieradata
+homedir
+hostname
 http
 i3
 i3wm
@@ -101,6 +112,8 @@ iptables
 javascript
 jekyll
 kaomoji
+keyring
+keyrings
 kickstart
 ldap
 localhost
@@ -148,4 +161,5 @@ thusly
 unbanning
 usermod
 virtualized
+webserver
 wildcard
