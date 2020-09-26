@@ -48,14 +48,14 @@ elseif !empty($TMUX)
     " For use hooked by `TextYankPost` autocmd (as below)
     "
     " Takes the contents of the recently-yanked @c and puts it into the Tmux
-    " paste buffer `vim_reg_c`
+    " paste buffer 0
     if has_key(v:event, 'regname') && (v:event['regname'] ==# 'c')
-      :call system('cat <(pasteme=' . shellescape(@c) . ' printenv pasteme) | head -c -1 | tmux load-buffer -b vim_reg_c - ')
+      :call system('cat <(pasteme=' . shellescape(@c) . ' printenv pasteme) | head -c -1 | tmux load-buffer -b 0 - ')
     endif
   endfunction
   function! Pull_from_tmux()
-    " Pulls whatever is in the Tmux paste buffer `vim_reg_c` into @c
-    silent let c_tmp = system('tmux save-buffer -b vim_reg_c -')
+    " Pulls whatever is in the Tmux paste buffer 0 into @c
+    silent let c_tmp = system('tmux save-buffer -b 0 -')
     if v:shell_error == 0
       let @c = c_tmp
     else
