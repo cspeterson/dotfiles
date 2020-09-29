@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ENVVARS
-export TERMINAL=terminator
+export TERMINAL=kitty
 # Vim ftw
 export EDITOR=vim
 # Lastpass cli - make clipboard selections time out

@@ -23,6 +23,7 @@ sudo apt-get install \
   gsimplecal \
   i3blocks \
   i3lock \
+  kitty \
   lastpass-cli \
   libimage-exiftool-perl \
   pasystray \
@@ -32,7 +33,6 @@ sudo apt-get install \
   qalc \
   rofi \
   scrot \
-  terminator \
   ubuntu-restricted-extras \
   udiskie \
   vim-gtk3 \
