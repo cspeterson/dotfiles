@@ -15,6 +15,7 @@ let mapleader = '\'
 nnoremap Q q
 nnoremap q <Nop>
 set nomodeline
+nnoremap <F1> <Nop>
 
 " Unmap home/end in insert mode because I git them by accident a lot on my
 " laptop
