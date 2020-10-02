@@ -32,6 +32,7 @@ Plugin 'christoomey/vim-sort-motion'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'craigemery/vim-autotag'
 Plugin 'cspeterson/vim-convert'	" Unit conversion
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
 Plugin 'godlygeek/tabular'         " Aligns text
 Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPreview and MarkdownPreviewStop
