@@ -1,3 +1,4 @@
+ sci-fi
 APIs
 AWS
 AppArmor
@@ -22,12 +23,15 @@ GPG
 Galera
 GitLab
 HTTPS
+HUDs
 Heptapod
 IBus
 IMDB
 IPAM
 IPv6
 Icinga
+Icinga's
+Icinga2
 ImageMagick
 JSON
 Javascript
@@ -73,6 +77,7 @@ TSV
 TTRPGs
 Tmux
 TrueType
+UI
 UX
 VirtualBox
 Vlambeer
@@ -97,6 +102,7 @@ chocolatey
 classism
 codebase
 config
+corvid
 cssh
 darktable
 deterministically
@@ -110,6 +116,7 @@ facter
 factsets
 filename
 files
+forgetability
 frontmatter
 geekery
 gif
@@ -165,6 +172,7 @@ rsync
 rsyslog
 runtime
 sendmail
+service
 smagic
 subclasses
 submenu
