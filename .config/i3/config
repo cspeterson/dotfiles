@@ -36,22 +36,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -218,15 +206,10 @@ exec --no-startup-id xautolock -time 10 -locker $lock_cmd
 #
 # Window placements and behaviours
 #
-# CSSH
-for_window [title="CSSH"] floating enable
 # Firefox
 for_window [class="Firefox"] stacking enable
 # Pop-up calendar (opens from i3blocks click event)
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 10 px
-# Tomaatti pomodoro timer
-for_window [title="(?i)tomaatti" class="(?i)tk"] floating enable move position center urgent
-
 
 #
 # Application key combos
@@ -290,12 +273,5 @@ bindsym $mod+m exec amixer -D pulse sset Master 0%; exec notify-send -t 1 --icon
 #
 # UI Navigation
 #
-# Workspaces
-bindsym $mod+semicolon workspace prev
-bindsym $mod+apostrophe workspace next
-bindsym $mod+x move workspace to output right
-# Cycle windows (in workspace)
-bindsym $mod+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py
-bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/focus-next-visible.py reverse
 # Lock screen
 bindsym Mod1+Control+l exec $lock_cmd
