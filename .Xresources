@@ -28,8 +28,8 @@ XTerm*reverseVideo: on
 #ifdef SRVR_csplt
 	#define ANTIALIAS 1
 	#define AUTOHINT 0
-	#define CURSORSIZE 64
-	#define DPI 180
+	#define CURSORSIZE 32
+	#define DPI 90
 	#define HINTING 1
 	#define HINTSTYLE  hintfull
 	#define LCDFILTER  lcddefault
@@ -43,4 +43,3 @@ Xft.hinting: HINTING
 Xft.hintstyle: HINTSTYLE
 Xft.lcdfilter: LCDFILTER
 Xft.rgba: RGBA
-! Set this variable for use in i3 config

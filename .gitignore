@@ -82,6 +82,8 @@
 !/.config/GIMP/
 !/.config/GIMP/2.10
 !/.config/GIMP/2.10/menurc
+!/.config/autorandr/
+!/.config/autorandr/**
 !/.config/gsimplecal/
 !/.config/gsimplecal/config
 !/.config/i3/
