@@ -63,6 +63,8 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+# Float and pin application across workspaces
+bindsym $mod+Shift+Return exec i3-msg "floating toggle; sticky toggle"
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
