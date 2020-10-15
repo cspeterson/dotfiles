@@ -138,8 +138,8 @@ bindsym $mod+r mode "resize"
 #######################################################################
 #
 # Values
-# 
-set $lock_cmd "$HOME/.bin/lockblank"
+#
+set $lock_cmd "xset dpms 0 0 0; i3lock -c 000000"
 set $mastervol $(amixer -D pulse get Master  | grep -Eo '[[0-9]+%]' | head -n 1)
 set_from_resource $barfontsize i3wm.i3barfontsize
 #
