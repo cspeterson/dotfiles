@@ -7,6 +7,8 @@
 	stat=!git status
 [color]
 	ui = auto
+[diff]
+	noprefix = true
 [push]
 	default = current
 [user]
