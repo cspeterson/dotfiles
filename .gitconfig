@@ -1,8 +1,3 @@
-[user]
-	email = 3893680+cspeterson@users.noreply.github.com
-	name = Christopher Peterson
-[push]
-	default = current
 [alias]
 	alog = !git log --graph --abbrev-commit
 	# Show branches sorted by last commit and include the date in the output
@@ -12,3 +7,8 @@
 	stat=!git status
 [color]
 	ui = auto
+[push]
+	default = current
+[user]
+	email = 3893680+cspeterson@users.noreply.github.com
+	name = Christopher Peterson
