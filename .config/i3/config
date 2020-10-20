@@ -64,7 +64,7 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 # Float and pin application across workspaces
-bindsym $mod+Shift+Return exec i3-msg "floating toggle; sticky toggle"
+bindsym $mod+Shift+Return exec --no-startup-id "i3-msg 'floating toggle; sticky toggle'"
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -208,8 +208,6 @@ exec --no-startup-id xautolock -time 10 -locker $lock_cmd
 #
 # Window placements and behaviours
 #
-# Firefox
-for_window [class="Firefox"] stacking enable
 # Pop-up calendar (opens from i3blocks click event)
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 10 px
 
