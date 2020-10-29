@@ -1,8 +1,8 @@
- sci-fi
 APIs
 AWS
 AppArmor
 Augeas
+CAs
 CLDR
 CLI
 CentOS
@@ -38,6 +38,7 @@ Javascript
 Kramdown
 LDAP
 LSG
+Landrush
 LastPass
 Liam
 Lichtenberg
@@ -54,6 +55,7 @@ Nagios
 Nginx
 OSX
 Onceover
+PKI
 Pluggable
 Puppetized
 RPG
@@ -63,6 +65,7 @@ Rclone
 RedHat
 Reddit
 Rsyslog
+SDL
 SElinux
 SMTP
 STDIN
@@ -144,6 +147,7 @@ linters
 localhost
 logogram
 logrotate
+lookups
 loopback
 manpage
 megayacht
@@ -152,6 +156,7 @@ mlookup
 modularize
 mountpoint
 mtime
+multiline
 mysql
 nav
 ntpd
@@ -171,6 +176,7 @@ repos
 rsync
 rsyslog
 runtime
+sci-fi
 sendmail
 service
 smagic
@@ -185,10 +191,13 @@ systemctl
 systemd
 teledildonics
 thusly
+toolset
 unbanning
 unstage
 unstaged
 usermod
 virtualized
 webserver
+whitespace
 wildcard
+workspaces
