@@ -30,6 +30,7 @@ sudo apt-get install \
   pavucontrol \
   pcmanfm-qt \
   peek \
+  playerctl \
   qalc \
   rofi \
   scrot \
