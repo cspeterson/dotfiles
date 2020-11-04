@@ -102,7 +102,7 @@ parse_args() {
 }
 
 main() {
-  parse_args "#@"
+  # parse_args "#@"
   parse_args "$@" || \
     if [[ $? -eq 255 ]]; then
       # Printing help returns 255 as a signal to exit here with success
