@@ -282,8 +282,8 @@ endif
 
 " Writing out and transforming the buffer into the clipboard
 " Write/Copy Markdown to BBCode
-nnoremap <Leader>wcmb :w !pandoc -f markdown -t $HOME/.config/pandoc/writers/pandoc_bbcode_smf.lua <bar> xclip -selection clipboard<CR>
-vnoremap <Leader>wcmb :w !pandoc -f markdown -t $HOME/.config/pandoc/writers/pandoc_bbcode_smf.lua <bar> xclip -selection clipboard<CR>
+nnoremap <Leader>wcmb :silent w !pandoc -f markdown -t $HOME/.config/pandoc/writers/pandoc_bbcode_smf.lua <bar> xclip -selection clipboard<CR>
+vnoremap <Leader>wcmb :silent w !pandoc -f markdown -t $HOME/.config/pandoc/writers/pandoc_bbcode_smf.lua <bar> xclip -selection clipboard<CR>
 " Write/Copy Markdown to Html
 nnoremap <Leader>wcmh :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
 vnoremap <Leader>wcmh :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
