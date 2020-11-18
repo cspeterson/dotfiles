@@ -280,13 +280,13 @@ if spellfile_mtime > spelllookupfile_mtime
   call UpdateSpellfileLookup()
 endif
 
-
-" Pipe out buffer/selection into pandoc for rendering to html in clipboard
-" This could be made more generalized and use `filetype` to set input format
-" automatically if I find myself using this for other things too
-" Markdown
-nnoremap <Leader>wcm :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
-vnoremap <Leader>wcm :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
+" Writing out and transforming the buffer into the clipboard
+" Write/Copy Markdown to BBCode
+nnoremap <Leader>wcmb :w !pandoc -f markdown -t $HOME/.config/pandoc/writers/pandoc_bbcode_smf.lua <bar> xclip -selection clipboard<CR>
+vnoremap <Leader>wcmb :w !pandoc -f markdown -t $HOME/.config/pandoc/writers/pandoc_bbcode_smf.lua <bar> xclip -selection clipboard<CR>
+" Write/Copy Markdown to Html
+nnoremap <Leader>wcmh :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
+vnoremap <Leader>wcmh :silent w !pandoc -f markdown <bar> xclip -t text/html -selection clipboard<CR>
 
 "###############################################3
 "## Plugins!
