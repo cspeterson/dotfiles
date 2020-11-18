@@ -97,6 +97,10 @@
 !/.config/kitty/theme.conf
 !/.config/mimeapps.list
 !/.config/pcmanfm-qt/
+!/.config/pandoc/
+!/.config/pandoc/writers/
+!/.config/pandoc/writers/pandoc_bbcode_smf.lua
+!/.config/pandoc/writers/pandoc-bbcode-smf.git
 !/.config/pcmanfm-qt/default
 !/.config/pcmanfm-qt/default/settings.conf
 !/.config/proselint/
