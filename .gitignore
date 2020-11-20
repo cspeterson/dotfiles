@@ -153,15 +153,16 @@
 !/.tmux/bin/.tmux-send-keys-to-all-panes
 !/.tmux.conf
 
-!.vim/ftdetect/markdown.vim
 !/.vim/
 !/.vim/ftdetect/
+!/.vim/ftdetect/markdown.vim
 !/.vim/ftdetect/puppet.vim
 !/.vim/ftplugin/
 !/.vim/ftplugin/css.vim
 !/.vim/ftplugin/html.vim
 !/.vim/ftplugin/javascript.vim
 !/.vim/ftplugin/json.vim
+!/.vim/ftplugin/lua.vim
 !/.vim/ftplugin/markdown.vim
 !/.vim/ftplugin/puppet.vim
 !/.vim/ftplugin/python.vim
