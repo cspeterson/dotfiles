@@ -2,6 +2,7 @@ APIs
 AWS
 AppArmor
 Augeas
+BBCode
 CAs
 CLDR
 CLI
@@ -169,6 +170,7 @@ mysql
 nav
 ntpd
 other's
+pandoc
 param
 params
 peasy
