@@ -42,20 +42,19 @@ nnoremap <C-n> :set number!<CR> :set relativenumber!<CR>
 nnoremap <silent> "" :registers<CR>
 " map register c to x11 'clipboard' register because "+ is more work
 if !empty($DISPLAY) && has('clipboard')
+  vnoremap "c "+
+  vnoremap "C "+
   nnoremap "c "+
   nnoremap "C "+
 elseif !empty($TMUX)
   function! Yank_to_tmux()
-    " For use hooked by `TextYankPost` autocmd (as below)
-    "
-    " Takes the contents of the recently-yanked @c and puts it into the Tmux
-    " paste buffer 0
-    if has_key(v:event, 'regname') && (v:event['regname'] ==# 'c')
-      :call system('cat <(pasteme=' . shellescape(@c) . ' printenv pasteme) | head -c -1 | tmux load-buffer -b 0 - ')
-    endif
+    " Takes the contents of `@c` and puts it into the Tmux paste buffer `0`
+    " (which works with old and new versions of Tmux - the newer `bufferN`
+    " naming scheme is not backwards compatible)
+    :call system('cat <(pasteme=' . shellescape(@c) . ' printenv pasteme) | head -c -1 | tmux load-buffer -b 0 - ')
   endfunction
   function! Pull_from_tmux()
-    " Pulls whatever is in the Tmux paste buffer 0 into @c
+    " Pulls whatever is in the Tmux paste buffer `0` into `@c`
     silent let c_tmp = system('tmux save-buffer -b 0 -')
     if v:shell_error == 0
       let @c = c_tmp
@@ -63,13 +62,32 @@ elseif !empty($TMUX)
       let @c = ''
     endif
   endfunction
-
-  nnoremap "C "c
-  autocmd TextYankPost * :call Yank_to_tmux()
-  nnoremap <Leader>ct :call Pull_from_tmux() <Enter>
-
-  " Always make the local reg match the tmux buffer at load
-  :call Pull_from_tmux()
+  " We could use the `TextYankPost` autocmd to make this work by reacting to
+  " any placement of text into `@c` but Vim 7.4 that I'm actually using on
+  " some older machines lacks this feature :/
+  " As a consequence, I have no good way to integrate this yank into normal
+  " keystrokes with motions and text objects etc and have it still end up in
+  " Tmux
+  nnoremap "Cy :echoerr 'Please select in visual mode before using this mapping
+        \ to yank text into a Tmux buffer' <Enter>
+  nnoremap "cy :echoerr 'Please select in visual mode before using this mapping
+        \ to yank text into a Tmux buffer' <Enter>
+  nnoremap "cd :echoerr 'Please select in visual mode before using this mapping
+        \ to yank text into a Tmux buffer' <Enter>
+  nnoremap "Cy :echoerr 'Please select in visual mode before using this mapping
+        \ to yank text into a Tmux buffer' <Enter>
+  " Pasting is easy though!
+  nnoremap "cp :call Pull_from_tmux() <Bar> normal! "cp <Enter>
+  nnoremap "Cp :call Pull_from_tmux() <Bar> normal! "cp <Enter>
+  nnoremap "cP :call Pull_from_tmux() <Bar> normal! "cP <Enter>
+  nnoremap "CP :call Pull_from_tmux() <Bar> normal! "cP <Enter>
+  " Yank current visual selection into Tmux paste buffer
+  vnoremap "cy "cy <Bar> :call Yank_to_tmux() <Enter>
+  vnoremap "Cy "cy <Bar> :call Yank_to_tmux() <Enter>
+  " Put the contents of the Tmux paste buffer, repacing the current visual
+  " selection
+  vnoremap "cp :call Pull_from_tmux() <Bar> normal! gv"cp<Enter>
+  vnoremap "Cp :call Pull_from_tmux() <Bar> normal! gv"cp<Enter>
 endif
 
 " Search
