@@ -29,7 +29,7 @@ done
 
 # Fzf
 export FZF_COMPLETION_TRIGGER='~~'
-FZF_COMMAND='if ([ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1); then { git ls-files & git ls-files --others --exclude-standard; }; else find 2>/dev/null; fi'
+FZF_COMMAND='if ([ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1); then { git ls-files --recurse-submodules; git ls-files --others --exclude-standard; }; else find 2>/dev/null; fi'
 export FZF_CTRL_T_COMMAND="${FZF_COMMAND}"
 export FZF_DEFAULT_COMMAND="${FZF_COMMAND}"
 export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
