@@ -1,10 +1,16 @@
 [alias]
+	# Abbreviated log
 	alog = !git log --graph --abbrev-commit
 	# Show branches sorted by last commit and include the date in the output
 	branchl=!git for-each-ref --sort=authordate --format "'%(authordate:iso) * %1B[0;32m%(refname:short)%1B[m %(subject)' --sort=-committerdate refs/heads"
+	# Diff staged
 	diffs=!git diff --staged
+	# List git aliases
 	la = !git config --list | grep -F alias
+	# Status for lazy
 	stat=!git status
+	# Unstage/restore files from staging
+	unstage=!git reset HEAD
 [color]
 	ui = auto
 [diff]
