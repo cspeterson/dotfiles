@@ -10,6 +10,7 @@ CentOS
 Cron
 DHCP
 DNS
+DSL
 Dockerfile
 DuckDuckGo
 EL
@@ -28,6 +29,7 @@ GitLab
 HTTPS
 HUDs
 Heptapod
+IAS
 IBus
 IMDB
 IPAM
@@ -49,6 +51,7 @@ Lichtenberg
 MP4
 MailChimp
 MariaDB
+Mariabackup
 Minecraft
 Morty
 Multisite
@@ -94,6 +97,7 @@ VirtualBox
 Vlambeer
 WordPress
 XTerm
+XtraBackup
 YAML
 ZWJ
 allocoprophagy
@@ -115,6 +119,7 @@ classism
 codebase
 config
 corvid
+crontab
 cssh
 darktable
 deterministically
@@ -183,9 +188,11 @@ playthrough
 pluggable
 podcasting
 pre
+prepending
 r10k
 recognizability
 recurse
+regex
 repo
 repos
 rsync
@@ -196,6 +203,7 @@ sendmail
 service
 smagic
 subclasses
+subcommand
 submenu
 submodule
 submodule's
