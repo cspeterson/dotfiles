@@ -70,10 +70,10 @@ Puppetized
 RPG
 RPGs
 RPMs
+RSyslog
 Rclone
 RedHat
 Reddit
-Rsyslog
 SDL
 SElinux
 SMTP
@@ -95,6 +95,7 @@ UX
 VR
 VirtualBox
 Vlambeer
+Wayland
 WordPress
 XTerm
 XtraBackup
@@ -196,7 +197,6 @@ regex
 repo
 repos
 rsync
-rsyslog
 runtime
 sci-fi
 sendmail
