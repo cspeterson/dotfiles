@@ -18,8 +18,12 @@ sudo apt-get install \
 
 echo 'Install pip packages...'
 pip3 install \
-  virtualenv \
+  bandit \
+  black \
+  flake8 \
+  isort \
   proselint \
+  virtualenv \
   yq \
 
 echo 'Install ruby gems...'
