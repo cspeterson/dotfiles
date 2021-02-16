@@ -22,6 +22,7 @@ pip3 install \
   black \
   flake8 \
   isort \
+  mypy \
   proselint \
   virtualenv \
   yq \
