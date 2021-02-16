@@ -1,5 +1,5 @@
 setlocal autoindent
-setlocal colorcolumn=80
+setlocal colorcolumn=88
 setlocal encoding=utf-8
 setlocal expandtab	" inserts spaces instead of tabs
 setlocal fileformat=unix
