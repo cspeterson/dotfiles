@@ -1,0 +1,2 @@
+# Grep in a git repo, ignoring .gitignored files but including untracked
+alias ggrep='git grep --untracked'
