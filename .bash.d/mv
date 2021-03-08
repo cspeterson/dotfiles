@@ -1,12 +1,12 @@
 bak() {
   local oldfilepath="${1}"
-  local newfilepath="${oldfilepath}.bak"
+  local newfilepath="${oldfilepath%/}.bak"
 
   mv "${oldfilepath}" "${newfilepath}"
 }
 
 unbak() {
-  local bakfilepath="${1}"
+  local bakfilepath="${1%/}"
   if ! [[ "${bakfilepath}" == *.bak ]]; then
     echo 'File does not end in .bak' 1>&2
     return 1
