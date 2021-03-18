@@ -28,6 +28,7 @@ Galera
 GitLab
 HTTPS
 HUDs
+HUP
 Heptapod
 IAS
 IBus
@@ -41,6 +42,7 @@ Icinga2
 ImageMagick
 JSON
 Javascript
+Jennkins
 Kramdown
 LDAP
 LSG
@@ -71,6 +73,7 @@ RPG
 RPGs
 RPMs
 RSyslog
+RSyslog's
 Rclone
 RedHat
 Reddit
@@ -92,6 +95,7 @@ Tmux
 TrueType
 UI
 UX
+VMware
 VR
 VirtualBox
 Vlambeer
@@ -105,6 +109,7 @@ allocoprophagy
 autocmd
 autocomplete
 autofs
+automagically
 automount
 automounting
 backlight
@@ -134,6 +139,8 @@ facter
 factsets
 filename
 files
+filesystem
+filesystems
 forgetability
 frontend
 frontmatter
@@ -153,11 +160,13 @@ iptables
 ish
 javascript
 jekyll
+journald
 kaomoji
 keyring
 keyrings
 kickstart
 ldap
+linewise
 linter
 linters
 localhost
@@ -196,7 +205,9 @@ recurse
 regex
 repo
 repos
+resized
 rsync
+ruleset
 runtime
 sci-fi
 sendmail
@@ -204,6 +215,7 @@ service
 smagic
 subclasses
 subcommand
+subdirectory
 submenu
 submodule
 submodule's
@@ -222,6 +234,7 @@ undeployed
 unstage
 unstaged
 usermod
+vSphere
 viewable
 virtualized
 webserver
