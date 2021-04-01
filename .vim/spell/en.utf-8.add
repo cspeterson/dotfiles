@@ -15,6 +15,8 @@ Dockerfile
 DuckDuckGo
 EL
 EPEL
+EPP
+ERB
 Ender
 Ender's
 F5
@@ -78,8 +80,9 @@ Rclone
 RedHat
 Reddit
 SDL
-SElinux
+SELinux
 SMTP
+SSSD
 STDIN
 Silurian
 Splatmoji
@@ -113,6 +116,8 @@ automagically
 automount
 automounting
 backlight
+backtick
+backticks
 balancer
 bitmapped
 boolean
@@ -183,6 +188,7 @@ mountpoint
 mtime
 multiline
 mysql
+nameref
 nav
 naïve
 naïvely
@@ -231,13 +237,17 @@ thusly
 toolset
 unbanning
 undeployed
+unmanaged
 unstage
 unstaged
 usermod
 vSphere
+validator
 viewable
 virtualized
 webserver
 whitespace
 wildcard
 workspaces
+yamllint
+yamllint's
