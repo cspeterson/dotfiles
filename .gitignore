@@ -112,6 +112,7 @@
 !/.config/ranger/plugins/fzf.py
 !/.config/ranger/rc.conf
 !/.config/ranger/rifle.conf
+!/.config/shellcheckrc
 !/.config/terminator/
 !/.config/terminator/config
 !/.config/udiskie/
