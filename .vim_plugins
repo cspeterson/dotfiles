@@ -175,6 +175,8 @@ else
   let g:ale_linters = { 'markdown': ['proselint']}
   let g:ale_sign_error = '✘'
   let g:ale_sign_warning = '⚠'
+  nnoremap ]l :ALENextWrap<CR>
+  nnoremap [l :ALEPreviousWrap<CR>
 endif
 
 "###############################################
