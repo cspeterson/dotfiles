@@ -25,6 +25,7 @@ pip3 install \
   mypy \
   proselint \
   virtualenv \
+  yamllint \
   yq \
 
 echo 'Install ruby gems...'
