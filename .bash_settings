@@ -9,4 +9,5 @@ export HISTCONTROL=ignoreboth
 export TERM=xterm-256color
 
 # shopts
+shopt -s extglob
 shopt -s globstar
