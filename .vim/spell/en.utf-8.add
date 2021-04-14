@@ -17,6 +17,7 @@ EL
 EPEL
 EPP
 ERB
+EYAML
 Ender
 Ender's
 F5
@@ -28,6 +29,7 @@ Frontmatter
 GPG
 Galera
 GitLab
+Gollum
 HTTPS
 HUDs
 HUP
@@ -53,6 +55,7 @@ LastPass
 Liam
 Lichtenberg
 MP4
+Magisk
 MailChimp
 MariaDB
 Mariabackup
@@ -76,19 +79,24 @@ RPGs
 RPMs
 RSyslog
 RSyslog's
+Rainerscript
 Rclone
 RedHat
 Reddit
 SDL
 SELinux
 SMTP
+SSL
 SSSD
+STDERR
 STDIN
+STDOUT
 Silurian
 Splatmoji
 Subsites
 Sysctl
 TLDR
+TLS
 TMDB
 TOC
 TODO
@@ -153,6 +161,8 @@ geekery
 gif
 gitlab
 gitlab-ci
+heredoc
+heredocs
 hiera
 hieradata
 homedir
@@ -208,6 +218,7 @@ prepending
 r10k
 recognizability
 recurse
+redux
 regex
 repo
 repos
@@ -229,6 +240,7 @@ subnet
 subsite
 subsites
 sudo
+superset
 syslog
 systemctl
 systemd
