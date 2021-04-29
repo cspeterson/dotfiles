@@ -56,6 +56,7 @@ Plugin 'python-mode/python-mode'
 Plugin 'rhysd/vim-textobj-anyblock'
 Plugin 'rodjek/vim-puppet'
 Plugin 'sk1418/HowMuch'
+Plugin 'soywod/himalaya'
 Plugin 'tmhedberg/SimpylFold'  " smarter code folding
 Plugin 'tmhedberg/matchit'
 Plugin 'tommcdo/vim-exchange'
