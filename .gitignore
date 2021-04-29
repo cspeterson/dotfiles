@@ -86,6 +86,8 @@
 !/.config/autorandr/**
 !/.config/gsimplecal/
 !/.config/gsimplecal/config
+!/.config/himalaya/
+!/.config/himalaya/.keep
 !/.config/i3/
 !/.config/i3/config
 !/.config/i3/lastpass-dmenu
