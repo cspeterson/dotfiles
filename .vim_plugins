@@ -27,6 +27,7 @@
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
+Plugin 'cespare/vim-toml'
 Plugin 'chaimleib/vim-renpy'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'christoomey/vim-titlecase'
