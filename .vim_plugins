@@ -33,6 +33,7 @@ Plugin 'christoomey/vim-sort-motion'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'craigemery/vim-autotag'
 Plugin 'cspeterson/vim-convert'	" Unit conversion
+Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
 Plugin 'fisadev/vim-isort'
