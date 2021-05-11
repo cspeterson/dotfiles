@@ -1,0 +1,17 @@
+---
+device: '/dev/input/event7'
+
+rebinds:
+  # Make capslock function as control
+  - from: KEY_CAPSLOCK
+    to: KEY_LEFTCTRL
+
+  # Switch pgup/pgdwn with home/end
+  - from: KEY_HOME
+    to: KEY_PAGEUP
+  - from: KEY_END
+    to: KEY_PAGEDOWN
+  - from: KEY_PAGEUP
+    to: KEY_HOME
+  - from: KEY_PAGEDOWN
+    to: KEY_END

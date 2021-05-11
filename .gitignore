@@ -119,6 +119,8 @@
 !/.config/udiskie/
 !/.config/udiskie/config.yml
 !/.config/user-dirs.dirs
+!/.config/waybind/
+!/.config/waybind/config.yml
 
 !/.gemrc
 
