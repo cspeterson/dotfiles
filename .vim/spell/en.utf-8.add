@@ -48,6 +48,7 @@ ImageMagick
 JSON
 Javascript
 Jennkins
+Jq
 Kramdown
 LDAP
 LSG
@@ -88,6 +89,7 @@ Reddit
 SDL
 SELinux
 SMTP
+SQLite
 SSL
 SSSD
 STDERR
@@ -180,6 +182,8 @@ i3wm
 io
 iptables
 ish
+jank
+janky
 javascript
 jekyll
 journald
