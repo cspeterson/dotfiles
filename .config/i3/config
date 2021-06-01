@@ -193,8 +193,6 @@ exec --no-startup-id dropbox start
 exec --no-startup-id ibus-daemon -drx
 # Network manager
 exec --no-startup-id nm-applet
-# Gajim
-exec --no-startup-id gajim
 # Sound
 exec --no-startup-id pasystray
 # Touchpads tap-enable
