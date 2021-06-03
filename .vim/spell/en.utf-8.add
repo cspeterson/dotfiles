@@ -3,17 +3,23 @@ AWS
 AppArmor
 Augeas
 BBCode
+Base64
 CAs
+CIDR
 CLDR
 CLI
 CentOS
 Cron
 DHCP
+DNF
 DNS
 DSL
+Docker's
 Dockerfile
 DuckDuckGo
 EL
+EL7
+EL8
 EPEL
 EPP
 ERB
@@ -100,6 +106,7 @@ Splatmoji
 Springdale
 Subsites
 Sysctl
+TCP
 TLDR
 TLS
 TMDB
@@ -109,6 +116,7 @@ TSV
 TTRPGs
 Tmux
 TrueType
+UDP
 UI
 UX
 VMware
@@ -204,6 +212,7 @@ manpage
 megayacht
 metadata
 mlookup
+modularity
 modularize
 mountpoint
 mtime
