@@ -34,6 +34,10 @@ pip3 install --user --upgrade \
   cookiecutter \
   youtube-dl \
 
+sudo npm install --global \
+  alex \
+
+
 
 # echo 'Install some basic Go packages...'
 # go get \
