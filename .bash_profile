@@ -36,6 +36,7 @@ export FZF_DEFAULT_OPTS='-m --height 85% --reverse'
 export GEM_HOME="$HOME/.gems"
 export GOBIN=$HOME/.go/bin
 export GOPATH=$HOME/.go
+export ICINGA_DATE_FMT='+%FT%H:%M:%S'
 export LPASS_CLIPBOARD_COMMAND="xclip -selection clipboard -in -l 1"
 export QUOTING_STYLE=literal
 
