@@ -1,4 +1,5 @@
 APIs
+APs
 AWS
 AppArmor
 Augeas
@@ -6,6 +7,7 @@ BBCode
 Base64
 CAs
 CIDR
+CIFS
 CLDR
 CLI
 CentOS
@@ -27,6 +29,7 @@ EYAML
 Ender
 Ender's
 F5
+FAS
 FFmpeg
 FQDN
 Facter
@@ -50,6 +53,7 @@ ITL
 Icinga
 Icinga's
 Icinga2
+Icinga2's
 ImageMagick
 JSON
 Javascript
@@ -72,17 +76,21 @@ Morty
 Multisite
 MySQL
 NFS
+NFSv3
 NFSv4
 Nagios
+NetApp
 Nginx
 OSX
 Oculus
 Onceover
 OpenVPN
+PDFs
 PKI
 Pluggable
 PuppetDB
 Puppetized
+README
 RPG
 RPGs
 RPMs
@@ -101,6 +109,7 @@ SSSD
 STDERR
 STDIN
 STDOUT
+SVM
 Silurian
 Splatmoji
 Springdale
@@ -116,8 +125,10 @@ TSV
 TTRPGs
 Tmux
 TrueType
+UCARP
 UDP
 UI
+URI
 UX
 VMware
 VR
@@ -167,6 +178,7 @@ even
 executables
 facter
 factsets
+failover
 filename
 files
 filesystem
@@ -264,6 +276,7 @@ subsite
 subsites
 sudo
 superset
+symlink
 syslog
 systemctl
 systemd
@@ -281,6 +294,7 @@ vSphere
 validator
 viewable
 virtualized
+walkthrough
 webserver
 whitespace
 wildcard
