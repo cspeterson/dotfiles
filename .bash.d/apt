@@ -1,3 +1,4 @@
+alias apt-provides="echo 'NOTE: You may want to \`sudo apt-file update...\`'; apt-file find"
 alias aptinst='apt --yes install'
 alias aptls='apt list --installed'
 alias aptrm='apt remove'

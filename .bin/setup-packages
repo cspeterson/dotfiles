@@ -2,6 +2,7 @@
 
 echo 'Install a bunch of basic packages...'
 sudo apt-get install \
+  apt-file \
   curl \
   eyed3 \
   gnuplot-x11 \
