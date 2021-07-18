@@ -43,3 +43,6 @@ Xft.hinting: HINTING
 Xft.hintstyle: HINTSTYLE
 Xft.lcdfilter: LCDFILTER
 Xft.rgba: RGBA
+
+! Rofi
+rofi.dpi: DPI
