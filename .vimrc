@@ -166,6 +166,13 @@ nnoremap <Leader>s= <C-w>=
 " Close all other windows in current tabview but current
 nnoremap <Leader>so <C-w>o
 
+" Completion mappings
+if !empty($DISPLAY)
+  " GUI file and directory completion
+  inoremap <expr> <c-x><c-g><c-f> substitute(system('zenity --file-selection'), '\n\+$', '', '')
+  inoremap <expr> <c-x><c-g><c-d> substitute(system('zenity --directory --file-selection'), '\n\+$', '', '')
+endif
+
 " Statusline
 set laststatus=2 " always show status line
 set statusline=
