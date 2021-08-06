@@ -204,5 +204,6 @@ runtime ftplugin/man.vim
 "# Fzf
 "###############################################3
 
-imap <c-x><c-f> <plug>(fzf-complete-file)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+inoremap <c-x><c-f> <plug>(fzf-complete-file)
+inoremap <c-x><c-l> <plug>(fzf-complete-line)
+inoremap <expr> <c-x><c-d> fzf#vim#complete#path("find . -type d -print \| sed '1d;s:^..::'")
