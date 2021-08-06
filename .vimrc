@@ -310,7 +310,7 @@ vnoremap <Leader>wcmh :silent w !pandoc -f markdown <bar> xclip -t text/html -se
 "###############################################3
 "## Plugins!
 "###############################################3
-source ~/.vim_plugins
+source ~/.vimplugins.vim
 
 "###############################################3
 "## After plugins!
