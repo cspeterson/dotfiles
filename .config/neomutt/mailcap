@@ -1,0 +1,9 @@
+text/html; elinks -force-html -dump -dump-color-mode 1; copiousoutput;
+application/pdf;  pdftotext %s -; copiousoutput;
+
+# Catch the rest with xdg-open
+audio/*; xdg-open %s &;
+application/*; xdg-open %s &;
+image/*; xdg-open %s &;
+text/*; cat %s; copiousoutput;
+video/*; xdg-open %s &;

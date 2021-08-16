@@ -1,0 +1,17 @@
+source ~/.config/neomutt/muttrc
+
+set folder = 'imaps://mail.domain.tld' # Mailbox location
+set from = 'user@domain.tld' # Send as
+set imap_pass   = `pass arg arg`
+set imap_user   = 'user@domain.tld'
+set postponed = '+Drafts' # Put drafts here
+set query_command = '/path/to/recipient/autocomplete arg arg'
+set record = '+Sent' # Where to put sent copies
+set signature = '~/.config/neomutt/some/signature'
+set smtp_pass   = `pass arg arg`
+set smtp_url = "smtp://seru@domain.tld:587"
+set spoolfile   = "+INBOX"
+set ssl_starttls = 'yes'
+set trash       = '+archive' # Put deleted messages here instead of actually purging
+
+mailboxes       = '+INBOX' '+INBOX/inbox_subfolder' '+Otherfolder' '+archive'

@@ -6,5 +6,5 @@ setlocal fileformat=unix
 setlocal shiftwidth=2
 setlocal smartindent
 setlocal softtabstop=2
-setlocal tabstop=2	" Sets a 'tab' to 4 spaces
+setlocal tabstop=2
 setlocal commentstring=\<\!--\ %s\ --\>

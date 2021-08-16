@@ -4,6 +4,7 @@ echo 'Install a bunch of basic packages...'
 sudo apt-get install \
   apt-file \
   curl \
+  elinks \
   eyed3 \
   gnuplot-x11 \
   htop \
@@ -16,6 +17,7 @@ sudo apt-get install \
   nodejs \
   npm \
   pandoc \
+  poppler-utils \
   python3-pip \
   ranger \
   screen \
@@ -23,6 +25,7 @@ sudo apt-get install \
   texlive-latex-recommended \
   translate-shell \
   units \
+  urlscan \
   vim \
   w3m \
   wkhtmltopdf \

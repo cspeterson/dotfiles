@@ -75,6 +75,10 @@
 !/.bundle/
 !/.bundle/config
 
+!/.cache/
+!/.cache/mutt/
+!/.cache/mutt/.keep
+
 !/.clusterssh/
 !/.clusterssh/config
 
@@ -99,6 +103,10 @@
 !/.config/kitty/kitty.conf
 !/.config/kitty/theme.conf
 !/.config/mimeapps.list
+!/.config/neomutt/
+!/.config/neomutt/example.muttrc
+!/.config/neomutt/mailcap
+!/.config/neomutt/muttrc
 !/.config/pandoc/
 !/.config/pandoc/writers/
 !/.config/pandoc/writers/pandoc-bbcode-smf.git
@@ -169,6 +177,7 @@
 !/.vim/ftplugin/javascript.vim
 !/.vim/ftplugin/json.vim
 !/.vim/ftplugin/lua.vim
+!/.vim/ftplugin/mail.vim
 !/.vim/ftplugin/markdown.vim
 !/.vim/ftplugin/puppet.vim
 !/.vim/ftplugin/python.vim
