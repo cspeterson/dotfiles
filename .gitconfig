@@ -24,3 +24,5 @@
 [user]
 	email = 3893680+cspeterson@users.noreply.github.com
 	name = Christopher Peterson
+[init]
+	defaultBranch = main
