@@ -178,6 +178,7 @@
 !/.vim/ftplugin/json.vim
 !/.vim/ftplugin/lua.vim
 !/.vim/ftplugin/mail.vim
+!/.vim/ftplugin/mail.vim
 !/.vim/ftplugin/markdown.vim
 !/.vim/ftplugin/puppet.vim
 !/.vim/ftplugin/python.vim

@@ -83,3 +83,12 @@ macro pager                              dT        '<delete-thread> <sync-mailbo
 macro pager                              dd        '<delete-message> <sync-mailbox> <exit>' # Delete message being viewed and go back to index
 macro pager                              dt        '<delete-thread> <exit>' # Mark thread for deletion but do not push changes
 macro pager                              x         '<delete-message> <exit>' # Mark message being viewed for deletion and hop back to index
+
+macro index                              dj        '<tag-pattern>~m 0,1<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
+macro index                              d<Down>   '<tag-pattern>~m 0,1<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
+macro index                              d2j       '<tag-pattern>~m 0,2<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
+macro index                              d3j       '<tag-pattern>~m 0,3<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
+macro index                              dk        '<tag-pattern>~m -1,0<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
+macro index                              d<Up>     '<tag-pattern>~m -1,0<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
+macro index                              d2k       '<tag-pattern>~m -2,0<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
+macro index                              d3k       '<tag-pattern>~m -3,0<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
