@@ -107,6 +107,8 @@
 !/.config/neomutt/example.muttrc
 !/.config/neomutt/mailcap
 !/.config/neomutt/muttrc
+!/.config/neomutt/style.css
+!/.config/neomutt/template.html
 !/.config/pandoc/
 !/.config/pandoc/writers/
 !/.config/pandoc/writers/pandoc-bbcode-smf.git
