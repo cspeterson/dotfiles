@@ -50,8 +50,8 @@ bind  index                              zA        collapse-all # Toggle folding
 bind  index                              <space>   collapse-thread # Toggle folding of the selected thread
 bind  editor                             \t        complete-query # Tab-completion
 bind  generic                            zz         current-middle # Vim-ish centering of current line
-macro pager                              x         '<delete-message> <exit>' 'Mark message being viewed for deletion and hop back to index'
-bind  index                              x         delete-message # Mark message for deletion but do not push the change
+macro pager                              x         '<delete-thread> <exit>' 'Mark message being viewed for deletion and hop back to index'
+bind  index                              x         delete-thread # Mark message for deletion but do not push the change
 macro index                              dd        '<delete-message> <sync-mailbox>' 'Delete and immediately push the change'
 macro pager                              dd        '<delete-message> <sync-mailbox> <exit>' 'Delete message being viewed and go back to index'
 macro pager                              dt        '<delete-thread> <exit>' 'Mark thread for deletion but do not push changes'
