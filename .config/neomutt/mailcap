@@ -1,4 +1,4 @@
-text/html; elinks -force-html -dump -dump-color-mode 1; copiousoutput;
+text/html; elinks -force-html -dump; copiousoutput;
 application/pdf;  pdftotext %s -; copiousoutput;
 
 # Catch the rest with xdg-open
