@@ -22,6 +22,7 @@ set mail_check = 90 # Auto refresh 90s
 set mail_check_stats
 set mail_check_stats_interval = 60
 set mailcap_path = "~/.config/neomutt/mailcap" # MIME type handling
+set mark_macro_prefix = '`' # Jump to mark as in vim
 set message_cachedir = "~/.cache/mutt"
 set postpone = 'yes' # Always save unfinished messages to drafts
 set realname = 'Christopher Peterson' # It'sa me
@@ -59,16 +60,18 @@ macro attach                            \co        '<enter-command>set mailcap_p
 macro generic                            <F5>      '<enter-command>source ~/.config/neomutt/muttrc<Enter>' # Refresh main config (but not account-specific)
 bind  attach,browser,index               gg        first-entry # Jump to top
 bind  index                              g!        flag-message
-bind index,pager                         gr        group-reply
+bind  index,pager                        gr        group-reply
 bind  index                              \\r       imap-fetch-mail
 bind  attach,browser,index               G         last-entry # Jump to bottom
-bind pager                               <Right>   next-entry # In pager, left/right skip prev/next
+bind  index                              c         mail # Compose new message
+bind  index                              m         mark-message # Mark message as in Vim
+bind  pager                              <Right>   next-entry # In pager, left/right skip prev/next
 bind  index                              <Down>    next-entry # Select next item, even if marked for deletion
 bind  pager                              j         next-line # Scroll
 bind  pager                              <Down>    next-line # Scroll
 bind  attach,browser,index,pager         \Cf       next-page # Scroll pagedown
 macro attach,compose,index,compose,pager \cu       '<pipe-entry> urlscan<Enter>' 'Call urlscan to extract URLs out of a message'
-bind pager                               <Left>    previous-entry # In pager, left/right skip prev/next
+bind  pager                              <Left>    previous-entry # In pager, left/right skip prev/next
 bind  index                              <Up>      previous-entry # Select prev item, even if marked for deletion
 bind  pager                              k         previous-line # Scroll
 bind  pager                              <Up>      previous-line # Scroll
