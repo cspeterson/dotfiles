@@ -98,3 +98,16 @@ bind  pager                              gg        top # Jump to top
 bind  index                              D         undelete-message
 bind  index,pager                        X         undelete-message
 bind  index                              gT        untag-pattern
+
+# Really big macros
+macro compose y '\
+<tag-entry><toggle-unlink>\
+<enter-command>set pipe_decode<Enter>\
+<pipe-message>pandoc --standalone --css ~/.config/neomutt/style.css --from gfm --to html --self-contained --metadata pagetitle=" " --template ~/.config/neomutt/template.html --output ~/.cache/mutt/msg.tmp.html<Enter>\
+<enter-command>unset pipe_decode<Enter>\
+<attach-file>~/.cache/mutt/msg.tmp.html<Enter>\
+<tag-entry><toggle-unlink>\
+<group-alternatives>\
+<edit-description>^UAlternatives for message body<Enter>'\
+<send-message> \
+'Convert markdown to HTML5, and bundle it with the markdown for plaintext as alternative content types'
