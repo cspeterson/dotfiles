@@ -33,6 +33,7 @@ set sidebar_visible
 set sort='reverse-threads' # New on top
 set strict_threads = 'no' # Play loose with figuring out what counts as part of a threaded conversation
 set timeout=30 # For timeout on *user input*
+set wait_key = 'no' # Do not prompt for confirm after running external commands
 
 # A design limitation in NeoMutt means that binding e.g. both `n` and `nn` is
 # problematic - unbind the shorter ones to sidestep
