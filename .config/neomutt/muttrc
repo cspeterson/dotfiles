@@ -30,6 +30,7 @@ set resolve = 'no' # Do not skip to next message after an action is taken
 set resume_draft_files = 'yes' # Draftsa as postponed
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set sidebar_visible
+set sig_dashes = 'no' # I will put the dashes into my sig myself to ensure they have a blank line before for markdown friendliness
 set sort='reverse-threads' # New on top
 set strict_threads = 'no' # Play loose with figuring out what counts as part of a threaded conversation
 set timeout=30 # For timeout on *user input*
