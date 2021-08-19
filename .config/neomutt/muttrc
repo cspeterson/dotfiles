@@ -83,7 +83,7 @@ bind  index,pager                        <C-Right> sidebar-open
 bind  index,pager                        <C-Up>    sidebar-prev
 bind  index                              \\s       sync-mailbox
 bind  index                              gt        tag-pattern
-macro index                              gan       '<tag-pattern>~A<Enter><tag-prefix><clear-flag>N<untag-pattern>~A<Enter>' 'Toggle "new" flag on all messages in folder'
+macro index                              gar       '<tag-pattern>~A<Enter><tag-prefix><clear-flag>N<untag-pattern>~A<Enter>' '"Mark all read" i.e. clear "new" flag on all messages in folder'
 macro index                              dj        '<tag-pattern>~m 0,1<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
 macro index                              d<Down>   '<tag-pattern>~m 0,1<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
 macro index                              d2j       '<tag-pattern>~m 0,2<Enter> <tag-prefix><delete-message> <sync-mailbox>' # Delete like a vim motion
