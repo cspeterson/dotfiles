@@ -80,6 +80,7 @@ bind  pager                              k         previous-line # Scroll
 bind  pager                              <Up>      previous-line # Scroll
 bind  attach,browser,index,pager         \Cb       previous-page # Scroll pageup
 bind  browser,index,pager                N         search-opposite # As `N` in Vim search
+bind  compose                            Y         send-message
 bind  index,pager                        <C-Down>  sidebar-next
 bind  index,pager                        <C-Right> sidebar-open
 bind  index,pager                        <C-Up>    sidebar-prev
