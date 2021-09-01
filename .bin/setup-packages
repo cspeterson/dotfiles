@@ -38,9 +38,9 @@ pip3 install --user --upgrade \
   cookiecutter \
   youtube-dl \
 
-sudo npm install --global \
+npm install --prefix "${HOME}/.node_user" \
   alex \
-
+  trello-cli \
 
 
 # echo 'Install some basic Go packages...'
