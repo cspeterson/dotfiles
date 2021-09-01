@@ -40,6 +40,7 @@ Galera
 GitLab
 GitLab's
 Gollum
+HTML5
 HTTPS
 HUDs
 HUP
@@ -79,6 +80,7 @@ NFS
 NFSv3
 NFSv4
 Nagios
+NeoMutt
 NetApp
 Nginx
 OSX
@@ -88,6 +90,7 @@ OpenVPN
 PDFs
 PKI
 Pluggable
+Prepend
 PuppetDB
 Puppetized
 README
@@ -141,6 +144,7 @@ XtraBackup
 YAML
 ZWJ
 allocoprophagy
+amongst
 autocmd
 autocomplete
 autofs
@@ -247,6 +251,7 @@ playthrough
 pluggable
 podcasting
 pre
+prepend
 prepending
 r10k
 recognizability
