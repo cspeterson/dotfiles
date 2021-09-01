@@ -17,9 +17,10 @@ bindirs=(
   "${HOME}/.gems/bin"
   "${HOME}/.go/bin"
   "${HOME}/.local/bin"
+  "${HOME}/.node_user/node_modules/.bin/"
   "${HOME}/bin"
-  "/var/lib/flatpak/exports/bin"
   '/opt/puppetlabs/bin/'
+  '/var/lib/flatpak/exports/bin'
 )
 for bindir in "${bindirs[@]}"; do
   if [ -d "${bindir}" ] ; then
