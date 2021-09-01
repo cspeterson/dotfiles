@@ -171,6 +171,7 @@
 !/.vim/
 !/.vim/ftdetect/
 !/.vim/ftdetect/markdown.vim
+!/.vim/ftdetect/muttrc.vim
 !/.vim/ftdetect/puppet.vim
 !/.vim/ftplugin/
 !/.vim/ftplugin/css.vim
