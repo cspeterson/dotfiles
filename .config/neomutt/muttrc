@@ -101,7 +101,7 @@ bind  index,pager                        X         undelete-message
 bind  index                              gT        untag-pattern
 
 # Really big macros
-macro compose y '\
+macro compose                            y         '\
 <tag-entry><toggle-unlink>\
 <enter-command>set pipe_decode<Enter>\
 <pipe-message>pandoc --standalone --css ~/.config/neomutt/style.css --from gfm --to html --self-contained --metadata pagetitle=" " --template ~/.config/neomutt/template.html --output ~/.cache/mutt/msg.tmp.html<Enter>\
