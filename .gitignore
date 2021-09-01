@@ -182,6 +182,7 @@
 !/.vim/ftplugin/mail.vim
 !/.vim/ftplugin/mail.vim
 !/.vim/ftplugin/markdown.vim
+!/.vim/ftplugin/muttrc.vim
 !/.vim/ftplugin/puppet.vim
 !/.vim/ftplugin/python.vim
 !/.vim/ftplugin/ruby.vim
