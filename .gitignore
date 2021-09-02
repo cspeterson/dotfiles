@@ -46,6 +46,7 @@
 !/.bin/bright
 !/.bin/docxmd2pdf
 !/.bin/dotfiles-setup.py
+!/.bin/email_to_trello
 !/.bin/gifgen
 !/.bin/h5toflac
 !/.bin/httplen

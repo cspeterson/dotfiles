@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+if [[ ( $# -eq 0 ) || ( $# -ne 2 ) ]] \
+  || [ "${1}" == '-h' ] \
+  || [ "${1}" == '--help' ]; then
+  echo "
+  This script takes a raw email (with headers!) on STDIN and uses the
+  title and body to create a Trello card on the specified board and list
+
+  Expects `trello-cli` (https://github.com/mheap/trello-cli) in PATH to do
+  the actual Trelloing
+    \`npm install trello-cli\`
+
+  Example:
+    \`cat /path/to/message | $0 [boardName] [listName]\`
+  "
+  exit 0
+fi
+
+main() {
+  local boardname="${1}"
+  local listname="${2}"
+  local title
+  local description=''
+
+  while IFS='$\n' read -r line; do
+    # Getcard title from headers
+    if [ -z "${line}" ]; then
+      # End of headers
+      break
+    fi
+    if [[ "${line}" =~ Subject:\ * ]]; then
+      title="${line#*: }"
+      title="${title#Re: }"
+    fi
+  done
+
+  if [ -z "${boardname}" ] || [ -z "${listname}" ]; then
+    echo "Invalid board or list name" >&2
+    exit 1
+  fi
+
+  while IFS='$\n' read -r line; do
+    # Extract card text from body of email
+    if [ "${line}" == '-- ' ]; then
+      # So begins a mail sig, ignore the rest
+      break
+    else
+      description="${description}${line}"$'\n'
+    fi
+  done
+
+  if [ -z "${description}" ]; then
+    echo "Invalid card description" >&2
+    exit 1
+  fi
+
+  trello add-card "${title}" "${description}" --boardName "${boardname}" --listName "${listname}"
+}
+
+main "$@"
