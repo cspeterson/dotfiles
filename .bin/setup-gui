@@ -16,6 +16,7 @@ sudo apt-get install \
   adwaita-icon-theme-full \
   autorandr \
   blueman \
+  cargo \
   dmenu \
   fonts-font-awesome \
   gajim \
@@ -40,6 +41,10 @@ sudo apt-get install \
   vlc \
   xautolock \
   xsel \
+
+cargo install --locked \
+  spotify-tui \
+  spotifyd \
 
 
 ## Other

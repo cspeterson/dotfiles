@@ -1,0 +1,10 @@
+---
+behavior:
+  liked_icon: '❤️'
+  paused_icon: '⏸️'
+  playing_icon: '▶️'
+
+keybindings:
+  back: 'q'
+  jump_to_end: 'G'
+  jump_to_start: 'g'

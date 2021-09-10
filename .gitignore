@@ -68,6 +68,7 @@
 !/.bin/setup-tmux
 !/.bin/setup-vim
 !/.bin/sizerate
+!/.bin/spt
 !/.bin/tmux-chdir
 !/.bin/touchpads-tapping-enable
 !/.bin/vimt
@@ -126,6 +127,8 @@
 !/.config/ranger/plugins/fzf.py
 !/.config/ranger/rc.conf
 !/.config/ranger/rifle.conf
+!/.config/spotify-tui/
+!/.config/spotify-tui/config.yml
 !/.config/terminator/
 !/.config/terminator/config
 !/.config/udiskie/
