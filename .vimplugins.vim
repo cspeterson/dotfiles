@@ -36,7 +36,6 @@ Plugin 'cspeterson/vim-convert'	" Unit conversion
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elzr/vim-json'           " Better than standard javascript highlighting
-Plugin 'fisadev/vim-isort'
 Plugin 'godlygeek/tabular'         " Aligns text
 Plugin 'iamcco/markdown-preview.vim'       " Md preview with commands MarkdownPreview and MarkdownPreviewStop
 Plugin 'jeetsukumaran/vim-indentwise'
@@ -69,6 +68,9 @@ Plugin 'tpope/vim-surround'        " Easily work with surrounding objects eg par
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ReplaceWithRegister'
 
+if (has('python3'))
+  Plugin 'fisadev/vim-isort'
+endif
 if v:version < 800
   Plugin 'vim-syntastic/syntastic'
   let syntax_checker = 'syntastic'
