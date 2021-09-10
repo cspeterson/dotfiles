@@ -20,6 +20,7 @@ sudo apt-get install \
   poppler-utils \
   python3-pip \
   ranger \
+  run-one \
   screen \
   texlive-fonts-recommended \
   texlive-latex-recommended \
