@@ -11,7 +11,6 @@ fi
 
 # Add other bins to path if exist
 bindirs=(
-  "${HOME}/.bin"
   "${HOME}/.cargo/bin"
   "${HOME}/.fzf/bin"
   "${HOME}/.gems/bin"
@@ -21,6 +20,7 @@ bindirs=(
   "${HOME}/bin"
   '/opt/puppetlabs/bin/'
   '/var/lib/flatpak/exports/bin'
+  "${HOME}/.bin" # Add this last pls
 )
 for bindir in "${bindirs[@]}"; do
   if [ -d "${bindir}" ] ; then
