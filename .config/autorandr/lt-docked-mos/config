@@ -1,0 +1,18 @@
+output DP-2
+off
+output DP-3
+off
+output DP-4
+off
+output DP-1
+crtc 0
+mode 1920x1200
+pos 0x0
+primary
+rate 59.95
+output eDP-1
+crtc 1
+mode 3840x2400
+pos 1920x0
+rate 59.99
+transform 0.500000,0.000000,0.000000,0.000000,0.500000,0.000000,0.000000,0.000000,1.000000
