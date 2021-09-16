@@ -27,6 +27,7 @@
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " Automatic set paste when pasting. which is nice.
 Plugin 'altercation/vim-colors-solarized'     " Pleasant colors
+Plugin 'bogado/file-line' " Open paths like `/path/to/file:NN` directly to the specified line number
 Plugin 'cespare/vim-toml'
 Plugin 'chaimleib/vim-renpy'
 Plugin 'christoomey/vim-sort-motion'
