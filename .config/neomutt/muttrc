@@ -59,7 +59,7 @@ bind  index                              dt        delete-thread # Mark thread f
 macro pager                              dT        '<delete-thread> <sync-mailbox> <exit>' 'Immediately force deletion of current message and go back to listing'
 macro index                              dT        '<delete-thread> <sync-mailbox>' 'Immediately force deletion of current message and go back to listing'
 macro attach                            \co        '<enter-command>set mailcap_path="~/.config/neomutt/mailcap.xdgall"<Enter><view-attach><enter-command>set mailcap_path="~/.config/neomutt/mailcap"<Enter>' 'Open the selected attachment via xdg-open, ignoring any other configured handlingAA2'
-macro index,pager                        E         '<enter-command>set pipe_decode<Enter><pipe-message>$EDITOR -<Enter><enter-command>unset pipe_decode<Enter>' 'View message in EDITOR *without* all the headers'
+macro index,pager                        e         '<enter-command>set pipe_decode<Enter><pipe-message>$EDITOR -<Enter><enter-command>unset pipe_decode<Enter>' 'View message in EDITOR *without* all the headers'
 macro generic                            <F5>      '<enter-command>source ~/.config/neomutt/muttrc<Enter>' 'Refresh main config (but not account-specific)'
 bind  attach,browser,index               gg        first-entry # Jump to top
 bind  index                              g!        flag-message
@@ -75,6 +75,7 @@ bind  pager                              j         next-line # Scroll
 bind  pager                              <Down>    next-line # Scroll
 bind  attach,browser,index,pager         \Cf       next-page # Scroll pagedown
 macro attach,compose,index,compose,pager \cu       '<pipe-entry> urlscan<Enter>' 'Call urlscan to extract URLs out of a message'
+macro index,pager                        E         '<pipe-message>$EDITOR -<Enter>' 'View message in EDITOR *with* all the headers'
 bind  pager                              <Left>    previous-entry # In pager, left/right skip prev/next
 bind  index                              <Up>      previous-entry # Select prev item, even if marked for deletion
 bind  pager                              k         previous-line # Scroll
