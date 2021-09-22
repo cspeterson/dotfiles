@@ -66,7 +66,6 @@ macro index,pager                        e         '<enter-command>set pipe_deco
 macro generic                            <F5>      '<enter-command>source ~/.config/neomutt/muttrc<Enter>' 'Refresh main config (but not account-specific)'
 bind  attach,browser,index               gg        first-entry # Jump to top
 bind  index                              g!        flag-message
-macro pager                              gf        '<forward-message>' 'Forward current message with the plaintext version included inline'
 bind  index,pager                        gr        group-reply
 bind  index                              \\r       imap-fetch-mail
 bind  attach,browser,index               G         last-entry # Jump to bottom
@@ -106,8 +105,11 @@ bind  index,pager                        X         undelete-message
 bind  index                              gT        untag-pattern
 
 # Really big macros
+
+## Convert message to HTML and send in combo with the original as MIME alternatives
 macro compose                            y         '\
-<tag-entry><toggle-unlink>\
+<first-entry>\
+<tag-entry>\
 <enter-command>set pipe_decode<Enter>\
 <pipe-message>pandoc --standalone --css ~/.config/neomutt/style.css --from gfm --to html --self-contained --metadata pagetitle=" " --template ~/.config/neomutt/template.html --output ~/.cache/mutt/msg.tmp.html<Enter>\
 <enter-command>unset pipe_decode<Enter>\
