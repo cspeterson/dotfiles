@@ -7,8 +7,10 @@ set attach_save_dir = "~/downloads/" # Default save dir for attachments to XDG d
 set collapse_all # Fold all threads
 set copy = 'yes'
 set delete = 'yes' # Delete without prompting
-set header_cache = "~/.cache/mutt" # Point to a directory for better performance
 set forward_format = 'Fwd: %s' # Prepend indicator to a forwarded message like every other client because the default disagrees
+set forward_attribution_intro = '----- Forwarded message from %f -----\n```'
+set forward_attribution_trailer = '```\n----- End forwarded message -----'
+set header_cache = "~/.cache/mutt" # Point to a directory for better performance
 set imap_passive = 'no' # Let NeoMutt create new IMAP connections
 set index_format="\
 %4C \
@@ -24,10 +26,11 @@ set mail_check_stats_interval = 60
 set mailcap_path = "~/.config/neomutt/mailcap" # MIME type handling
 set mark_macro_prefix = '`' # Jump to mark as in vim
 set message_cachedir = "~/.cache/mutt"
+set mime_forward = "ask-yes"
 set postpone = 'yes' # Always save unfinished messages to drafts
 set realname = 'Christopher Peterson' # It'sa me
 set resolve = 'no' # Do not skip to next message after an action is taken
-set resume_draft_files = 'yes' # Draftsa as postponed
+set resume_draft_files = 'yes' # Resume drafts from postponed
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set sidebar_visible
 set sig_dashes = 'no' # I will put the dashes into my sig myself to ensure they have a blank line before for markdown friendliness
