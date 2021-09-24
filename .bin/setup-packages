@@ -3,6 +3,7 @@
 echo 'Install a bunch of basic packages...'
 sudo apt-get install \
   apt-file \
+  calcurse \
   curl \
   elinks \
   eyed3 \

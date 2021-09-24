@@ -51,6 +51,7 @@
 !/.bin/h5toflac
 !/.bin/httplen
 !/.bin/i3keys
+!/.bin/ical_summary
 !/.bin/instagif
 !/.bin/lastpass-dmenu
 !/.bin/lastpass-dmenu.git

@@ -1,5 +1,7 @@
-text/html; elinks -force-html -dump; copiousoutput;
+application/ics; ical_summary %s; copiousoutput;
 application/pdf;  pdftotext %s -; copiousoutput;
+text/calendar; ical_summary %s; copiousoutput;
+text/html; elinks -force-html -dump; copiousoutput;
 
 # Catch the rest with xdg-open
 audio/*; xdg-open %s &;

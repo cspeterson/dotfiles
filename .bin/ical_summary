@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# It would probably make so much more sense to just inspect the file manually
+# with Python but meh I fell in this hole and now here we are
+
+if [ $# -ne 1 ] || ! [ -f "${1}" ]; then
+  echo "
+  Summarizes the event(s) inside an ical file
+
+  Usage:
+    ${0} /path/to/event.ical
+  "
+fi
+
+f="${1}";
+calcurse_cachedir="${HOME}/.cache/calcurse"
+
+fmt='\n%m\n│──Start: \t%(start:%Y.%m.%d @ %I:%M%P (%a))\n│──End: \t%(end:%Y.%m.%d @ %I:%M%P (%a))\n│──Duration: \t%(duration:%dd %Hh %Mm)\n└──Note: %N\n\n'
+rrule="$(sed -n '/^BEGIN:VEVENT/,/^END:VEVENT/{p;/^END:VEVENT/q}' "${f}" | grep '^RRULE' | sed 's/^RRULE://' | sed '/^└──Note: / s/\n/'$'\n''/g')"
+if [ -z "${rrule}" ]; then
+  rrule='<none>'
+fi
+
+# Run calcurse on a fresh data dir just to get the output for this one import
+rm -rf "${calcurse_cachedir}"
+summary="$(calcurse --datadir "${calcurse_cachedir}" --import "${f}" --dump-imported --format-apt "${fmt}" --format-recur-apt "${fmt}")"
+rm -rf "${calcurse_cachedir}"
+
+echo "#################"
+echo "${summary}" | sed '/^│──Duration: \t/a │──Repeat: \t'"${rrule}"
