@@ -78,6 +78,7 @@ bind  pager                              j         next-line # Scroll
 bind  pager                              <Down>    next-line # Scroll
 bind  attach,browser,index,pager         \Cf       next-page # Scroll pagedown
 macro attach,compose,index,compose,pager \cu       '<pipe-entry> urlscan<Enter>' 'Call urlscan to extract URLs out of a message'
+macro attach                             e         '<pipe-message>$EDITOR -<Enter>' 'Open arbitrary attachment in $EDITOR'
 macro index,pager                        E         '<pipe-message>$EDITOR -<Enter>' 'View message in EDITOR *with* all the headers'
 bind  pager                              <Left>    previous-entry # In pager, left/right skip prev/next
 bind  index                              <Up>      previous-entry # Select prev item, even if marked for deletion
