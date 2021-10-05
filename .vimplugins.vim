@@ -53,7 +53,6 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'psf/black'
-Plugin 'python-mode/python-mode'
 Plugin 'rhysd/vim-textobj-anyblock'
 Plugin 'rodjek/vim-puppet'
 Plugin 'sk1418/HowMuch'
@@ -71,6 +70,7 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 
 if (has('python3'))
   Plugin 'fisadev/vim-isort'
+  Plugin 'python-mode/python-mode'
 endif
 if v:version < 800
   Plugin 'vim-syntastic/syntastic'
