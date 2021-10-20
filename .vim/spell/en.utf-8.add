@@ -56,10 +56,12 @@ Icinga's
 Icinga2
 Icinga2's
 ImageMagick
+Insta
 JSON
 Javascript
 Jennkins
 Jq
+Jq's
 Kramdown
 LDAP
 LSG
@@ -92,6 +94,7 @@ PKI
 Percona
 Pluggable
 Prepend
+Proofpoint
 PuppetDB
 Puppetized
 README
@@ -128,6 +131,7 @@ TODO
 TSV
 TTRPGs
 Tmux
+Totoro
 Trello
 TrueType
 UCARP
@@ -240,6 +244,8 @@ nameref
 nav
 naïve
 naïvely
+nftables
+nftables
 ntpd
 other's
 pandoc
@@ -255,6 +261,7 @@ podcasting
 pre
 prepend
 prepending
+proxying
 r10k
 recognizability
 recurse
