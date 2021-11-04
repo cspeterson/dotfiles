@@ -8,3 +8,19 @@ keybindings:
   back: 'q'
   jump_to_end: 'G'
   jump_to_start: 'g'
+
+theme:
+  # Solarized light via
+  # https://matthewbilyeu.com/blog/2019-09-19/solarized-light-theme-for-spotify-tui
+  active: "42, 161, 152"  # current playing song in list
+  banner: "42, 161, 152"   # the "spotify-tui" banner on launch
+  error_border: "220, 50, 47"  # error dialog border
+  error_text: "220, 50, 47"   # error message text (e.g. "Spotify API reported error 404")
+  hint: "38, 139, 210"  # hint text in errors
+  hovered: "211, 54, 130"  # hovered pane border
+  inactive: "147, 161, 161"  # borders of inactive panes
+  playbar_background: "7, 54, 66"  # background of progress bar
+  playbar_progress: "42, 161, 152"  # filled-in part of the progress bar
+  playbar_text: "101, 123, 131"  # artist name in player pane
+  selected: "42, 161, 152"   # a) selected pane border, b) hovered item in list, & c) track title in player
+  text: "101, 123, 131"  # text in panes
