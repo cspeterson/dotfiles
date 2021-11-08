@@ -54,7 +54,7 @@ ssh_mux() {
   hostnameshellcmd='$(hostname)'
 
   if [ "${1}" == 'tmux' ]; then
-    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} tmux attach-session -t ${session_name} || ${sudocmd} tmux -L tmux.${USER} new-session -s ${session_name}"
+    ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} tmux -L tmux.${USER} attach-session -t ${session_name} || ${sudocmd} tmux -L tmux.${USER} new-session -s ${session_name}"
   else
     ssh -t ${2} "clear; echo \"Logging into host ${2}  identifying as ${hostnameshellcmd}\"; ${sudocmd} screen -DRS ${session_name}"
   fi
