@@ -38,6 +38,7 @@ sudo apt-get install \
 # echo 'Install some basic packages from pip...'
 pip3 install --user --upgrade \
   cookiecutter \
+  csvtomd \
   youtube-dl \
 
 npm install --prefix "${HOME}/.node_user" \
