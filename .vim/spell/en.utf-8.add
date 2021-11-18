@@ -10,6 +10,7 @@ CIDR
 CIFS
 CLDR
 CLI
+CNAME
 CentOS
 Cron
 DHCP
@@ -143,6 +144,7 @@ VMware
 VR
 VirtualBox
 Vlambeer
+WCCP
 Wayland
 WordPress
 XTerm
@@ -270,6 +272,7 @@ redux
 regex
 repo
 repos
+requestors
 resized
 rsync
 ruleset
@@ -306,6 +309,7 @@ unlink
 unmanaged
 unstage
 unstaged
+untrusted
 upstream's
 usermod
 vSphere
