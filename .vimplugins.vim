@@ -32,6 +32,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'chaimleib/vim-renpy'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'christoomey/vim-titlecase'
+Plugin 'coachshea/vim-textobj-markdown'
 Plugin 'craigemery/vim-autotag'
 Plugin 'cspeterson/vim-convert'	" Unit conversion
 Plugin 'dhruvasagar/vim-table-mode'
@@ -196,6 +197,21 @@ xmap  -     <Plug>SpeedDatingDown
 nmap d+     <Plug>SpeedDatingNowUTC
 nmap d=     <Plug>SpeedDatingNowUTC
 nmap d-     <Plug>SpeedDatingNowLocal
+
+"###############################################
+"# Textobj-Markdown
+"###############################################
+" I only want this plugin in order to make objects of fenced codeblocks, so
+" stop it from doing its other things
+let g:textobj_markdown_no_default_key_mappings=1
+omap aF <plug>(textobj-markdown-Bchunk-a)
+omap af <plug>(textobj-markdown-chunk-a)
+omap iF <plug>(textobj-markdown-Bchunk-i)
+omap if <plug>(textobj-markdown-chunk-i)
+vmap aF <plug>(textobj-markdown-Bchunk-a)
+vmap af <plug>(textobj-markdown-chunk-a)
+vmap iF <plug>(textobj-markdown-Bchunk-i)
+vmap if <plug>(textobj-markdown-chunk-i)
 
 "###############################################3
 "# Man
