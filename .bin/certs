@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+# [Christopher Peterson](https://chrispeterson.info)
+set -e
+set -o pipefail
+
+######
+# Argpargse
+######
+
+print_help() {
+  echo "
+    Usage:
+      ${0} [OPTIONS]... [ARGS]
+
+        Extract certificates from STDIN
+
+    Options:
+      -n, --number
+        A numer (\`1\`) or range (\`[0-1]\`) of the certs to print from STDIN.
+        Actually a Perl regex, so matching double digits will get more complex.
+        Prints all by default.
+
+    Examples
+      Print all certs found on STDIN:
+          openssl s_client -connect domain.tld:443 </dev/null | \\
+            ${0}
+
+      Print only the 1st cert found on stdin
+          openssl s_client -connect domain.tld:443 </dev/null | \\
+            ${0} -n 1
+
+      Print only certs 2 and 3 found on stdin
+          openssl s_client -connect domain.tld:443 </dev/null | \\
+            ${0} -n '[2-3]'
+
+  "
+}
+
+parse_args() {
+  # Before running through `getopts`, translate out convenient long-versions
+  # within $@ because we're using bash built-in getopts which does not support
+  # long args
+  for opt in "$@"; do
+    shift
+    case "${opt}" in
+      '--help')          set -- "$@" '-h' ;;
+      '--number')        set -- "$@" '-n' ;;
+      *)                 set -- "$@" "${opt}" ;;
+    esac
+  done
+
+  # Back to the beginning now and get our opts
+  OPTIND=1
+  while getopts ':hn:' opt; do
+    case "${opt}" in
+      h)
+        print_help
+        exit 0
+        ;;
+      n)
+        export REGEX="${OPTARG}"
+        ;;
+      *)
+        echo "Invalid option ${OPTARG}" >&2
+        print_help
+        return 1
+        ;;
+    esac
+  done
+
+  if [ -z "${REGEX}" ]; then
+    export REGEX='[0-9]+'
+  fi
+}
+
+main() {
+  # parse_args "#@"
+  parse_args "$@"
+
+  local input=()
+  readarray input
+
+  perl -lne '$k++ if /-----BEGIN/;if(/-----BEGIN/ .. /-----END/){print if $k=~/'"${REGEX}"'/}'  <<< "${input[@]}"
+}
+
+main "$@"
