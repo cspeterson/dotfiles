@@ -21,6 +21,7 @@ sudo apt-get install \
   poppler-utils \
   python3-pip \
   ranger \
+  rclone \
   run-one \
   screen \
   texlive-fonts-recommended \
