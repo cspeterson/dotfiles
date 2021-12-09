@@ -11,6 +11,7 @@ tmp_session=$(
   done
 )
 
+
 ######
 # Args
 ######
@@ -44,6 +45,12 @@ if [ "${1}" == '-h' ] || [ "${1}" == '--help' ]; then
   fail_help
 fi
 
+if [ -z "${TMUX}" ]; then
+  exit 1
+else
+  readonly SOCKET=$(grep -Po '(?<=/)[^/,]*(?=,)' <<< "${TMUX}")
+fi
+
 ######
 # Deps
 ######
@@ -58,7 +65,7 @@ command -v wc >/dev/null || fail_help
 ######
 trap early_exit SIGINT
 early_exit() {
-  tmux kill-session -t "${tmp_session}"
+  tmux -L "${SOCKET}" kill-session -t "${tmp_session}"
   exit $?
 }
 
@@ -76,33 +83,30 @@ fi
 
 session_client_count () {
   sess="${1}"
-  count=$(tmux list-clients -t "${sess}" | wc -l)
+  count=$(tmux -L "${SOCKET}" list-clients -t "${sess}" | wc -l)
   echo "${count}"
 }
 
-if [ -z "${TMUX}" ]; then
-  exit 1
-fi
 vers=$(tmux -V | grep -Po '[0-9\.]*')
 
-curr_session=$(tmux display -p '#S')
+curr_session=$(tmux -L "${SOCKET}" display -p '#S')
 
 # This is dumb but stay with me - Tmux doesn't use semver
 if (( $(echo "${vers} < 1.9" | bc -l) )); then
-  tmux set-option default-path "${newdir}"
+  tmux -L "${SOCKET}" set-option default-path "${newdir}"
 else
   # In order to change the default working directory in Tmux >=1.9 from
   # *within* the same session, we'll need to jump through some hoops.
   # So! Make a new session and inside that session, attach the *first* session
   # in a manner that alters the default path. Then, kill the second session and
   # you're back where you started, but with a new working dir 👍
-  tmux new-session -d -t "${tmp_session}"
-  tmux send-keys -t "${tmp_session}" 'unset TMUX' Enter
+  tmux -L "${SOCKET}" new-session -d -t "${tmp_session}"
+  tmux -L "${SOCKET}" send-keys -t "${tmp_session}" 'unset TMUX' Enter
   client_count=$(session_client_count "${curr_session}")
-  tmux send-keys -t "${tmp_session}" "tmux attach-session -t \"${curr_session}\" -c \"${newdir}\"" Enter
+  tmux -L "${SOCKET}" send-keys -t "${tmp_session}" "tmux -L \"${SOCKET}\" attach-session -t \"${curr_session}\" -c \"${newdir}\"" Enter
   start_count="${client_count}"
   while (( client_count <= start_count )); do
     client_count=$(session_client_count "${curr_session}")
   done
-  tmux kill-session -t "${tmp_session}"
+  tmux -L "${SOCKET}" kill-session -t "${tmp_session}"
 fi
