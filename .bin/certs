@@ -80,7 +80,7 @@ main() {
   local input=()
   readarray input
 
-  perl -lne '$k++ if /-----BEGIN/;if(/-----BEGIN/ .. /-----END/){print if $k=~/'"${REGEX}"'/}'  <<< "${input[@]}"
+  sed 's/^[[:space:]]*//g' <<< "${input[@]}" | perl -lne '$k++ if /-----BEGIN/;if(/^-----BEGIN/ .. /^-----END/){print if $k=~/'"${REGEX}"'/}'
 }
 
 main "$@"
