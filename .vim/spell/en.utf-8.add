@@ -4,6 +4,7 @@ AWS
 AppArmor
 Augeas
 BBCode
+BYOD
 Base64
 CAs
 CIDR
@@ -11,11 +12,14 @@ CIFS
 CLDR
 CLI
 CNAME
+CNAMEs
 CentOS
 Cron
 DHCP
 DNF
 DNS
+DRAC
+DRACs
 DSL
 Docker's
 Dockerfile
@@ -35,6 +39,8 @@ FFmpeg
 FQDN
 Facter
 Fail2Ban
+Forrestal
+FoxyProxy
 Frontmatter
 GPG
 Galera
@@ -99,6 +105,7 @@ Proofpoint
 PuppetDB
 Puppetized
 README
+RELP
 RPG
 RPGs
 RPMs
@@ -119,10 +126,12 @@ STDIN
 STDOUT
 SVM
 Silurian
+SmartProxy
 Splatmoji
 Springdale
 Subsites
 Sysctl
+TCL
 TCP
 TLDR
 TLS
@@ -140,11 +149,13 @@ UDP
 UI
 URI
 UX
+VMs
 VMware
 VR
 VirtualBox
 Vlambeer
 WCCP
+WPAD
 Wayland
 WordPress
 XTerm
@@ -211,6 +222,7 @@ hostname
 http
 i3
 i3wm
+iRule
 io
 iptables
 ish
@@ -246,6 +258,7 @@ nameref
 nav
 naïve
 naïvely
+netmask
 nftables
 nftables
 ntpd
@@ -263,6 +276,7 @@ podcasting
 pre
 prepend
 prepending
+proxied
 proxying
 r10k
 recognizability
@@ -290,6 +304,7 @@ submenu
 submodule
 submodule's
 subnet
+subnets
 subsite
 subsites
 substring
