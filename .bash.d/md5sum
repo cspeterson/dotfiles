@@ -7,7 +7,6 @@ md5comp() {
   shift
 
   for filename in "$@"; do
-    echo "${filename} <<<<<<"
     newsum=$(md5sum "$filename" | tr -s ' ' | cut -d ' ' -f 1)
     if [ "$newsum" != "$md5sum" ]; then
       echo "No match"
