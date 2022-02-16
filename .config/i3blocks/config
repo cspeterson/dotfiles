@@ -141,9 +141,10 @@ interval=30
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
+[temperature]
+command=/usr/share/i3blocks/temperature --chip coretemp-isa-0000 -w 85 -c 100
+label=TEMP
+interval=5
 
 # Key indicators
 #
