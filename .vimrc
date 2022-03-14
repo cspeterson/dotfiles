@@ -3,6 +3,7 @@
 "###############################################3
 set cursorline " highlight the line being edited
 set lazyredraw
+set nojoinspaces
 set number " line numbers
 set relativenumber " in combo with above, makes 'hybrid mode'
 set scrolloff=3 " keep 3 lines above or below when scrolling up and down
