@@ -121,3 +121,10 @@ macro compose                            y         '\
 <edit-description>^UAlternatives for message body<Enter>'\
 <send-message> \
 'Convert markdown to HTML5, and bundle it with the markdown for plaintext as alternative content types'
+
+# [O]pen the selected attachment as HTML (in the same manner as the send macro above) and open it for preview
+macro compose                            oh        '\
+<enter-command>set pipe_decode<Enter>\
+<pipe-message>pandoc --standalone --css ~/.config/neomutt/style.css --from gfm --to html --self-contained --metadata pagetitle=" " --template ~/.config/neomutt/template.html --output ~/.cache/mutt/preview.tmp.html<Enter>\
+<shell-escape>sensible-browser ~/.cache/mutt/preview.tmp.html<Enter>\
+<enter-command>unset pipe_decode<Enter>
