@@ -6,6 +6,7 @@ Augeas
 BBCode
 BYOD
 Base64
+Bento
 CAs
 CIDR
 CIFS
@@ -28,6 +29,7 @@ DuckDuckGo
 EL
 EL7
 EL8
+EOL
 EPEL
 EPP
 ERB
@@ -101,6 +103,7 @@ PDFs
 PKI
 Percona
 Pluggable
+PostgreSQL
 Prepend
 Proofpoint
 PuppetDB
@@ -153,6 +156,7 @@ URI
 UX
 VMs
 VMware
+VPN
 VR
 VirtualBox
 Vlambeer
@@ -164,6 +168,7 @@ XTerm
 XtraBackup
 YAML
 ZWJ
+affordances
 allocoprophagy
 amongst
 autocmd
@@ -176,6 +181,7 @@ backlight
 backtick
 backticks
 balancer
+bento
 bitmapped
 bool
 boolean
@@ -187,6 +193,7 @@ certname
 chocolatey
 classism
 codebase
+codebases
 config
 corvid
 crontab
@@ -261,6 +268,8 @@ nameref
 nav
 naïve
 naïvely
+netflow
+netflows
 netmask
 nftables
 nftables
@@ -291,6 +300,7 @@ repo
 repos
 requestors
 resized
+rigamarole
 rsync
 ruleset
 runtime
