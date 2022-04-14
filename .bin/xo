@@ -7,4 +7,4 @@
 file="${1}"
 
 $HOME/.bin/markused "${file}"
-$(xdg-open "${file}" &)
+xdg-open "${file}" &
