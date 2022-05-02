@@ -16,7 +16,7 @@ f="${1}";
 calcurse_cachedir="${HOME}/.cache/calcurse"
 
 fmt='\n%m\n│──Start: \t%(start:%Y.%m.%d @ %I:%M%P (%a))\n│──End: \t%(end:%Y.%m.%d @ %I:%M%P (%a))\n│──Duration: \t%(duration:%dd %Hh %Mm)\n└──Note: %N\n\n'
-rrule="$(sed -n '/^BEGIN:VEVENT/,/^END:VEVENT/{p;/^END:VEVENT/q}' "${f}" | grep '^RRULE' | sed 's/^RRULE://' | sed '/^└──Note: / s/\n/'$'\n''/g')"
+rrule="$(sed -n '/^BEGIN:VEVENT/,/^END:VEVENT/{p;/^END:VEVENT/q}' "${f}" D| grep '^RRULE' | sed 's/^RRULE://' )"
 if [ -z "${rrule}" ]; then
   rrule='<none>'
 fi
