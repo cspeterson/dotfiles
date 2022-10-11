@@ -282,6 +282,11 @@ function FoldAround()
   execute 'normal! `<kzfgg`>jzfG`<'
 endfunction
 
+" Filetypes
+nnoremap <Leader>f! :set filetype=<CR>
+nnoremap <Leader>fj :set filetype=json<CR>
+nnoremap <Leader>fm :set filetype=markdown<CR>
+
 " Incrementing/decrementing
 nnoremap <C-a> <Nop>
 nnoremap + <C-a>
