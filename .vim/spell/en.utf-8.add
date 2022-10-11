@@ -103,9 +103,11 @@ Oculus
 Onceover
 OpenVPN
 PDFs
+PHP-FPM
 PIs
 PKI
 Percona
+Pingdom
 Pluggable
 PostgreSQL
 Prepend
@@ -329,6 +331,7 @@ shorthands
 smagic
 subclasses
 subcommand
+subcommands
 subdirectory
 subdomain
 subkey
