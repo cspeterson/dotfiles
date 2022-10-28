@@ -7,14 +7,17 @@ sudo apt-get install \
   curl \
   elinks \
   eyed3 \
+  fzf \
   gnuplot-x11 \
   htop \
   jmtpfs \
   jq \
+  lastpass-cli \
   libgimp2.0-dev \
   links \
   moreutils \
   mosh \
+  neomutt \
   nodejs \
   npm \
   pandoc \
