@@ -44,8 +44,6 @@ sudo apt-get install \
 
 cargo install --locked \
   spotify-tui \
-  spotifyd \
-
 
 ## Other
 echo '::::Install from misc...'

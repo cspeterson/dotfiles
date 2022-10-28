@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Ensure a single instance of `spotifyd` is running before launching
-# `spotify-tui`
-run-this-one spotifyd
-~/.cargo/bin/spt "$@"
