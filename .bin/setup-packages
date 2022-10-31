@@ -17,6 +17,7 @@ sudo apt-get install \
   links \
   moreutils \
   mosh \
+  ncdu \
   neomutt \
   nodejs \
   npm \
