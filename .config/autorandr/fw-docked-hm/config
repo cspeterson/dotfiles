@@ -5,13 +5,13 @@ off
 output DP-3
 off
 output DP-4
-crtc 1
+crtc 0
 mode 3840x2160
 pos 0x0
+primary
 rate 60.00
 output eDP-1
-crtc 0
+crtc 1
 mode 2256x1504
 pos 3840x656
-primary
 rate 60.00
