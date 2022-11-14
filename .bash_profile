@@ -9,25 +9,6 @@ if [ -n "${BASH_VERSION}" ]; then
     fi
 fi
 
-# Add other bins to path if exist
-bindirs=(
-  "${HOME}/.cargo/bin"
-  "${HOME}/.fzf/bin"
-  "${HOME}/.gems/bin"
-  "${HOME}/.go/bin"
-  "${HOME}/.local/bin"
-  "${HOME}/.node_user/node_modules/.bin/"
-  "${HOME}/bin"
-  '/opt/puppetlabs/bin/'
-  '/var/lib/flatpak/exports/bin'
-  "${HOME}/.bin" # Add this last pls
-)
-for bindir in "${bindirs[@]}"; do
-  if [ -d "${bindir}" ] ; then
-      export PATH="${bindir}:${PATH}"
-  fi
-done
-
 export EDITOR=vim
 export FZF_COMMAND='if ([ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1); then { git ls-files; git ls-files --others --exclude-standard; }; else find 2>/dev/null; fi'
 export FZF_COMPLETION_TRIGGER='~~'

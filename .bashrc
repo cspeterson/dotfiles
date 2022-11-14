@@ -50,6 +50,25 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Add other bins to path if exist
+bindirs=(
+  "${HOME}/.cargo/bin"
+  "${HOME}/.fzf/bin"
+  "${HOME}/.gems/bin"
+  "${HOME}/.go/bin"
+  "${HOME}/.local/bin"
+  "${HOME}/.node_user/node_modules/.bin/"
+  "${HOME}/bin"
+  '/opt/puppetlabs/bin/'
+  '/var/lib/flatpak/exports/bin'
+  "${HOME}/.bin" # Add this last pls
+)
+for bindir in "${bindirs[@]}"; do
+  if [ -d "${bindir}" ] ; then
+      export PATH="${bindir}:${PATH}"
+  fi
+done
+
 # Usage-related bash settings
 if [ -f ~/.bash_settings ]; then
 	source ~/.bash_settings
