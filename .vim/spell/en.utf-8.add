@@ -94,6 +94,7 @@ MySQL
 NFS
 NFSv3
 NFSv4
+NRPE
 Nagios
 NeoMutt
 NetApp
@@ -163,6 +164,7 @@ UDP
 UI
 URI
 UX
+VLAN
 VM
 VMs
 VMware
@@ -274,6 +276,7 @@ manpage
 megayacht
 metadata
 misconfiguration
+misconfigured
 mlookup
 modularity
 modularize
@@ -329,6 +332,7 @@ sendmail
 service
 shorthands
 smagic
+strace
 subclasses
 subcommand
 subcommands
