@@ -199,6 +199,12 @@ nmap d=     <Plug>SpeedDatingNowUTC
 nmap d-     <Plug>SpeedDatingNowLocal
 
 "###############################################
+"# titlecase
+"###############################################
+nmap gt  <Plug>Titlecase
+vmap gt  <Plug>Titlecase
+
+"###############################################
 "# Textobj-Markdown
 "###############################################
 " I only want this plugin in order to make objects of fenced codeblocks, so
