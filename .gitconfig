@@ -30,3 +30,5 @@
 	name = Christopher Peterson
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false
