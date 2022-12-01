@@ -16,8 +16,3 @@ if [ -n "$BASH_VERSION" ]; then
     source "$HOME/.bash_profile"
   fi
 fi
-
-# Set up screen layout
-if [ -f "$HOME/.screenlayout/screenlayout" ]; then
-  "$HOME/.screenlayout/screenlayout"
-fi
