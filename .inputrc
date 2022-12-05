@@ -27,6 +27,15 @@ $if mode=emacs
 	"[1;7D": shell-backward-word
 	"[1;7C": shell-forward-word
 
+	# Literal mappings for Ctrl-left-arrow and Ctrl-right-arrow for
+	# shifting cursor by word
+        "\e[1;5C": forward-word
+        "\e[1;5D": backward-word
+        "\e[5C": forward-word
+        "\e[5D": backward-word
+        "\e\e[C": forward-word
+        "\e\e[D": backward-word
+
 	# Jump up and down wrapped line in a manner almost similar to Vim
 	"\C-gk": previous-screen-line
 	"\C-g\C-k": previous-screen-line
