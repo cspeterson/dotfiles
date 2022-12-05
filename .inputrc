@@ -28,13 +28,17 @@ $if mode=emacs
 	"[1;7C": shell-forward-word
 
 	# Literal mappings for Ctrl-left-arrow and Ctrl-right-arrow for
-	# shifting cursor by word
+	# shifting cursor by word else Tmux gets weird
         "\e[1;5C": forward-word
         "\e[1;5D": backward-word
         "\e[5C": forward-word
         "\e[5D": backward-word
         "\e\e[C": forward-word
         "\e\e[D": backward-word
+
+	# Literal mappings for the use of the Home/End keys else Tmux gets weird
+	"\e[1~": beginning-of-line
+	"\e[4~": end-of-line
 
 	# Jump up and down wrapped line in a manner almost similar to Vim
 	"\C-gk": previous-screen-line
