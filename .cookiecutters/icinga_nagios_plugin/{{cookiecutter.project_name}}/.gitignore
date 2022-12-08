@@ -1,0 +1,9 @@
+*.egg-info/
+*.swo
+*.swp
+*pyc
+__pycache__/
+build/
+dist/
+venv/
+virtualenv/
