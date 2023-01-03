@@ -1,4 +1,6 @@
 
+alias ssh-rsa='ssh -oHostKeyAlgorithms=+ssh-rsa'
+
 dossh() {
   # Keep trying to connect over ssh
         ssh "$1"
