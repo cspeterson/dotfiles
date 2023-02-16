@@ -92,6 +92,10 @@ elseif !empty($TMUX)
   vnoremap "Cp :call Pull_from_tmux() <Bar> normal! gv"cp<Enter>
 endif
 
+" Casing
+" Hitting `u` twice is kinda easier than shifting it up
+nnoremap guu gU
+
 " Search
 " Use ignore case, smart case, highlight results, incrementally
 " smart case ignores "ignore case" if we include uppercase characters
