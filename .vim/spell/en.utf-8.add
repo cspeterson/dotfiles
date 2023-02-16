@@ -69,6 +69,7 @@ Icinga's
 Icinga2
 Icinga2's
 ImageMagick
+Infoblox
 Insta
 JSON
 Javascript
@@ -107,6 +108,7 @@ PDFs
 PHP-FPM
 PIs
 PKI
+PXE
 Percona
 Pingdom
 Pluggable
@@ -115,6 +117,7 @@ Prepend
 Proofpoint
 PuppetDB
 Puppetized
+Pylint
 README
 RELP
 RPG
@@ -153,6 +156,7 @@ TLS
 TMDB
 TOC
 TODO
+TODO
 TSV
 TTRPGs
 Tmux
@@ -161,6 +165,7 @@ Trello
 TrueType
 UCARP
 UDP
+UEFI
 UI
 URI
 UX
@@ -273,6 +278,7 @@ logrotate
 lookups
 loopback
 manpage
+md5sum
 megayacht
 metadata
 misconfiguration
@@ -355,6 +361,7 @@ systemctl
 systemd
 teledildonics
 thusly
+timestamp
 toolset
 unbanning
 uncommenting
