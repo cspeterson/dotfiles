@@ -107,6 +107,13 @@ if [ -d "${HOME}/.bash.d" ]; then
   done
 fi
 
+# Collections
+if [ -d "${HOME}/.bash.local.d" ]; then
+  for f in "${HOME}/.bash.local.d"/*; do
+    source "${f}"
+  done
+fi
+
 if [ -d "${HOME}/.bash_completion.d" ]; then
   for f in "${HOME}/.bash_completion.d"/*; do
     source "${f}"
