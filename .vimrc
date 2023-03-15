@@ -290,6 +290,7 @@ endfunction
 nnoremap <Leader>f! :set filetype=<CR>
 nnoremap <Leader>fj :set filetype=json<CR>
 nnoremap <Leader>fm :set filetype=markdown<CR>
+nnoremap <Leader>fy :set filetype=yaml<CR>
 
 " Incrementing/decrementing
 nnoremap <C-a> <Nop>
