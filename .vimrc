@@ -291,6 +291,7 @@ nnoremap <Leader>f! :set filetype=<CR>
 nnoremap <Leader>fe :set filetype=mail<CR>
 nnoremap <Leader>fj :set filetype=json<CR>
 nnoremap <Leader>fm :set filetype=markdown<CR>
+nnoremap <Leader>fp :set filetype=python<CR>
 nnoremap <Leader>fy :set filetype=yaml<CR>
 
 " Incrementing/decrementing
