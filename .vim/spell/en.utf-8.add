@@ -115,6 +115,7 @@ Pluggable
 PostgreSQL
 Prepend
 Proofpoint
+Pulumi
 PuppetDB
 Puppetized
 Pylint
@@ -188,6 +189,7 @@ ZWJ
 affordances
 allocoprophagy
 amongst
+anonymizing
 autocmd
 autocomplete
 autofs
@@ -214,6 +216,7 @@ codebase
 codebases
 config
 corvid
+cron
 crontab
 cssh
 darktable
@@ -367,12 +370,14 @@ unbanning
 uncommenting
 unconfigured
 undeployed
+unencrypted
 unlink
 unmanaged
 unstage
 unstaged
 untrusted
 upstream's
+userbase
 usermod
 vSphere
 validator
