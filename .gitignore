@@ -54,6 +54,7 @@
 !/.bin/i3keys
 !/.bin/ical_summary
 !/.bin/instagif
+!/.bin/kitty
 !/.bin/lastpass-dmenu
 !/.bin/lastpass-dmenu.git
 !/.bin/lockblank

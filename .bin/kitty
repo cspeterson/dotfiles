@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# i3 should point here for terminal so that, if a newer version of Kitty is installed in $HOME, it can be used instead of the one that ships from the system  repos
+~/.local/kitty.app/bin/kitty || kitty
