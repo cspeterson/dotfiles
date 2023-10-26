@@ -1,1 +1,2 @@
 alias diffc='diff --color=always'
+alias diffchar='git diff --word-diff=color --word-diff-regex=. '
