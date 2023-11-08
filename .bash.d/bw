@@ -1,0 +1,3 @@
+# Bitwarden CLI
+alias bwp="BITWARDENCLI_APPDATA_DIR=~/.config/Bitwarden\ CLI\ Personal bw"
+alias bww="BITWARDENCLI_APPDATA_DIR=~/.config/Bitwarden\ CLI\ Work bw"
