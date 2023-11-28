@@ -52,7 +52,9 @@ npm install --prefix "${HOME}/.node_user" \
 
 
 # echo 'Install some basic Go packages...'
-# go get \
+go install \
+  github.com/google/yamlfmt/cmd/yamlfmt@latest \
+
 
 # echo 'Install odd scripts...'
 wget -O "${HOME}/.bin/tmux-cssh" https://raw.githubusercontent.com/peikk0/tmux-cssh/master/tmux-cssh
