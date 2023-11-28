@@ -214,11 +214,11 @@ for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move d
 #
 # Emoji/emoticon selection
 bindsym $mod+slash exec "$HOME/.bin/splatmoji copy"
+
 # Lastpass cli popups
 ## Password to clipboard
-bindsym $mod+l exec "$HOME/.bin/lastpass-dmenu copy"
-## Password typed out by xdotool
-bindsym $mod+Control+l exec "$HOME/.bin/lastpass-dmenu type"
+bindsym $mod+l exec "$HOME/.bin/bw-menu"
+
 # PCManfm-qt GUI file browser
 bindsym $mod+z exec pcmanfm-qt
 # Screenshot: shutter screenshot full desktop
