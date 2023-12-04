@@ -124,8 +124,4 @@ macro compose                            y         '\
 
 # [O]pen the selected attachment as HTML (in the same manner as the send macro above) and open it for preview
 bind compose o noop
-macro compose                            oh        '\
-<enter-command>set pipe_decode<Enter>\
-<pipe-message>pandoc --standalone --css ~/.config/neomutt/style.css --from gfm --to html --self-contained --metadata pagetitle=" " --template ~/.config/neomutt/template.html --output ~/.cache/mutt/preview.tmp.html<Enter>\
-<shell-escape>sensible-browser ~/.cache/mutt/preview.tmp.html<Enter>\
-<enter-command>unset pipe_decode<Enter>
+# actual bind for preview done separately in personal and work profiles in order to open personal/work mail specifically in theirrespective browser profiles
