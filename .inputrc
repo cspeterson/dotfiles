@@ -45,4 +45,8 @@ $if mode=emacs
 	"\C-g\C-k": previous-screen-line
 	"\C-gj": next-screen-line
 	"\C-g\C-j": next-screen-line
+
+	# Jump to beginning or end of lines with these keys that usually jump by character
+	"\C-f": end-of-line
+	"\C-b": beginning-of-line
 $endif
