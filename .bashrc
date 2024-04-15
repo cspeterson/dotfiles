@@ -63,6 +63,7 @@ bindirs=(
   "${HOME}/bin"
   '/opt/puppetlabs/bin/'
   '/var/lib/flatpak/exports/bin'
+  '/usr/local/bin'
   "${HOME}/.bin" # Add this last pls
 )
 for bindir in "${bindirs[@]}"; do
