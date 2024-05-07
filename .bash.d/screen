@@ -1,2 +1,3 @@
 alias screen='TERM=screen-256color screen'
 alias screenhere='screen -DRS "$(basename $(pwd))"'
+alias screen-chdir="screen -X eval \"chdir $PWD\""
