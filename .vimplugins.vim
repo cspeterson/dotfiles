@@ -233,3 +233,11 @@ imap <c-x><c-f> <plug>(fzf-complete-file)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 " File completion of *directories only*
 imap <expr> <c-x><c-d> fzf#vim#complete#path("find . -type d -print \| sed '1d;s:^..::'")
+
+
+"###############################################3
+"# Tabular(ize)
+"###############################################3
+
+autocmd VimEnter * AddTabularPattern puppet_params /^[^\$]*\zs\$/l1c0
+autocmd VimEnter * AddTabularPattern rocket /^[^\$]*\zs\$/l1c0
