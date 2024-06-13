@@ -239,5 +239,6 @@ imap <expr> <c-x><c-d> fzf#vim#complete#path("find . -type d -print \| sed '1d;s
 "# Tabular(ize)
 "###############################################3
 
+autocmd VimEnter * AddTabularPattern first_hash /^[^#]*\zs#
 autocmd VimEnter * AddTabularPattern puppet_params /^[^\$]*\zs\$/l1c0
 autocmd VimEnter * AddTabularPattern rocket /^[^\$]*\zs\$/l1c0
