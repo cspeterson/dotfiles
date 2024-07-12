@@ -8,6 +8,7 @@ BBCode
 BYOD
 Base64
 Bento
+Bitwarden
 CAs
 CIDR
 CIFS
@@ -28,6 +29,7 @@ Docker's
 Dockerfile
 Drupal
 DuckDuckGo
+EDUCAUSE
 EL
 EL7
 EL8
@@ -68,6 +70,7 @@ Icinga
 Icinga's
 Icinga2
 Icinga2's
+IdP
 ImageMagick
 Infoblox
 Insta
@@ -88,6 +91,7 @@ Magisk
 MailChimp
 MariaDB
 Mariabackup
+Meraki
 Minecraft
 Morty
 Multisite
@@ -103,6 +107,7 @@ Nginx
 OSX
 Oculus
 Onceover
+OpenDNS
 OpenVPN
 PDFs
 PHP-FPM
@@ -131,6 +136,7 @@ Rclone
 RedHat
 Reddit
 SAML
+SASL
 SDL
 SELinux
 SMS
@@ -138,6 +144,7 @@ SMTP
 SNI
 SQLite
 SSL
+SSO
 SSSD
 STDERR
 STDIN
@@ -185,6 +192,7 @@ WordPress
 XTerm
 XtraBackup
 YAML
+YubiKey
 ZWJ
 affordances
 allocoprophagy
@@ -223,6 +231,7 @@ darktable
 datetime
 datetimes
 deterministically
+discoverable
 distro
 distros
 dmenu
@@ -259,6 +268,8 @@ i3
 i3wm
 iApp
 iRule
+integrations
+interoperate
 io
 iptables
 ish
@@ -294,6 +305,7 @@ mtime
 multiline
 mysql
 nameref
+nameservers
 nav
 naïve
 naïvely
@@ -304,6 +316,7 @@ nftables
 nftables
 ntpd
 other's
+overridable
 pandoc
 param
 params
@@ -311,6 +324,7 @@ peasy
 per
 perfdata
 php
+plaintext
 playthrough
 pluggable
 podcasting
@@ -366,6 +380,7 @@ teledildonics
 thusly
 timestamp
 toolset
+trainings
 unbanning
 uncommenting
 unconfigured
@@ -390,5 +405,3 @@ wildcard
 workspaces
 yamllint
 yamllint's
-SASL
-Bitwarden
