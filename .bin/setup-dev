@@ -23,7 +23,6 @@ pip3 install \
   flake8 \
   isort \
   mypy \
-  proselint \
   virtualenv \
   yamllint \
   yq \

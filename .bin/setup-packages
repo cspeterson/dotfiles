@@ -47,7 +47,6 @@ pip3 install --user --upgrade \
   youtube-dl \
 
 npm install --prefix "${HOME}/.node_user" \
-  alex \
   trello-cli \
 
 

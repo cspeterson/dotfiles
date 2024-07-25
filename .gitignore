@@ -175,6 +175,13 @@
 !/.tmux/bin/.tmux-send-keys-to-all-panes
 !/.tmux.conf
 
+!/.vale.ini
+!/.vale_styles/
+!/.vale_styles/config
+!/.vale_styles/config/vocabularies
+!/.vale_styles/config/vocabularies/all
+!/.vale_styles/config/vocabularies/all/accept.txt
+
 !/.vim/
 !/.vim/ftdetect/
 !/.vim/ftdetect/markdown.vim
