@@ -177,6 +177,7 @@ UEFI
 UI
 URI
 UX
+VAs
 VLAN
 VM
 VMs
@@ -305,7 +306,6 @@ mtime
 multiline
 mysql
 nameref
-nameservers
 nav
 naïve
 naïvely
@@ -334,6 +334,7 @@ prepending
 proxied
 proxying
 r10k
+ransomware
 recognizability
 recurse
 recursing
@@ -361,6 +362,7 @@ subcommand
 subcommands
 subdirectory
 subdomain
+subdomains
 subkey
 submenu
 submodule
