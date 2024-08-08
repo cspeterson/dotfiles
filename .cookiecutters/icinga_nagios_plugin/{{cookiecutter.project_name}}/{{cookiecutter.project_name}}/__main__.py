@@ -69,7 +69,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     #     parser.print_help()
     #     sys.exit(1)
 
-    args = parser.parse_args(argv) if argv else parser.parse_args()
+    args = parser.parse_args(argv) if argv else parser.parse_args([])
 
     if args.verbosity >= 2:
         log_level = logging.DEBUG
