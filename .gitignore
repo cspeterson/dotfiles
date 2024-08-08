@@ -142,10 +142,6 @@
 
 !/.gemrc
 
-!/.github/
-!/.github/LICENSE
-!/.github/README.md
-
 !/.gitconfig
 !/.gitignore
 !/.gitmodules
@@ -160,8 +156,6 @@
 !/.local/share/applications/vim.desktop
 
 !/.profile
-
-!/.README.md
 
 !/.screenrc
 
@@ -210,3 +204,7 @@
 !/.vimrc
 
 !/.xsession
+
+!/LICENSE
+!/Makefile
+!/README.md
