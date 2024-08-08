@@ -1,6 +1,3 @@
-[submodule ".bin/lastpass-dmenu.git"]
-	path = .bin/lastpass-dmenu.git
-	url = git@github.com:cspeterson/lastpass-dmenu.git
 [submodule ".config/pandoc/writers/pandoc-bbcode-smf"]
 	path = .config/pandoc/writers/pandoc-bbcode-smf
 	url = git@github.com:cspeterson/pandoc-bbcode-smf.git
