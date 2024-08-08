@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Icinga2/Nagios plugin which {{cookiecutter.project_description}}
+Icinga2/Nagios plugin which...
+{{cookiecutter.project_description | wordwrap(88)}}
 """
 
 import argparse
@@ -12,6 +13,13 @@ import nagiosplugin  # type:ignore
 
 def parse_args(argv=None) -> argparse.Namespace:
     """Parse args"""
+
+    # bool_action = (
+    #     # Should be `BooleanOptionalAction` if Python >= 3.9, else the old way
+    #     argparse.BooleanOptionalAction
+    #     if hasattr(argparse, "BooleanOptionalAction")
+    #     else "store_true"
+    # )
 
     usage_examples: str = """examples:
 
@@ -57,7 +65,7 @@ def parse_args(argv=None) -> argparse.Namespace:
         type=str,
     )
 
-    # if len(sys.argv) == 1:
+    # if len(sys.argv) == 0:
     #     parser.print_help()
     #     sys.exit(1)
 
@@ -101,10 +109,11 @@ class SomeResource(nagiosplugin.Resource):
 
 
 @nagiosplugin.guarded
-def main():
+def main(
+    argv,
+):
     """Main"""
-
-    args = parse_args(sys.argv[1:])
+    args = parse_args(argv)
     logging.debug("Argparse results: %s", args)
 
     some_resource = SomeResource()
@@ -118,4 +127,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])

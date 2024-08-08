@@ -16,27 +16,36 @@ $(VENV):
 
 $(DEPENDENCIES): $(VENV) requirements-make.txt requirements.txt
 	# Install Python dependencies, runtime *and* test/build
-	python3 -m pip install --requirement requirements-make.txt
-	python3 -m pip install --requirement requirements.txt
+	./venv/bin/python3 -m pip install --requirement requirements-make.txt
+	./venv/bin/python3 -m pip install --requirement requirements.txt
 	touch $(DEPENDENCIES)
 
 .PHONY: static-analysis
 static-analysis: $(DEPENDENCIES)
+	# Lint
 	pylint {{cookiecutter.project_name}}/ tests/
+	# Check typing
 	mypy {{cookiecutter.project_name}}/ tests/
+	# Check style
 	black --check {{cookiecutter.project_name}}/ tests/
+	# Hooray all good
 
 .PHONY: test
 test: $(DEPENDENCIES)
 	pytest tests/
 
+.PHONY: test-verbose
+test-verbose: $(DEPENDENCIES)
+	pytest  -rP --log-cli-level=10 tests/
+
+.PHONY: fix
 fix: $(DEPENDENCIES)
 	# Enforce style with Black
 	black {{cookiecutter.project_name}}/
 	black tests/
 
 .PHONY: package
-package: $(BUILD)
+package: $(BUILD) static-analysis test
 
 $(BUILD): $(DEPENDENCIES)
 	# Build the package
@@ -45,15 +54,15 @@ $(BUILD): $(DEPENDENCIES)
 		exit 1; \
 		fi
 	mkdir --parents $(BUILD_DIR)
-	python3 -m build --outdir $(BUILD_DIR)
+	./venv/bin/python3 -m build --outdir $(BUILD_DIR)
 	touch $(BUILD)
 
 .PHONY: publish
 publish: package test
 	@test $${TWINE_PASSWORD?Please set environment variable TWINE_PASSWORD in order to publish}
-	python3 -m twine upload --username __token__ $(BUILD_DIR)/*
+	./venv/bin/python3 -m twine upload --username __token__ $(BUILD_DIR)/*
 
 .PHONY: publish-test
 publish-test: package test
 	@test $${TWINE_PASSWORD?Please set environment variable TWINE_PASSWORD in order to publish}
-	python3 -m twine upload --repository testpypi --username __token__ $(BUILD_DIR)/*
+	./venv/bin/python3 -m twine upload --repository testpypi --username __token__ $(BUILD_DIR)/*

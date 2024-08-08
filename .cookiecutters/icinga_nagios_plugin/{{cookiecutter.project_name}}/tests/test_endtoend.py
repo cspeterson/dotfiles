@@ -1,8 +1,7 @@
 """ End-to-end tests """
 
-import subprocess
-
 import pytest  # type:ignore
+import {{cookiecutter.project_name}}.__main__ as program  # type:ignore
 
 
 @pytest.mark.parametrize(
@@ -10,10 +9,13 @@ import pytest  # type:ignore
     [
         (
             # OK
-            [],
+            [
+                "--warning",
+                ":1",
+            ],
             {
                 "returncode": 0,
-                "output_contains": "OK",
+                "output": "OK",
             },
         ),
         (
@@ -24,7 +26,7 @@ import pytest  # type:ignore
             ],
             {
                 "returncode": 1,
-                "output_contains": "WARNING",
+                "output": "WARNING",
             },
         ),
         (
@@ -35,19 +37,24 @@ import pytest  # type:ignore
             ],
             {
                 "returncode": 2,
-                "output_contains": "CRITICAL",
+                "output": "CRITICAL",
             },
         ),
+    ],
+    ids=[
+        "Description of the test which is represented by the first set of values",
+        "Description of the test which is represented by the second set of values",
+        "Description of the test which is represented by the third set of values",
     ],
 )
 # pylint: disable=unused-argument
 # pylint: disable=redefined-outer-name
-def test_end_to_end(test_input, expected):
+def test_end_to_end(capsys, test_input, expected):
     """Test"""
-    command = ["python3", "-m", "{{cookiecutter.project_name}}"] + [str(x) for x in test_input]
-    res = subprocess.run(command, capture_output=True, check=False, text=True)
-    assert res.returncode == expected["returncode"]
-    assert expected["output_contains"] in res.stdout
+    with pytest.raises(SystemExit) as excinfo:
+        program.main(argv=test_input)
+    assert excinfo.value.code == expected["returncode"]
+    assert expected["output"] in capsys.readouterr()[0].rstrip("\n")
 
 
 # pylint: enable=unused-argument
