@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+""" Run {{cookiecutter.project_name}} from its module """
+
+from {{cookiecutter.project_name}} import __main__
+__main__.main()
