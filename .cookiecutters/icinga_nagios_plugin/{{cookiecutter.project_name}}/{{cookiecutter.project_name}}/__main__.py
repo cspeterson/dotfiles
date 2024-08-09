@@ -45,7 +45,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     parser.add_argument(
         "--critical",
         "-c",
-        help=("Critical range for download duration in seconds"),
+        help=("Critical range for ..."),
         type=str,
     )
 
@@ -61,7 +61,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     parser.add_argument(
         "--warning",
         "-w",
-        help=("Warning range for download duration in seconds"),
+        help=("Warning range for ..."),
         type=str,
     )
 
