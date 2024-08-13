@@ -1,3 +1,4 @@
+ACLs
 APs
 AWS
 Acquia
@@ -142,6 +143,7 @@ SELinux
 SMS
 SMTP
 SNI
+SOA
 SQLite
 SSL
 SSO
