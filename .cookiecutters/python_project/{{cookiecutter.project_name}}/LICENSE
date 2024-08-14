@@ -1,4 +1,4 @@
-Copyright {% now 'local', '%Y' %} {{cookiecutter.person_or_organization_name}} <{{cookiecutter.person_or_organization_website}}>
+Copyright {% now 'local', '%Y' %} {{cookiecutter.person_or_organization_name}} {% if cookiecutter.person_or_organization_website %}<{{cookiecutter.person_or_organization_website}}>{% endif %}
 
 {%- if cookiecutter.license == "License :: OSI Approved :: MIT License" %}
 # Released under MIT License
