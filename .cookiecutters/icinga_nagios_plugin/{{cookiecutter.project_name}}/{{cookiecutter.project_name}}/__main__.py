@@ -119,8 +119,8 @@ def main(
     some_resource = SomeResource()
     context = nagiosplugin.ScalarContext(
         "context",
-        args.warning,
-        args.critical,
+        warning=args.warning,
+        critical=args.critical,
     )
     check = nagiosplugin.Check(some_resource, context)
     check.main(args.verbosity)
