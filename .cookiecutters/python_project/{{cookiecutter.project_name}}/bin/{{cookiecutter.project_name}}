@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """ Run {{cookiecutter.project_name}} from its module """
+import sys
 
 from {{cookiecutter.project_name}} import __main__
-__main__.main()
+__main__.main(sys.arg[1:])
