@@ -42,7 +42,6 @@ NOTE on the command path: the above Icinga2 configuration object points to the c
 
 * point it to wherever it is installed by its full path
 * symlink from the specified path to the actual script.
-* or take the kludge route, leave it as-is, and copy `__main__.py` from this repo into `PluginDir/`
 
 Up to you!
 
