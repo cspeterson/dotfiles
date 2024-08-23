@@ -51,7 +51,7 @@ Up to you!
 
 # Contributing
 
-Merge requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Merge requests are welcome. For major changes, open an issue first to discuss what you would like to change.
 
 To run the test suite:
 
