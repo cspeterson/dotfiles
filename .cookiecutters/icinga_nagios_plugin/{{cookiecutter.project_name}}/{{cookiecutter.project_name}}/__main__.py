@@ -7,11 +7,12 @@ Icinga2/Nagios plugin which...
 import argparse
 import logging
 import sys
+from typing import Generator, Optional
 
 import nagiosplugin  # type:ignore
 
 
-def parse_args(argv=None) -> argparse.Namespace:
+def parse_args(argv: Optional[list] = None) -> argparse.Namespace:
     """Parse args"""
 
     # bool_action = (
@@ -91,10 +92,10 @@ class SomeResource(nagiosplugin.Resource):
 
     def __init__(
         self,
-    ):
+    ) -> None:
         pass
 
-    def probe(self):
+    def probe(self) -> Generator[nagiosplugin.Metric, None, None]:
         """
         Run the check itself
         """
@@ -110,8 +111,8 @@ class SomeResource(nagiosplugin.Resource):
 
 @nagiosplugin.guarded
 def main(
-    argv,
-):
+    argv: list,
+) -> None:
     """Main"""
     args = parse_args(argv)
     logging.debug("Argparse results: %s", args)

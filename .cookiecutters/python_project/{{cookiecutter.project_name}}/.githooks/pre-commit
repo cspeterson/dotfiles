@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ "$(git branch --show-current)" == "main" ]]; then
+  return 0
+fi
+
+# Redirect output to stderr.
+exec 1>&2
+
+make all
+make changelog-verify

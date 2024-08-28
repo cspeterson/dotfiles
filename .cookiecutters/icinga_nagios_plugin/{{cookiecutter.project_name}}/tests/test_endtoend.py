@@ -49,7 +49,9 @@ import {{cookiecutter.project_name}}.__main__ as program  # type:ignore
 )
 # pylint: disable=unused-argument
 # pylint: disable=redefined-outer-name
-def test_end_to_end(capsys, test_input, expected):
+def test_end_to_end(
+    capsys: pytest.CaptureFixture, test_input: list, expected: dict
+) -> None:
     """Test"""
     with pytest.raises(SystemExit) as excinfo:
         program.main(argv=test_input)

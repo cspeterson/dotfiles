@@ -6,9 +6,10 @@
 import argparse
 import logging
 import sys
+from typing import Optional
 
 
-def parse_args(argv=None) -> argparse.Namespace:
+def parse_args(argv: Optional[list] = None) -> argparse.Namespace:
     """Parse args"""
 
     # bool_action = (
@@ -69,8 +70,8 @@ def parse_args(argv=None) -> argparse.Namespace:
 
 
 def main(
-    argv,
-):
+    argv: list,
+) -> None:
     """Main"""
     args = parse_args(argv)
     logging.debug("Argparse results: %s", args)
