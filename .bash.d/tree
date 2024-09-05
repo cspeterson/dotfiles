@@ -1,1 +1,1 @@
-alias treeg='tree --gitignore'
+alias treeg='tree --gitignore -a -I .git'
