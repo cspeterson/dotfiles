@@ -11,6 +11,8 @@ from typing import Generator, Optional
 
 import nagiosplugin  # type:ignore
 
+from {{cookiecutter.resource_class_name | lower}} import {{cookiecutter.resource_class_name}}
+
 
 def parse_args(argv: Optional[list] = None) -> argparse.Namespace:
     """Parse args"""
@@ -82,31 +84,6 @@ def parse_args(argv: Optional[list] = None) -> argparse.Namespace:
     logging.basicConfig(level=log_level)
 
     return args
-
-
-# pylint: disable=too-few-public-methods
-class SomeResource(nagiosplugin.Resource):
-    """
-    A model of the thing being monitored
-    """
-
-    def __init__(
-        self,
-    ) -> None:
-        pass
-
-    def probe(self) -> Generator[nagiosplugin.Metric, None, None]:
-        """
-        Run the check itself
-        """
-        yield nagiosplugin.Metric(
-            "metric_name",
-            0,
-            context="context",
-        )
-
-
-# pylint: enable=too-few-public-methods
 
 
 @nagiosplugin.guarded
